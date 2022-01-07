@@ -945,26 +945,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _mainView = require("./components/main-view/main-view");
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
-// Main component (will eventually use all the others)
+// Main component
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            className: "my-flix",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                __source: {
-                    fileName: "src/index.jsx",
-                    lineNumber: 12
-                },
-                __self: this,
-                children: "Good morning"
-            })
+            __self: this
         }));
     }
 }
@@ -978,7 +970,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22736,7 +22728,171 @@ module.exports = require('./cjs/scheduler-tracing.development.js');
     exports.unstable_wrap = unstable_wrap;
 })();
 
-},{}],"jUTZ8":[function() {},{}],"6d00J":[function(require,module,exports) {
+},{}],"2zHas":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$35bf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$35bf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _movieCard = require("../movie-card/movie-card");
+var _movieView = require("../movie-view/movie-view");
+class MainView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            movies: [
+                {
+                    _id: '61aadf36bd437165f6b49008',
+                    Title: 'Princess Mononoke',
+                    Description: "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime.",
+                    Director: {
+                        Name: 'Hayao Miyazaki',
+                        Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
+                        Birth: '1941'
+                    },
+                    ImagePath: './img/princessmononoke.png',
+                    Featured: true,
+                    Genre: {
+                        Name: 'Action',
+                        Description: 'Action film is a film genre in which the protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases.'
+                    }
+                },
+                {
+                    _id: '61aaddcdbd437165f6b49006',
+                    Title: "Kiki's Delivery Service",
+                    Description: 'A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service.',
+                    Director: {
+                        Name: 'Hayao Miyazaki',
+                        Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
+                        Birth: '1941'
+                    },
+                    ImagePath: './img/kikisdeliveryservice.png',
+                    featured: true,
+                    Genre: {
+                        Name: 'Fantasy',
+                        Description: 'Fantasy films are films that belong to the fantasy genre with fantastic themes, usually magic, supernatural events, mythology, folklore, or exotic fantasy worlds.'
+                    }
+                },
+                {
+                    _id: '61aae060bd437165f6b49009',
+                    Title: 'Spirited Away',
+                    Description: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+                    Director: {
+                        Name: 'Hayao Miyazaki',
+                        Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
+                        Birth: '1941'
+                    },
+                    ImagePath: './img/spiritedaway.png',
+                    featured: false,
+                    Genre: {
+                        Name: 'Adventure',
+                        Description: 'Adventure film is a genre that revolves around the conquests and explorations of a protagonist. The purpose of the conquest can be to retrieve a person or treasure, but often the main focus is simply the pursuit of the unknown.'
+                    }
+                }, 
+            ],
+            selectedMovie: null
+        };
+    }
+    setSelectedMovie(newSelectedMovie) {
+        this.setState({
+            selectedMovie: newSelectedMovie
+        });
+    }
+    render() {
+        const { movies , selectedMovie  } = this.state;
+        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 79
+            },
+            __self: this,
+            children: "The list is empty!"
+        }));
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 82
+            },
+            __self: this,
+            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
+                movie: selectedMovie,
+                onBackClick: (newSelectedMovie)=>{
+                    this.setSelectedMovie(newSelectedMovie);
+                },
+                __source: {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 84
+                },
+                __self: this
+            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                    movie: movie,
+                    onMovieClick: (movie1)=>{
+                        this.setSelectedMovie(movie1);
+                    },
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 92
+                    },
+                    __self: this
+                }, movie._id)
+            )
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$35bf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"6EiBJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4249.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movie , onMovieClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "movie-card",
+            onClick: ()=>{
+                onMovieClick(movie);
+            },
+            __source: {
+                fileName: "src/components/movie-card/movie-card.jsx",
+                lineNumber: 7
+            },
+            __self: this,
+            children: movie.Title
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$4249.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"6d00J":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22888,6 +23044,125 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"awHaO"}]},["7aHBw","1575c","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react-refresh/runtime":"awHaO"}],"ikZdr":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3741.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MovieView extends _reactDefault.default.Component {
+    render() {
+        const { movie , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "movie-view",
+            __source: {
+                fileName: "src/components/movie-view/movie-view.jsx",
+                lineNumber: 8
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "movie-poster",
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 9
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        src: movie.ImagePath,
+                        width: "250px",
+                        __source: {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 10
+                        },
+                        __self: this
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "movie-title",
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 12
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 13
+                            },
+                            __self: this,
+                            children: "Title:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 14
+                            },
+                            __self: this,
+                            children: movie.Title
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "movie-description",
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 16
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 17
+                            },
+                            __self: this,
+                            children: "Description:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 18
+                            },
+                            __self: this,
+                            children: movie.Description
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                    onClick: ()=>{
+                        onBackClick(null);
+                    },
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 20
+                    },
+                    __self: this,
+                    children: "Back"
+                })
+            ]
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$3741.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"jUTZ8":[function() {},{}]},["7aHBw","1575c","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
