@@ -17,7 +17,7 @@ export class MainView extends React.Component {
             Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
             Birth: '1941',
           },
-          ImagePath: './img/princessmononoke.png',
+          ImagePath: require('../../img/princessmononoke.png'),
           Featured: true,
           Genre: {
             Name: 'Action',
@@ -35,7 +35,7 @@ export class MainView extends React.Component {
             Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
             Birth: '1941',
           },
-          ImagePath: './img/kikisdeliveryservice.png',
+          ImagePath: require('../../img/kikisdeliveryservice.png'),
           featured: true,
           Genre: {
             Name: 'Fantasy',
@@ -53,7 +53,7 @@ export class MainView extends React.Component {
             Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
             Birth: '1941',
           },
-          ImagePath: './img/spiritedaway.png',
+          ImagePath: require('../../img/spiritedaway.png'),
           featured: false,
           Genre: {
             Name: 'Adventure',

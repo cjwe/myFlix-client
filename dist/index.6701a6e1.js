@@ -22758,7 +22758,7 @@ class MainView extends _reactDefault.default.Component {
                         Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
                         Birth: '1941'
                     },
-                    ImagePath: './img/princessmononoke.png',
+                    ImagePath: require('../../img/princessmononoke.png'),
                     Featured: true,
                     Genre: {
                         Name: 'Action',
@@ -22774,7 +22774,7 @@ class MainView extends _reactDefault.default.Component {
                         Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
                         Birth: '1941'
                     },
-                    ImagePath: './img/kikisdeliveryservice.png',
+                    ImagePath: require('../../img/kikisdeliveryservice.png'),
                     featured: true,
                     Genre: {
                         Name: 'Fantasy',
@@ -22790,7 +22790,7 @@ class MainView extends _reactDefault.default.Component {
                         Bio: 'Hayao Miyazaki is a Japanese animator, director, producer, screenwriter, author, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.',
                         Birth: '1941'
                     },
-                    ImagePath: './img/spiritedaway.png',
+                    ImagePath: require('../../img/spiritedaway.png'),
                     featured: false,
                     Genre: {
                         Name: 'Adventure',
@@ -22855,7 +22855,7 @@ class MainView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../../img/princessmononoke.png":"e3sgh","../../img/kikisdeliveryservice.png":"2dn52","../../img/spiritedaway.png":"jgOhy","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23163,6 +23163,50 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"jUTZ8":[function() {},{}]},["7aHBw","1575c","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6d00J","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5Oe2T"}],"e3sgh":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "princessmononoke.13690ac1.png";
+
+},{"./helpers/bundle-url":"hGila"}],"hGila":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"2dn52":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "kikisdeliveryservice.15818ec6.png";
+
+},{"./helpers/bundle-url":"hGila"}],"jgOhy":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "spiritedaway.9b95353d.png";
+
+},{"./helpers/bundle-url":"hGila"}],"jUTZ8":[function() {},{}]},["7aHBw","1575c","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
