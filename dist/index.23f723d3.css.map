@@ -1,0 +1,1 @@
+{"mappings":"AAEA;EACE,OAHM","sources":["Desktop/CF/myFlix-client/src/index.scss"],"sourcesContent":["$color: rgb(245, 141, 228);\n\n.my-flix {\n  color: $color;\n}\n"],"names":[],"version":3,"file":"index.23f723d3.css.map","sourceRoot":"/__parcel_source_root/"}
