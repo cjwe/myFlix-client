@@ -22794,10 +22794,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+//React Components
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _registrationView = require("../registration-view/registration-view");
 var _loginView = require("../login-view/login-view");
+//SCSS Import
 var _mainViewScss = require("./main-view.scss");
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -22805,8 +22807,7 @@ class MainView extends _reactDefault.default.Component {
         this.state = {
             movies: [],
             selectedMovie: null,
-            user: null,
-            registered: null
+            user: null
         };
     }
     //Load movies from database
@@ -22819,9 +22820,9 @@ class MainView extends _reactDefault.default.Component {
             console.log(error);
         });
     }
-    // Affect state of parent element
-    // To movie-card
-    setselectedMovie(movie) {
+    // Affect state of parent element...
+    // to movie-card
+    setSelectedMovie(movie) {
         this.setState({
             selectedMovie: movie
         });
@@ -22832,39 +22833,22 @@ class MainView extends _reactDefault.default.Component {
             user
         });
     }
-    // to registration-view
-    onRegister(registered, user) {
-        this.setState({
-            registered,
-            user
-        });
-    }
     render() {
-        const { movies , selectedMovie , user: user1 , registered: registered1  } = this.state;
-        // If user is registered but not logged in, log in view
+        const { movies , selectedMovie , user: user1  } = this.state;
+        // If user is not logged in, loads log-in view
         if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
-            ,
-            toRegistrationView: (toRegister)=>this.toRegistrationView(toRegister)
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 61,
-            columnNumber: 9
-        }, this));
-        // If user is not logged in or registered, registration-view
-        if (!user1 && !registered1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-            onRegister: (registered, username)=>this.onRegister(registered, username)
-        }, void 0, false, {
-            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 72,
-            columnNumber: 9
+            lineNumber: 55,
+            columnNumber: 14
         }, this));
         // Empty main view for loading
         if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view"
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 80,
+            lineNumber: 58,
             columnNumber: 37
         }, this));
         // Render movie list when logged in and registered
@@ -22878,12 +22862,12 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, void 0, false, {
                     fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                    lineNumber: 87,
+                    lineNumber: 65,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                lineNumber: 86,
+                lineNumber: 64,
                 columnNumber: 11
             }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 children: [
@@ -22891,7 +22875,7 @@ class MainView extends _reactDefault.default.Component {
                         children: "Movies"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                        lineNumber: 96,
+                        lineNumber: 74,
                         columnNumber: 13
                     }, this),
                     movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
@@ -22901,19 +22885,19 @@ class MainView extends _reactDefault.default.Component {
                             }
                         }, movie._id, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 98,
+                            lineNumber: 76,
                             columnNumber: 15
                         }, this)
                     )
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                lineNumber: 95,
+                lineNumber: 73,
                 columnNumber: 11
             }, this)
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 84,
+            lineNumber: 62,
             columnNumber: 7
         }, this));
     }
@@ -24516,11 +24500,13 @@ class MovieCard extends _reactDefault.default.Component {
         }, this));
     }
 }
-// prop-types
-// Give informational warnings in browser if data does not match required shape
+// Prop-types
+// Gives informational warnings in browser if data does not match required shape
 MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
-        Title: _propTypesDefault.default.string.isRequired
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
@@ -25386,6 +25372,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _propTypes = require("prop-types");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieViewScss = require("./movie-view.scss");
@@ -25407,7 +25394,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: "<"
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 13,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25415,7 +25402,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: movie.Title
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 21,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25423,13 +25410,13 @@ class MovieView extends _reactDefault.default.Component {
                             children: "✰"
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 22,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                    lineNumber: 12,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25446,7 +25433,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Genre: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 29,
+                                            lineNumber: 30,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25454,13 +25441,13 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Genre.Name
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 30,
+                                            lineNumber: 31,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 28,
+                                    lineNumber: 29,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25471,7 +25458,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Director: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 36,
+                                            lineNumber: 37,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25479,13 +25466,13 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Director.Name
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 37,
+                                            lineNumber: 38,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 36,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25496,7 +25483,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Description: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 43,
+                                            lineNumber: 44,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25504,19 +25491,19 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Description
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 44,
+                                            lineNumber: 45,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 42,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 27,
+                            lineNumber: 28,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25525,24 +25512,24 @@ class MovieView extends _reactDefault.default.Component {
                                 src: imgPath + movie.ImagePath
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 52,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 51,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-            lineNumber: 10,
+            lineNumber: 11,
             columnNumber: 7
         }, this));
     }
@@ -25553,7 +25540,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","./movie-view.scss":"eBfSJ","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"eBfSJ":[function() {},{}],"1AwyY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","./movie-view.scss":"eBfSJ","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","prop-types":"aSVWb"}],"eBfSJ":[function() {},{}],"1AwyY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b153 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25574,14 +25561,14 @@ var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
     const [username, setUsername] = _react.useState('');
-    const [password1, setPassword1] = _react.useState('');
-    const [password2, setPassword2] = _react.useState('');
+    const [password, setPassword1] = _react.useState('');
     const [email, setEmail] = _react.useState('');
     const [birthday, setBirthday] = _react.useState('');
     // Modify state of MainView to be registered and logged in with new user
     const handleSubmit = (e)=>{
         e.preventDefault();
-        props.onRegister(true, username);
+        console.log(username);
+        props.onRegister(registered);
     };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         className: "registration-view",
@@ -25671,7 +25658,7 @@ function RegistrationView(props) {
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
                                 className: "registration-form__line-label",
-                                children: "Re-enter password:"
+                                children: "Email:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
                                 lineNumber: 53,
@@ -25680,19 +25667,19 @@ function RegistrationView(props) {
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
                                 className: "registration-form__line__input-field",
                                 type: "text",
-                                value: password2,
-                                onChange: (e)=>setPassword2(e.target.value)
+                                value: email,
+                                onChange: (e)=>setEmail(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 56,
+                                lineNumber: 54,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
                                 className: "registration-form__label-tips",
-                                children: "passwords must match"
+                                children: "required"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 62,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -25706,46 +25693,11 @@ function RegistrationView(props) {
                         children: [
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
                                 className: "registration-form__line-label",
-                                children: "Email:"
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 68,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
-                                className: "registration-form__line__input-field",
-                                type: "text",
-                                value: email,
-                                onChange: (e)=>setEmail(e.target.value)
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 69,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
-                                className: "registration-form__label-tips",
-                                children: "required"
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 75,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 67,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                        className: "registration-form__line",
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("label", {
-                                className: "registration-form__line-label",
                                 className: "registration-form__line",
                                 children: "Birthday:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 79,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25755,7 +25707,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setBirthday(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 85,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25763,13 +25715,13 @@ function RegistrationView(props) {
                                 children: "optional"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 91,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 78,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25778,7 +25730,7 @@ function RegistrationView(props) {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 94,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this)
                 ]
@@ -25794,12 +25746,17 @@ function RegistrationView(props) {
         columnNumber: 5
     }, this));
 }
-_s(RegistrationView, "sQw4ndFEIHqHJMeXBhFGhhkm2Is=");
+_s(RegistrationView, "vCN6z8+MSoUU9+QrvHImoe3J2Bs=");
 _c = RegistrationView;
 // prop-types
 // Give informational warnings in browser if data does not match required shape
 RegistrationView.propTypes = {
-    onRegister: _propTypesDefault.default.func.isRequired
+    register: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string.isRequired
+    })
 };
 var _c;
 $RefreshReg$(_c, "RegistrationView");
@@ -25837,10 +25794,7 @@ function LoginView(props) {
         // Send auth request to server
         props.onLoggedIn(username);
     };
-    const handleClickRegister = (e)=>{
-        e.preventDefault();
-        props.toRegistrationView('');
-    };
+    // Register button click needed
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         className: "login-view",
         children: [
@@ -25848,7 +25802,7 @@ function LoginView(props) {
                 children: "Login to myFlix"
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 24,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
@@ -25862,7 +25816,7 @@ function LoginView(props) {
                                 children: "Username:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 28,
+                                lineNumber: 25,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25872,13 +25826,13 @@ function LoginView(props) {
                                 onChange: (e)=>setUsername(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 29,
+                                lineNumber: 26,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 27,
+                        lineNumber: 24,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25889,7 +25843,7 @@ function LoginView(props) {
                                 children: "Password:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 38,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25899,13 +25853,13 @@ function LoginView(props) {
                                 onChange: (e)=>setPassword(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 39,
+                                lineNumber: 36,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 37,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25915,13 +25869,13 @@ function LoginView(props) {
                         children: "Log in"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 47,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 26,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25930,28 +25884,28 @@ function LoginView(props) {
                         children: "Don't have an account? "
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 57,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
                         type: "submit",
-                        onClick: handleClickRegister,
+                        onClick: handleSubmit,
                         children: "Register"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 58,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 56,
+                lineNumber: 53,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-        lineNumber: 23,
+        lineNumber: 20,
         columnNumber: 5
     }, this));
 }
@@ -25960,8 +25914,11 @@ _c = LoginView;
 // prop-types
 // Give informational warnings in browser if data does not match required shape
 LoginView.propTypes = {
-    onLoggedIn: _propTypesDefault.default.func.isRequired,
-    toRegistrationView: _propTypesDefault.default.func.isRequired
+    user: _propTypesDefault.default.shape({
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired
+    }),
+    onLoggedIn: _propTypesDefault.default.func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "LoginView");

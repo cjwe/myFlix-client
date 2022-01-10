@@ -5,15 +5,15 @@ import './registration-view.scss';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
-  const [password1, setPassword1] = useState('');
-  const [password2, setPassword2] = useState('');
+  const [password, setPassword1] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
   // Modify state of MainView to be registered and logged in with new user
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.onRegister(true, username);
+    console.log(username);
+    props.onRegister(registered);
   };
 
   return (
@@ -46,21 +46,6 @@ export function RegistrationView(props) {
           />
           <span className="registration-form__label-tips">
             must not be blank
-          </span>
-        </div>
-
-        <div className="registration-form__line">
-          <label className="registration-form__line-label">
-            Re-enter password:
-          </label>
-          <input
-            className="registration-form__line__input-field"
-            type="text"
-            value={password2}
-            onChange={(e) => setPassword2(e.target.value)}
-          />
-          <span className="registration-form__label-tips">
-            passwords must match
           </span>
         </div>
 
@@ -102,5 +87,10 @@ export function RegistrationView(props) {
 // prop-types
 // Give informational warnings in browser if data does not match required shape
 RegistrationView.propTypes = {
-  onRegister: PropTypes.func.isRequired,
+  register: PropTypes.shape({
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
+    Email: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired,
+  }),
 };

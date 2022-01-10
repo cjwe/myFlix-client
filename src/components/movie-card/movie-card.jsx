@@ -19,11 +19,13 @@ export class MovieCard extends React.Component {
   }
 }
 
-// prop-types
-// Give informational warnings in browser if data does not match required shape
+// Prop-types
+// Gives informational warnings in browser if data does not match required shape
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired,
 };

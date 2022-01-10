@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+
+//React Components
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 
+//SCSS Import
 import './main-view.scss';
 
 export default class MainView extends React.Component {
@@ -14,7 +17,6 @@ export default class MainView extends React.Component {
       movies: [],
       selectedMovie: null,
       user: null,
-      registered: null,
     };
   }
 
@@ -31,9 +33,9 @@ export default class MainView extends React.Component {
         console.log(error);
       });
   }
-  // Affect state of parent element
-  // To movie-card
-  setselectedMovie(movie) {
+  // Affect state of parent element...
+  // to movie-card
+  setSelectedMovie(movie) {
     this.setState({
       selectedMovie: movie,
     });
@@ -44,37 +46,13 @@ export default class MainView extends React.Component {
       user,
     });
   }
-  // to registration-view
-  onRegister(registered, user) {
-    this.setState({
-      registered,
-      user,
-    });
-  }
 
   render() {
-    const { movies, selectedMovie, user, registered } = this.state;
+    const { movies, selectedMovie, user } = this.state;
 
-    // If user is registered but not logged in, log in view
+    // If user is not logged in, loads log-in view
     if (!user)
-      return (
-        <LoginView
-          onLoggedIn={(user) => this.onLoggedIn(user)}
-          toRegistrationView={(toRegister) =>
-            this.toRegistrationView(toRegister)
-          }
-        />
-      );
-
-    // If user is not logged in or registered, registration-view
-    if (!user && !registered)
-      return (
-        <RegistrationView
-          onRegister={(registered, username) =>
-            this.onRegister(registered, username)
-          }
-        />
-      );
+      return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
 
     // Empty main view for loading
     if (movies.length === 0) return <div className="main-view" />;

@@ -14,10 +14,7 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-  const handleClickRegister = (e) => {
-    e.preventDefault();
-    props.toRegistrationView('');
-  };
+  // Register button click needed
 
   return (
     <div className="login-view">
@@ -55,7 +52,7 @@ export function LoginView(props) {
 
       <div>
         <span>Don't have an account? </span>
-        <button type="submit" onClick={handleClickRegister}>
+        <button type="submit" onClick={handleSubmit}>
           Register
         </button>
       </div>
@@ -66,6 +63,9 @@ export function LoginView(props) {
 // prop-types
 // Give informational warnings in browser if data does not match required shape
 LoginView.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }),
   onLoggedIn: PropTypes.func.isRequired,
-  toRegistrationView: PropTypes.func.isRequired,
 };

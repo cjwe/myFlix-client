@@ -1,3 +1,4 @@
+import { shape } from 'prop-types';
 import React from 'react';
 import './movie-view.scss';
 
