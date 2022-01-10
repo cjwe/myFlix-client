@@ -22811,7 +22811,7 @@ class MainView extends _reactDefault.default.Component {
     }
     //Load movies from database
     componentDidMount() {
-        _axiosDefault.default.get('https://miyazaki-movie-api.herokuapp.com/').then((response)=>{
+        _axiosDefault.default.get('https://miyazaki-movie-api.herokuapp.com/movies').then((response)=>{
             this.setState({
                 movies: response.data
             });
@@ -22821,9 +22821,9 @@ class MainView extends _reactDefault.default.Component {
     }
     // Affect state of parent element
     // To movie-card
-    setSelectedMovie(newSelectedMovie) {
+    setselectedMovie(movie) {
         this.setState({
-            selectedMovie: newSelectedMovie
+            selectedMovie: movie
         });
     }
     // to login-view
@@ -22841,14 +22841,6 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , selectedMovie , user: user1 , registered: registered1  } = this.state;
-        // If user is not registered, registration-view
-        if (!registered1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-            onRegister: (registered, username)=>this.onRegister(registered, username)
-        }, void 0, false, {
-            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 61,
-            columnNumber: 9
-        }, this));
         // If user is registered but not logged in, log in view
         if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
@@ -22856,7 +22848,15 @@ class MainView extends _reactDefault.default.Component {
             toRegistrationView: (toRegister)=>this.toRegistrationView(toRegister)
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 70,
+            lineNumber: 61,
+            columnNumber: 9
+        }, this));
+        // If user is not logged in or registered, registration-view
+        if (!user1 && !registered1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
+            onRegister: (registered, username)=>this.onRegister(registered, username)
+        }, void 0, false, {
+            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+            lineNumber: 72,
             columnNumber: 9
         }, this));
         // Empty main view for loading
@@ -22864,7 +22864,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view"
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 78,
+            lineNumber: 80,
             columnNumber: 37
         }, this));
         // Render movie list when logged in and registered
@@ -22878,12 +22878,12 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, void 0, false, {
                     fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                    lineNumber: 84,
+                    lineNumber: 87,
                     columnNumber: 13
                 }, this)
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                lineNumber: 83,
+                lineNumber: 86,
                 columnNumber: 11
             }, this) : /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                 children: [
@@ -22891,29 +22891,29 @@ class MainView extends _reactDefault.default.Component {
                         children: "Movies"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                        lineNumber: 93,
+                        lineNumber: 96,
                         columnNumber: 13
                     }, this),
-                    movies.map((movie1)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                            movie: movie1,
-                            onMovieClick: (movie)=>{
-                                this.setSelectedMovie(movie);
+                    movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                            movie: movie,
+                            onMovieClick: (newSelectedMovie)=>{
+                                this.setSelectedMovie(newSelectedMovie);
                             }
-                        }, movie1._id, false, {
+                        }, movie._id, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 95,
+                            lineNumber: 98,
                             columnNumber: 15
                         }, this)
                     )
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                lineNumber: 92,
+                lineNumber: 95,
                 columnNumber: 11
             }, this)
         }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-            lineNumber: 81,
+            lineNumber: 84,
             columnNumber: 7
         }, this));
     }
@@ -22925,7 +22925,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","axios":"22oK9","../movie-card/movie-card":"9Nfyy","../movie-view/movie-view":"fZ6hs","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","./main-view.scss":"3TxoA","../registration-view/registration-view":"1AwyY","../login-view/login-view":"ascpw"}],"22oK9":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","axios":"22oK9","../movie-card/movie-card":"9Nfyy","../movie-view/movie-view":"fZ6hs","../registration-view/registration-view":"1AwyY","../login-view/login-view":"ascpw","./main-view.scss":"3TxoA","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"22oK9":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"bMYNv"}],"bMYNv":[function(require,module,exports) {
@@ -24530,157 +24530,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","prop-types":"aSVWb","./movie-card.scss":"7C5Lc"}],"eZ7wG":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"68IVY":[function(require,module,exports) {
-"use strict";
-var Refresh = require('react-refresh/runtime');
-function debounce(func, delay) {
-    var args1;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module.id + ' ' + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module) {
-    if (isReactRefreshBoundary(module.exports)) {
-        registerExportsForReactRefresh(module);
-        if (module.hot) {
-            module.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module.exports;
-            });
-            module.hot.accept(function(getParents) {
-                var prevExports = module.hot.data.prevExports;
-                var nextExports = module.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module) {
-    var exports = module.exports, id = module.id;
-    Refresh.register(exports, id + ' %exports%');
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + ' %exports% ' + key);
-    }
-}
-
-},{"react-refresh/runtime":"fDiOI"}],"aSVWb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","prop-types":"aSVWb","./movie-card.scss":"7C5Lc","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"aSVWb":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
@@ -25374,7 +25224,157 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"./lib/ReactPropTypesSecret":"5VZLR","./lib/has":"9aTTL"}],"7C5Lc":[function() {},{}],"fZ6hs":[function(require,module,exports) {
+},{"./lib/ReactPropTypesSecret":"5VZLR","./lib/has":"9aTTL"}],"7C5Lc":[function() {},{}],"eZ7wG":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"68IVY":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args1;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"fDiOI"}],"fZ6hs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fbf8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25383,7 +25383,6 @@ $parcel$ReactRefreshHelpers$fbf8.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-// This is temporary. Remove this as soon as you add an external style sheet.
 parcelHelpers.export(exports, "MovieView", ()=>MovieView
 );
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
@@ -25408,7 +25407,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: "<"
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 16,
+                            lineNumber: 13,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25416,7 +25415,7 @@ class MovieView extends _reactDefault.default.Component {
                             children: movie.Title
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 24,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25424,13 +25423,13 @@ class MovieView extends _reactDefault.default.Component {
                             children: "✰"
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 25,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                    lineNumber: 15,
+                    lineNumber: 12,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25447,7 +25446,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Genre: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 32,
+                                            lineNumber: 29,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25455,13 +25454,13 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Genre.Name
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 33,
+                                            lineNumber: 30,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 31,
+                                    lineNumber: 28,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25472,7 +25471,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Director: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 39,
+                                            lineNumber: 36,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25480,13 +25479,13 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Director.Name
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 40,
+                                            lineNumber: 37,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 38,
+                                    lineNumber: 35,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25497,7 +25496,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Description: "
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 46,
+                                            lineNumber: 43,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25505,19 +25504,19 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Description
                                         }, void 0, false, {
                                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 47,
+                                            lineNumber: 44,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 45,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 30,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25526,24 +25525,24 @@ class MovieView extends _reactDefault.default.Component {
                                 src: imgPath + movie.ImagePath
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 55,
+                                lineNumber: 52,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 54,
+                            lineNumber: 51,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                    lineNumber: 28,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-            lineNumber: 13,
+            lineNumber: 10,
             columnNumber: 7
         }, this));
     }
@@ -25554,7 +25553,7 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","./movie-view.scss":"eBfSJ"}],"eBfSJ":[function() {},{}],"3TxoA":[function() {},{}],"1AwyY":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","./movie-view.scss":"eBfSJ","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"eBfSJ":[function() {},{}],"1AwyY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b153 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25574,8 +25573,6 @@ var _registrationViewScss = require("./registration-view.scss");
 var _s = $RefreshSig$();
 function RegistrationView(props) {
     _s();
-    // Shorthands used with { useState } Reat Hook
-    // https://reactjs.org/docs/hooks-state.html
     const [username, setUsername] = _react.useState('');
     const [password1, setPassword1] = _react.useState('');
     const [password2, setPassword2] = _react.useState('');
@@ -25593,7 +25590,7 @@ function RegistrationView(props) {
                 children: "Sign up for a free MyFlix account:"
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 23,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
@@ -25607,7 +25604,7 @@ function RegistrationView(props) {
                                 children: "Username:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 27,
+                                lineNumber: 25,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25617,7 +25614,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setUsername(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 28,
+                                lineNumber: 26,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25625,13 +25622,13 @@ function RegistrationView(props) {
                                 children: "5+ characters, no spaces"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 34,
+                                lineNumber: 32,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 26,
+                        lineNumber: 24,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25642,7 +25639,7 @@ function RegistrationView(props) {
                                 children: "Enter desired password:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 40,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25652,7 +25649,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setPassword1(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 43,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25660,13 +25657,13 @@ function RegistrationView(props) {
                                 children: "must not be blank"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 49,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 39,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25677,7 +25674,7 @@ function RegistrationView(props) {
                                 children: "Re-enter password:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 55,
+                                lineNumber: 53,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25687,7 +25684,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setPassword2(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 58,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25695,13 +25692,13 @@ function RegistrationView(props) {
                                 children: "passwords must match"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 64,
+                                lineNumber: 62,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 54,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25712,7 +25709,7 @@ function RegistrationView(props) {
                                 children: "Email:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 70,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25722,7 +25719,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setEmail(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 71,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25730,13 +25727,13 @@ function RegistrationView(props) {
                                 children: "required"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 77,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 69,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25748,7 +25745,7 @@ function RegistrationView(props) {
                                 children: "Birthday:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 81,
+                                lineNumber: 79,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25758,7 +25755,7 @@ function RegistrationView(props) {
                                 onChange: (e)=>setBirthday(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 87,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("span", {
@@ -25766,13 +25763,13 @@ function RegistrationView(props) {
                                 children: "optional"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                                lineNumber: 93,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 80,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25781,19 +25778,19 @@ function RegistrationView(props) {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                        lineNumber: 96,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 25,
+                lineNumber: 23,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "Desktop/CF/myFlix-client/src/components/registration-view/registration-view.jsx",
-        lineNumber: 22,
+        lineNumber: 20,
         columnNumber: 5
     }, this));
 }
@@ -25842,7 +25839,6 @@ function LoginView(props) {
     };
     const handleClickRegister = (e)=>{
         e.preventDefault();
-        // LOOK FOR A WAY TO REFACTOR THIS SO THAT I DO NOT NEED THIS USELESS PARAMETER
         props.toRegistrationView('');
     };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25852,7 +25848,7 @@ function LoginView(props) {
                 children: "Login to myFlix"
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 25,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("form", {
@@ -25866,7 +25862,7 @@ function LoginView(props) {
                                 children: "Username:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 29,
+                                lineNumber: 28,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25876,13 +25872,13 @@ function LoginView(props) {
                                 onChange: (e)=>setUsername(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 30,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25893,7 +25889,7 @@ function LoginView(props) {
                                 children: "Password:"
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 39,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("input", {
@@ -25903,13 +25899,13 @@ function LoginView(props) {
                                 onChange: (e)=>setPassword(e.target.value)
                             }, void 0, false, {
                                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                                lineNumber: 40,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 38,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25919,13 +25915,13 @@ function LoginView(props) {
                         children: "Log in"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 48,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -25934,7 +25930,7 @@ function LoginView(props) {
                         children: "Don't have an account? "
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 58,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -25943,19 +25939,19 @@ function LoginView(props) {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                        lineNumber: 59,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-                lineNumber: 57,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "Desktop/CF/myFlix-client/src/components/login-view/login-view.jsx",
-        lineNumber: 24,
+        lineNumber: 23,
         columnNumber: 5
     }, this));
 }
@@ -25975,6 +25971,6 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","prop-types":"aSVWb","./login-view.scss":"cE7gW","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"cE7gW":[function() {},{}],"52Yni":[function() {},{}]},["beDeb","e6Bex","4ODew"], "4ODew", "parcelRequire94c2")
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","prop-types":"aSVWb","./login-view.scss":"cE7gW","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"cE7gW":[function() {},{}],"3TxoA":[function() {},{}],"52Yni":[function() {},{}]},["beDeb","e6Bex","4ODew"], "4ODew", "parcelRequire94c2")
 
 //# sourceMappingURL=index.2d705bcd.js.map

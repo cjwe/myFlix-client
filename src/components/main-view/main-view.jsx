@@ -21,7 +21,7 @@ export default class MainView extends React.Component {
   //Load movies from database
   componentDidMount() {
     axios
-      .get('https://miyazaki-movie-api.herokuapp.com/')
+      .get('https://miyazaki-movie-api.herokuapp.com/movies')
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -33,9 +33,9 @@ export default class MainView extends React.Component {
   }
   // Affect state of parent element
   // To movie-card
-  setSelectedMovie(newSelectedMovie) {
+  setselectedMovie(movie) {
     this.setState({
-      selectedMovie: newSelectedMovie,
+      selectedMovie: movie,
     });
   }
   // to login-view
@@ -55,15 +55,6 @@ export default class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, registered } = this.state;
 
-    // If user is not registered, registration-view
-    if (!registered)
-      return (
-        <RegistrationView
-          onRegister={(registered, username) =>
-            this.onRegister(registered, username)
-          }
-        />
-      );
     // If user is registered but not logged in, log in view
     if (!user)
       return (
@@ -74,8 +65,20 @@ export default class MainView extends React.Component {
           }
         />
       );
+
+    // If user is not logged in or registered, registration-view
+    if (!user && !registered)
+      return (
+        <RegistrationView
+          onRegister={(registered, username) =>
+            this.onRegister(registered, username)
+          }
+        />
+      );
+
     // Empty main view for loading
     if (movies.length === 0) return <div className="main-view" />;
+
     // Render movie list when logged in and registered
     return (
       <div className="main-view">
@@ -95,8 +98,8 @@ export default class MainView extends React.Component {
               <MovieCard
                 key={movie._id}
                 movie={movie}
-                onMovieClick={(movie) => {
-                  this.setSelectedMovie(movie);
+                onMovieClick={(newSelectedMovie) => {
+                  this.setSelectedMovie(newSelectedMovie);
                 }}
               />
             ))}

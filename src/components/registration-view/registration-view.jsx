@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-  // Shorthands used with { useState } Reat Hook
-  // https://reactjs.org/docs/hooks-state.html
   const [username, setUsername] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');

@@ -1,17 +1,14 @@
 import React from 'react';
-
 import './movie-view.scss';
 
 let imgPath = './img/';
-
-// This is temporary. Remove this as soon as you add an external style sheet.
 
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
       <div className="movie-view">
-        {/* This is on top of grid */}
+        {/* Top of grid */}
         <div className="movie-view__title-line">
           <button
             className="movie-view-button"

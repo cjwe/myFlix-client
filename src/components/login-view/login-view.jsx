@@ -16,7 +16,6 @@ export function LoginView(props) {
 
   const handleClickRegister = (e) => {
     e.preventDefault();
-    // LOOK FOR A WAY TO REFACTOR THIS SO THAT I DO NOT NEED THIS USELESS PARAMETER
     props.toRegistrationView('');
   };
 
