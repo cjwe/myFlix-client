@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import './login-view.scss';
+//Import React Bootstrap Components
+import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import { Container } from 'react-bootstrap';
+
+// import './login-view.scss';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -17,46 +23,43 @@ export function LoginView(props) {
   // Register button click needed
 
   return (
-    <div className="login-view">
-      <h2>Login to myFlix</h2>
+    <Container fluid className="loginContainer">
+      <Navbar bg="light">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src=""
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            myMiyazaki
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
 
-      <form className="login-form">
-        <div className="login-form__line">
-          <label className="login-form__line__label">Username:</label>
-          <input
-            className="login-form__line__input-field"
+      <Form>
+        <Form.Group controlId="formUsername">
+          <Form.Label>Username:</Form.Label>
+          <Form.Control
             type="text"
-            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-        </div>
+        </Form.Group>
 
-        <div className="login-form__line">
-          <label className="login-form__line__label">Password:</label>
-          <input
-            className="login-form__line__input-field"
-            type="text"
-            value={password}
+        <Form.Group controlId="formPassword">
+          <Form.Label>Password:</Form.Label>
+          <Form.Control
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-
-        <button
-          className="login-form__login-button"
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Log in
-        </button>
-      </form>
-
-      <div>
-        <span>Don't have an account? </span>
-        <button type="submit" onClick={handleSubmit}>
-          Register
-        </button>
-      </div>
-    </div>
+        </Form.Group>
+        <Button variant="primary" type="submit" onClick={handleSubmit}>
+          Submit
+        </Button>
+      </Form>
+    </Container>
   );
 }
 

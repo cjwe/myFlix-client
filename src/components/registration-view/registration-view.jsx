@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 import './registration-view.scss';
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
-  const [password, setPassword1] = useState('');
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [birthday, setBirthday] = useState('');
 
@@ -17,70 +25,69 @@ export function RegistrationView(props) {
   };
 
   return (
-    <div className="registration-view">
-      <h2>Sign up for a free MyFlix account:</h2>
+    <Container>
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card>
+              <Card.Body>
+                <Card.Title>Sign up for a free myMiyzaki account:</Card.Title>
+                <Form>
+                  <Form.Group>
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      required
+                      placeholder="Enter a username"
+                    />
+                  </Form.Group>
 
-      <form className="registration-form">
-        <div className="registration-form__line">
-          <label className="registration-form__line-label">Username:</label>
-          <input
-            className="registration-form__line__input-field"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <span className="registration-form__label-tips">
-            5+ characters, no spaces
-          </span>
-        </div>
+                  <Form.Group>
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      minLength="8"
+                      placeholder="Your password must be 8 or more characters"
+                    />
+                  </Form.Group>
 
-        <div className="registration-form__line">
-          <label className="registration-form__line-label">
-            Enter desired password:
-          </label>
-          <input
-            className="registration-form__line__input-field"
-            type="text"
-            value={password1}
-            onChange={(e) => setPassword1(e.target.value)}
-          />
-          <span className="registration-form__label-tips">
-            must not be blank
-          </span>
-        </div>
+                  <Form.Group>
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={email}
+                      onChange={(e) => setUsername(e.target.value)}
+                      required
+                      placeholder="Enter an email address"
+                    />
+                  </Form.Group>
 
-        <div className="registration-form__line">
-          <label className="registration-form__line-label">Email:</label>
-          <input
-            className="registration-form__line__input-field"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <span className="registration-form__label-tips">required</span>
-        </div>
+                  <Form.Group>
+                    <Form.Label>Birthday:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={birthday}
+                      onChange={(e) => setBirthday(e.target.value)}
+                      required
+                      placeholder="DD-MM-YYYY"
+                    />
+                  </Form.Group>
 
-        <div className="registration-form__line">
-          <label
-            className="registration-form__line-label"
-            className="registration-form__line"
-          >
-            Birthday:
-          </label>
-          <input
-            className="registration-form__line__input-field"
-            type="text"
-            value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
-          />
-          <span className="registration-form__label-tips">optional</span>
-        </div>
-
-        <button type="submit" onClick={handleSubmit}>
-          Register
-        </button>
-      </form>
-    </div>
+                  <Button type="submit" onClick={handleSubmit}>
+                    Register
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

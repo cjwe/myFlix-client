@@ -4,8 +4,10 @@ import axios from 'axios';
 //React Components
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 //SCSS Import
 import './main-view.scss';
@@ -57,22 +59,21 @@ export default class MainView extends React.Component {
     // Empty main view for loading
     if (movies.length === 0) return <div className="main-view" />;
 
-    // Render movie list when logged in and registered
+    // Render movie cards when logged in and registered
     return (
-      <div className="main-view">
+      <Row className="main-view justify-content-md-center">
         {selectedMovie ? (
-          <div>
+          <Col md={8}>
             <MovieView
               movie={selectedMovie}
               onBackClick={(newSelectedMovie) => {
                 this.setSelectedMovie(newSelectedMovie);
               }}
             />
-          </div>
+          </Col>
         ) : (
-          <div>
-            <h1>Movies</h1>
-            {movies.map((movie) => (
+          movies.map((movie) => (
+            <Col md={3}>
               <MovieCard
                 key={movie._id}
                 movie={movie}
@@ -80,10 +81,10 @@ export default class MainView extends React.Component {
                   this.setSelectedMovie(newSelectedMovie);
                 }}
               />
-            ))}
-          </div>
+            </Col>
+          ))
         )}
-      </div>
+      </Row>
     );
   }
 }
