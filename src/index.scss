@@ -1,5 +1,24 @@
 $color: rgb(245, 141, 228);
 
+* {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'Mali', cursive;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
 .my-flix {
   color: $color;
+}
+
+@media (max-width: 797px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

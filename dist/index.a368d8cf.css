@@ -70,10 +70,37 @@ img {
     font-size: 20px;
   }
 }
+.btn-primary {
+  background-color: #159bea !important;
+  border-color: #159bea !important;
+}
+.btn-primary:hover {
+  background-color: #062e46 !important;
+  border-color: #062e46 !important;
+}
 * {
   box-sizing: border-box;
 }
+* {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+h1 {
+  font-family: "Mali", cursive;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
 .my-flix {
   color: #f58de4;
+}
+
+@media (max-width: 797px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /*# sourceMappingURL=index.a368d8cf.css.map */

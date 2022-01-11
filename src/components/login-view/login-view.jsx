@@ -5,9 +5,14 @@ import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
-// import './login-view.scss';
+//Import custom SCSS
+import './login-view.scss';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -23,43 +28,59 @@ export function LoginView(props) {
   // Register button click needed
 
   return (
-    <Container fluid className="loginContainer">
-      <Navbar bg="light">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src=""
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            myMiyazaki
-          </Navbar.Brand>
-        </Container>
+    <div className="login-view">
+      <Navbar bg="light" variant="light">
+        <Navbar.Brand href="#home">
+          <img
+            alt="Logo of Totoro"
+            src={require('../../img/logotext.svg')}
+            width="100"
+            height="auto"
+          />{' '}
+        </Navbar.Brand>
       </Navbar>
-
-      <Form>
-        <Form.Group controlId="formUsername">
-          <Form.Label>Username:</Form.Label>
-          <Form.Control
-            type="text"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-
-        <Form.Group controlId="formPassword">
-          <Form.Label>Password:</Form.Label>
-          <Form.Control
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
-    </Container>
+      <br />
+      <Container>
+        <Row>
+          <Col></Col>
+          <Col xs={9}>
+            <Card className="text-center">
+              <Card.Header>Log in to your myGhibli account</Card.Header>
+              <Card.Body>
+                <Form>
+                  <Card.Text>
+                    <Form.Group controlId="formUsername">
+                      <Form.Label>Username:</Form.Label>
+                      <Form.Control
+                        type="text"
+                        onChange={(e) => setUsername(e.target.value)}
+                      />
+                    </Form.Group>
+                  </Card.Text>
+                  <Card.Text>
+                    <Form.Group controlId="formPassword">
+                      <Form.Label>Password:</Form.Label>
+                      <Form.Control
+                        type="password"
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </Form.Group>
+                  </Card.Text>
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    onClick={handleSubmit}
+                  >
+                    Log in
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col></Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
