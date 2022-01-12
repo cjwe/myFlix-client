@@ -1,58 +1,34 @@
 import { shape } from 'prop-types';
 import React from 'react';
+import { Card } from 'react-bootstrap';
 import './movie-view.scss';
 
-let imgPath = './img/';
+let imgPath = '../../img/';
 
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
       <div className="movie-view">
-        {/* Top of grid */}
-        <div className="movie-view__title-line">
-          <button
-            className="movie-view-button"
-            onClick={() => {
-              onBackClick(null);
-            }}
-          >
-            &lt;
-          </button>
-          <span className="movie-view__title">{movie.Title}</span>
-          <button className="movie-view-button">&#10032;</button>
-        </div>
-
-        <div className="movie-view__grid">
-          {/* Grid column 1 */}
-          <div className="movie-info">
-            <div className="movie-view__line">
-              <span className="movie-view__line__label">Genre: </span>
-              <span className="movie-view__line__value">
-                {movie.Genre.Name}
-              </span>
-            </div>
-
-            <div className="movie-view__line">
-              <span className="movie-view__line__label">Director: </span>
-              <span className="movie-view__line__value">
-                {movie.Director.Name}
-              </span>
-            </div>
-
-            <div className="movie-view__line description">
-              <span className="movie-view__line__label">Description: </span>
-              <span className="movie-view__line__value">
-                {movie.Description}
-              </span>
-            </div>
-          </div>
-
-          {/* Grid column 2 */}
-          <div className="movie-poster">
-            <img src={imgPath + movie.ImagePath} />
-          </div>
-        </div>
+        <Card>
+          <Card.Header>
+            {/* <img src={require('../../img/' + movie.ImagePath)} /> */}
+          </Card.Header>
+          <Card.Body>{movie.Title}</Card.Body>
+          <Card.Body>Genre: {movie.Genre.Name}</Card.Body>
+          <Card.Body>Director: {movie.Director.Name}</Card.Body>
+          <Card.Body>Description: {movie.Description}</Card.Body>
+          <Card.Footer>
+            <button
+              className="movie-view-button"
+              onClick={() => {
+                onBackClick(null);
+              }}
+            >
+              Back to list
+            </button>
+          </Card.Footer>
+        </Card>
       </div>
     );
   }

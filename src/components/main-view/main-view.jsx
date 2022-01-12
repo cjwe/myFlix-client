@@ -1,16 +1,24 @@
 import React from 'react';
 import axios from 'axios';
 
-//React Components
+// Import React components
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 
+// Import React Bootstrap components
+import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Stack from 'react-bootstrap/Stack';
 
-//SCSS Import
+// Custom SCSS Import
 import './main-view.scss';
+import { Nav } from 'react-bootstrap';
 
 export default class MainView extends React.Component {
   constructor() {
@@ -61,30 +69,52 @@ export default class MainView extends React.Component {
 
     // Render movie cards when logged in and registered
     return (
-      <Row className="main-view justify-content-md-center">
-        {selectedMovie ? (
-          <Col md={8}>
-            <MovieView
-              movie={selectedMovie}
-              onBackClick={(newSelectedMovie) => {
-                this.setSelectedMovie(newSelectedMovie);
-              }}
-            />
-          </Col>
-        ) : (
-          movies.map((movie) => (
-            <Col md={3}>
-              <MovieCard
-                key={movie._id}
-                movie={movie}
-                onMovieClick={(newSelectedMovie) => {
+      <div className="main-view">
+        <Navbar bg="light" variant="light" expand="md">
+          <Container>
+            <Navbar.Brand href="#home">
+              <img
+                alt="Logo of Totoro"
+                src={require('../../img/logotext.svg')}
+                width="100"
+                height="auto"
+              />{' '}
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto">
+                <Nav.Link href="#myaccount">My Account</Nav.Link>
+                <Nav.Link href="#movies">Movies</Nav.Link>
+                <Nav.Link href="#logout">Log Out</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Row className="g-2 m-3 p-3">
+          {selectedMovie ? (
+            <Col className="m-3 d-flex align-items-stretch">
+              <MovieView
+                movie={selectedMovie}
+                onBackClick={(newSelectedMovie) => {
                   this.setSelectedMovie(newSelectedMovie);
                 }}
               />
             </Col>
-          ))
-        )}
-      </Row>
+          ) : (
+            movies.map((movie) => (
+              <Col className="p-3 m-3 d-flex align-items-stretch">
+                <MovieCard
+                  key={movie._id}
+                  movie={movie}
+                  onMovieClick={(newSelectedMovie) => {
+                    this.setSelectedMovie(newSelectedMovie);
+                  }}
+                />
+              </Col>
+            ))
+          )}
+        </Row>
+      </div>
     );
   }
 }

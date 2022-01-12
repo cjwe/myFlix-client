@@ -1,4 +1,4 @@
-$color: rgb(245, 141, 228);
+$blue: rgb(21, 155, 234);
 
 * {
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -10,10 +10,6 @@ h1 {
 
 .container-fluid {
   padding: 0px !important;
-}
-
-.my-flix {
-  color: $color;
 }
 
 @media (max-width: 797px) {

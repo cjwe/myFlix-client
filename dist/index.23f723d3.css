@@ -1,4 +1,102 @@
-.my-flix {
-  color: #f58de4;
+* {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+h1 {
+  font-family: "Mali", cursive;
+}
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+@media (max-width: 797px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.movie-view {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.movie-view-button {
+  font-size: 30px;
+  background-color: white;
+  border: none;
+  margin: 15px;
+}
+
+.movie-view-button:hover {
+  cursor: pointer;
+}
+
+.movie-view__title-line {
+  display: block;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.movie-view__line {
+  display: block;
+}
+
+.movie-view__line__label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.movie-view__line__value {
+  font-size: 18px;
+}
+
+.movie-view__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.movie-info {
+  display: grid;
+  grid-template-rows: 50px 50px 4fr;
+}
+
+.description {
+  padding-top: 3em;
+}
+
+@media (max-width: 700px) {
+  .movie-view__grid {
+    display: block;
+  }
+
+  .description {
+    padding-top: 1em;
+  }
+
+  .movie-view__title-line {
+    font-size: 20px;
+  }
+}
+.btn-primary {
+  background-color: #159bea !important;
+  border-color: #159bea !important;
+}
+.btn-primary:hover {
+  background-color: #062e46 !important;
+  border-color: #062e46 !important;
+}
+* {
+  box-sizing: border-box;
 }
 /*# sourceMappingURL=index.23f723d3.css.map */
