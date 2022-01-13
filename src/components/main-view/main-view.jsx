@@ -43,6 +43,23 @@ export default class MainView extends React.Component {
         console.log(error);
       });
   }
+  //Get movies
+  getMovies(token) {
+    axios
+      .get('https://miyazaki-movie-api.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   // Affect state of parent element...
   // to movie-card
   setSelectedMovie(movie) {
@@ -51,10 +68,15 @@ export default class MainView extends React.Component {
     });
   }
   // to login-view
-  onLoggedIn(user) {
+  onLoggedIn(authData) {
+    console.log(authData);
     this.setState({
-      user,
+      user: authData.user.Username,
     });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
   }
 
   render() {

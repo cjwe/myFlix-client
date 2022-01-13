@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 //Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
@@ -19,9 +20,19 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    // Send auth request to server
-    props.onLoggedIn(username);
+    // Request for authentication
+    axios
+      .post('https://miyazaki-movie-api.herokuapp.com/login', {
+        Username: username,
+        Password: password,
+      })
+      .then((response) => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch((e) => {
+        console.log('User not found.');
+      });
   };
 
   // Register button click needed
