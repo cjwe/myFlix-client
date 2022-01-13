@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import { NavbarView } from '../nav-bar/nav-bar';
+
 //Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
@@ -39,16 +41,7 @@ export function LoginView(props) {
 
   return (
     <div className="login-view">
-      <Navbar bg="light" variant="light">
-        <Navbar.Brand href="#home">
-          <img
-            alt="Logo of Totoro"
-            src={require('../../img/logotext.svg')}
-            width="100"
-            height="auto"
-          />{' '}
-        </Navbar.Brand>
-      </Navbar>
+      <NavbarView />
       <br />
       <Container>
         <Row>

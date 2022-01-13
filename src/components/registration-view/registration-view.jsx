@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
+// Import React Bootstrap Components
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -9,19 +11,33 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+// Import Custom CSS
 import './registration-view.scss';
 
 export function RegistrationView(props) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
-  const [birthday, setBirthday] = useState('');
+  const [Username, setUsername] = useState('');
+  const [Password, setPassword] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Birthday, setBirthday] = useState('');
 
   // Modify state of MainView to be registered and logged in with new user
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(username);
-    props.onRegister(registered);
+    axios
+      .post(`https://miyazaki-movie-api.herokuapp.com/users`, {
+        Username: Username,
+        Password: Password,
+        Email: Email,
+        Birthday: Birthday,
+      })
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+        alert('Registration Successful!');
+        window.open('/', '_self');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
@@ -37,7 +53,7 @@ export function RegistrationView(props) {
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                       type="text"
-                      value={username}
+                      value={Username}
                       onChange={(e) => setUsername(e.target.value)}
                       required
                       placeholder="Enter a username"
@@ -48,7 +64,7 @@ export function RegistrationView(props) {
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
                       type="password"
-                      value={password}
+                      value={Password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
                       minLength="8"
@@ -60,8 +76,8 @@ export function RegistrationView(props) {
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
                       type="email"
-                      value={email}
-                      onChange={(e) => setUsername(e.target.value)}
+                      value={Email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                       placeholder="Enter an email address"
                     />
@@ -70,11 +86,10 @@ export function RegistrationView(props) {
                   <Form.Group>
                     <Form.Label>Birthday:</Form.Label>
                     <Form.Control
-                      type="text"
-                      value={birthday}
+                      type="date"
+                      value={Birthday}
                       onChange={(e) => setBirthday(e.target.value)}
                       required
-                      placeholder="DD-MM-YYYY"
                     />
                   </Form.Group>
 
