@@ -117,11 +117,11 @@ export default class MainView extends React.Component {
       <Router>
         <NavbarView />
         <Routes>
-          {/* // For main view */}
+          {/* For main view */}
           <Route
             exact
             path="/"
-            render={() => {
+            element={() => {
               if (!user)
                 return (
                   <Col>
@@ -137,10 +137,10 @@ export default class MainView extends React.Component {
               ));
             }}
           />
-          {/* // For movie card */}
+          {/* For movie card */}
           <Route
             path="/movies/:movieId"
-            render={({ match, history }) => {
+            element={({ match, history }) => {
               if (!user)
                 return (
                   <Col>
@@ -158,10 +158,10 @@ export default class MainView extends React.Component {
               );
             }}
           />
-          {/* // For director view */}
+          {/* For director view */}
           <Route
             path="/directors/:Name"
-            render={({ match, history }) => {
+            element={({ match, history }) => {
               if (!user)
                 return (
                   <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
@@ -181,10 +181,10 @@ export default class MainView extends React.Component {
               );
             }}
           />
-          {/* // For genre view */}
+          {/* For genre view */}
           <Route
             path="/genres/:Name"
-            render={({ match, history }) => {
+            element={({ match, history }) => {
               if (!user)
                 return (
                   <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
@@ -204,11 +204,11 @@ export default class MainView extends React.Component {
               );
             }}
           />
-          {/* // For profile view */}
+          {/* For profile view */}
           <Route
             exact
             path="/users/:Username"
-            render={({ match, history }) => {
+            element={({ match, history }) => {
               if (!user)
                 return (
                   <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
@@ -229,74 +229,4 @@ export default class MainView extends React.Component {
       </Router>
     );
   }
-
-  /* //     const { movies, selectedMovie, user } = this.state;
-
-//     // If user is not logged in, loads log-in view
-//     if (!user)
-//       return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-
-//     // Empty main view for loading
-//     if (movies.length === 0) return <div className="main-view" />;
-
-//     // Render movie cards when logged in and registered
-//     return (
-//       <Router>
-//         <div className="main-view">
-//           <Navbar bg="light" variant="light" expand="md">
-//             <Container>
-//               <Navbar.Brand href="#home">
-//                 <img
-//                   alt="Logo of Totoro"
-//                   src={require('../../img/logotext.svg')}
-//                   width="100"
-//                   height="auto"
-//                 />{' '}
-//               </Navbar.Brand>
-//               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//               <Navbar.Collapse id="basic-navbar-nav">
-//                 <Nav className="ml-auto">
-//                   <Nav.Link href="#myaccount">My Account</Nav.Link>
-//                   <Nav.Link href="#movies">Movies</Nav.Link>
-//                   <Nav.Link href="#logout">Log Out</Nav.Link>
-//                 </Nav>
-//               </Navbar.Collapse>
-//               <button
-//                 onClick={() => {
-//                   this.onLoggedOut();
-//                 }}
-//               >
-//                 Logout
-//               </button>
-//             </Container>
-//           </Navbar>
-//           <Row className="g-2 m-3 p-3">
-//             {selectedMovie ? (
-//               <Col className="m-3 d-flex align-items-stretch">
-//                 <MovieView
-//                   movie={selectedMovie}
-//                   onBackClick={(newSelectedMovie) => {
-//                     this.setSelectedMovie(newSelectedMovie);
-//                   }}
-//                 />
-//               </Col>
-//             ) : (
-//               movies.map((movie) => (
-//                 <Col className="p-3 m-3 d-flex align-items-stretch">
-//                   <MovieCard
-//                     key={movie._id}
-//                     movie={movie}
-//                     onMovieClick={(newSelectedMovie) => {
-//                       this.setSelectedMovie(newSelectedMovie);
-//                     }}
-//                   />
-//                 </Col>
-//               ))
-//             )}
-//           </Row>
-//         </div>
-//       </Router>
-//     );
-//   }
-// } */
 }
