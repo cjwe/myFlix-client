@@ -1,9 +1,9 @@
-import { shape } from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { shape } from 'prop-types';
+
 import { Card } from 'react-bootstrap';
 import './movie-view.scss';
-
-let imgPath = '../../img/';
 
 export class MovieView extends React.Component {
   render() {
@@ -11,12 +11,15 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-view">
         <Card>
-          <Card.Header>
-            {/* <img src={require('../../img/' + movie.ImagePath)} /> */}
-          </Card.Header>
+          <Card.Header>{/* Add image here */}</Card.Header>
           <Card.Body>{movie.Title}</Card.Body>
           <Card.Body>Genre: {movie.Genre.Name}</Card.Body>
-          <Card.Body>Director: {movie.Director.Name}</Card.Body>
+          <Card.Body>
+            Director:
+            <Link to={`/movies/directors/${movie.Director.Name}`}>
+              {movie.Director.Name}
+            </Link>
+          </Card.Body>
           <Card.Body>Description: {movie.Description}</Card.Body>
           <Card.Footer>
             <button

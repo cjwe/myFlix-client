@@ -152,11 +152,11 @@ export class ProfileView extends React.Component {
   }
 
   render() {
-    const { movies, onBackClick } = this.props;
+    const { movies } = this.props;
     const { FavoriteMovies, Username, Email, Birthday } = this.state;
 
     return (
-      <Container className="profile-view" align="center">
+      <div className="profile-view">
         <Row>
           <Col>
             <Card className="user-profile">
@@ -306,7 +306,7 @@ export class ProfileView extends React.Component {
             </Container>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }

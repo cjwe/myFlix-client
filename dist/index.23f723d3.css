@@ -24,6 +24,15 @@ h1 {
   background-color: #062e46 !important;
   border-color: #062e46 !important;
 }
+
+.btn-primary {
+  background-color: #159bea !important;
+  border-color: #159bea !important;
+}
+.btn-primary:hover {
+  background-color: #062e46 !important;
+  border-color: #062e46 !important;
+}
 .btn-primary {
   background-color: #159bea !important;
   border-color: #159bea !important;
