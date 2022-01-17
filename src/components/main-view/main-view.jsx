@@ -100,12 +100,6 @@ export default class MainView extends React.Component {
     });
   }
 
-  onRegistration(registration) {
-    this.setState({
-      registration,
-    });
-  }
-
   loadingCheck(user) {
     if (!user)
       return (
@@ -144,7 +138,7 @@ export default class MainView extends React.Component {
           />
           {/* For registration view */}
           <Route
-            path="/users"
+            path="/register"
             render={() => {
               if (user) return <Redirect to="/" />;
               return (
@@ -226,7 +220,7 @@ export default class MainView extends React.Component {
           <Route
             exact
             path="/users/:Username"
-            render={({ match, history }) => {
+            render={({ history }) => {
               if (!user)
                 return (
                   <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
@@ -234,20 +228,13 @@ export default class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return (
                 <Col md={8}>
-                  <Navbar />
                   <ProfileView
-                    username={username}
-                    password={password}
-                    email={email}
-                    username={username}
-                    birthday={birthday}
-                    favorites={favorites}
+                    user={user}
+                    setUser={(user) => this.setUser(user)}
                     movies={movies}
-                    getUser={this.getUser}
+                    onLoggedOut={() => this.onLoggedOut()}
                     onBackClick={() => history.goBack()}
-                    removeMovie={(_id) => this.onRemoveFavorite(_id)}
                   />
-                  <RegistrationView />
                 </Col>
               );
             }}

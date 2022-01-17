@@ -14,51 +14,37 @@ import Stack from 'react-bootstrap/Stack';
 // Custom SCSS
 import './nav-bar.scss';
 
-export class NavbarView extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+export function NavbarView() {
+  const user = localStorage.getItem('user');
 
   onLoggedOut = () => {
     localStorage.clear();
     window.open('/', '_self');
   };
 
-  render() {
-    const { user } = this.props;
-
-    return (
-      <Navbar bg="light" variant="light" expand="md">
-        <Container>
-          <Link to={`/`}>
-            <Navbar.Brand>
-              <img
-                alt="Logo of Totoro"
-                src={require('../../img/logotext.svg')}
-                width="100"
-                height="auto"
-              />{' '}
-            </Navbar.Brand>
-          </Link>
-          <Button
-            type="button"
-            onClick={() => {
-              onLoggedOut;
-            }}
-          >
-            Logout
-          </Button>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Link to={`/users/${user}`}>
-                <Nav.Link>My Profile</Nav.Link>
-              </Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    );
-  }
+  return (
+    <Navbar bg="light" variant="light" expand="md">
+      <Container>
+        <Link to={`/`}>
+          <Navbar.Brand>
+            <img
+              alt="Logo of Totoro"
+              src={require('../../img/logotext.svg')}
+              width="100"
+              height="auto"
+            />{' '}
+          </Navbar.Brand>
+        </Link>
+        <Button type="button" onClick={() => this.onLoggedOut()}>
+          Logout
+        </Button>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href={`/users/${user}`}>My Profile</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }

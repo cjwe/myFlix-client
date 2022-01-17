@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Import React Bootstrap Components
 import Form from 'react-bootstrap/Form';
@@ -22,6 +23,7 @@ export function RegistrationView(props) {
 
   // Modify state of MainView to be registered and logged in with new user
   const handleSubmit = (e) => {
+    e.preventDefault();
     axios
       .post(`https://miyazaki-movie-api.herokuapp.com/users`, {
         Username: Username,
@@ -41,68 +43,66 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Container>
+    <div className="registration-view">
       <Row>
         <Col>
-          <CardGroup>
-            <Card>
-              <Card.Body>
-                <Card.Title>Sign up for a free myMiyzaki account:</Card.Title>
-                <Form>
-                  <Form.Group>
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={Username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      required
-                      placeholder="Enter a username"
-                    />
-                  </Form.Group>
+          <Card>
+            <Card.Body>
+              <Card.Title>Sign up for a free myMiyzaki account:</Card.Title>
+              <Form>
+                <Form.Group>
+                  <Form.Label>Username:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={Username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    placeholder="Enter a username"
+                  />
+                </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control
-                      type="password"
-                      value={Password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      minLength="8"
-                      placeholder="Your password must be 8 or more characters"
-                    />
-                  </Form.Group>
+                <Form.Group>
+                  <Form.Label>Password:</Form.Label>
+                  <Form.Control
+                    type="password"
+                    value={Password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength="8"
+                    placeholder="Your password must be 8 or more characters"
+                  />
+                </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Email:</Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={Email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      placeholder="Enter an email address"
-                    />
-                  </Form.Group>
+                <Form.Group>
+                  <Form.Label>Email:</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={Email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    placeholder="Enter an email address"
+                  />
+                </Form.Group>
 
-                  <Form.Group>
-                    <Form.Label>Birthday:</Form.Label>
-                    <Form.Control
-                      type="date"
-                      value={Birthday}
-                      onChange={(e) => setBirthday(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
+                <Form.Group>
+                  <Form.Label>Birthday:</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={Birthday}
+                    onChange={(e) => setBirthday(e.target.value)}
+                    required
+                  />
+                </Form.Group>
 
-                  <Button type="submit" onClick={handleSubmit}>
-                    Register
-                  </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-          </CardGroup>
+                <Button type="submit" onClick={handleSubmit}>
+                  Register
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 

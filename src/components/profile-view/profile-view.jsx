@@ -35,6 +35,26 @@ export class ProfileView extends React.Component {
     this.getUser(accessToken);
   }
 
+  onRemoveFavorite = (e, movie) => {
+    const username = localStorage.getItem('user');
+    console.log(username);
+    const token = localStorage.getItem('token');
+    console.log(this.props);
+    axios
+      .delete(
+        `https://miyazaki-movie-api.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      .then((response) => {
+        console.log(response);
+        alert('Movie was removed from favorites.');
+        this.componentDidMount();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   onLoggedOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -238,7 +258,7 @@ export class ProfileView extends React.Component {
                       <Button
                         variant="warning"
                         type="submit"
-                        onClick={this.editUser}
+                        onClick={() => this.editUser()}
                       >
                         Update User
                       </Button>

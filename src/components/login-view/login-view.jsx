@@ -15,6 +15,7 @@ import Card from 'react-bootstrap/Card';
 
 //Import custom SCSS
 import './login-view.scss';
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -41,8 +42,6 @@ export function LoginView(props) {
 
   return (
     <div className="login-view">
-      <NavbarView />
-      <br />
       <Container>
         <Row>
           <Col></Col>
@@ -69,12 +68,24 @@ export function LoginView(props) {
                       />
                     </Form.Group>
                   </Card.Text>
+                  <Link to={`/`}>
+                    <Button
+                      variant="success link"
+                      type="submit"
+                      onClick={handleSubmit}
+                    >
+                      Log in
+                    </Button>
+                  </Link>
+                  <Container>Need an account?</Container>
                   <Button
-                    variant="primary"
-                    type="submit"
-                    onClick={handleSubmit}
+                    onClick={() => {
+                      window.location.href = '/register';
+                    }}
+                    variant="secondary"
+                    type="button"
                   >
-                    Log in
+                    Register
                   </Button>
                 </Form>
               </Card.Body>
