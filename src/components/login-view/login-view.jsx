@@ -48,24 +48,22 @@ export function LoginView(props) {
               <Card.Header>Log in to your myGhibli account</Card.Header>
               <Card.Body>
                 <Form>
-                  <Card.Text>
-                    <Form.Group controlId="formUsername">
-                      <Form.Label>Username:</Form.Label>
-                      <Form.Control
-                        type="text"
-                        onChange={(e) => setUsername(e.target.value)}
-                      />
-                    </Form.Group>
-                  </Card.Text>
-                  <Card.Text>
-                    <Form.Group controlId="formPassword">
-                      <Form.Label>Password:</Form.Label>
-                      <Form.Control
-                        type="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
-                    </Form.Group>
-                  </Card.Text>
+                  <Form.Group controlId="formUsername">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </Form.Group>
+                </Form>
+                <Container>
                   <Link to={`/`}>
                     <Button
                       variant="success link"
@@ -85,7 +83,7 @@ export function LoginView(props) {
                   >
                     Register
                   </Button>
-                </Form>
+                </Container>
               </Card.Body>
             </Card>
           </Col>

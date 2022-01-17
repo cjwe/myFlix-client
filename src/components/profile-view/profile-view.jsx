@@ -39,7 +39,6 @@ export class ProfileView extends React.Component {
     const username = localStorage.getItem('user');
     console.log(username);
     const token = localStorage.getItem('token');
-    console.log(this.props);
     axios
       .delete(
         `https://miyazaki-movie-api.herokuapp.com/users/${username}/movies/${movie._id}`,
@@ -183,15 +182,15 @@ export class ProfileView extends React.Component {
               <Card.Header>User Profile</Card.Header>
               <Card.Body>
                 <Card.Text>
-                  <span className="label">Username:</span>
+                  <span className="label">Username: </span>
                   <span className="value">{Username}</span>
                 </Card.Text>
                 <Card.Text>
-                  <span className="label">Email:</span>
+                  <span className="label">Email: </span>
                   <span className="value">{Email}</span>
                 </Card.Text>
                 <Card.Text>
-                  <span className="label">Birthday:</span>
+                  <span className="label">Birthday: </span>
                   <span className="value">{Birthday}</span>
                 </Card.Text>
               </Card.Body>
@@ -203,75 +202,73 @@ export class ProfileView extends React.Component {
             <Card>
               <Card.Header>Update Profile</Card.Header>
               <Card.Body>
-                <Card.Text>
-                  <Form
-                    className="update-form"
-                    onSubmit={(e) =>
-                      this.editUser(
-                        e,
-                        this.Username,
-                        this.Password,
-                        this.Email,
-                        this.Birthday
-                      )
-                    }
-                  >
-                    <Form.Group>
-                      <Form.Label>Username</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="Username"
-                        placeholder="New Username"
-                        onChange={(e) => this.setUsername(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        name="Password"
-                        placeholder="New Password"
-                        onChange={(e) => this.setPassword(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="Email"
-                        placeholder="New Email"
-                        onChange={(e) => this.setEmail(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Birthday</Form.Label>
-                      <Form.Control
-                        type="date"
-                        name="Birthday"
-                        onChange={(e) => this.setBirthday(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Button
-                        variant="warning"
-                        type="submit"
-                        onClick={() => this.editUser}
-                      >
-                        Update User
-                      </Button>
-                      <Button
-                        className="delete-button"
-                        variant="danger"
-                        onClick={() => this.onDeleteUser}
-                      >
-                        Delete User
-                      </Button>
-                    </Form.Group>
-                  </Form>
-                </Card.Text>
+                <Form
+                  className="update-form"
+                  onSubmit={(e) =>
+                    this.editUser(
+                      e,
+                      this.Username,
+                      this.Password,
+                      this.Email,
+                      this.Birthday
+                    )
+                  }
+                >
+                  <Form.Group>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="Username"
+                      placeholder="New Username"
+                      onChange={(e) => this.setUsername(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="Password"
+                      placeholder="New Password"
+                      onChange={(e) => this.setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="Email"
+                      placeholder="New Email"
+                      onChange={(e) => this.setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Birthday</Form.Label>
+                    <Form.Control
+                      type="date"
+                      name="Birthday"
+                      onChange={(e) => this.setBirthday(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Button
+                      variant="warning"
+                      type="submit"
+                      onClick={() => this.editUser}
+                    >
+                      Update User
+                    </Button>
+                    <Button
+                      className="delete-button"
+                      variant="danger"
+                      onClick={() => this.onDeleteUser()}
+                    >
+                      Delete User
+                    </Button>
+                  </Form.Group>
+                </Form>
               </Card.Body>
             </Card>
           </Col>
@@ -293,11 +290,8 @@ export class ProfileView extends React.Component {
                           FavoriteMovies.find((fav) => fav === movie._id)
                         ) {
                           return (
-                            <Container>
-                              <Card
-                                className="favorite-movie card-content"
-                                key={movie._id}
-                              >
+                            <Container key={movie._id}>
+                              <Card className="favorite-movie card-content">
                                 <Card.Img
                                   className="fav-poster"
                                   variant="top"

@@ -97,16 +97,6 @@ class MainView extends React.Component {
     });
   }
 
-  loadingCheck(user) {
-    if (!user)
-      return (
-        <Col>
-          <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-        </Col>
-      );
-    if (movies.length === 0) return <div className="main-view" />;
-  }
-
   render() {
     //#5 movies extracted from this props
     const { movies } = this.props;
