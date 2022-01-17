@@ -114,8 +114,8 @@ class MainView extends React.Component {
 
     return (
       <Router>
-        <NavbarView />
         {/* For main view */}
+        <NavbarView />
         <Row>
           <Route
             exact

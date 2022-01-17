@@ -42,7 +42,7 @@ export class ProfileView extends React.Component {
     console.log(this.props);
     axios
       .delete(
-        `https://miyazaki-movie-api.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://miyazaki-movie-api.herokuapp.com/users/${username}/movies/${movie._id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
@@ -51,7 +51,7 @@ export class ProfileView extends React.Component {
         this.componentDidMount();
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -80,7 +80,7 @@ export class ProfileView extends React.Component {
         });
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -117,7 +117,7 @@ export class ProfileView extends React.Component {
         window.open(`/users/${Username}`, '_self');
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -138,7 +138,7 @@ export class ProfileView extends React.Component {
         window.open(`/`, '_self');
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   }
 
@@ -258,14 +258,14 @@ export class ProfileView extends React.Component {
                       <Button
                         variant="warning"
                         type="submit"
-                        onClick={() => this.editUser()}
+                        onClick={() => this.editUser}
                       >
                         Update User
                       </Button>
                       <Button
                         className="delete-button"
                         variant="danger"
-                        onClick={() => this.onDeleteUser()}
+                        onClick={() => this.onDeleteUser}
                       >
                         Delete User
                       </Button>
@@ -292,31 +292,34 @@ export class ProfileView extends React.Component {
                           FavoriteMovies.find((fav) => fav === movie._id)
                         ) {
                           return (
-                            <Card
-                              className="favorite-movie card-content"
-                              key={movie._id}
-                            >
-                              <Card.Img
-                                className="fav-poster"
-                                variant="top"
-                                src={movie.ImagePath}
-                              />
-                              <Card.Body>
-                                <Card.Title className="movie_title">
-                                  {movie.Title}
-                                </Card.Title>
-                                <Button
-                                  size="sm"
-                                  variant="danger"
-                                  value={movie._id}
-                                  onClick={(e) =>
-                                    this.onRemoveFavorite(e, movie)
-                                  }
-                                >
-                                  Remove
-                                </Button>
-                              </Card.Body>
-                            </Card>
+                            <Container>
+                              My Favorite Movies
+                              <Card
+                                className="favorite-movie card-content"
+                                key={movie._id}
+                              >
+                                <Card.Img
+                                  className="fav-poster"
+                                  variant="top"
+                                  src={movie.ImagePath}
+                                />
+                                <Card.Body>
+                                  <Card.Title className="movie_title">
+                                    {movie.Title}
+                                  </Card.Title>
+                                  <Button
+                                    size="sm"
+                                    variant="danger"
+                                    value={movie._id}
+                                    onClick={(e) =>
+                                      this.onRemoveFavorite(e, movie)
+                                    }
+                                  >
+                                    Remove
+                                  </Button>
+                                </Card.Body>
+                              </Card>
+                            </Container>
                           );
                         }
                       })}

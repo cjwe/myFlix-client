@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { NavbarView } from '../nav-bar/nav-bar';
-
 //Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
