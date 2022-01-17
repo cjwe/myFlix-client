@@ -1,15 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Routes,
-} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
+
+// Import actions
+// #0
+import { setMovies } from '../../actions/actions';
 
 // Import React components
-import { MovieCard } from '../movie-card/movie-card';
+import MoviesList from '../movies-list/movies-list';
+// import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { DirectorView } from '../director-view/director-view';
@@ -31,18 +32,24 @@ import Stack from 'react-bootstrap/Stack';
 // Custom SCSS Import
 import './main-view.scss';
 
-export default class MainView extends React.Component {
+//#2 export keyword removed
+class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
-      selectedMovie: null,
-      Description: null,
-      Movies: null,
+      // #3 movies state removed
       user: null,
     };
   }
 
+  // Load movies from database
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({ user: localStorage.getItem('user') });
+      this.getMovies(accessToken);
+    }
+  }
   // Get movies
   getMovies(token) {
     axios
@@ -51,9 +58,8 @@ export default class MainView extends React.Component {
       })
       .then((response) => {
         // Assign the result to the state
-        this.setState({
-          movies: response.data,
-        });
+        // #4
+        this.props.setMovies(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -79,15 +85,6 @@ export default class MainView extends React.Component {
     window.open('/', '_self');
   }
 
-  // Load movies from database
-  componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({ user: localStorage.getItem('user') });
-      this.getMovies(accessToken);
-    }
-  }
-
   // Set user
   setUser(user) {
     this.setState({ user });
@@ -111,7 +108,9 @@ export default class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.state;
+    //#5 movies extracted from this props
+    const { movies } = this.props;
+    const { user } = this.state;
 
     return (
       <Router>
@@ -129,11 +128,8 @@ export default class MainView extends React.Component {
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;
-              return movies.map((m) => (
-                <Col md={3} key={m._id}>
-                  <MovieCard movie={m} />
-                </Col>
-              ));
+              // #6
+              return <MoviesList movies={movies} />;
             }}
           />
           {/* For registration view */}
@@ -244,3 +240,9 @@ export default class MainView extends React.Component {
     );
   }
 }
+
+let mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { setMovies })(MainView);
