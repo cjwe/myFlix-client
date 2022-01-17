@@ -47,7 +47,7 @@ export class ProfileView extends React.Component {
       )
       .then((response) => {
         console.log(response);
-        alert('Movie was removed from favorites.');
+        alert(`${movie.Title} was removed from your favorites.`);
         this.componentDidMount();
       })
       .catch(function (error) {
@@ -284,6 +284,7 @@ export class ProfileView extends React.Component {
                   {FavoriteMovies.length === 0 && (
                     <div className="text-center">No Favorite Movies</div>
                   )}
+                  My Favorite Movies
                   <Row className="favorite-container">
                     {FavoriteMovies.length > 0 &&
                       movies.map((movie) => {
@@ -293,7 +294,6 @@ export class ProfileView extends React.Component {
                         ) {
                           return (
                             <Container>
-                              My Favorite Movies
                               <Card
                                 className="favorite-movie card-content"
                                 key={movie._id}

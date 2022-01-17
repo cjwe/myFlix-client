@@ -168,7 +168,7 @@ class MainView extends React.Component {
           />
           {/* For director view */}
           <Route
-            path="movies/directors/:Name"
+            path="/directors/:Name"
             render={({ match, history }) => {
               if (!user)
                 return (

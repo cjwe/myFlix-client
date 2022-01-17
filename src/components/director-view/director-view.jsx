@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
+import { Link } from 'react-router-dom';
 
 // Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,7 +19,7 @@ import './director-view.scss';
 
 export class DirectorView extends React.Component {
   render() {
-    const { Director, onBackClick, movies, movie } = this.props;
+    const { Director, onBackClick, movies } = this.props;
 
     return (
       <Container>

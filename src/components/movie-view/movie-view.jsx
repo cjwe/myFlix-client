@@ -32,7 +32,7 @@ export class MovieView extends React.Component {
         }
       )
       .then((response) => {
-        alert(`Added ${this.props.movie.Title} to favorites List`);
+        alert(`Added ${this.props.movie.Title} to your favorites!`);
       })
       .catch(function (error) {
         console.log(error);
@@ -47,10 +47,13 @@ export class MovieView extends React.Component {
             <img src={movie.ImagePath} />
           </Card.Header>
           <Card.Body>{movie.Title}</Card.Body>
-          <Card.Body>Genre: {movie.Genre.Name}</Card.Body>
+          <Card.Body>
+            Genre:
+            <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
+          </Card.Body>
           <Card.Body>
             Director:
-            <Link to={`/movies/directors/${movie.Director.Name}`}>
+            <Link to={`/directors/${movie.Director.Name}`}>
               {movie.Director.Name}
             </Link>
           </Card.Body>
