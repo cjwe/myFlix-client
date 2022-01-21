@@ -113,7 +113,6 @@ class MainView extends React.Component {
   render() {
     //#5 movies extracted from this props
     const { movies, user } = this.props;
-    // const { user } = this.state;
 
     return (
       <Router>
@@ -124,12 +123,10 @@ class MainView extends React.Component {
             exact
             path="/"
             render={() => {
-              if (!{ user })
+              if (!user)
                 return (
                   <Col>
-                    <LoginView
-                      onLoggedIn={({ user }) => this.onLoggedIn({ user })}
-                    />
+                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                   </Col>
                 );
               if (movies.length === 0) return <div className="main-view" />;

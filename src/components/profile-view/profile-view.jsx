@@ -329,4 +329,8 @@ class ProfileView extends React.Component {
   }
 }
 
+let mapStateToProps = (state) => {
+  return { movies: state.movies, user: state.user };
+};
+
 export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);
