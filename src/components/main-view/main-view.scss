@@ -1,6 +1,11 @@
 $blue: rgb(21, 155, 234);
 $darkblue: rgb(6, 46, 70);
 
+body {
+  // background-color: #159bea;
+  // background-image: linear-gradient(62deg, #159bea 0%, #c4ffbc 100%);
+}
+
 .btn-primary {
   background-color: $blue !important;
   border-color: $blue !important;

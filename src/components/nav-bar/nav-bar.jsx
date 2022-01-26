@@ -24,27 +24,25 @@ export function NavbarView() {
 
   return (
     <Navbar bg="light" variant="light" expand="md">
-      <Container>
-        <Link to={`/`}>
-          <Navbar.Brand>
-            <img
-              alt="Logo of Totoro"
-              src={require('../../img/logotext.svg')}
-              width="100"
-              height="auto"
-            />{' '}
-          </Navbar.Brand>
-        </Link>
+      <Link to={`/`}>
+        <Navbar.Brand>
+          <img
+            alt="Logo of Totoro"
+            src={require('../../img/logotext.svg')}
+            width="100"
+            height="auto"
+          />{' '}
+        </Navbar.Brand>
+      </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse className="text-center" id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          <Nav.Link href={`/users/${user}`}>My Profile</Nav.Link>
+        </Nav>
         <Button type="button" onClick={() => this.onLoggedOut()}>
           Logout
         </Button>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link href={`/users/${user}`}>My Profile</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
+      </Navbar.Collapse>
     </Navbar>
   );
 }

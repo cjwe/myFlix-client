@@ -1,5 +1,6 @@
 * {
   font-family: "Be Vietnam Pro", sans-serif;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -15,6 +16,62 @@ h1 {
     padding-left: 0px;
     padding-right: 0px;
   }
+}
+.card-title {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+}
+
+.btn-primary {
+  background-color: #159bea !important;
+  border-color: #159bea !important;
+}
+.btn-primary:hover {
+  background-color: #062e46 !important;
+  border-color: #062e46 !important;
+}
+
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fef8f8;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: calc(var(--curve) * 1px);
+  background-color: var(--surface-color);
+  transform: translateY(100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
 }
 .btn-primary {
   background-color: #159bea !important;

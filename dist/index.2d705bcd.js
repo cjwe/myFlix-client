@@ -1027,13 +1027,7 @@ class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRedux.Provider, {
             store: store,
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
-                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/index.jsx",
-                    lineNumber: 26,
-                    columnNumber: 11
-                }, this)
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_mainViewDefault.default, {
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/index.jsx",
                 lineNumber: 25,
@@ -25831,149 +25825,155 @@ class MainView extends _reactDefault.default.Component {
                     lineNumber: 108,
                     columnNumber: 9
                 }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            exact: true,
-                            path: "/",
-                            render: ()=>{
-                                if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
+                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                exact: true,
+                                path: "/",
+                                render: ()=>{
+                                    if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                            onLoggedIn: (user)=>this.onLoggedIn(user)
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "main-view"
+                                    }, void 0, false, void 0, void 0));
+                                    // #6
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_moviesListDefault.default, {
+                                        movies: movies
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 111,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                path: "/register",
+                                render: ()=>{
+                                    if (user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Redirect, {
+                                        to: "/"
+                                    }, void 0, false, void 0, void 0));
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 127,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                path: "/movies/:movieId",
+                                render: ({ match , history  })=>{
+                                    if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                            onLoggedIn: (user)=>this.onLoggedIn(user)
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "main-view"
+                                    }, void 0, false, void 0, void 0));
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        md: 8,
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
+                                            movie: movies.find((m)=>m._id === match.params.movieId
+                                            ),
+                                            onBackClick: ()=>history.goBack()
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 140,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                path: "/directors/:Name",
+                                render: ({ match , history  })=>{
+                                    if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
                                         onLoggedIn: (user)=>this.onLoggedIn(user)
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                    className: "main-view"
-                                }, void 0, false, void 0, void 0));
-                                // #6
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_moviesListDefault.default, {
-                                    movies: movies
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 110,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "/register",
-                            render: ()=>{
-                                if (user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Redirect, {
-                                    to: "/"
-                                }, void 0, false, void 0, void 0));
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 126,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "/movies/:movieId",
-                            render: ({ match , history  })=>{
-                                if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                    }, void 0, false, void 0, void 0));
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "main-view"
+                                    }, void 0, false, void 0, void 0));
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        md: 8,
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
+                                            Director: movies.find((m)=>m.Director.Name === match.params.Name
+                                            ).Director,
+                                            movies: movies,
+                                            onBackClick: ()=>history.goBack()
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 161,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                path: "/genres/:Name",
+                                render: ({ match , history  })=>{
+                                    if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
                                         onLoggedIn: (user)=>this.onLoggedIn(user)
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                    className: "main-view"
-                                }, void 0, false, void 0, void 0));
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    md: 8,
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
-                                        movie: movies.find((m)=>m._id === match.params.movieId
-                                        ),
-                                        onBackClick: ()=>history.goBack()
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 139,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "/directors/:Name",
-                            render: ({ match , history  })=>{
-                                if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
-                                    onLoggedIn: (user)=>this.onLoggedIn(user)
-                                }, void 0, false, void 0, void 0));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                    className: "main-view"
-                                }, void 0, false, void 0, void 0));
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    md: 8,
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
-                                        Director: movies.find((m)=>m.Director.Name === match.params.Name
-                                        ).Director,
-                                        movies: movies,
-                                        onBackClick: ()=>history.goBack()
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 160,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            path: "/genres/:Name",
-                            render: ({ match , history  })=>{
-                                if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
-                                    onLoggedIn: (user)=>this.onLoggedIn(user)
-                                }, void 0, false, void 0, void 0));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                    className: "main-view"
-                                }, void 0, false, void 0, void 0));
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    md: 8,
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genreView.GenreView, {
-                                        movies: movies,
-                                        Genre: movies.find((m)=>m.Genre.Name === match.params.Name
-                                        ).Genre,
-                                        onBackClick: ()=>history.goBack()
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 183,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
-                            exact: true,
-                            path: "/users/:Username",
-                            render: ({ history  })=>{
-                                if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
-                                    onLoggedIn: (user)=>this.onLoggedIn(user)
-                                }, void 0, false, void 0, void 0));
-                                if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-                                    className: "main-view"
-                                }, void 0, false, void 0, void 0));
-                                return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                                    md: 8,
-                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_profileView.ProfileView, {
-                                        user: user1,
-                                        setUser: (user)=>this.setUser(user)
-                                        ,
-                                        movies: movies,
-                                        onLoggedOut: ()=>this.onLoggedOut()
-                                        ,
-                                        onBackClick: ()=>history.goBack()
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0));
-                            }
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
-                            lineNumber: 206,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                                    }, void 0, false, void 0, void 0));
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "main-view"
+                                    }, void 0, false, void 0, void 0));
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        md: 8,
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genreView.GenreView, {
+                                            movies: movies,
+                                            Genre: movies.find((m)=>m.Genre.Name === match.params.Name
+                                            ).Genre,
+                                            onBackClick: ()=>history.goBack()
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 185,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
+                                exact: true,
+                                path: "/users/:Username",
+                                render: ({ history  })=>{
+                                    if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
+                                        onLoggedIn: (user)=>this.onLoggedIn(user)
+                                    }, void 0, false, void 0, void 0));
+                                    if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                                        className: "main-view"
+                                    }, void 0, false, void 0, void 0));
+                                    return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                                        md: 8,
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_profileView.ProfileView, {
+                                            user: user1,
+                                            setUser: (user)=>this.setUser(user)
+                                            ,
+                                            movies: movies,
+                                            onLoggedOut: ()=>this.onLoggedOut()
+                                            ,
+                                            onBackClick: ()=>history.goBack()
+                                        }, void 0, false, void 0, void 0)
+                                    }, void 0, false, void 0, void 0));
+                                }
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                                lineNumber: 208,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
+                        lineNumber: 110,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "Desktop/CF/myFlix-client/src/components/main-view/main-view.jsx",
                     lineNumber: 109,
                     columnNumber: 9
@@ -29807,6 +29807,8 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
 var _reactRedux = require("react-redux");
 var _visibilityFilterInput = require("../visibility-filter-input/visibility-filter-input");
 var _visibilityFilterInputDefault = parcelHelpers.interopDefault(_visibilityFilterInput);
@@ -29826,43 +29828,55 @@ function MoviesList(props) {
         className: "main-view"
     }, void 0, false, {
         fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 23
     }, this));
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                md: 12,
+                sm: 10,
                 style: {
-                    margin: '1em'
+                    margin: '2em'
                 },
                 children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_visibilityFilterInputDefault.default, {
                     visibilityFilter: visibilityFilter
                 }, void 0, false, {
                     fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
-            filteredMovies.map((m)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
-                    md: 3,
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
-                        movie: m
-                    }, void 0, false, {
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
+                xs: 1,
+                md: 2,
+                className: "",
+                children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
+                        md: 4,
+                        lg: 3,
+                        sm: 6,
+                        className: "d-flex align-items-stretch",
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieCard.MovieCard, {
+                            movie: m
+                        }, void 0, false, {
+                            fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
+                            lineNumber: 40,
+                            columnNumber: 13
+                        }, this)
+                    }, m._id, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 11
                     }, this)
-                }, m._id, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
-                    lineNumber: 31,
-                    columnNumber: 9
-                }, this)
-            )
+                )
+            }, void 0, false, {
+                fileName: "Desktop/CF/myFlix-client/src/components/movies-list/movies-list.jsx",
+                lineNumber: 31,
+                columnNumber: 7
+            }, this)
         ]
     }, void 0, true));
 }
@@ -29876,7 +29890,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","react-bootstrap/Col":"2cYKy","react-redux":"2SxhE","../visibility-filter-input/visibility-filter-input":"6ScmX","../movie-card/movie-card":"9Nfyy","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"2cYKy":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","react-bootstrap/Col":"2cYKy","react-redux":"2SxhE","../visibility-filter-input/visibility-filter-input":"6ScmX","../movie-card/movie-card":"9Nfyy","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","react-bootstrap/Row":"I0sF7"}],"2cYKy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCol", ()=>useCol
@@ -31592,54 +31606,75 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactRouterDom = require("react-router-dom");
+var _reactBootstrapIcons = require("react-bootstrap-icons");
+var _accordion = require("react-bootstrap/Accordion");
+var _accordionDefault = parcelHelpers.interopDefault(_accordion);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
+var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie  } = this.props;
-        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default, {
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Img, {
-                    variant: "top",
-                    src: movie.ImagePath
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-                    lineNumber: 15,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
-                    children: [
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Title, {
-                            children: movie.Title
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-                            lineNumber: 17,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Text, {
-                            children: movie.Description
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-                            lineNumber: 18,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-                    lineNumber: 16,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Footer, {
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                        to: `/movies/${movie._id}`,
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
-                            variant: "link",
-                            children: "Open"
-                        }, void 0, false, {
+        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
+            href: "",
+            className: "cardlink",
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default, {
+                className: "m-1",
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Img, {
+                        variant: "top",
+                        src: movie.ImagePath
+                    }, void 0, false, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+                        className: "card__overlay",
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
+                            className: "text-center",
+                            children: [
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Title, {
+                                    children: movie.Title
+                                }, void 0, false, {
+                                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 23,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Text, {
+                                    children: movie.Description
+                                }, void 0, false, {
+                                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 24,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Text, {
+                                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                        to: `/movies/${movie._id}`,
+                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
+                                            variant: "link",
+                                            children: "Open"
+                                        }, void 0, false, {
+                                            fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 27,
+                                            columnNumber: 19
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 17
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 25,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
                             lineNumber: 22,
                             columnNumber: 13
@@ -31649,15 +31684,15 @@ class MovieCard extends _reactDefault.default.Component {
                         lineNumber: 21,
                         columnNumber: 11
                     }, this)
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-                    lineNumber: 20,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
+                ]
+            }, void 0, true, {
+                fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 19,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
             fileName: "Desktop/CF/myFlix-client/src/components/movie-card/movie-card.jsx",
-            lineNumber: 14,
+            lineNumber: 18,
             columnNumber: 7
         }, this));
     }
@@ -31676,7 +31711,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","prop-types":"aSVWb","react-router-dom":"efxpL","react-bootstrap/Button":"3G11l","react-bootstrap/Card":"JImEC","react-bootstrap/Row":"I0sF7","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"3G11l":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","prop-types":"aSVWb","react-router-dom":"efxpL","react-bootstrap/Button":"3G11l","react-bootstrap/Card":"JImEC","react-bootstrap/Row":"I0sF7","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY","react-bootstrap/Accordion":"gez1l","./movie-card.scss":"7C5Lc","react-bootstrap-icons":"8adSq"}],"3G11l":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -31972,278 +32007,62 @@ as: Component = 'div' , ...props }, ref)=>{
 Row.displayName = 'Row';
 exports.default = Row;
 
-},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"fZ6hs":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fbf8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$fbf8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MovieView", ()=>MovieView
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _propTypes = require("prop-types");
-var _navbar = require("react-bootstrap/Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _container = require("react-bootstrap/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _card = require("react-bootstrap/Card");
-var _cardDefault = parcelHelpers.interopDefault(_card);
-var _stack = require("react-bootstrap/Stack");
-var _stackDefault = parcelHelpers.interopDefault(_stack);
-var _movieViewScss = require("./movie-view.scss");
-class MovieView extends _reactDefault.default.Component {
-    constructor(props){
-        super(props);
-    }
-    addFavoriteMovie() {
-        const token = localStorage.getItem('token');
-        const user = localStorage.getItem('user');
-        _axiosDefault.default.post(`https://miyazaki-movie-api.herokuapp.com/users/${user}/movies/${this.props.movie._id}`, {
-        }, {
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            method: 'POST'
-        }).then((response)=>{
-            alert(`Added ${this.props.movie.Title} to your favorites!`);
-        }).catch(function(error) {
-            console.log(error);
-        });
-    }
-    render() {
-        const { movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
-            className: "movie-view",
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default, {
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Header, {
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                            src: movie.ImagePath
-                        }, void 0, false, {
-                            fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                            lineNumber: 47,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 46,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
-                        children: movie.Title
-                    }, void 0, false, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 49,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
-                        children: [
-                            "Genre:",
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                to: `/genres/${movie.Genre.Name}`,
-                                children: movie.Genre.Name
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 52,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 50,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
-                        children: [
-                            "Director:",
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                to: `/directors/${movie.Director.Name}`,
-                                children: movie.Director.Name
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 56,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 54,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
-                        children: [
-                            "Description: ",
-                            movie.Description
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 60,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Footer, {
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
-                                className: "movie-view-button",
-                                onClick: ()=>{
-                                    onBackClick(null);
-                                },
-                                children: "Back to list"
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 62,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
-                                variant: "outline-primary",
-                                className: "btn-outline-primary",
-                                value: movie._id,
-                                onClick: (e)=>this.addFavoriteMovie(e, movie)
-                                ,
-                                children: "Add to Favorites"
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                                lineNumber: 70,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                        lineNumber: 61,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 45,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
-            lineNumber: 44,
-            columnNumber: 7
-        }, this));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$fbf8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","axios":"22oK9","react-router-dom":"efxpL","prop-types":"aSVWb","react-bootstrap/Navbar":"3bMLN","react-bootstrap/Form":"1inqF","react-bootstrap/Button":"3G11l","react-bootstrap/Container":"4bK46","react-bootstrap/Row":"I0sF7","react-bootstrap/Col":"2cYKy","react-bootstrap/Card":"JImEC","react-bootstrap/Stack":"6ILic","./movie-view.scss":"eBfSJ","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"3bMLN":[function(require,module,exports) {
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"gez1l":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
-var _selectableContext = require("@restart/ui/SelectableContext");
-var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
 var _uncontrollable = require("uncontrollable");
-var _createWithBsPrefix = require("./createWithBsPrefix");
-var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-var _navbarBrand = require("./NavbarBrand");
-var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
-var _navbarCollapse = require("./NavbarCollapse");
-var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
-var _navbarToggle = require("./NavbarToggle");
-var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
-var _navbarOffcanvas = require("./NavbarOffcanvas");
-var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
 var _themeProvider = require("./ThemeProvider");
-var _navbarContext = require("./NavbarContext");
-var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _accordionBody = require("./AccordionBody");
+var _accordionBodyDefault = parcelHelpers.interopDefault(_accordionBody);
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionHeader = require("./AccordionHeader");
+var _accordionHeaderDefault = parcelHelpers.interopDefault(_accordionHeader);
+var _accordionItem = require("./AccordionItem");
+var _accordionItemDefault = parcelHelpers.interopDefault(_accordionItem);
 var _jsxRuntime = require("react/jsx-runtime");
-const NavbarText = _createWithBsPrefixDefault.default('navbar-text', {
-    Component: 'span'
-});
-const defaultProps = {
-    expand: true,
-    variant: 'light',
-    collapseOnSelect: false
-};
-const Navbar = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const { bsPrefix: initialBsPrefix , expand , variant , bg , fixed , sticky , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-    as: Component = 'nav' , expanded , onToggle , onSelect , collapseOnSelect , ...controlledProps } = _uncontrollable.useUncontrolled(props, {
-        expanded: 'onToggle'
+const Accordion = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = 'div' , activeKey , bsPrefix , className , onSelect , flush , alwaysOpen , ...controlledProps } = _uncontrollable.useUncontrolled(props, {
+        activeKey: 'onSelect'
     });
-    const bsPrefix = _themeProvider.useBootstrapPrefix(initialBsPrefix, 'navbar');
-    const handleCollapse = _react.useCallback((...args)=>{
-        onSelect == null || onSelect(...args);
-        if (collapseOnSelect && expanded) onToggle == null || onToggle(false);
-    }, [
-        onSelect,
-        collapseOnSelect,
-        expanded,
-        onToggle
-    ]); // will result in some false positives but that seems better
-    // than false negatives. strict `undefined` check allows explicit
-    // "nulling" of the role if the user really doesn't want one
-    if (controlledProps.role === undefined && Component !== 'nav') controlledProps.role = 'navigation';
-    let expandClass = `${bsPrefix}-expand`;
-    if (typeof expand === 'string') expandClass = `${expandClass}-${expand}`;
-    const navbarContext = _react.useMemo(()=>({
-            onToggle: ()=>onToggle == null ? void 0 : onToggle(!expanded)
-            ,
-            bsPrefix,
-            expanded: !!expanded
+    const prefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion');
+    const contextValue = _react.useMemo(()=>({
+            activeEventKey: activeKey,
+            onSelect,
+            alwaysOpen
         })
     , [
-        bsPrefix,
-        expanded,
-        onToggle
+        activeKey,
+        onSelect,
+        alwaysOpen
     ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarContextDefault.default.Provider, {
-        value: navbarContext,
-        children: /*#__PURE__*/ _jsxRuntime.jsx(_selectableContextDefault.default.Provider, {
-            value: handleCollapse,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
-                ref: ref,
-                ...controlledProps,
-                className: _classnamesDefault.default(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
-            })
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_accordionContextDefault.default.Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ref: ref,
+            ...controlledProps,
+            className: _classnamesDefault.default(className, prefix, flush && `${prefix}-flush`)
         })
     }));
 });
-Navbar.defaultProps = defaultProps;
-Navbar.displayName = 'Navbar';
-exports.default = Object.assign(Navbar, {
-    Brand: _navbarBrandDefault.default,
-    Collapse: _navbarCollapseDefault.default,
-    Offcanvas: _navbarOffcanvasDefault.default,
-    Text: NavbarText,
-    Toggle: _navbarToggleDefault.default
+Accordion.displayName = 'Accordion';
+exports.default = Object.assign(Accordion, {
+    Button: _accordionButtonDefault.default,
+    Collapse: _accordionCollapseDefault.default,
+    Item: _accordionItemDefault.default,
+    Header: _accordionHeaderDefault.default,
+    Body: _accordionBodyDefault.default
 });
 
-},{"classnames":"3ryre","react":"j2vgo","@restart/ui/SelectableContext":"fukMq","uncontrollable":"3EsYt","./createWithBsPrefix":"cACiA","./NavbarBrand":"eCv5e","./NavbarCollapse":"jrNPP","./NavbarToggle":"k7kGI","./NavbarOffcanvas":"5Lz2u","./ThemeProvider":"jFIKE","./NavbarContext":"bOFar","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"fukMq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey
-);
-var _react = require("react");
-const SelectableContext = /*#__PURE__*/ _react.createContext(null);
-const makeEventKey = (eventKey, href = null)=>{
-    if (eventKey != null) return String(eventKey);
-    return href || null;
-};
-exports.default = SelectableContext;
-
-},{"react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"3EsYt":[function(require,module,exports) {
+},{"classnames":"3ryre","react":"j2vgo","uncontrollable":"3EsYt","./ThemeProvider":"jFIKE","./AccordionBody":"cOjEa","./AccordionButton":"ghImv","./AccordionCollapse":"iEl0v","./AccordionContext":"kuKcS","./AccordionHeader":"jPVll","./AccordionItem":"ggGXZ","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"3EsYt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useUncontrolled", ()=>_hookDefault.default
@@ -32663,53 +32482,63 @@ function polyfill(Component) {
     return Component;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"eCv5e":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"cOjEa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
+var _accordionCollapse = require("./AccordionCollapse");
+var _accordionCollapseDefault = parcelHelpers.interopDefault(_accordionCollapse);
+var _accordionItemContext = require("./AccordionItemContext");
+var _accordionItemContextDefault = parcelHelpers.interopDefault(_accordionItemContext);
 var _jsxRuntime = require("react/jsx-runtime");
-const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , as , ...props }, ref)=>{
-    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-brand');
-    const Component = as || (props.href ? 'a' : 'span');
-    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
-        ...props,
-        ref: ref,
-        className: _classnamesDefault.default(className, bsPrefix)
-    }));
-});
-NavbarBrand.displayName = 'NavbarBrand';
-exports.default = NavbarBrand;
-
-},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"jrNPP":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _collapse = require("./Collapse");
-var _collapseDefault = parcelHelpers.interopDefault(_collapse);
-var _themeProvider = require("./ThemeProvider");
-var _navbarContext = require("./NavbarContext");
-var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const NavbarCollapse = /*#__PURE__*/ _react.forwardRef(({ children , bsPrefix , ...props }, ref)=>{
-    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-collapse');
-    const context = _react.useContext(_navbarContextDefault.default);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_collapseDefault.default, {
-        in: !!(context && context.expanded),
-        ...props,
-        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+const AccordionBody = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , bsPrefix , className , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion-body');
+    const { eventKey  } = _react.useContext(_accordionItemContextDefault.default);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_accordionCollapseDefault.default, {
+        eventKey: eventKey,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
             ref: ref,
-            className: bsPrefix,
-            children: children
+            ...props,
+            className: _classnamesDefault.default(className, bsPrefix)
         })
     }));
 });
-NavbarCollapse.displayName = 'NavbarCollapse';
-exports.default = NavbarCollapse;
+AccordionBody.displayName = 'AccordionBody';
+exports.default = AccordionBody;
 
-},{"react":"j2vgo","./Collapse":"jJV3h","./ThemeProvider":"jFIKE","./NavbarContext":"bOFar","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"jJV3h":[function(require,module,exports) {
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","./AccordionCollapse":"iEl0v","./AccordionItemContext":"fi9mk","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"iEl0v":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const AccordionCollapse = /*#__PURE__*/ _react.forwardRef(({ as: Component = 'div' , bsPrefix , className , children , eventKey , ...props }, ref)=>{
+    const { activeEventKey  } = _react.useContext(_accordionContextDefault.default);
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion-collapse');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_collapseDefault.default, {
+        ref: ref,
+        in: _accordionContext.isAccordionItemSelected(activeEventKey, eventKey),
+        ...props,
+        className: _classnamesDefault.default(className, bsPrefix),
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            children: _react.Children.only(children)
+        })
+    }));
+});
+AccordionCollapse.displayName = 'AccordionCollapse';
+exports.default = AccordionCollapse;
+
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","./Collapse":"jJV3h","./AccordionContext":"kuKcS","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"jJV3h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33789,7 +33618,6630 @@ function safeFindDOMNode(componentOrElement) {
 }
 exports.default = safeFindDOMNode;
 
-},{"react-dom":"7i2gL","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"bOFar":[function(require,module,exports) {
+},{"react-dom":"7i2gL","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"kuKcS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isAccordionItemSelected", ()=>isAccordionItemSelected
+);
+var _react = require("react");
+function isAccordionItemSelected(activeEventKey, eventKey) {
+    return Array.isArray(activeEventKey) ? activeEventKey.includes(eventKey) : activeEventKey === eventKey;
+}
+const context = /*#__PURE__*/ _react.createContext({
+});
+context.displayName = 'AccordionContext';
+exports.default = context;
+
+},{"react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"fi9mk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const context = /*#__PURE__*/ _react.createContext({
+    eventKey: ''
+});
+context.displayName = 'AccordionItemContext';
+exports.default = context;
+
+},{"react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"ghImv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAccordionButton", ()=>useAccordionButton
+);
+var _react = require("react");
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _accordionContext = require("./AccordionContext");
+var _accordionContextDefault = parcelHelpers.interopDefault(_accordionContext);
+var _accordionItemContext = require("./AccordionItemContext");
+var _accordionItemContextDefault = parcelHelpers.interopDefault(_accordionItemContext);
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+function useAccordionButton(eventKey, onClick) {
+    const { activeEventKey , onSelect , alwaysOpen  } = _react.useContext(_accordionContextDefault.default);
+    return (e)=>{
+        /*
+      Compare the event key in context with the given event key.
+      If they are the same, then collapse the component.
+    */ let eventKeyPassed = eventKey === activeEventKey ? null : eventKey;
+        if (alwaysOpen) {
+            if (Array.isArray(activeEventKey)) {
+                if (activeEventKey.includes(eventKey)) eventKeyPassed = activeEventKey.filter((k)=>k !== eventKey
+                );
+                else eventKeyPassed = [
+                    ...activeEventKey,
+                    eventKey
+                ];
+            } else // activeEventKey is undefined.
+            eventKeyPassed = [
+                eventKey
+            ];
+        }
+        onSelect == null || onSelect(eventKeyPassed, e);
+        onClick == null || onClick(e);
+    };
+}
+const AccordionButton = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'button' , bsPrefix , className , onClick , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion-button');
+    const { eventKey  } = _react.useContext(_accordionItemContextDefault.default);
+    const accordionOnClick = useAccordionButton(eventKey, onClick);
+    const { activeEventKey  } = _react.useContext(_accordionContextDefault.default);
+    if (Component === 'button') props.type = 'button';
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        onClick: accordionOnClick,
+        ...props,
+        "aria-expanded": eventKey === activeEventKey,
+        className: _classnamesDefault.default(className, bsPrefix, !_accordionContext.isAccordionItemSelected(activeEventKey, eventKey) && 'collapsed')
+    }));
+});
+AccordionButton.displayName = 'AccordionButton';
+exports.default = AccordionButton;
+
+},{"react":"j2vgo","classnames":"3ryre","./AccordionContext":"kuKcS","./AccordionItemContext":"fi9mk","./ThemeProvider":"jFIKE","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"jPVll":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _accordionButton = require("./AccordionButton");
+var _accordionButtonDefault = parcelHelpers.interopDefault(_accordionButton);
+var _jsxRuntime = require("react/jsx-runtime");
+const AccordionHeader = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'h2' , bsPrefix , className , children , onClick , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion-header');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnamesDefault.default(className, bsPrefix),
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_accordionButtonDefault.default, {
+            onClick: onClick,
+            children: children
+        })
+    }));
+});
+AccordionHeader.displayName = 'AccordionHeader';
+exports.default = AccordionHeader;
+
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","./AccordionButton":"ghImv","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"ggGXZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _accordionItemContext = require("./AccordionItemContext");
+var _accordionItemContextDefault = parcelHelpers.interopDefault(_accordionItemContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const AccordionItem = /*#__PURE__*/ _react.forwardRef(({ // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , bsPrefix , className , eventKey , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'accordion-item');
+    const contextValue = _react.useMemo(()=>({
+            eventKey
+        })
+    , [
+        eventKey
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_accordionItemContextDefault.default.Provider, {
+        value: contextValue,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ref: ref,
+            ...props,
+            className: _classnamesDefault.default(className, bsPrefix)
+        })
+    }));
+});
+AccordionItem.displayName = 'AccordionItem';
+exports.default = AccordionItem;
+
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","./AccordionItemContext":"fi9mk","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"7C5Lc":[function() {},{}],"8adSq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Icon123", ()=>_123Default.default
+);
+parcelHelpers.export(exports, "Activity", ()=>_activityDefault.default
+);
+parcelHelpers.export(exports, "AlarmFill", ()=>_alarmFillDefault.default
+);
+parcelHelpers.export(exports, "Alarm", ()=>_alarmDefault.default
+);
+parcelHelpers.export(exports, "AlignBottom", ()=>_alignBottomDefault.default
+);
+parcelHelpers.export(exports, "AlignCenter", ()=>_alignCenterDefault.default
+);
+parcelHelpers.export(exports, "AlignEnd", ()=>_alignEndDefault.default
+);
+parcelHelpers.export(exports, "AlignMiddle", ()=>_alignMiddleDefault.default
+);
+parcelHelpers.export(exports, "AlignStart", ()=>_alignStartDefault.default
+);
+parcelHelpers.export(exports, "AlignTop", ()=>_alignTopDefault.default
+);
+parcelHelpers.export(exports, "Alt", ()=>_altDefault.default
+);
+parcelHelpers.export(exports, "AppIndicator", ()=>_appIndicatorDefault.default
+);
+parcelHelpers.export(exports, "App", ()=>_appDefault.default
+);
+parcelHelpers.export(exports, "Apple", ()=>_appleDefault.default
+);
+parcelHelpers.export(exports, "ArchiveFill", ()=>_archiveFillDefault.default
+);
+parcelHelpers.export(exports, "Archive", ()=>_archiveDefault.default
+);
+parcelHelpers.export(exports, "Arrow90degDown", ()=>_arrow90DegDownDefault.default
+);
+parcelHelpers.export(exports, "Arrow90degLeft", ()=>_arrow90DegLeftDefault.default
+);
+parcelHelpers.export(exports, "Arrow90degRight", ()=>_arrow90DegRightDefault.default
+);
+parcelHelpers.export(exports, "Arrow90degUp", ()=>_arrow90DegUpDefault.default
+);
+parcelHelpers.export(exports, "ArrowBarDown", ()=>_arrowBarDownDefault.default
+);
+parcelHelpers.export(exports, "ArrowBarLeft", ()=>_arrowBarLeftDefault.default
+);
+parcelHelpers.export(exports, "ArrowBarRight", ()=>_arrowBarRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowBarUp", ()=>_arrowBarUpDefault.default
+);
+parcelHelpers.export(exports, "ArrowClockwise", ()=>_arrowClockwiseDefault.default
+);
+parcelHelpers.export(exports, "ArrowCounterclockwise", ()=>_arrowCounterclockwiseDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownCircleFill", ()=>_arrowDownCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownCircle", ()=>_arrowDownCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownLeftCircleFill", ()=>_arrowDownLeftCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownLeftCircle", ()=>_arrowDownLeftCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownLeftSquareFill", ()=>_arrowDownLeftSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownLeftSquare", ()=>_arrowDownLeftSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownLeft", ()=>_arrowDownLeftDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownRightCircleFill", ()=>_arrowDownRightCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownRightCircle", ()=>_arrowDownRightCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownRightSquareFill", ()=>_arrowDownRightSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownRightSquare", ()=>_arrowDownRightSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownRight", ()=>_arrowDownRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownShort", ()=>_arrowDownShortDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownSquareFill", ()=>_arrowDownSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownSquare", ()=>_arrowDownSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowDownUp", ()=>_arrowDownUpDefault.default
+);
+parcelHelpers.export(exports, "ArrowDown", ()=>_arrowDownDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftCircleFill", ()=>_arrowLeftCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftCircle", ()=>_arrowLeftCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftRight", ()=>_arrowLeftRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftShort", ()=>_arrowLeftShortDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftSquareFill", ()=>_arrowLeftSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeftSquare", ()=>_arrowLeftSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowLeft", ()=>_arrowLeftDefault.default
+);
+parcelHelpers.export(exports, "ArrowRepeat", ()=>_arrowRepeatDefault.default
+);
+parcelHelpers.export(exports, "ArrowReturnLeft", ()=>_arrowReturnLeftDefault.default
+);
+parcelHelpers.export(exports, "ArrowReturnRight", ()=>_arrowReturnRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowRightCircleFill", ()=>_arrowRightCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowRightCircle", ()=>_arrowRightCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowRightShort", ()=>_arrowRightShortDefault.default
+);
+parcelHelpers.export(exports, "ArrowRightSquareFill", ()=>_arrowRightSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowRightSquare", ()=>_arrowRightSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowRight", ()=>_arrowRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpCircleFill", ()=>_arrowUpCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpCircle", ()=>_arrowUpCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpLeftCircleFill", ()=>_arrowUpLeftCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpLeftCircle", ()=>_arrowUpLeftCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpLeftSquareFill", ()=>_arrowUpLeftSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpLeftSquare", ()=>_arrowUpLeftSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpLeft", ()=>_arrowUpLeftDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpRightCircleFill", ()=>_arrowUpRightCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpRightCircle", ()=>_arrowUpRightCircleDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpRightSquareFill", ()=>_arrowUpRightSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpRightSquare", ()=>_arrowUpRightSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpRight", ()=>_arrowUpRightDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpShort", ()=>_arrowUpShortDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpSquareFill", ()=>_arrowUpSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ArrowUpSquare", ()=>_arrowUpSquareDefault.default
+);
+parcelHelpers.export(exports, "ArrowUp", ()=>_arrowUpDefault.default
+);
+parcelHelpers.export(exports, "ArrowsAngleContract", ()=>_arrowsAngleContractDefault.default
+);
+parcelHelpers.export(exports, "ArrowsAngleExpand", ()=>_arrowsAngleExpandDefault.default
+);
+parcelHelpers.export(exports, "ArrowsCollapse", ()=>_arrowsCollapseDefault.default
+);
+parcelHelpers.export(exports, "ArrowsExpand", ()=>_arrowsExpandDefault.default
+);
+parcelHelpers.export(exports, "ArrowsFullscreen", ()=>_arrowsFullscreenDefault.default
+);
+parcelHelpers.export(exports, "ArrowsMove", ()=>_arrowsMoveDefault.default
+);
+parcelHelpers.export(exports, "AspectRatioFill", ()=>_aspectRatioFillDefault.default
+);
+parcelHelpers.export(exports, "AspectRatio", ()=>_aspectRatioDefault.default
+);
+parcelHelpers.export(exports, "Asterisk", ()=>_asteriskDefault.default
+);
+parcelHelpers.export(exports, "At", ()=>_atDefault.default
+);
+parcelHelpers.export(exports, "AwardFill", ()=>_awardFillDefault.default
+);
+parcelHelpers.export(exports, "Award", ()=>_awardDefault.default
+);
+parcelHelpers.export(exports, "Back", ()=>_backDefault.default
+);
+parcelHelpers.export(exports, "BackspaceFill", ()=>_backspaceFillDefault.default
+);
+parcelHelpers.export(exports, "BackspaceReverseFill", ()=>_backspaceReverseFillDefault.default
+);
+parcelHelpers.export(exports, "BackspaceReverse", ()=>_backspaceReverseDefault.default
+);
+parcelHelpers.export(exports, "Backspace", ()=>_backspaceDefault.default
+);
+parcelHelpers.export(exports, "Badge3dFill", ()=>_badge3DFillDefault.default
+);
+parcelHelpers.export(exports, "Badge3d", ()=>_badge3DDefault.default
+);
+parcelHelpers.export(exports, "Badge4kFill", ()=>_badge4KFillDefault.default
+);
+parcelHelpers.export(exports, "Badge4k", ()=>_badge4KDefault.default
+);
+parcelHelpers.export(exports, "Badge8kFill", ()=>_badge8KFillDefault.default
+);
+parcelHelpers.export(exports, "Badge8k", ()=>_badge8KDefault.default
+);
+parcelHelpers.export(exports, "BadgeAdFill", ()=>_badgeAdFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeAd", ()=>_badgeAdDefault.default
+);
+parcelHelpers.export(exports, "BadgeArFill", ()=>_badgeArFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeAr", ()=>_badgeArDefault.default
+);
+parcelHelpers.export(exports, "BadgeCcFill", ()=>_badgeCcFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeCc", ()=>_badgeCcDefault.default
+);
+parcelHelpers.export(exports, "BadgeHdFill", ()=>_badgeHdFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeHd", ()=>_badgeHdDefault.default
+);
+parcelHelpers.export(exports, "BadgeTmFill", ()=>_badgeTmFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeTm", ()=>_badgeTmDefault.default
+);
+parcelHelpers.export(exports, "BadgeVoFill", ()=>_badgeVoFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeVo", ()=>_badgeVoDefault.default
+);
+parcelHelpers.export(exports, "BadgeVrFill", ()=>_badgeVrFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeVr", ()=>_badgeVrDefault.default
+);
+parcelHelpers.export(exports, "BadgeWcFill", ()=>_badgeWcFillDefault.default
+);
+parcelHelpers.export(exports, "BadgeWc", ()=>_badgeWcDefault.default
+);
+parcelHelpers.export(exports, "BagCheckFill", ()=>_bagCheckFillDefault.default
+);
+parcelHelpers.export(exports, "BagCheck", ()=>_bagCheckDefault.default
+);
+parcelHelpers.export(exports, "BagDashFill", ()=>_bagDashFillDefault.default
+);
+parcelHelpers.export(exports, "BagDash", ()=>_bagDashDefault.default
+);
+parcelHelpers.export(exports, "BagFill", ()=>_bagFillDefault.default
+);
+parcelHelpers.export(exports, "BagPlusFill", ()=>_bagPlusFillDefault.default
+);
+parcelHelpers.export(exports, "BagPlus", ()=>_bagPlusDefault.default
+);
+parcelHelpers.export(exports, "BagXFill", ()=>_bagXFillDefault.default
+);
+parcelHelpers.export(exports, "BagX", ()=>_bagXDefault.default
+);
+parcelHelpers.export(exports, "Bag", ()=>_bagDefault.default
+);
+parcelHelpers.export(exports, "BandaidFill", ()=>_bandaidFillDefault.default
+);
+parcelHelpers.export(exports, "Bandaid", ()=>_bandaidDefault.default
+);
+parcelHelpers.export(exports, "Bank", ()=>_bankDefault.default
+);
+parcelHelpers.export(exports, "Bank2", ()=>_bank2Default.default
+);
+parcelHelpers.export(exports, "BarChartFill", ()=>_barChartFillDefault.default
+);
+parcelHelpers.export(exports, "BarChartLineFill", ()=>_barChartLineFillDefault.default
+);
+parcelHelpers.export(exports, "BarChartLine", ()=>_barChartLineDefault.default
+);
+parcelHelpers.export(exports, "BarChartSteps", ()=>_barChartStepsDefault.default
+);
+parcelHelpers.export(exports, "BarChart", ()=>_barChartDefault.default
+);
+parcelHelpers.export(exports, "BasketFill", ()=>_basketFillDefault.default
+);
+parcelHelpers.export(exports, "Basket", ()=>_basketDefault.default
+);
+parcelHelpers.export(exports, "Basket2Fill", ()=>_basket2FillDefault.default
+);
+parcelHelpers.export(exports, "Basket2", ()=>_basket2Default.default
+);
+parcelHelpers.export(exports, "Basket3Fill", ()=>_basket3FillDefault.default
+);
+parcelHelpers.export(exports, "Basket3", ()=>_basket3Default.default
+);
+parcelHelpers.export(exports, "BatteryCharging", ()=>_batteryChargingDefault.default
+);
+parcelHelpers.export(exports, "BatteryFull", ()=>_batteryFullDefault.default
+);
+parcelHelpers.export(exports, "BatteryHalf", ()=>_batteryHalfDefault.default
+);
+parcelHelpers.export(exports, "Battery", ()=>_batteryDefault.default
+);
+parcelHelpers.export(exports, "Behance", ()=>_behanceDefault.default
+);
+parcelHelpers.export(exports, "BellFill", ()=>_bellFillDefault.default
+);
+parcelHelpers.export(exports, "BellSlashFill", ()=>_bellSlashFillDefault.default
+);
+parcelHelpers.export(exports, "BellSlash", ()=>_bellSlashDefault.default
+);
+parcelHelpers.export(exports, "Bell", ()=>_bellDefault.default
+);
+parcelHelpers.export(exports, "Bezier", ()=>_bezierDefault.default
+);
+parcelHelpers.export(exports, "Bezier2", ()=>_bezier2Default.default
+);
+parcelHelpers.export(exports, "Bicycle", ()=>_bicycleDefault.default
+);
+parcelHelpers.export(exports, "BinocularsFill", ()=>_binocularsFillDefault.default
+);
+parcelHelpers.export(exports, "Binoculars", ()=>_binocularsDefault.default
+);
+parcelHelpers.export(exports, "BlockquoteLeft", ()=>_blockquoteLeftDefault.default
+);
+parcelHelpers.export(exports, "BlockquoteRight", ()=>_blockquoteRightDefault.default
+);
+parcelHelpers.export(exports, "Bluetooth", ()=>_bluetoothDefault.default
+);
+parcelHelpers.export(exports, "BodyText", ()=>_bodyTextDefault.default
+);
+parcelHelpers.export(exports, "BookFill", ()=>_bookFillDefault.default
+);
+parcelHelpers.export(exports, "BookHalf", ()=>_bookHalfDefault.default
+);
+parcelHelpers.export(exports, "Book", ()=>_bookDefault.default
+);
+parcelHelpers.export(exports, "BookmarkCheckFill", ()=>_bookmarkCheckFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkCheck", ()=>_bookmarkCheckDefault.default
+);
+parcelHelpers.export(exports, "BookmarkDashFill", ()=>_bookmarkDashFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkDash", ()=>_bookmarkDashDefault.default
+);
+parcelHelpers.export(exports, "BookmarkFill", ()=>_bookmarkFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkHeartFill", ()=>_bookmarkHeartFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkHeart", ()=>_bookmarkHeartDefault.default
+);
+parcelHelpers.export(exports, "BookmarkPlusFill", ()=>_bookmarkPlusFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkPlus", ()=>_bookmarkPlusDefault.default
+);
+parcelHelpers.export(exports, "BookmarkStarFill", ()=>_bookmarkStarFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkStar", ()=>_bookmarkStarDefault.default
+);
+parcelHelpers.export(exports, "BookmarkXFill", ()=>_bookmarkXFillDefault.default
+);
+parcelHelpers.export(exports, "BookmarkX", ()=>_bookmarkXDefault.default
+);
+parcelHelpers.export(exports, "Bookmark", ()=>_bookmarkDefault.default
+);
+parcelHelpers.export(exports, "BookmarksFill", ()=>_bookmarksFillDefault.default
+);
+parcelHelpers.export(exports, "Bookmarks", ()=>_bookmarksDefault.default
+);
+parcelHelpers.export(exports, "Bookshelf", ()=>_bookshelfDefault.default
+);
+parcelHelpers.export(exports, "BoomboxFill", ()=>_boomboxFillDefault.default
+);
+parcelHelpers.export(exports, "Boombox", ()=>_boomboxDefault.default
+);
+parcelHelpers.export(exports, "BootstrapFill", ()=>_bootstrapFillDefault.default
+);
+parcelHelpers.export(exports, "BootstrapReboot", ()=>_bootstrapRebootDefault.default
+);
+parcelHelpers.export(exports, "Bootstrap", ()=>_bootstrapDefault.default
+);
+parcelHelpers.export(exports, "BorderAll", ()=>_borderAllDefault.default
+);
+parcelHelpers.export(exports, "BorderBottom", ()=>_borderBottomDefault.default
+);
+parcelHelpers.export(exports, "BorderCenter", ()=>_borderCenterDefault.default
+);
+parcelHelpers.export(exports, "BorderInner", ()=>_borderInnerDefault.default
+);
+parcelHelpers.export(exports, "BorderLeft", ()=>_borderLeftDefault.default
+);
+parcelHelpers.export(exports, "BorderMiddle", ()=>_borderMiddleDefault.default
+);
+parcelHelpers.export(exports, "BorderOuter", ()=>_borderOuterDefault.default
+);
+parcelHelpers.export(exports, "BorderRight", ()=>_borderRightDefault.default
+);
+parcelHelpers.export(exports, "BorderStyle", ()=>_borderStyleDefault.default
+);
+parcelHelpers.export(exports, "BorderTop", ()=>_borderTopDefault.default
+);
+parcelHelpers.export(exports, "BorderWidth", ()=>_borderWidthDefault.default
+);
+parcelHelpers.export(exports, "Border", ()=>_borderDefault.default
+);
+parcelHelpers.export(exports, "BoundingBoxCircles", ()=>_boundingBoxCirclesDefault.default
+);
+parcelHelpers.export(exports, "BoundingBox", ()=>_boundingBoxDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowDownLeft", ()=>_boxArrowDownLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowDownRight", ()=>_boxArrowDownRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowDown", ()=>_boxArrowDownDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInDownLeft", ()=>_boxArrowInDownLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInDownRight", ()=>_boxArrowInDownRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInDown", ()=>_boxArrowInDownDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInLeft", ()=>_boxArrowInLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInRight", ()=>_boxArrowInRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInUpLeft", ()=>_boxArrowInUpLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInUpRight", ()=>_boxArrowInUpRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowInUp", ()=>_boxArrowInUpDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowLeft", ()=>_boxArrowLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowRight", ()=>_boxArrowRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowUpLeft", ()=>_boxArrowUpLeftDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowUpRight", ()=>_boxArrowUpRightDefault.default
+);
+parcelHelpers.export(exports, "BoxArrowUp", ()=>_boxArrowUpDefault.default
+);
+parcelHelpers.export(exports, "BoxSeam", ()=>_boxSeamDefault.default
+);
+parcelHelpers.export(exports, "Box", ()=>_boxDefault.default
+);
+parcelHelpers.export(exports, "Boxes", ()=>_boxesDefault.default
+);
+parcelHelpers.export(exports, "Braces", ()=>_bracesDefault.default
+);
+parcelHelpers.export(exports, "Bricks", ()=>_bricksDefault.default
+);
+parcelHelpers.export(exports, "BriefcaseFill", ()=>_briefcaseFillDefault.default
+);
+parcelHelpers.export(exports, "Briefcase", ()=>_briefcaseDefault.default
+);
+parcelHelpers.export(exports, "BrightnessAltHighFill", ()=>_brightnessAltHighFillDefault.default
+);
+parcelHelpers.export(exports, "BrightnessAltHigh", ()=>_brightnessAltHighDefault.default
+);
+parcelHelpers.export(exports, "BrightnessAltLowFill", ()=>_brightnessAltLowFillDefault.default
+);
+parcelHelpers.export(exports, "BrightnessAltLow", ()=>_brightnessAltLowDefault.default
+);
+parcelHelpers.export(exports, "BrightnessHighFill", ()=>_brightnessHighFillDefault.default
+);
+parcelHelpers.export(exports, "BrightnessHigh", ()=>_brightnessHighDefault.default
+);
+parcelHelpers.export(exports, "BrightnessLowFill", ()=>_brightnessLowFillDefault.default
+);
+parcelHelpers.export(exports, "BrightnessLow", ()=>_brightnessLowDefault.default
+);
+parcelHelpers.export(exports, "BroadcastPin", ()=>_broadcastPinDefault.default
+);
+parcelHelpers.export(exports, "Broadcast", ()=>_broadcastDefault.default
+);
+parcelHelpers.export(exports, "BrushFill", ()=>_brushFillDefault.default
+);
+parcelHelpers.export(exports, "Brush", ()=>_brushDefault.default
+);
+parcelHelpers.export(exports, "BucketFill", ()=>_bucketFillDefault.default
+);
+parcelHelpers.export(exports, "Bucket", ()=>_bucketDefault.default
+);
+parcelHelpers.export(exports, "BugFill", ()=>_bugFillDefault.default
+);
+parcelHelpers.export(exports, "Bug", ()=>_bugDefault.default
+);
+parcelHelpers.export(exports, "Building", ()=>_buildingDefault.default
+);
+parcelHelpers.export(exports, "Bullseye", ()=>_bullseyeDefault.default
+);
+parcelHelpers.export(exports, "CalculatorFill", ()=>_calculatorFillDefault.default
+);
+parcelHelpers.export(exports, "Calculator", ()=>_calculatorDefault.default
+);
+parcelHelpers.export(exports, "CalendarCheckFill", ()=>_calendarCheckFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarCheck", ()=>_calendarCheckDefault.default
+);
+parcelHelpers.export(exports, "CalendarDateFill", ()=>_calendarDateFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarDate", ()=>_calendarDateDefault.default
+);
+parcelHelpers.export(exports, "CalendarDayFill", ()=>_calendarDayFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarDay", ()=>_calendarDayDefault.default
+);
+parcelHelpers.export(exports, "CalendarEventFill", ()=>_calendarEventFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarEvent", ()=>_calendarEventDefault.default
+);
+parcelHelpers.export(exports, "CalendarFill", ()=>_calendarFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarMinusFill", ()=>_calendarMinusFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarMinus", ()=>_calendarMinusDefault.default
+);
+parcelHelpers.export(exports, "CalendarMonthFill", ()=>_calendarMonthFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarMonth", ()=>_calendarMonthDefault.default
+);
+parcelHelpers.export(exports, "CalendarPlusFill", ()=>_calendarPlusFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarPlus", ()=>_calendarPlusDefault.default
+);
+parcelHelpers.export(exports, "CalendarRangeFill", ()=>_calendarRangeFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarRange", ()=>_calendarRangeDefault.default
+);
+parcelHelpers.export(exports, "CalendarWeekFill", ()=>_calendarWeekFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarWeek", ()=>_calendarWeekDefault.default
+);
+parcelHelpers.export(exports, "CalendarXFill", ()=>_calendarXFillDefault.default
+);
+parcelHelpers.export(exports, "CalendarX", ()=>_calendarXDefault.default
+);
+parcelHelpers.export(exports, "Calendar", ()=>_calendarDefault.default
+);
+parcelHelpers.export(exports, "Calendar2CheckFill", ()=>_calendar2CheckFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Check", ()=>_calendar2CheckDefault.default
+);
+parcelHelpers.export(exports, "Calendar2DateFill", ()=>_calendar2DateFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Date", ()=>_calendar2DateDefault.default
+);
+parcelHelpers.export(exports, "Calendar2DayFill", ()=>_calendar2DayFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Day", ()=>_calendar2DayDefault.default
+);
+parcelHelpers.export(exports, "Calendar2EventFill", ()=>_calendar2EventFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Event", ()=>_calendar2EventDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Fill", ()=>_calendar2FillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2MinusFill", ()=>_calendar2MinusFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Minus", ()=>_calendar2MinusDefault.default
+);
+parcelHelpers.export(exports, "Calendar2MonthFill", ()=>_calendar2MonthFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Month", ()=>_calendar2MonthDefault.default
+);
+parcelHelpers.export(exports, "Calendar2PlusFill", ()=>_calendar2PlusFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Plus", ()=>_calendar2PlusDefault.default
+);
+parcelHelpers.export(exports, "Calendar2RangeFill", ()=>_calendar2RangeFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Range", ()=>_calendar2RangeDefault.default
+);
+parcelHelpers.export(exports, "Calendar2WeekFill", ()=>_calendar2WeekFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2Week", ()=>_calendar2WeekDefault.default
+);
+parcelHelpers.export(exports, "Calendar2XFill", ()=>_calendar2XFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar2X", ()=>_calendar2XDefault.default
+);
+parcelHelpers.export(exports, "Calendar2", ()=>_calendar2Default.default
+);
+parcelHelpers.export(exports, "Calendar3EventFill", ()=>_calendar3EventFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar3Event", ()=>_calendar3EventDefault.default
+);
+parcelHelpers.export(exports, "Calendar3Fill", ()=>_calendar3FillDefault.default
+);
+parcelHelpers.export(exports, "Calendar3RangeFill", ()=>_calendar3RangeFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar3Range", ()=>_calendar3RangeDefault.default
+);
+parcelHelpers.export(exports, "Calendar3WeekFill", ()=>_calendar3WeekFillDefault.default
+);
+parcelHelpers.export(exports, "Calendar3Week", ()=>_calendar3WeekDefault.default
+);
+parcelHelpers.export(exports, "Calendar3", ()=>_calendar3Default.default
+);
+parcelHelpers.export(exports, "Calendar4Event", ()=>_calendar4EventDefault.default
+);
+parcelHelpers.export(exports, "Calendar4Range", ()=>_calendar4RangeDefault.default
+);
+parcelHelpers.export(exports, "Calendar4Week", ()=>_calendar4WeekDefault.default
+);
+parcelHelpers.export(exports, "Calendar4", ()=>_calendar4Default.default
+);
+parcelHelpers.export(exports, "CameraFill", ()=>_cameraFillDefault.default
+);
+parcelHelpers.export(exports, "CameraReelsFill", ()=>_cameraReelsFillDefault.default
+);
+parcelHelpers.export(exports, "CameraReels", ()=>_cameraReelsDefault.default
+);
+parcelHelpers.export(exports, "CameraVideoFill", ()=>_cameraVideoFillDefault.default
+);
+parcelHelpers.export(exports, "CameraVideoOffFill", ()=>_cameraVideoOffFillDefault.default
+);
+parcelHelpers.export(exports, "CameraVideoOff", ()=>_cameraVideoOffDefault.default
+);
+parcelHelpers.export(exports, "CameraVideo", ()=>_cameraVideoDefault.default
+);
+parcelHelpers.export(exports, "Camera", ()=>_cameraDefault.default
+);
+parcelHelpers.export(exports, "Camera2", ()=>_camera2Default.default
+);
+parcelHelpers.export(exports, "CapslockFill", ()=>_capslockFillDefault.default
+);
+parcelHelpers.export(exports, "Capslock", ()=>_capslockDefault.default
+);
+parcelHelpers.export(exports, "CardChecklist", ()=>_cardChecklistDefault.default
+);
+parcelHelpers.export(exports, "CardHeading", ()=>_cardHeadingDefault.default
+);
+parcelHelpers.export(exports, "CardImage", ()=>_cardImageDefault.default
+);
+parcelHelpers.export(exports, "CardList", ()=>_cardListDefault.default
+);
+parcelHelpers.export(exports, "CardText", ()=>_cardTextDefault.default
+);
+parcelHelpers.export(exports, "CaretDownFill", ()=>_caretDownFillDefault.default
+);
+parcelHelpers.export(exports, "CaretDownSquareFill", ()=>_caretDownSquareFillDefault.default
+);
+parcelHelpers.export(exports, "CaretDownSquare", ()=>_caretDownSquareDefault.default
+);
+parcelHelpers.export(exports, "CaretDown", ()=>_caretDownDefault.default
+);
+parcelHelpers.export(exports, "CaretLeftFill", ()=>_caretLeftFillDefault.default
+);
+parcelHelpers.export(exports, "CaretLeftSquareFill", ()=>_caretLeftSquareFillDefault.default
+);
+parcelHelpers.export(exports, "CaretLeftSquare", ()=>_caretLeftSquareDefault.default
+);
+parcelHelpers.export(exports, "CaretLeft", ()=>_caretLeftDefault.default
+);
+parcelHelpers.export(exports, "CaretRightFill", ()=>_caretRightFillDefault.default
+);
+parcelHelpers.export(exports, "CaretRightSquareFill", ()=>_caretRightSquareFillDefault.default
+);
+parcelHelpers.export(exports, "CaretRightSquare", ()=>_caretRightSquareDefault.default
+);
+parcelHelpers.export(exports, "CaretRight", ()=>_caretRightDefault.default
+);
+parcelHelpers.export(exports, "CaretUpFill", ()=>_caretUpFillDefault.default
+);
+parcelHelpers.export(exports, "CaretUpSquareFill", ()=>_caretUpSquareFillDefault.default
+);
+parcelHelpers.export(exports, "CaretUpSquare", ()=>_caretUpSquareDefault.default
+);
+parcelHelpers.export(exports, "CaretUp", ()=>_caretUpDefault.default
+);
+parcelHelpers.export(exports, "CartCheckFill", ()=>_cartCheckFillDefault.default
+);
+parcelHelpers.export(exports, "CartCheck", ()=>_cartCheckDefault.default
+);
+parcelHelpers.export(exports, "CartDashFill", ()=>_cartDashFillDefault.default
+);
+parcelHelpers.export(exports, "CartDash", ()=>_cartDashDefault.default
+);
+parcelHelpers.export(exports, "CartFill", ()=>_cartFillDefault.default
+);
+parcelHelpers.export(exports, "CartPlusFill", ()=>_cartPlusFillDefault.default
+);
+parcelHelpers.export(exports, "CartPlus", ()=>_cartPlusDefault.default
+);
+parcelHelpers.export(exports, "CartXFill", ()=>_cartXFillDefault.default
+);
+parcelHelpers.export(exports, "CartX", ()=>_cartXDefault.default
+);
+parcelHelpers.export(exports, "Cart", ()=>_cartDefault.default
+);
+parcelHelpers.export(exports, "Cart2", ()=>_cart2Default.default
+);
+parcelHelpers.export(exports, "Cart3", ()=>_cart3Default.default
+);
+parcelHelpers.export(exports, "Cart4", ()=>_cart4Default.default
+);
+parcelHelpers.export(exports, "CashCoin", ()=>_cashCoinDefault.default
+);
+parcelHelpers.export(exports, "CashStack", ()=>_cashStackDefault.default
+);
+parcelHelpers.export(exports, "Cash", ()=>_cashDefault.default
+);
+parcelHelpers.export(exports, "Cast", ()=>_castDefault.default
+);
+parcelHelpers.export(exports, "ChatDotsFill", ()=>_chatDotsFillDefault.default
+);
+parcelHelpers.export(exports, "ChatDots", ()=>_chatDotsDefault.default
+);
+parcelHelpers.export(exports, "ChatFill", ()=>_chatFillDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftDotsFill", ()=>_chatLeftDotsFillDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftDots", ()=>_chatLeftDotsDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftFill", ()=>_chatLeftFillDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftQuoteFill", ()=>_chatLeftQuoteFillDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftQuote", ()=>_chatLeftQuoteDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftTextFill", ()=>_chatLeftTextFillDefault.default
+);
+parcelHelpers.export(exports, "ChatLeftText", ()=>_chatLeftTextDefault.default
+);
+parcelHelpers.export(exports, "ChatLeft", ()=>_chatLeftDefault.default
+);
+parcelHelpers.export(exports, "ChatQuoteFill", ()=>_chatQuoteFillDefault.default
+);
+parcelHelpers.export(exports, "ChatQuote", ()=>_chatQuoteDefault.default
+);
+parcelHelpers.export(exports, "ChatRightDotsFill", ()=>_chatRightDotsFillDefault.default
+);
+parcelHelpers.export(exports, "ChatRightDots", ()=>_chatRightDotsDefault.default
+);
+parcelHelpers.export(exports, "ChatRightFill", ()=>_chatRightFillDefault.default
+);
+parcelHelpers.export(exports, "ChatRightQuoteFill", ()=>_chatRightQuoteFillDefault.default
+);
+parcelHelpers.export(exports, "ChatRightQuote", ()=>_chatRightQuoteDefault.default
+);
+parcelHelpers.export(exports, "ChatRightTextFill", ()=>_chatRightTextFillDefault.default
+);
+parcelHelpers.export(exports, "ChatRightText", ()=>_chatRightTextDefault.default
+);
+parcelHelpers.export(exports, "ChatRight", ()=>_chatRightDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareDotsFill", ()=>_chatSquareDotsFillDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareDots", ()=>_chatSquareDotsDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareFill", ()=>_chatSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareQuoteFill", ()=>_chatSquareQuoteFillDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareQuote", ()=>_chatSquareQuoteDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareTextFill", ()=>_chatSquareTextFillDefault.default
+);
+parcelHelpers.export(exports, "ChatSquareText", ()=>_chatSquareTextDefault.default
+);
+parcelHelpers.export(exports, "ChatSquare", ()=>_chatSquareDefault.default
+);
+parcelHelpers.export(exports, "ChatTextFill", ()=>_chatTextFillDefault.default
+);
+parcelHelpers.export(exports, "ChatText", ()=>_chatTextDefault.default
+);
+parcelHelpers.export(exports, "Chat", ()=>_chatDefault.default
+);
+parcelHelpers.export(exports, "CheckAll", ()=>_checkAllDefault.default
+);
+parcelHelpers.export(exports, "CheckCircleFill", ()=>_checkCircleFillDefault.default
+);
+parcelHelpers.export(exports, "CheckCircle", ()=>_checkCircleDefault.default
+);
+parcelHelpers.export(exports, "CheckLg", ()=>_checkLgDefault.default
+);
+parcelHelpers.export(exports, "CheckSquareFill", ()=>_checkSquareFillDefault.default
+);
+parcelHelpers.export(exports, "CheckSquare", ()=>_checkSquareDefault.default
+);
+parcelHelpers.export(exports, "Check", ()=>_checkDefault.default
+);
+parcelHelpers.export(exports, "Check2All", ()=>_check2AllDefault.default
+);
+parcelHelpers.export(exports, "Check2Circle", ()=>_check2CircleDefault.default
+);
+parcelHelpers.export(exports, "Check2Square", ()=>_check2SquareDefault.default
+);
+parcelHelpers.export(exports, "Check2", ()=>_check2Default.default
+);
+parcelHelpers.export(exports, "ChevronBarContract", ()=>_chevronBarContractDefault.default
+);
+parcelHelpers.export(exports, "ChevronBarDown", ()=>_chevronBarDownDefault.default
+);
+parcelHelpers.export(exports, "ChevronBarExpand", ()=>_chevronBarExpandDefault.default
+);
+parcelHelpers.export(exports, "ChevronBarLeft", ()=>_chevronBarLeftDefault.default
+);
+parcelHelpers.export(exports, "ChevronBarRight", ()=>_chevronBarRightDefault.default
+);
+parcelHelpers.export(exports, "ChevronBarUp", ()=>_chevronBarUpDefault.default
+);
+parcelHelpers.export(exports, "ChevronCompactDown", ()=>_chevronCompactDownDefault.default
+);
+parcelHelpers.export(exports, "ChevronCompactLeft", ()=>_chevronCompactLeftDefault.default
+);
+parcelHelpers.export(exports, "ChevronCompactRight", ()=>_chevronCompactRightDefault.default
+);
+parcelHelpers.export(exports, "ChevronCompactUp", ()=>_chevronCompactUpDefault.default
+);
+parcelHelpers.export(exports, "ChevronContract", ()=>_chevronContractDefault.default
+);
+parcelHelpers.export(exports, "ChevronDoubleDown", ()=>_chevronDoubleDownDefault.default
+);
+parcelHelpers.export(exports, "ChevronDoubleLeft", ()=>_chevronDoubleLeftDefault.default
+);
+parcelHelpers.export(exports, "ChevronDoubleRight", ()=>_chevronDoubleRightDefault.default
+);
+parcelHelpers.export(exports, "ChevronDoubleUp", ()=>_chevronDoubleUpDefault.default
+);
+parcelHelpers.export(exports, "ChevronDown", ()=>_chevronDownDefault.default
+);
+parcelHelpers.export(exports, "ChevronExpand", ()=>_chevronExpandDefault.default
+);
+parcelHelpers.export(exports, "ChevronLeft", ()=>_chevronLeftDefault.default
+);
+parcelHelpers.export(exports, "ChevronRight", ()=>_chevronRightDefault.default
+);
+parcelHelpers.export(exports, "ChevronUp", ()=>_chevronUpDefault.default
+);
+parcelHelpers.export(exports, "CircleFill", ()=>_circleFillDefault.default
+);
+parcelHelpers.export(exports, "CircleHalf", ()=>_circleHalfDefault.default
+);
+parcelHelpers.export(exports, "CircleSquare", ()=>_circleSquareDefault.default
+);
+parcelHelpers.export(exports, "Circle", ()=>_circleDefault.default
+);
+parcelHelpers.export(exports, "ClipboardCheck", ()=>_clipboardCheckDefault.default
+);
+parcelHelpers.export(exports, "ClipboardData", ()=>_clipboardDataDefault.default
+);
+parcelHelpers.export(exports, "ClipboardMinus", ()=>_clipboardMinusDefault.default
+);
+parcelHelpers.export(exports, "ClipboardPlus", ()=>_clipboardPlusDefault.default
+);
+parcelHelpers.export(exports, "ClipboardX", ()=>_clipboardXDefault.default
+);
+parcelHelpers.export(exports, "Clipboard", ()=>_clipboardDefault.default
+);
+parcelHelpers.export(exports, "ClockFill", ()=>_clockFillDefault.default
+);
+parcelHelpers.export(exports, "ClockHistory", ()=>_clockHistoryDefault.default
+);
+parcelHelpers.export(exports, "Clock", ()=>_clockDefault.default
+);
+parcelHelpers.export(exports, "CloudArrowDownFill", ()=>_cloudArrowDownFillDefault.default
+);
+parcelHelpers.export(exports, "CloudArrowDown", ()=>_cloudArrowDownDefault.default
+);
+parcelHelpers.export(exports, "CloudArrowUpFill", ()=>_cloudArrowUpFillDefault.default
+);
+parcelHelpers.export(exports, "CloudArrowUp", ()=>_cloudArrowUpDefault.default
+);
+parcelHelpers.export(exports, "CloudCheckFill", ()=>_cloudCheckFillDefault.default
+);
+parcelHelpers.export(exports, "CloudCheck", ()=>_cloudCheckDefault.default
+);
+parcelHelpers.export(exports, "CloudDownloadFill", ()=>_cloudDownloadFillDefault.default
+);
+parcelHelpers.export(exports, "CloudDownload", ()=>_cloudDownloadDefault.default
+);
+parcelHelpers.export(exports, "CloudDrizzleFill", ()=>_cloudDrizzleFillDefault.default
+);
+parcelHelpers.export(exports, "CloudDrizzle", ()=>_cloudDrizzleDefault.default
+);
+parcelHelpers.export(exports, "CloudFill", ()=>_cloudFillDefault.default
+);
+parcelHelpers.export(exports, "CloudFogFill", ()=>_cloudFogFillDefault.default
+);
+parcelHelpers.export(exports, "CloudFog", ()=>_cloudFogDefault.default
+);
+parcelHelpers.export(exports, "CloudFog2Fill", ()=>_cloudFog2FillDefault.default
+);
+parcelHelpers.export(exports, "CloudFog2", ()=>_cloudFog2Default.default
+);
+parcelHelpers.export(exports, "CloudHailFill", ()=>_cloudHailFillDefault.default
+);
+parcelHelpers.export(exports, "CloudHail", ()=>_cloudHailDefault.default
+);
+parcelHelpers.export(exports, "CloudHazeFill", ()=>_cloudHazeFillDefault.default
+);
+parcelHelpers.export(exports, "CloudHaze", ()=>_cloudHazeDefault.default
+);
+parcelHelpers.export(exports, "CloudHaze2Fill", ()=>_cloudHaze2FillDefault.default
+);
+parcelHelpers.export(exports, "CloudHaze2", ()=>_cloudHaze2Default.default
+);
+parcelHelpers.export(exports, "CloudLightningFill", ()=>_cloudLightningFillDefault.default
+);
+parcelHelpers.export(exports, "CloudLightningRainFill", ()=>_cloudLightningRainFillDefault.default
+);
+parcelHelpers.export(exports, "CloudLightningRain", ()=>_cloudLightningRainDefault.default
+);
+parcelHelpers.export(exports, "CloudLightning", ()=>_cloudLightningDefault.default
+);
+parcelHelpers.export(exports, "CloudMinusFill", ()=>_cloudMinusFillDefault.default
+);
+parcelHelpers.export(exports, "CloudMinus", ()=>_cloudMinusDefault.default
+);
+parcelHelpers.export(exports, "CloudMoonFill", ()=>_cloudMoonFillDefault.default
+);
+parcelHelpers.export(exports, "CloudMoon", ()=>_cloudMoonDefault.default
+);
+parcelHelpers.export(exports, "CloudPlusFill", ()=>_cloudPlusFillDefault.default
+);
+parcelHelpers.export(exports, "CloudPlus", ()=>_cloudPlusDefault.default
+);
+parcelHelpers.export(exports, "CloudRainFill", ()=>_cloudRainFillDefault.default
+);
+parcelHelpers.export(exports, "CloudRainHeavyFill", ()=>_cloudRainHeavyFillDefault.default
+);
+parcelHelpers.export(exports, "CloudRainHeavy", ()=>_cloudRainHeavyDefault.default
+);
+parcelHelpers.export(exports, "CloudRain", ()=>_cloudRainDefault.default
+);
+parcelHelpers.export(exports, "CloudSlashFill", ()=>_cloudSlashFillDefault.default
+);
+parcelHelpers.export(exports, "CloudSlash", ()=>_cloudSlashDefault.default
+);
+parcelHelpers.export(exports, "CloudSleetFill", ()=>_cloudSleetFillDefault.default
+);
+parcelHelpers.export(exports, "CloudSleet", ()=>_cloudSleetDefault.default
+);
+parcelHelpers.export(exports, "CloudSnowFill", ()=>_cloudSnowFillDefault.default
+);
+parcelHelpers.export(exports, "CloudSnow", ()=>_cloudSnowDefault.default
+);
+parcelHelpers.export(exports, "CloudSunFill", ()=>_cloudSunFillDefault.default
+);
+parcelHelpers.export(exports, "CloudSun", ()=>_cloudSunDefault.default
+);
+parcelHelpers.export(exports, "CloudUploadFill", ()=>_cloudUploadFillDefault.default
+);
+parcelHelpers.export(exports, "CloudUpload", ()=>_cloudUploadDefault.default
+);
+parcelHelpers.export(exports, "Cloud", ()=>_cloudDefault.default
+);
+parcelHelpers.export(exports, "CloudsFill", ()=>_cloudsFillDefault.default
+);
+parcelHelpers.export(exports, "Clouds", ()=>_cloudsDefault.default
+);
+parcelHelpers.export(exports, "CloudyFill", ()=>_cloudyFillDefault.default
+);
+parcelHelpers.export(exports, "Cloudy", ()=>_cloudyDefault.default
+);
+parcelHelpers.export(exports, "CodeSlash", ()=>_codeSlashDefault.default
+);
+parcelHelpers.export(exports, "CodeSquare", ()=>_codeSquareDefault.default
+);
+parcelHelpers.export(exports, "Code", ()=>_codeDefault.default
+);
+parcelHelpers.export(exports, "Coin", ()=>_coinDefault.default
+);
+parcelHelpers.export(exports, "CollectionFill", ()=>_collectionFillDefault.default
+);
+parcelHelpers.export(exports, "CollectionPlayFill", ()=>_collectionPlayFillDefault.default
+);
+parcelHelpers.export(exports, "CollectionPlay", ()=>_collectionPlayDefault.default
+);
+parcelHelpers.export(exports, "Collection", ()=>_collectionDefault.default
+);
+parcelHelpers.export(exports, "ColumnsGap", ()=>_columnsGapDefault.default
+);
+parcelHelpers.export(exports, "Columns", ()=>_columnsDefault.default
+);
+parcelHelpers.export(exports, "Command", ()=>_commandDefault.default
+);
+parcelHelpers.export(exports, "CompassFill", ()=>_compassFillDefault.default
+);
+parcelHelpers.export(exports, "Compass", ()=>_compassDefault.default
+);
+parcelHelpers.export(exports, "ConeStriped", ()=>_coneStripedDefault.default
+);
+parcelHelpers.export(exports, "Cone", ()=>_coneDefault.default
+);
+parcelHelpers.export(exports, "Controller", ()=>_controllerDefault.default
+);
+parcelHelpers.export(exports, "CpuFill", ()=>_cpuFillDefault.default
+);
+parcelHelpers.export(exports, "Cpu", ()=>_cpuDefault.default
+);
+parcelHelpers.export(exports, "CreditCard2BackFill", ()=>_creditCard2BackFillDefault.default
+);
+parcelHelpers.export(exports, "CreditCard2Back", ()=>_creditCard2BackDefault.default
+);
+parcelHelpers.export(exports, "CreditCard2FrontFill", ()=>_creditCard2FrontFillDefault.default
+);
+parcelHelpers.export(exports, "CreditCard2Front", ()=>_creditCard2FrontDefault.default
+);
+parcelHelpers.export(exports, "CreditCardFill", ()=>_creditCardFillDefault.default
+);
+parcelHelpers.export(exports, "CreditCard", ()=>_creditCardDefault.default
+);
+parcelHelpers.export(exports, "Crop", ()=>_cropDefault.default
+);
+parcelHelpers.export(exports, "CupFill", ()=>_cupFillDefault.default
+);
+parcelHelpers.export(exports, "CupStraw", ()=>_cupStrawDefault.default
+);
+parcelHelpers.export(exports, "Cup", ()=>_cupDefault.default
+);
+parcelHelpers.export(exports, "CurrencyBitcoin", ()=>_currencyBitcoinDefault.default
+);
+parcelHelpers.export(exports, "CurrencyDollar", ()=>_currencyDollarDefault.default
+);
+parcelHelpers.export(exports, "CurrencyEuro", ()=>_currencyEuroDefault.default
+);
+parcelHelpers.export(exports, "CurrencyExchange", ()=>_currencyExchangeDefault.default
+);
+parcelHelpers.export(exports, "CurrencyPound", ()=>_currencyPoundDefault.default
+);
+parcelHelpers.export(exports, "CurrencyYen", ()=>_currencyYenDefault.default
+);
+parcelHelpers.export(exports, "CursorFill", ()=>_cursorFillDefault.default
+);
+parcelHelpers.export(exports, "CursorText", ()=>_cursorTextDefault.default
+);
+parcelHelpers.export(exports, "Cursor", ()=>_cursorDefault.default
+);
+parcelHelpers.export(exports, "DashCircleDotted", ()=>_dashCircleDottedDefault.default
+);
+parcelHelpers.export(exports, "DashCircleFill", ()=>_dashCircleFillDefault.default
+);
+parcelHelpers.export(exports, "DashCircle", ()=>_dashCircleDefault.default
+);
+parcelHelpers.export(exports, "DashLg", ()=>_dashLgDefault.default
+);
+parcelHelpers.export(exports, "DashSquareDotted", ()=>_dashSquareDottedDefault.default
+);
+parcelHelpers.export(exports, "DashSquareFill", ()=>_dashSquareFillDefault.default
+);
+parcelHelpers.export(exports, "DashSquare", ()=>_dashSquareDefault.default
+);
+parcelHelpers.export(exports, "Dash", ()=>_dashDefault.default
+);
+parcelHelpers.export(exports, "DeviceHddFill", ()=>_deviceHddFillDefault.default
+);
+parcelHelpers.export(exports, "DeviceHdd", ()=>_deviceHddDefault.default
+);
+parcelHelpers.export(exports, "DeviceSsdFill", ()=>_deviceSsdFillDefault.default
+);
+parcelHelpers.export(exports, "DeviceSsd", ()=>_deviceSsdDefault.default
+);
+parcelHelpers.export(exports, "Diagram2Fill", ()=>_diagram2FillDefault.default
+);
+parcelHelpers.export(exports, "Diagram2", ()=>_diagram2Default.default
+);
+parcelHelpers.export(exports, "Diagram3Fill", ()=>_diagram3FillDefault.default
+);
+parcelHelpers.export(exports, "Diagram3", ()=>_diagram3Default.default
+);
+parcelHelpers.export(exports, "DiamondFill", ()=>_diamondFillDefault.default
+);
+parcelHelpers.export(exports, "DiamondHalf", ()=>_diamondHalfDefault.default
+);
+parcelHelpers.export(exports, "Diamond", ()=>_diamondDefault.default
+);
+parcelHelpers.export(exports, "Dice1Fill", ()=>_dice1FillDefault.default
+);
+parcelHelpers.export(exports, "Dice1", ()=>_dice1Default.default
+);
+parcelHelpers.export(exports, "Dice2Fill", ()=>_dice2FillDefault.default
+);
+parcelHelpers.export(exports, "Dice2", ()=>_dice2Default.default
+);
+parcelHelpers.export(exports, "Dice3Fill", ()=>_dice3FillDefault.default
+);
+parcelHelpers.export(exports, "Dice3", ()=>_dice3Default.default
+);
+parcelHelpers.export(exports, "Dice4Fill", ()=>_dice4FillDefault.default
+);
+parcelHelpers.export(exports, "Dice4", ()=>_dice4Default.default
+);
+parcelHelpers.export(exports, "Dice5Fill", ()=>_dice5FillDefault.default
+);
+parcelHelpers.export(exports, "Dice5", ()=>_dice5Default.default
+);
+parcelHelpers.export(exports, "Dice6Fill", ()=>_dice6FillDefault.default
+);
+parcelHelpers.export(exports, "Dice6", ()=>_dice6Default.default
+);
+parcelHelpers.export(exports, "DiscFill", ()=>_discFillDefault.default
+);
+parcelHelpers.export(exports, "Disc", ()=>_discDefault.default
+);
+parcelHelpers.export(exports, "Discord", ()=>_discordDefault.default
+);
+parcelHelpers.export(exports, "DisplayFill", ()=>_displayFillDefault.default
+);
+parcelHelpers.export(exports, "Display", ()=>_displayDefault.default
+);
+parcelHelpers.export(exports, "DisplayportFill", ()=>_displayportFillDefault.default
+);
+parcelHelpers.export(exports, "Displayport", ()=>_displayportDefault.default
+);
+parcelHelpers.export(exports, "DistributeHorizontal", ()=>_distributeHorizontalDefault.default
+);
+parcelHelpers.export(exports, "DistributeVertical", ()=>_distributeVerticalDefault.default
+);
+parcelHelpers.export(exports, "DoorClosedFill", ()=>_doorClosedFillDefault.default
+);
+parcelHelpers.export(exports, "DoorClosed", ()=>_doorClosedDefault.default
+);
+parcelHelpers.export(exports, "DoorOpenFill", ()=>_doorOpenFillDefault.default
+);
+parcelHelpers.export(exports, "DoorOpen", ()=>_doorOpenDefault.default
+);
+parcelHelpers.export(exports, "Dot", ()=>_dotDefault.default
+);
+parcelHelpers.export(exports, "Download", ()=>_downloadDefault.default
+);
+parcelHelpers.export(exports, "DpadFill", ()=>_dpadFillDefault.default
+);
+parcelHelpers.export(exports, "Dpad", ()=>_dpadDefault.default
+);
+parcelHelpers.export(exports, "Dribbble", ()=>_dribbbleDefault.default
+);
+parcelHelpers.export(exports, "DropletFill", ()=>_dropletFillDefault.default
+);
+parcelHelpers.export(exports, "DropletHalf", ()=>_dropletHalfDefault.default
+);
+parcelHelpers.export(exports, "Droplet", ()=>_dropletDefault.default
+);
+parcelHelpers.export(exports, "EarFill", ()=>_earFillDefault.default
+);
+parcelHelpers.export(exports, "Ear", ()=>_earDefault.default
+);
+parcelHelpers.export(exports, "Earbuds", ()=>_earbudsDefault.default
+);
+parcelHelpers.export(exports, "EaselFill", ()=>_easelFillDefault.default
+);
+parcelHelpers.export(exports, "Easel", ()=>_easelDefault.default
+);
+parcelHelpers.export(exports, "Easel2Fill", ()=>_easel2FillDefault.default
+);
+parcelHelpers.export(exports, "Easel2", ()=>_easel2Default.default
+);
+parcelHelpers.export(exports, "Easel3Fill", ()=>_easel3FillDefault.default
+);
+parcelHelpers.export(exports, "Easel3", ()=>_easel3Default.default
+);
+parcelHelpers.export(exports, "EggFill", ()=>_eggFillDefault.default
+);
+parcelHelpers.export(exports, "EggFried", ()=>_eggFriedDefault.default
+);
+parcelHelpers.export(exports, "Egg", ()=>_eggDefault.default
+);
+parcelHelpers.export(exports, "EjectFill", ()=>_ejectFillDefault.default
+);
+parcelHelpers.export(exports, "Eject", ()=>_ejectDefault.default
+);
+parcelHelpers.export(exports, "EmojiAngryFill", ()=>_emojiAngryFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiAngry", ()=>_emojiAngryDefault.default
+);
+parcelHelpers.export(exports, "EmojiDizzyFill", ()=>_emojiDizzyFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiDizzy", ()=>_emojiDizzyDefault.default
+);
+parcelHelpers.export(exports, "EmojiExpressionlessFill", ()=>_emojiExpressionlessFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiExpressionless", ()=>_emojiExpressionlessDefault.default
+);
+parcelHelpers.export(exports, "EmojiFrownFill", ()=>_emojiFrownFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiFrown", ()=>_emojiFrownDefault.default
+);
+parcelHelpers.export(exports, "EmojiHeartEyesFill", ()=>_emojiHeartEyesFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiHeartEyes", ()=>_emojiHeartEyesDefault.default
+);
+parcelHelpers.export(exports, "EmojiLaughingFill", ()=>_emojiLaughingFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiLaughing", ()=>_emojiLaughingDefault.default
+);
+parcelHelpers.export(exports, "EmojiNeutralFill", ()=>_emojiNeutralFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiNeutral", ()=>_emojiNeutralDefault.default
+);
+parcelHelpers.export(exports, "EmojiSmileFill", ()=>_emojiSmileFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiSmileUpsideDownFill", ()=>_emojiSmileUpsideDownFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiSmileUpsideDown", ()=>_emojiSmileUpsideDownDefault.default
+);
+parcelHelpers.export(exports, "EmojiSmile", ()=>_emojiSmileDefault.default
+);
+parcelHelpers.export(exports, "EmojiSunglassesFill", ()=>_emojiSunglassesFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiSunglasses", ()=>_emojiSunglassesDefault.default
+);
+parcelHelpers.export(exports, "EmojiWinkFill", ()=>_emojiWinkFillDefault.default
+);
+parcelHelpers.export(exports, "EmojiWink", ()=>_emojiWinkDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeCheckFill", ()=>_envelopeCheckFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeCheck", ()=>_envelopeCheckDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeDashFill", ()=>_envelopeDashFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeDash", ()=>_envelopeDashDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeExclamationFill", ()=>_envelopeExclamationFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeExclamation", ()=>_envelopeExclamationDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeFill", ()=>_envelopeFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeOpenFill", ()=>_envelopeOpenFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeOpen", ()=>_envelopeOpenDefault.default
+);
+parcelHelpers.export(exports, "EnvelopePlusFill", ()=>_envelopePlusFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopePlus", ()=>_envelopePlusDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeSlashFill", ()=>_envelopeSlashFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeSlash", ()=>_envelopeSlashDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeXFill", ()=>_envelopeXFillDefault.default
+);
+parcelHelpers.export(exports, "EnvelopeX", ()=>_envelopeXDefault.default
+);
+parcelHelpers.export(exports, "Envelope", ()=>_envelopeDefault.default
+);
+parcelHelpers.export(exports, "EraserFill", ()=>_eraserFillDefault.default
+);
+parcelHelpers.export(exports, "Eraser", ()=>_eraserDefault.default
+);
+parcelHelpers.export(exports, "Ethernet", ()=>_ethernetDefault.default
+);
+parcelHelpers.export(exports, "ExclamationCircleFill", ()=>_exclamationCircleFillDefault.default
+);
+parcelHelpers.export(exports, "ExclamationCircle", ()=>_exclamationCircleDefault.default
+);
+parcelHelpers.export(exports, "ExclamationDiamondFill", ()=>_exclamationDiamondFillDefault.default
+);
+parcelHelpers.export(exports, "ExclamationDiamond", ()=>_exclamationDiamondDefault.default
+);
+parcelHelpers.export(exports, "ExclamationLg", ()=>_exclamationLgDefault.default
+);
+parcelHelpers.export(exports, "ExclamationOctagonFill", ()=>_exclamationOctagonFillDefault.default
+);
+parcelHelpers.export(exports, "ExclamationOctagon", ()=>_exclamationOctagonDefault.default
+);
+parcelHelpers.export(exports, "ExclamationSquareFill", ()=>_exclamationSquareFillDefault.default
+);
+parcelHelpers.export(exports, "ExclamationSquare", ()=>_exclamationSquareDefault.default
+);
+parcelHelpers.export(exports, "ExclamationTriangleFill", ()=>_exclamationTriangleFillDefault.default
+);
+parcelHelpers.export(exports, "ExclamationTriangle", ()=>_exclamationTriangleDefault.default
+);
+parcelHelpers.export(exports, "Exclamation", ()=>_exclamationDefault.default
+);
+parcelHelpers.export(exports, "Exclude", ()=>_excludeDefault.default
+);
+parcelHelpers.export(exports, "ExplicitFill", ()=>_explicitFillDefault.default
+);
+parcelHelpers.export(exports, "Explicit", ()=>_explicitDefault.default
+);
+parcelHelpers.export(exports, "EyeFill", ()=>_eyeFillDefault.default
+);
+parcelHelpers.export(exports, "EyeSlashFill", ()=>_eyeSlashFillDefault.default
+);
+parcelHelpers.export(exports, "EyeSlash", ()=>_eyeSlashDefault.default
+);
+parcelHelpers.export(exports, "Eye", ()=>_eyeDefault.default
+);
+parcelHelpers.export(exports, "Eyedropper", ()=>_eyedropperDefault.default
+);
+parcelHelpers.export(exports, "Eyeglasses", ()=>_eyeglassesDefault.default
+);
+parcelHelpers.export(exports, "Facebook", ()=>_facebookDefault.default
+);
+parcelHelpers.export(exports, "Fan", ()=>_fanDefault.default
+);
+parcelHelpers.export(exports, "FileArrowDownFill", ()=>_fileArrowDownFillDefault.default
+);
+parcelHelpers.export(exports, "FileArrowDown", ()=>_fileArrowDownDefault.default
+);
+parcelHelpers.export(exports, "FileArrowUpFill", ()=>_fileArrowUpFillDefault.default
+);
+parcelHelpers.export(exports, "FileArrowUp", ()=>_fileArrowUpDefault.default
+);
+parcelHelpers.export(exports, "FileBarGraphFill", ()=>_fileBarGraphFillDefault.default
+);
+parcelHelpers.export(exports, "FileBarGraph", ()=>_fileBarGraphDefault.default
+);
+parcelHelpers.export(exports, "FileBinaryFill", ()=>_fileBinaryFillDefault.default
+);
+parcelHelpers.export(exports, "FileBinary", ()=>_fileBinaryDefault.default
+);
+parcelHelpers.export(exports, "FileBreakFill", ()=>_fileBreakFillDefault.default
+);
+parcelHelpers.export(exports, "FileBreak", ()=>_fileBreakDefault.default
+);
+parcelHelpers.export(exports, "FileCheckFill", ()=>_fileCheckFillDefault.default
+);
+parcelHelpers.export(exports, "FileCheck", ()=>_fileCheckDefault.default
+);
+parcelHelpers.export(exports, "FileCodeFill", ()=>_fileCodeFillDefault.default
+);
+parcelHelpers.export(exports, "FileCode", ()=>_fileCodeDefault.default
+);
+parcelHelpers.export(exports, "FileDiffFill", ()=>_fileDiffFillDefault.default
+);
+parcelHelpers.export(exports, "FileDiff", ()=>_fileDiffDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkArrowDownFill", ()=>_fileEarmarkArrowDownFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkArrowDown", ()=>_fileEarmarkArrowDownDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkArrowUpFill", ()=>_fileEarmarkArrowUpFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkArrowUp", ()=>_fileEarmarkArrowUpDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBarGraphFill", ()=>_fileEarmarkBarGraphFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBarGraph", ()=>_fileEarmarkBarGraphDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBinaryFill", ()=>_fileEarmarkBinaryFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBinary", ()=>_fileEarmarkBinaryDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBreakFill", ()=>_fileEarmarkBreakFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkBreak", ()=>_fileEarmarkBreakDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkCheckFill", ()=>_fileEarmarkCheckFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkCheck", ()=>_fileEarmarkCheckDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkCodeFill", ()=>_fileEarmarkCodeFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkCode", ()=>_fileEarmarkCodeDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkDiffFill", ()=>_fileEarmarkDiffFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkDiff", ()=>_fileEarmarkDiffDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkEaselFill", ()=>_fileEarmarkEaselFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkEasel", ()=>_fileEarmarkEaselDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkExcelFill", ()=>_fileEarmarkExcelFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkExcel", ()=>_fileEarmarkExcelDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkFill", ()=>_fileEarmarkFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkFontFill", ()=>_fileEarmarkFontFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkFont", ()=>_fileEarmarkFontDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkImageFill", ()=>_fileEarmarkImageFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkImage", ()=>_fileEarmarkImageDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkLockFill", ()=>_fileEarmarkLockFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkLock", ()=>_fileEarmarkLockDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkLock2Fill", ()=>_fileEarmarkLock2FillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkLock2", ()=>_fileEarmarkLock2Default.default
+);
+parcelHelpers.export(exports, "FileEarmarkMedicalFill", ()=>_fileEarmarkMedicalFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkMedical", ()=>_fileEarmarkMedicalDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkMinusFill", ()=>_fileEarmarkMinusFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkMinus", ()=>_fileEarmarkMinusDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkMusicFill", ()=>_fileEarmarkMusicFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkMusic", ()=>_fileEarmarkMusicDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPdfFill", ()=>_fileEarmarkPdfFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPdf", ()=>_fileEarmarkPdfDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPersonFill", ()=>_fileEarmarkPersonFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPerson", ()=>_fileEarmarkPersonDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPlayFill", ()=>_fileEarmarkPlayFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPlay", ()=>_fileEarmarkPlayDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPlusFill", ()=>_fileEarmarkPlusFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPlus", ()=>_fileEarmarkPlusDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPostFill", ()=>_fileEarmarkPostFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPost", ()=>_fileEarmarkPostDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPptFill", ()=>_fileEarmarkPptFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkPpt", ()=>_fileEarmarkPptDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkRichtextFill", ()=>_fileEarmarkRichtextFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkRichtext", ()=>_fileEarmarkRichtextDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkRuledFill", ()=>_fileEarmarkRuledFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkRuled", ()=>_fileEarmarkRuledDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkSlidesFill", ()=>_fileEarmarkSlidesFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkSlides", ()=>_fileEarmarkSlidesDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkSpreadsheetFill", ()=>_fileEarmarkSpreadsheetFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkSpreadsheet", ()=>_fileEarmarkSpreadsheetDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkTextFill", ()=>_fileEarmarkTextFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkText", ()=>_fileEarmarkTextDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkWordFill", ()=>_fileEarmarkWordFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkWord", ()=>_fileEarmarkWordDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkXFill", ()=>_fileEarmarkXFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkX", ()=>_fileEarmarkXDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkZipFill", ()=>_fileEarmarkZipFillDefault.default
+);
+parcelHelpers.export(exports, "FileEarmarkZip", ()=>_fileEarmarkZipDefault.default
+);
+parcelHelpers.export(exports, "FileEarmark", ()=>_fileEarmarkDefault.default
+);
+parcelHelpers.export(exports, "FileEaselFill", ()=>_fileEaselFillDefault.default
+);
+parcelHelpers.export(exports, "FileEasel", ()=>_fileEaselDefault.default
+);
+parcelHelpers.export(exports, "FileExcelFill", ()=>_fileExcelFillDefault.default
+);
+parcelHelpers.export(exports, "FileExcel", ()=>_fileExcelDefault.default
+);
+parcelHelpers.export(exports, "FileFill", ()=>_fileFillDefault.default
+);
+parcelHelpers.export(exports, "FileFontFill", ()=>_fileFontFillDefault.default
+);
+parcelHelpers.export(exports, "FileFont", ()=>_fileFontDefault.default
+);
+parcelHelpers.export(exports, "FileImageFill", ()=>_fileImageFillDefault.default
+);
+parcelHelpers.export(exports, "FileImage", ()=>_fileImageDefault.default
+);
+parcelHelpers.export(exports, "FileLockFill", ()=>_fileLockFillDefault.default
+);
+parcelHelpers.export(exports, "FileLock", ()=>_fileLockDefault.default
+);
+parcelHelpers.export(exports, "FileLock2Fill", ()=>_fileLock2FillDefault.default
+);
+parcelHelpers.export(exports, "FileLock2", ()=>_fileLock2Default.default
+);
+parcelHelpers.export(exports, "FileMedicalFill", ()=>_fileMedicalFillDefault.default
+);
+parcelHelpers.export(exports, "FileMedical", ()=>_fileMedicalDefault.default
+);
+parcelHelpers.export(exports, "FileMinusFill", ()=>_fileMinusFillDefault.default
+);
+parcelHelpers.export(exports, "FileMinus", ()=>_fileMinusDefault.default
+);
+parcelHelpers.export(exports, "FileMusicFill", ()=>_fileMusicFillDefault.default
+);
+parcelHelpers.export(exports, "FileMusic", ()=>_fileMusicDefault.default
+);
+parcelHelpers.export(exports, "FilePdfFill", ()=>_filePdfFillDefault.default
+);
+parcelHelpers.export(exports, "FilePdf", ()=>_filePdfDefault.default
+);
+parcelHelpers.export(exports, "FilePersonFill", ()=>_filePersonFillDefault.default
+);
+parcelHelpers.export(exports, "FilePerson", ()=>_filePersonDefault.default
+);
+parcelHelpers.export(exports, "FilePlayFill", ()=>_filePlayFillDefault.default
+);
+parcelHelpers.export(exports, "FilePlay", ()=>_filePlayDefault.default
+);
+parcelHelpers.export(exports, "FilePlusFill", ()=>_filePlusFillDefault.default
+);
+parcelHelpers.export(exports, "FilePlus", ()=>_filePlusDefault.default
+);
+parcelHelpers.export(exports, "FilePostFill", ()=>_filePostFillDefault.default
+);
+parcelHelpers.export(exports, "FilePost", ()=>_filePostDefault.default
+);
+parcelHelpers.export(exports, "FilePptFill", ()=>_filePptFillDefault.default
+);
+parcelHelpers.export(exports, "FilePpt", ()=>_filePptDefault.default
+);
+parcelHelpers.export(exports, "FileRichtextFill", ()=>_fileRichtextFillDefault.default
+);
+parcelHelpers.export(exports, "FileRichtext", ()=>_fileRichtextDefault.default
+);
+parcelHelpers.export(exports, "FileRuledFill", ()=>_fileRuledFillDefault.default
+);
+parcelHelpers.export(exports, "FileRuled", ()=>_fileRuledDefault.default
+);
+parcelHelpers.export(exports, "FileSlidesFill", ()=>_fileSlidesFillDefault.default
+);
+parcelHelpers.export(exports, "FileSlides", ()=>_fileSlidesDefault.default
+);
+parcelHelpers.export(exports, "FileSpreadsheetFill", ()=>_fileSpreadsheetFillDefault.default
+);
+parcelHelpers.export(exports, "FileSpreadsheet", ()=>_fileSpreadsheetDefault.default
+);
+parcelHelpers.export(exports, "FileTextFill", ()=>_fileTextFillDefault.default
+);
+parcelHelpers.export(exports, "FileText", ()=>_fileTextDefault.default
+);
+parcelHelpers.export(exports, "FileWordFill", ()=>_fileWordFillDefault.default
+);
+parcelHelpers.export(exports, "FileWord", ()=>_fileWordDefault.default
+);
+parcelHelpers.export(exports, "FileXFill", ()=>_fileXFillDefault.default
+);
+parcelHelpers.export(exports, "FileX", ()=>_fileXDefault.default
+);
+parcelHelpers.export(exports, "FileZipFill", ()=>_fileZipFillDefault.default
+);
+parcelHelpers.export(exports, "FileZip", ()=>_fileZipDefault.default
+);
+parcelHelpers.export(exports, "File", ()=>_fileDefault.default
+);
+parcelHelpers.export(exports, "FilesAlt", ()=>_filesAltDefault.default
+);
+parcelHelpers.export(exports, "Files", ()=>_filesDefault.default
+);
+parcelHelpers.export(exports, "Film", ()=>_filmDefault.default
+);
+parcelHelpers.export(exports, "FilterCircleFill", ()=>_filterCircleFillDefault.default
+);
+parcelHelpers.export(exports, "FilterCircle", ()=>_filterCircleDefault.default
+);
+parcelHelpers.export(exports, "FilterLeft", ()=>_filterLeftDefault.default
+);
+parcelHelpers.export(exports, "FilterRight", ()=>_filterRightDefault.default
+);
+parcelHelpers.export(exports, "FilterSquareFill", ()=>_filterSquareFillDefault.default
+);
+parcelHelpers.export(exports, "FilterSquare", ()=>_filterSquareDefault.default
+);
+parcelHelpers.export(exports, "Filter", ()=>_filterDefault.default
+);
+parcelHelpers.export(exports, "Fingerprint", ()=>_fingerprintDefault.default
+);
+parcelHelpers.export(exports, "FlagFill", ()=>_flagFillDefault.default
+);
+parcelHelpers.export(exports, "Flag", ()=>_flagDefault.default
+);
+parcelHelpers.export(exports, "Flower1", ()=>_flower1Default.default
+);
+parcelHelpers.export(exports, "Flower2", ()=>_flower2Default.default
+);
+parcelHelpers.export(exports, "Flower3", ()=>_flower3Default.default
+);
+parcelHelpers.export(exports, "FolderCheck", ()=>_folderCheckDefault.default
+);
+parcelHelpers.export(exports, "FolderFill", ()=>_folderFillDefault.default
+);
+parcelHelpers.export(exports, "FolderMinus", ()=>_folderMinusDefault.default
+);
+parcelHelpers.export(exports, "FolderPlus", ()=>_folderPlusDefault.default
+);
+parcelHelpers.export(exports, "FolderSymlinkFill", ()=>_folderSymlinkFillDefault.default
+);
+parcelHelpers.export(exports, "FolderSymlink", ()=>_folderSymlinkDefault.default
+);
+parcelHelpers.export(exports, "FolderX", ()=>_folderXDefault.default
+);
+parcelHelpers.export(exports, "Folder", ()=>_folderDefault.default
+);
+parcelHelpers.export(exports, "Folder2Open", ()=>_folder2OpenDefault.default
+);
+parcelHelpers.export(exports, "Folder2", ()=>_folder2Default.default
+);
+parcelHelpers.export(exports, "Fonts", ()=>_fontsDefault.default
+);
+parcelHelpers.export(exports, "ForwardFill", ()=>_forwardFillDefault.default
+);
+parcelHelpers.export(exports, "Forward", ()=>_forwardDefault.default
+);
+parcelHelpers.export(exports, "Front", ()=>_frontDefault.default
+);
+parcelHelpers.export(exports, "FullscreenExit", ()=>_fullscreenExitDefault.default
+);
+parcelHelpers.export(exports, "Fullscreen", ()=>_fullscreenDefault.default
+);
+parcelHelpers.export(exports, "FunnelFill", ()=>_funnelFillDefault.default
+);
+parcelHelpers.export(exports, "Funnel", ()=>_funnelDefault.default
+);
+parcelHelpers.export(exports, "GearFill", ()=>_gearFillDefault.default
+);
+parcelHelpers.export(exports, "GearWideConnected", ()=>_gearWideConnectedDefault.default
+);
+parcelHelpers.export(exports, "GearWide", ()=>_gearWideDefault.default
+);
+parcelHelpers.export(exports, "Gear", ()=>_gearDefault.default
+);
+parcelHelpers.export(exports, "Gem", ()=>_gemDefault.default
+);
+parcelHelpers.export(exports, "GenderAmbiguous", ()=>_genderAmbiguousDefault.default
+);
+parcelHelpers.export(exports, "GenderFemale", ()=>_genderFemaleDefault.default
+);
+parcelHelpers.export(exports, "GenderMale", ()=>_genderMaleDefault.default
+);
+parcelHelpers.export(exports, "GenderTrans", ()=>_genderTransDefault.default
+);
+parcelHelpers.export(exports, "GeoAltFill", ()=>_geoAltFillDefault.default
+);
+parcelHelpers.export(exports, "GeoAlt", ()=>_geoAltDefault.default
+);
+parcelHelpers.export(exports, "GeoFill", ()=>_geoFillDefault.default
+);
+parcelHelpers.export(exports, "Geo", ()=>_geoDefault.default
+);
+parcelHelpers.export(exports, "GiftFill", ()=>_giftFillDefault.default
+);
+parcelHelpers.export(exports, "Gift", ()=>_giftDefault.default
+);
+parcelHelpers.export(exports, "Git", ()=>_gitDefault.default
+);
+parcelHelpers.export(exports, "Github", ()=>_githubDefault.default
+);
+parcelHelpers.export(exports, "Globe", ()=>_globeDefault.default
+);
+parcelHelpers.export(exports, "Globe2", ()=>_globe2Default.default
+);
+parcelHelpers.export(exports, "Google", ()=>_googleDefault.default
+);
+parcelHelpers.export(exports, "GpuCard", ()=>_gpuCardDefault.default
+);
+parcelHelpers.export(exports, "GraphDownArrow", ()=>_graphDownArrowDefault.default
+);
+parcelHelpers.export(exports, "GraphDown", ()=>_graphDownDefault.default
+);
+parcelHelpers.export(exports, "GraphUpArrow", ()=>_graphUpArrowDefault.default
+);
+parcelHelpers.export(exports, "GraphUp", ()=>_graphUpDefault.default
+);
+parcelHelpers.export(exports, "Grid1x2Fill", ()=>_grid1X2FillDefault.default
+);
+parcelHelpers.export(exports, "Grid1x2", ()=>_grid1X2Default.default
+);
+parcelHelpers.export(exports, "Grid3x2GapFill", ()=>_grid3X2GapFillDefault.default
+);
+parcelHelpers.export(exports, "Grid3x2Gap", ()=>_grid3X2GapDefault.default
+);
+parcelHelpers.export(exports, "Grid3x2", ()=>_grid3X2Default.default
+);
+parcelHelpers.export(exports, "Grid3x3GapFill", ()=>_grid3X3GapFillDefault.default
+);
+parcelHelpers.export(exports, "Grid3x3Gap", ()=>_grid3X3GapDefault.default
+);
+parcelHelpers.export(exports, "Grid3x3", ()=>_grid3X3Default.default
+);
+parcelHelpers.export(exports, "GridFill", ()=>_gridFillDefault.default
+);
+parcelHelpers.export(exports, "Grid", ()=>_gridDefault.default
+);
+parcelHelpers.export(exports, "GripHorizontal", ()=>_gripHorizontalDefault.default
+);
+parcelHelpers.export(exports, "GripVertical", ()=>_gripVerticalDefault.default
+);
+parcelHelpers.export(exports, "Hammer", ()=>_hammerDefault.default
+);
+parcelHelpers.export(exports, "HandIndexFill", ()=>_handIndexFillDefault.default
+);
+parcelHelpers.export(exports, "HandIndexThumbFill", ()=>_handIndexThumbFillDefault.default
+);
+parcelHelpers.export(exports, "HandIndexThumb", ()=>_handIndexThumbDefault.default
+);
+parcelHelpers.export(exports, "HandIndex", ()=>_handIndexDefault.default
+);
+parcelHelpers.export(exports, "HandThumbsDownFill", ()=>_handThumbsDownFillDefault.default
+);
+parcelHelpers.export(exports, "HandThumbsDown", ()=>_handThumbsDownDefault.default
+);
+parcelHelpers.export(exports, "HandThumbsUpFill", ()=>_handThumbsUpFillDefault.default
+);
+parcelHelpers.export(exports, "HandThumbsUp", ()=>_handThumbsUpDefault.default
+);
+parcelHelpers.export(exports, "HandbagFill", ()=>_handbagFillDefault.default
+);
+parcelHelpers.export(exports, "Handbag", ()=>_handbagDefault.default
+);
+parcelHelpers.export(exports, "Hash", ()=>_hashDefault.default
+);
+parcelHelpers.export(exports, "HddFill", ()=>_hddFillDefault.default
+);
+parcelHelpers.export(exports, "HddNetworkFill", ()=>_hddNetworkFillDefault.default
+);
+parcelHelpers.export(exports, "HddNetwork", ()=>_hddNetworkDefault.default
+);
+parcelHelpers.export(exports, "HddRackFill", ()=>_hddRackFillDefault.default
+);
+parcelHelpers.export(exports, "HddRack", ()=>_hddRackDefault.default
+);
+parcelHelpers.export(exports, "HddStackFill", ()=>_hddStackFillDefault.default
+);
+parcelHelpers.export(exports, "HddStack", ()=>_hddStackDefault.default
+);
+parcelHelpers.export(exports, "Hdd", ()=>_hddDefault.default
+);
+parcelHelpers.export(exports, "HdmiFill", ()=>_hdmiFillDefault.default
+);
+parcelHelpers.export(exports, "Hdmi", ()=>_hdmiDefault.default
+);
+parcelHelpers.export(exports, "Headphones", ()=>_headphonesDefault.default
+);
+parcelHelpers.export(exports, "HeadsetVr", ()=>_headsetVrDefault.default
+);
+parcelHelpers.export(exports, "Headset", ()=>_headsetDefault.default
+);
+parcelHelpers.export(exports, "HeartFill", ()=>_heartFillDefault.default
+);
+parcelHelpers.export(exports, "HeartHalf", ()=>_heartHalfDefault.default
+);
+parcelHelpers.export(exports, "Heart", ()=>_heartDefault.default
+);
+parcelHelpers.export(exports, "HeptagonFill", ()=>_heptagonFillDefault.default
+);
+parcelHelpers.export(exports, "HeptagonHalf", ()=>_heptagonHalfDefault.default
+);
+parcelHelpers.export(exports, "Heptagon", ()=>_heptagonDefault.default
+);
+parcelHelpers.export(exports, "HexagonFill", ()=>_hexagonFillDefault.default
+);
+parcelHelpers.export(exports, "HexagonHalf", ()=>_hexagonHalfDefault.default
+);
+parcelHelpers.export(exports, "Hexagon", ()=>_hexagonDefault.default
+);
+parcelHelpers.export(exports, "HourglassBottom", ()=>_hourglassBottomDefault.default
+);
+parcelHelpers.export(exports, "HourglassSplit", ()=>_hourglassSplitDefault.default
+);
+parcelHelpers.export(exports, "HourglassTop", ()=>_hourglassTopDefault.default
+);
+parcelHelpers.export(exports, "Hourglass", ()=>_hourglassDefault.default
+);
+parcelHelpers.export(exports, "HouseDoorFill", ()=>_houseDoorFillDefault.default
+);
+parcelHelpers.export(exports, "HouseDoor", ()=>_houseDoorDefault.default
+);
+parcelHelpers.export(exports, "HouseFill", ()=>_houseFillDefault.default
+);
+parcelHelpers.export(exports, "House", ()=>_houseDefault.default
+);
+parcelHelpers.export(exports, "Hr", ()=>_hrDefault.default
+);
+parcelHelpers.export(exports, "Hurricane", ()=>_hurricaneDefault.default
+);
+parcelHelpers.export(exports, "Hypnotize", ()=>_hypnotizeDefault.default
+);
+parcelHelpers.export(exports, "ImageAlt", ()=>_imageAltDefault.default
+);
+parcelHelpers.export(exports, "ImageFill", ()=>_imageFillDefault.default
+);
+parcelHelpers.export(exports, "Image", ()=>_imageDefault.default
+);
+parcelHelpers.export(exports, "Images", ()=>_imagesDefault.default
+);
+parcelHelpers.export(exports, "InboxFill", ()=>_inboxFillDefault.default
+);
+parcelHelpers.export(exports, "Inbox", ()=>_inboxDefault.default
+);
+parcelHelpers.export(exports, "InboxesFill", ()=>_inboxesFillDefault.default
+);
+parcelHelpers.export(exports, "Inboxes", ()=>_inboxesDefault.default
+);
+parcelHelpers.export(exports, "Infinity", ()=>_infinityDefault.default
+);
+parcelHelpers.export(exports, "InfoCircleFill", ()=>_infoCircleFillDefault.default
+);
+parcelHelpers.export(exports, "InfoCircle", ()=>_infoCircleDefault.default
+);
+parcelHelpers.export(exports, "InfoLg", ()=>_infoLgDefault.default
+);
+parcelHelpers.export(exports, "InfoSquareFill", ()=>_infoSquareFillDefault.default
+);
+parcelHelpers.export(exports, "InfoSquare", ()=>_infoSquareDefault.default
+);
+parcelHelpers.export(exports, "Info", ()=>_infoDefault.default
+);
+parcelHelpers.export(exports, "InputCursorText", ()=>_inputCursorTextDefault.default
+);
+parcelHelpers.export(exports, "InputCursor", ()=>_inputCursorDefault.default
+);
+parcelHelpers.export(exports, "Instagram", ()=>_instagramDefault.default
+);
+parcelHelpers.export(exports, "Intersect", ()=>_intersectDefault.default
+);
+parcelHelpers.export(exports, "JournalAlbum", ()=>_journalAlbumDefault.default
+);
+parcelHelpers.export(exports, "JournalArrowDown", ()=>_journalArrowDownDefault.default
+);
+parcelHelpers.export(exports, "JournalArrowUp", ()=>_journalArrowUpDefault.default
+);
+parcelHelpers.export(exports, "JournalBookmarkFill", ()=>_journalBookmarkFillDefault.default
+);
+parcelHelpers.export(exports, "JournalBookmark", ()=>_journalBookmarkDefault.default
+);
+parcelHelpers.export(exports, "JournalCheck", ()=>_journalCheckDefault.default
+);
+parcelHelpers.export(exports, "JournalCode", ()=>_journalCodeDefault.default
+);
+parcelHelpers.export(exports, "JournalMedical", ()=>_journalMedicalDefault.default
+);
+parcelHelpers.export(exports, "JournalMinus", ()=>_journalMinusDefault.default
+);
+parcelHelpers.export(exports, "JournalPlus", ()=>_journalPlusDefault.default
+);
+parcelHelpers.export(exports, "JournalRichtext", ()=>_journalRichtextDefault.default
+);
+parcelHelpers.export(exports, "JournalText", ()=>_journalTextDefault.default
+);
+parcelHelpers.export(exports, "JournalX", ()=>_journalXDefault.default
+);
+parcelHelpers.export(exports, "Journal", ()=>_journalDefault.default
+);
+parcelHelpers.export(exports, "Journals", ()=>_journalsDefault.default
+);
+parcelHelpers.export(exports, "Joystick", ()=>_joystickDefault.default
+);
+parcelHelpers.export(exports, "JustifyLeft", ()=>_justifyLeftDefault.default
+);
+parcelHelpers.export(exports, "JustifyRight", ()=>_justifyRightDefault.default
+);
+parcelHelpers.export(exports, "Justify", ()=>_justifyDefault.default
+);
+parcelHelpers.export(exports, "KanbanFill", ()=>_kanbanFillDefault.default
+);
+parcelHelpers.export(exports, "Kanban", ()=>_kanbanDefault.default
+);
+parcelHelpers.export(exports, "KeyFill", ()=>_keyFillDefault.default
+);
+parcelHelpers.export(exports, "Key", ()=>_keyDefault.default
+);
+parcelHelpers.export(exports, "KeyboardFill", ()=>_keyboardFillDefault.default
+);
+parcelHelpers.export(exports, "Keyboard", ()=>_keyboardDefault.default
+);
+parcelHelpers.export(exports, "Ladder", ()=>_ladderDefault.default
+);
+parcelHelpers.export(exports, "LampFill", ()=>_lampFillDefault.default
+);
+parcelHelpers.export(exports, "Lamp", ()=>_lampDefault.default
+);
+parcelHelpers.export(exports, "LaptopFill", ()=>_laptopFillDefault.default
+);
+parcelHelpers.export(exports, "Laptop", ()=>_laptopDefault.default
+);
+parcelHelpers.export(exports, "LayerBackward", ()=>_layerBackwardDefault.default
+);
+parcelHelpers.export(exports, "LayerForward", ()=>_layerForwardDefault.default
+);
+parcelHelpers.export(exports, "LayersFill", ()=>_layersFillDefault.default
+);
+parcelHelpers.export(exports, "LayersHalf", ()=>_layersHalfDefault.default
+);
+parcelHelpers.export(exports, "Layers", ()=>_layersDefault.default
+);
+parcelHelpers.export(exports, "LayoutSidebarInsetReverse", ()=>_layoutSidebarInsetReverseDefault.default
+);
+parcelHelpers.export(exports, "LayoutSidebarInset", ()=>_layoutSidebarInsetDefault.default
+);
+parcelHelpers.export(exports, "LayoutSidebarReverse", ()=>_layoutSidebarReverseDefault.default
+);
+parcelHelpers.export(exports, "LayoutSidebar", ()=>_layoutSidebarDefault.default
+);
+parcelHelpers.export(exports, "LayoutSplit", ()=>_layoutSplitDefault.default
+);
+parcelHelpers.export(exports, "LayoutTextSidebarReverse", ()=>_layoutTextSidebarReverseDefault.default
+);
+parcelHelpers.export(exports, "LayoutTextSidebar", ()=>_layoutTextSidebarDefault.default
+);
+parcelHelpers.export(exports, "LayoutTextWindowReverse", ()=>_layoutTextWindowReverseDefault.default
+);
+parcelHelpers.export(exports, "LayoutTextWindow", ()=>_layoutTextWindowDefault.default
+);
+parcelHelpers.export(exports, "LayoutThreeColumns", ()=>_layoutThreeColumnsDefault.default
+);
+parcelHelpers.export(exports, "LayoutWtf", ()=>_layoutWtfDefault.default
+);
+parcelHelpers.export(exports, "LifePreserver", ()=>_lifePreserverDefault.default
+);
+parcelHelpers.export(exports, "LightbulbFill", ()=>_lightbulbFillDefault.default
+);
+parcelHelpers.export(exports, "LightbulbOffFill", ()=>_lightbulbOffFillDefault.default
+);
+parcelHelpers.export(exports, "LightbulbOff", ()=>_lightbulbOffDefault.default
+);
+parcelHelpers.export(exports, "Lightbulb", ()=>_lightbulbDefault.default
+);
+parcelHelpers.export(exports, "LightningChargeFill", ()=>_lightningChargeFillDefault.default
+);
+parcelHelpers.export(exports, "LightningCharge", ()=>_lightningChargeDefault.default
+);
+parcelHelpers.export(exports, "LightningFill", ()=>_lightningFillDefault.default
+);
+parcelHelpers.export(exports, "Lightning", ()=>_lightningDefault.default
+);
+parcelHelpers.export(exports, "Line", ()=>_lineDefault.default
+);
+parcelHelpers.export(exports, "Link45deg", ()=>_link45DegDefault.default
+);
+parcelHelpers.export(exports, "Link", ()=>_linkDefault.default
+);
+parcelHelpers.export(exports, "Linkedin", ()=>_linkedinDefault.default
+);
+parcelHelpers.export(exports, "ListCheck", ()=>_listCheckDefault.default
+);
+parcelHelpers.export(exports, "ListColumnsReverse", ()=>_listColumnsReverseDefault.default
+);
+parcelHelpers.export(exports, "ListColumns", ()=>_listColumnsDefault.default
+);
+parcelHelpers.export(exports, "ListNested", ()=>_listNestedDefault.default
+);
+parcelHelpers.export(exports, "ListOl", ()=>_listOlDefault.default
+);
+parcelHelpers.export(exports, "ListStars", ()=>_listStarsDefault.default
+);
+parcelHelpers.export(exports, "ListTask", ()=>_listTaskDefault.default
+);
+parcelHelpers.export(exports, "ListUl", ()=>_listUlDefault.default
+);
+parcelHelpers.export(exports, "List", ()=>_listDefault.default
+);
+parcelHelpers.export(exports, "LockFill", ()=>_lockFillDefault.default
+);
+parcelHelpers.export(exports, "Lock", ()=>_lockDefault.default
+);
+parcelHelpers.export(exports, "Magic", ()=>_magicDefault.default
+);
+parcelHelpers.export(exports, "Mailbox", ()=>_mailboxDefault.default
+);
+parcelHelpers.export(exports, "Mailbox2", ()=>_mailbox2Default.default
+);
+parcelHelpers.export(exports, "MapFill", ()=>_mapFillDefault.default
+);
+parcelHelpers.export(exports, "Map", ()=>_mapDefault.default
+);
+parcelHelpers.export(exports, "MarkdownFill", ()=>_markdownFillDefault.default
+);
+parcelHelpers.export(exports, "Markdown", ()=>_markdownDefault.default
+);
+parcelHelpers.export(exports, "Mask", ()=>_maskDefault.default
+);
+parcelHelpers.export(exports, "Mastodon", ()=>_mastodonDefault.default
+);
+parcelHelpers.export(exports, "Medium", ()=>_mediumDefault.default
+);
+parcelHelpers.export(exports, "MegaphoneFill", ()=>_megaphoneFillDefault.default
+);
+parcelHelpers.export(exports, "Megaphone", ()=>_megaphoneDefault.default
+);
+parcelHelpers.export(exports, "Memory", ()=>_memoryDefault.default
+);
+parcelHelpers.export(exports, "MenuAppFill", ()=>_menuAppFillDefault.default
+);
+parcelHelpers.export(exports, "MenuApp", ()=>_menuAppDefault.default
+);
+parcelHelpers.export(exports, "MenuButtonFill", ()=>_menuButtonFillDefault.default
+);
+parcelHelpers.export(exports, "MenuButtonWideFill", ()=>_menuButtonWideFillDefault.default
+);
+parcelHelpers.export(exports, "MenuButtonWide", ()=>_menuButtonWideDefault.default
+);
+parcelHelpers.export(exports, "MenuButton", ()=>_menuButtonDefault.default
+);
+parcelHelpers.export(exports, "MenuDown", ()=>_menuDownDefault.default
+);
+parcelHelpers.export(exports, "MenuUp", ()=>_menuUpDefault.default
+);
+parcelHelpers.export(exports, "Messenger", ()=>_messengerDefault.default
+);
+parcelHelpers.export(exports, "Meta", ()=>_metaDefault.default
+);
+parcelHelpers.export(exports, "MicFill", ()=>_micFillDefault.default
+);
+parcelHelpers.export(exports, "MicMuteFill", ()=>_micMuteFillDefault.default
+);
+parcelHelpers.export(exports, "MicMute", ()=>_micMuteDefault.default
+);
+parcelHelpers.export(exports, "Mic", ()=>_micDefault.default
+);
+parcelHelpers.export(exports, "Microsoft", ()=>_microsoftDefault.default
+);
+parcelHelpers.export(exports, "MinecartLoaded", ()=>_minecartLoadedDefault.default
+);
+parcelHelpers.export(exports, "Minecart", ()=>_minecartDefault.default
+);
+parcelHelpers.export(exports, "ModemFill", ()=>_modemFillDefault.default
+);
+parcelHelpers.export(exports, "Modem", ()=>_modemDefault.default
+);
+parcelHelpers.export(exports, "Moisture", ()=>_moistureDefault.default
+);
+parcelHelpers.export(exports, "MoonFill", ()=>_moonFillDefault.default
+);
+parcelHelpers.export(exports, "MoonStarsFill", ()=>_moonStarsFillDefault.default
+);
+parcelHelpers.export(exports, "MoonStars", ()=>_moonStarsDefault.default
+);
+parcelHelpers.export(exports, "Moon", ()=>_moonDefault.default
+);
+parcelHelpers.export(exports, "MortarboardFill", ()=>_mortarboardFillDefault.default
+);
+parcelHelpers.export(exports, "Mortarboard", ()=>_mortarboardDefault.default
+);
+parcelHelpers.export(exports, "MotherboardFill", ()=>_motherboardFillDefault.default
+);
+parcelHelpers.export(exports, "Motherboard", ()=>_motherboardDefault.default
+);
+parcelHelpers.export(exports, "MouseFill", ()=>_mouseFillDefault.default
+);
+parcelHelpers.export(exports, "Mouse", ()=>_mouseDefault.default
+);
+parcelHelpers.export(exports, "Mouse2Fill", ()=>_mouse2FillDefault.default
+);
+parcelHelpers.export(exports, "Mouse2", ()=>_mouse2Default.default
+);
+parcelHelpers.export(exports, "Mouse3Fill", ()=>_mouse3FillDefault.default
+);
+parcelHelpers.export(exports, "Mouse3", ()=>_mouse3Default.default
+);
+parcelHelpers.export(exports, "MusicNoteBeamed", ()=>_musicNoteBeamedDefault.default
+);
+parcelHelpers.export(exports, "MusicNoteList", ()=>_musicNoteListDefault.default
+);
+parcelHelpers.export(exports, "MusicNote", ()=>_musicNoteDefault.default
+);
+parcelHelpers.export(exports, "MusicPlayerFill", ()=>_musicPlayerFillDefault.default
+);
+parcelHelpers.export(exports, "MusicPlayer", ()=>_musicPlayerDefault.default
+);
+parcelHelpers.export(exports, "Newspaper", ()=>_newspaperDefault.default
+);
+parcelHelpers.export(exports, "NintendoSwitch", ()=>_nintendoSwitchDefault.default
+);
+parcelHelpers.export(exports, "NodeMinusFill", ()=>_nodeMinusFillDefault.default
+);
+parcelHelpers.export(exports, "NodeMinus", ()=>_nodeMinusDefault.default
+);
+parcelHelpers.export(exports, "NodePlusFill", ()=>_nodePlusFillDefault.default
+);
+parcelHelpers.export(exports, "NodePlus", ()=>_nodePlusDefault.default
+);
+parcelHelpers.export(exports, "NutFill", ()=>_nutFillDefault.default
+);
+parcelHelpers.export(exports, "Nut", ()=>_nutDefault.default
+);
+parcelHelpers.export(exports, "OctagonFill", ()=>_octagonFillDefault.default
+);
+parcelHelpers.export(exports, "OctagonHalf", ()=>_octagonHalfDefault.default
+);
+parcelHelpers.export(exports, "Octagon", ()=>_octagonDefault.default
+);
+parcelHelpers.export(exports, "OpticalAudioFill", ()=>_opticalAudioFillDefault.default
+);
+parcelHelpers.export(exports, "OpticalAudio", ()=>_opticalAudioDefault.default
+);
+parcelHelpers.export(exports, "Option", ()=>_optionDefault.default
+);
+parcelHelpers.export(exports, "Outlet", ()=>_outletDefault.default
+);
+parcelHelpers.export(exports, "PaintBucket", ()=>_paintBucketDefault.default
+);
+parcelHelpers.export(exports, "PaletteFill", ()=>_paletteFillDefault.default
+);
+parcelHelpers.export(exports, "Palette", ()=>_paletteDefault.default
+);
+parcelHelpers.export(exports, "Palette2", ()=>_palette2Default.default
+);
+parcelHelpers.export(exports, "Paperclip", ()=>_paperclipDefault.default
+);
+parcelHelpers.export(exports, "Paragraph", ()=>_paragraphDefault.default
+);
+parcelHelpers.export(exports, "PatchCheckFill", ()=>_patchCheckFillDefault.default
+);
+parcelHelpers.export(exports, "PatchCheck", ()=>_patchCheckDefault.default
+);
+parcelHelpers.export(exports, "PatchExclamationFill", ()=>_patchExclamationFillDefault.default
+);
+parcelHelpers.export(exports, "PatchExclamation", ()=>_patchExclamationDefault.default
+);
+parcelHelpers.export(exports, "PatchMinusFill", ()=>_patchMinusFillDefault.default
+);
+parcelHelpers.export(exports, "PatchMinus", ()=>_patchMinusDefault.default
+);
+parcelHelpers.export(exports, "PatchPlusFill", ()=>_patchPlusFillDefault.default
+);
+parcelHelpers.export(exports, "PatchPlus", ()=>_patchPlusDefault.default
+);
+parcelHelpers.export(exports, "PatchQuestionFill", ()=>_patchQuestionFillDefault.default
+);
+parcelHelpers.export(exports, "PatchQuestion", ()=>_patchQuestionDefault.default
+);
+parcelHelpers.export(exports, "PauseBtnFill", ()=>_pauseBtnFillDefault.default
+);
+parcelHelpers.export(exports, "PauseBtn", ()=>_pauseBtnDefault.default
+);
+parcelHelpers.export(exports, "PauseCircleFill", ()=>_pauseCircleFillDefault.default
+);
+parcelHelpers.export(exports, "PauseCircle", ()=>_pauseCircleDefault.default
+);
+parcelHelpers.export(exports, "PauseFill", ()=>_pauseFillDefault.default
+);
+parcelHelpers.export(exports, "Pause", ()=>_pauseDefault.default
+);
+parcelHelpers.export(exports, "Paypal", ()=>_paypalDefault.default
+);
+parcelHelpers.export(exports, "PcDisplayHorizontal", ()=>_pcDisplayHorizontalDefault.default
+);
+parcelHelpers.export(exports, "PcDisplay", ()=>_pcDisplayDefault.default
+);
+parcelHelpers.export(exports, "PcHorizontal", ()=>_pcHorizontalDefault.default
+);
+parcelHelpers.export(exports, "Pc", ()=>_pcDefault.default
+);
+parcelHelpers.export(exports, "PciCard", ()=>_pciCardDefault.default
+);
+parcelHelpers.export(exports, "PeaceFill", ()=>_peaceFillDefault.default
+);
+parcelHelpers.export(exports, "Peace", ()=>_peaceDefault.default
+);
+parcelHelpers.export(exports, "PenFill", ()=>_penFillDefault.default
+);
+parcelHelpers.export(exports, "Pen", ()=>_penDefault.default
+);
+parcelHelpers.export(exports, "PencilFill", ()=>_pencilFillDefault.default
+);
+parcelHelpers.export(exports, "PencilSquare", ()=>_pencilSquareDefault.default
+);
+parcelHelpers.export(exports, "Pencil", ()=>_pencilDefault.default
+);
+parcelHelpers.export(exports, "PentagonFill", ()=>_pentagonFillDefault.default
+);
+parcelHelpers.export(exports, "PentagonHalf", ()=>_pentagonHalfDefault.default
+);
+parcelHelpers.export(exports, "Pentagon", ()=>_pentagonDefault.default
+);
+parcelHelpers.export(exports, "PeopleFill", ()=>_peopleFillDefault.default
+);
+parcelHelpers.export(exports, "People", ()=>_peopleDefault.default
+);
+parcelHelpers.export(exports, "Percent", ()=>_percentDefault.default
+);
+parcelHelpers.export(exports, "PersonBadgeFill", ()=>_personBadgeFillDefault.default
+);
+parcelHelpers.export(exports, "PersonBadge", ()=>_personBadgeDefault.default
+);
+parcelHelpers.export(exports, "PersonBoundingBox", ()=>_personBoundingBoxDefault.default
+);
+parcelHelpers.export(exports, "PersonCheckFill", ()=>_personCheckFillDefault.default
+);
+parcelHelpers.export(exports, "PersonCheck", ()=>_personCheckDefault.default
+);
+parcelHelpers.export(exports, "PersonCircle", ()=>_personCircleDefault.default
+);
+parcelHelpers.export(exports, "PersonDashFill", ()=>_personDashFillDefault.default
+);
+parcelHelpers.export(exports, "PersonDash", ()=>_personDashDefault.default
+);
+parcelHelpers.export(exports, "PersonFill", ()=>_personFillDefault.default
+);
+parcelHelpers.export(exports, "PersonLinesFill", ()=>_personLinesFillDefault.default
+);
+parcelHelpers.export(exports, "PersonPlusFill", ()=>_personPlusFillDefault.default
+);
+parcelHelpers.export(exports, "PersonPlus", ()=>_personPlusDefault.default
+);
+parcelHelpers.export(exports, "PersonRolodex", ()=>_personRolodexDefault.default
+);
+parcelHelpers.export(exports, "PersonSquare", ()=>_personSquareDefault.default
+);
+parcelHelpers.export(exports, "PersonVideo", ()=>_personVideoDefault.default
+);
+parcelHelpers.export(exports, "PersonVideo2", ()=>_personVideo2Default.default
+);
+parcelHelpers.export(exports, "PersonVideo3", ()=>_personVideo3Default.default
+);
+parcelHelpers.export(exports, "PersonWorkspace", ()=>_personWorkspaceDefault.default
+);
+parcelHelpers.export(exports, "PersonXFill", ()=>_personXFillDefault.default
+);
+parcelHelpers.export(exports, "PersonX", ()=>_personXDefault.default
+);
+parcelHelpers.export(exports, "Person", ()=>_personDefault.default
+);
+parcelHelpers.export(exports, "PhoneFill", ()=>_phoneFillDefault.default
+);
+parcelHelpers.export(exports, "PhoneLandscapeFill", ()=>_phoneLandscapeFillDefault.default
+);
+parcelHelpers.export(exports, "PhoneLandscape", ()=>_phoneLandscapeDefault.default
+);
+parcelHelpers.export(exports, "PhoneVibrateFill", ()=>_phoneVibrateFillDefault.default
+);
+parcelHelpers.export(exports, "PhoneVibrate", ()=>_phoneVibrateDefault.default
+);
+parcelHelpers.export(exports, "Phone", ()=>_phoneDefault.default
+);
+parcelHelpers.export(exports, "PieChartFill", ()=>_pieChartFillDefault.default
+);
+parcelHelpers.export(exports, "PieChart", ()=>_pieChartDefault.default
+);
+parcelHelpers.export(exports, "PiggyBankFill", ()=>_piggyBankFillDefault.default
+);
+parcelHelpers.export(exports, "PiggyBank", ()=>_piggyBankDefault.default
+);
+parcelHelpers.export(exports, "PinAngleFill", ()=>_pinAngleFillDefault.default
+);
+parcelHelpers.export(exports, "PinAngle", ()=>_pinAngleDefault.default
+);
+parcelHelpers.export(exports, "PinFill", ()=>_pinFillDefault.default
+);
+parcelHelpers.export(exports, "PinMapFill", ()=>_pinMapFillDefault.default
+);
+parcelHelpers.export(exports, "PinMap", ()=>_pinMapDefault.default
+);
+parcelHelpers.export(exports, "Pin", ()=>_pinDefault.default
+);
+parcelHelpers.export(exports, "Pinterest", ()=>_pinterestDefault.default
+);
+parcelHelpers.export(exports, "PipFill", ()=>_pipFillDefault.default
+);
+parcelHelpers.export(exports, "Pip", ()=>_pipDefault.default
+);
+parcelHelpers.export(exports, "PlayBtnFill", ()=>_playBtnFillDefault.default
+);
+parcelHelpers.export(exports, "PlayBtn", ()=>_playBtnDefault.default
+);
+parcelHelpers.export(exports, "PlayCircleFill", ()=>_playCircleFillDefault.default
+);
+parcelHelpers.export(exports, "PlayCircle", ()=>_playCircleDefault.default
+);
+parcelHelpers.export(exports, "PlayFill", ()=>_playFillDefault.default
+);
+parcelHelpers.export(exports, "Play", ()=>_playDefault.default
+);
+parcelHelpers.export(exports, "Playstation", ()=>_playstationDefault.default
+);
+parcelHelpers.export(exports, "PlugFill", ()=>_plugFillDefault.default
+);
+parcelHelpers.export(exports, "Plug", ()=>_plugDefault.default
+);
+parcelHelpers.export(exports, "PlusCircleDotted", ()=>_plusCircleDottedDefault.default
+);
+parcelHelpers.export(exports, "PlusCircleFill", ()=>_plusCircleFillDefault.default
+);
+parcelHelpers.export(exports, "PlusCircle", ()=>_plusCircleDefault.default
+);
+parcelHelpers.export(exports, "PlusLg", ()=>_plusLgDefault.default
+);
+parcelHelpers.export(exports, "PlusSlashMinus", ()=>_plusSlashMinusDefault.default
+);
+parcelHelpers.export(exports, "PlusSquareDotted", ()=>_plusSquareDottedDefault.default
+);
+parcelHelpers.export(exports, "PlusSquareFill", ()=>_plusSquareFillDefault.default
+);
+parcelHelpers.export(exports, "PlusSquare", ()=>_plusSquareDefault.default
+);
+parcelHelpers.export(exports, "Plus", ()=>_plusDefault.default
+);
+parcelHelpers.export(exports, "Power", ()=>_powerDefault.default
+);
+parcelHelpers.export(exports, "PrinterFill", ()=>_printerFillDefault.default
+);
+parcelHelpers.export(exports, "Printer", ()=>_printerDefault.default
+);
+parcelHelpers.export(exports, "ProjectorFill", ()=>_projectorFillDefault.default
+);
+parcelHelpers.export(exports, "Projector", ()=>_projectorDefault.default
+);
+parcelHelpers.export(exports, "PuzzleFill", ()=>_puzzleFillDefault.default
+);
+parcelHelpers.export(exports, "Puzzle", ()=>_puzzleDefault.default
+);
+parcelHelpers.export(exports, "QrCodeScan", ()=>_qrCodeScanDefault.default
+);
+parcelHelpers.export(exports, "QrCode", ()=>_qrCodeDefault.default
+);
+parcelHelpers.export(exports, "QuestionCircleFill", ()=>_questionCircleFillDefault.default
+);
+parcelHelpers.export(exports, "QuestionCircle", ()=>_questionCircleDefault.default
+);
+parcelHelpers.export(exports, "QuestionDiamondFill", ()=>_questionDiamondFillDefault.default
+);
+parcelHelpers.export(exports, "QuestionDiamond", ()=>_questionDiamondDefault.default
+);
+parcelHelpers.export(exports, "QuestionLg", ()=>_questionLgDefault.default
+);
+parcelHelpers.export(exports, "QuestionOctagonFill", ()=>_questionOctagonFillDefault.default
+);
+parcelHelpers.export(exports, "QuestionOctagon", ()=>_questionOctagonDefault.default
+);
+parcelHelpers.export(exports, "QuestionSquareFill", ()=>_questionSquareFillDefault.default
+);
+parcelHelpers.export(exports, "QuestionSquare", ()=>_questionSquareDefault.default
+);
+parcelHelpers.export(exports, "Question", ()=>_questionDefault.default
+);
+parcelHelpers.export(exports, "Quora", ()=>_quoraDefault.default
+);
+parcelHelpers.export(exports, "Quote", ()=>_quoteDefault.default
+);
+parcelHelpers.export(exports, "Radioactive", ()=>_radioactiveDefault.default
+);
+parcelHelpers.export(exports, "Rainbow", ()=>_rainbowDefault.default
+);
+parcelHelpers.export(exports, "ReceiptCutoff", ()=>_receiptCutoffDefault.default
+);
+parcelHelpers.export(exports, "Receipt", ()=>_receiptDefault.default
+);
+parcelHelpers.export(exports, "Reception0", ()=>_reception0Default.default
+);
+parcelHelpers.export(exports, "Reception1", ()=>_reception1Default.default
+);
+parcelHelpers.export(exports, "Reception2", ()=>_reception2Default.default
+);
+parcelHelpers.export(exports, "Reception3", ()=>_reception3Default.default
+);
+parcelHelpers.export(exports, "Reception4", ()=>_reception4Default.default
+);
+parcelHelpers.export(exports, "RecordBtnFill", ()=>_recordBtnFillDefault.default
+);
+parcelHelpers.export(exports, "RecordBtn", ()=>_recordBtnDefault.default
+);
+parcelHelpers.export(exports, "RecordCircleFill", ()=>_recordCircleFillDefault.default
+);
+parcelHelpers.export(exports, "RecordCircle", ()=>_recordCircleDefault.default
+);
+parcelHelpers.export(exports, "RecordFill", ()=>_recordFillDefault.default
+);
+parcelHelpers.export(exports, "Record", ()=>_recordDefault.default
+);
+parcelHelpers.export(exports, "Record2Fill", ()=>_record2FillDefault.default
+);
+parcelHelpers.export(exports, "Record2", ()=>_record2Default.default
+);
+parcelHelpers.export(exports, "Recycle", ()=>_recycleDefault.default
+);
+parcelHelpers.export(exports, "Reddit", ()=>_redditDefault.default
+);
+parcelHelpers.export(exports, "ReplyAllFill", ()=>_replyAllFillDefault.default
+);
+parcelHelpers.export(exports, "ReplyAll", ()=>_replyAllDefault.default
+);
+parcelHelpers.export(exports, "ReplyFill", ()=>_replyFillDefault.default
+);
+parcelHelpers.export(exports, "Reply", ()=>_replyDefault.default
+);
+parcelHelpers.export(exports, "Robot", ()=>_robotDefault.default
+);
+parcelHelpers.export(exports, "RouterFill", ()=>_routerFillDefault.default
+);
+parcelHelpers.export(exports, "Router", ()=>_routerDefault.default
+);
+parcelHelpers.export(exports, "RssFill", ()=>_rssFillDefault.default
+);
+parcelHelpers.export(exports, "Rss", ()=>_rssDefault.default
+);
+parcelHelpers.export(exports, "Rulers", ()=>_rulersDefault.default
+);
+parcelHelpers.export(exports, "SafeFill", ()=>_safeFillDefault.default
+);
+parcelHelpers.export(exports, "Safe", ()=>_safeDefault.default
+);
+parcelHelpers.export(exports, "Safe2Fill", ()=>_safe2FillDefault.default
+);
+parcelHelpers.export(exports, "Safe2", ()=>_safe2Default.default
+);
+parcelHelpers.export(exports, "SaveFill", ()=>_saveFillDefault.default
+);
+parcelHelpers.export(exports, "Save", ()=>_saveDefault.default
+);
+parcelHelpers.export(exports, "Save2Fill", ()=>_save2FillDefault.default
+);
+parcelHelpers.export(exports, "Save2", ()=>_save2Default.default
+);
+parcelHelpers.export(exports, "Scissors", ()=>_scissorsDefault.default
+);
+parcelHelpers.export(exports, "Screwdriver", ()=>_screwdriverDefault.default
+);
+parcelHelpers.export(exports, "SdCardFill", ()=>_sdCardFillDefault.default
+);
+parcelHelpers.export(exports, "SdCard", ()=>_sdCardDefault.default
+);
+parcelHelpers.export(exports, "Search", ()=>_searchDefault.default
+);
+parcelHelpers.export(exports, "SegmentedNav", ()=>_segmentedNavDefault.default
+);
+parcelHelpers.export(exports, "SendCheckFill", ()=>_sendCheckFillDefault.default
+);
+parcelHelpers.export(exports, "SendCheck", ()=>_sendCheckDefault.default
+);
+parcelHelpers.export(exports, "SendDashFill", ()=>_sendDashFillDefault.default
+);
+parcelHelpers.export(exports, "SendDash", ()=>_sendDashDefault.default
+);
+parcelHelpers.export(exports, "SendExclamationFill", ()=>_sendExclamationFillDefault.default
+);
+parcelHelpers.export(exports, "SendExclamation", ()=>_sendExclamationDefault.default
+);
+parcelHelpers.export(exports, "SendFill", ()=>_sendFillDefault.default
+);
+parcelHelpers.export(exports, "SendPlusFill", ()=>_sendPlusFillDefault.default
+);
+parcelHelpers.export(exports, "SendPlus", ()=>_sendPlusDefault.default
+);
+parcelHelpers.export(exports, "SendSlashFill", ()=>_sendSlashFillDefault.default
+);
+parcelHelpers.export(exports, "SendSlash", ()=>_sendSlashDefault.default
+);
+parcelHelpers.export(exports, "SendXFill", ()=>_sendXFillDefault.default
+);
+parcelHelpers.export(exports, "SendX", ()=>_sendXDefault.default
+);
+parcelHelpers.export(exports, "Send", ()=>_sendDefault.default
+);
+parcelHelpers.export(exports, "Server", ()=>_serverDefault.default
+);
+parcelHelpers.export(exports, "ShareFill", ()=>_shareFillDefault.default
+);
+parcelHelpers.export(exports, "Share", ()=>_shareDefault.default
+);
+parcelHelpers.export(exports, "ShieldCheck", ()=>_shieldCheckDefault.default
+);
+parcelHelpers.export(exports, "ShieldExclamation", ()=>_shieldExclamationDefault.default
+);
+parcelHelpers.export(exports, "ShieldFillCheck", ()=>_shieldFillCheckDefault.default
+);
+parcelHelpers.export(exports, "ShieldFillExclamation", ()=>_shieldFillExclamationDefault.default
+);
+parcelHelpers.export(exports, "ShieldFillMinus", ()=>_shieldFillMinusDefault.default
+);
+parcelHelpers.export(exports, "ShieldFillPlus", ()=>_shieldFillPlusDefault.default
+);
+parcelHelpers.export(exports, "ShieldFillX", ()=>_shieldFillXDefault.default
+);
+parcelHelpers.export(exports, "ShieldFill", ()=>_shieldFillDefault.default
+);
+parcelHelpers.export(exports, "ShieldLockFill", ()=>_shieldLockFillDefault.default
+);
+parcelHelpers.export(exports, "ShieldLock", ()=>_shieldLockDefault.default
+);
+parcelHelpers.export(exports, "ShieldMinus", ()=>_shieldMinusDefault.default
+);
+parcelHelpers.export(exports, "ShieldPlus", ()=>_shieldPlusDefault.default
+);
+parcelHelpers.export(exports, "ShieldShaded", ()=>_shieldShadedDefault.default
+);
+parcelHelpers.export(exports, "ShieldSlashFill", ()=>_shieldSlashFillDefault.default
+);
+parcelHelpers.export(exports, "ShieldSlash", ()=>_shieldSlashDefault.default
+);
+parcelHelpers.export(exports, "ShieldX", ()=>_shieldXDefault.default
+);
+parcelHelpers.export(exports, "Shield", ()=>_shieldDefault.default
+);
+parcelHelpers.export(exports, "ShiftFill", ()=>_shiftFillDefault.default
+);
+parcelHelpers.export(exports, "Shift", ()=>_shiftDefault.default
+);
+parcelHelpers.export(exports, "ShopWindow", ()=>_shopWindowDefault.default
+);
+parcelHelpers.export(exports, "Shop", ()=>_shopDefault.default
+);
+parcelHelpers.export(exports, "Shuffle", ()=>_shuffleDefault.default
+);
+parcelHelpers.export(exports, "Signal", ()=>_signalDefault.default
+);
+parcelHelpers.export(exports, "Signpost2Fill", ()=>_signpost2FillDefault.default
+);
+parcelHelpers.export(exports, "Signpost2", ()=>_signpost2Default.default
+);
+parcelHelpers.export(exports, "SignpostFill", ()=>_signpostFillDefault.default
+);
+parcelHelpers.export(exports, "SignpostSplitFill", ()=>_signpostSplitFillDefault.default
+);
+parcelHelpers.export(exports, "SignpostSplit", ()=>_signpostSplitDefault.default
+);
+parcelHelpers.export(exports, "Signpost", ()=>_signpostDefault.default
+);
+parcelHelpers.export(exports, "SimFill", ()=>_simFillDefault.default
+);
+parcelHelpers.export(exports, "Sim", ()=>_simDefault.default
+);
+parcelHelpers.export(exports, "SkipBackwardBtnFill", ()=>_skipBackwardBtnFillDefault.default
+);
+parcelHelpers.export(exports, "SkipBackwardBtn", ()=>_skipBackwardBtnDefault.default
+);
+parcelHelpers.export(exports, "SkipBackwardCircleFill", ()=>_skipBackwardCircleFillDefault.default
+);
+parcelHelpers.export(exports, "SkipBackwardCircle", ()=>_skipBackwardCircleDefault.default
+);
+parcelHelpers.export(exports, "SkipBackwardFill", ()=>_skipBackwardFillDefault.default
+);
+parcelHelpers.export(exports, "SkipBackward", ()=>_skipBackwardDefault.default
+);
+parcelHelpers.export(exports, "SkipEndBtnFill", ()=>_skipEndBtnFillDefault.default
+);
+parcelHelpers.export(exports, "SkipEndBtn", ()=>_skipEndBtnDefault.default
+);
+parcelHelpers.export(exports, "SkipEndCircleFill", ()=>_skipEndCircleFillDefault.default
+);
+parcelHelpers.export(exports, "SkipEndCircle", ()=>_skipEndCircleDefault.default
+);
+parcelHelpers.export(exports, "SkipEndFill", ()=>_skipEndFillDefault.default
+);
+parcelHelpers.export(exports, "SkipEnd", ()=>_skipEndDefault.default
+);
+parcelHelpers.export(exports, "SkipForwardBtnFill", ()=>_skipForwardBtnFillDefault.default
+);
+parcelHelpers.export(exports, "SkipForwardBtn", ()=>_skipForwardBtnDefault.default
+);
+parcelHelpers.export(exports, "SkipForwardCircleFill", ()=>_skipForwardCircleFillDefault.default
+);
+parcelHelpers.export(exports, "SkipForwardCircle", ()=>_skipForwardCircleDefault.default
+);
+parcelHelpers.export(exports, "SkipForwardFill", ()=>_skipForwardFillDefault.default
+);
+parcelHelpers.export(exports, "SkipForward", ()=>_skipForwardDefault.default
+);
+parcelHelpers.export(exports, "SkipStartBtnFill", ()=>_skipStartBtnFillDefault.default
+);
+parcelHelpers.export(exports, "SkipStartBtn", ()=>_skipStartBtnDefault.default
+);
+parcelHelpers.export(exports, "SkipStartCircleFill", ()=>_skipStartCircleFillDefault.default
+);
+parcelHelpers.export(exports, "SkipStartCircle", ()=>_skipStartCircleDefault.default
+);
+parcelHelpers.export(exports, "SkipStartFill", ()=>_skipStartFillDefault.default
+);
+parcelHelpers.export(exports, "SkipStart", ()=>_skipStartDefault.default
+);
+parcelHelpers.export(exports, "Skype", ()=>_skypeDefault.default
+);
+parcelHelpers.export(exports, "Slack", ()=>_slackDefault.default
+);
+parcelHelpers.export(exports, "SlashCircleFill", ()=>_slashCircleFillDefault.default
+);
+parcelHelpers.export(exports, "SlashCircle", ()=>_slashCircleDefault.default
+);
+parcelHelpers.export(exports, "SlashLg", ()=>_slashLgDefault.default
+);
+parcelHelpers.export(exports, "SlashSquareFill", ()=>_slashSquareFillDefault.default
+);
+parcelHelpers.export(exports, "SlashSquare", ()=>_slashSquareDefault.default
+);
+parcelHelpers.export(exports, "Slash", ()=>_slashDefault.default
+);
+parcelHelpers.export(exports, "Sliders", ()=>_slidersDefault.default
+);
+parcelHelpers.export(exports, "Smartwatch", ()=>_smartwatchDefault.default
+);
+parcelHelpers.export(exports, "Snapchat", ()=>_snapchatDefault.default
+);
+parcelHelpers.export(exports, "Snow", ()=>_snowDefault.default
+);
+parcelHelpers.export(exports, "Snow2", ()=>_snow2Default.default
+);
+parcelHelpers.export(exports, "Snow3", ()=>_snow3Default.default
+);
+parcelHelpers.export(exports, "SortAlphaDownAlt", ()=>_sortAlphaDownAltDefault.default
+);
+parcelHelpers.export(exports, "SortAlphaDown", ()=>_sortAlphaDownDefault.default
+);
+parcelHelpers.export(exports, "SortAlphaUpAlt", ()=>_sortAlphaUpAltDefault.default
+);
+parcelHelpers.export(exports, "SortAlphaUp", ()=>_sortAlphaUpDefault.default
+);
+parcelHelpers.export(exports, "SortDownAlt", ()=>_sortDownAltDefault.default
+);
+parcelHelpers.export(exports, "SortDown", ()=>_sortDownDefault.default
+);
+parcelHelpers.export(exports, "SortNumericDownAlt", ()=>_sortNumericDownAltDefault.default
+);
+parcelHelpers.export(exports, "SortNumericDown", ()=>_sortNumericDownDefault.default
+);
+parcelHelpers.export(exports, "SortNumericUpAlt", ()=>_sortNumericUpAltDefault.default
+);
+parcelHelpers.export(exports, "SortNumericUp", ()=>_sortNumericUpDefault.default
+);
+parcelHelpers.export(exports, "SortUpAlt", ()=>_sortUpAltDefault.default
+);
+parcelHelpers.export(exports, "SortUp", ()=>_sortUpDefault.default
+);
+parcelHelpers.export(exports, "Soundwave", ()=>_soundwaveDefault.default
+);
+parcelHelpers.export(exports, "SpeakerFill", ()=>_speakerFillDefault.default
+);
+parcelHelpers.export(exports, "Speaker", ()=>_speakerDefault.default
+);
+parcelHelpers.export(exports, "Speedometer", ()=>_speedometerDefault.default
+);
+parcelHelpers.export(exports, "Speedometer2", ()=>_speedometer2Default.default
+);
+parcelHelpers.export(exports, "Spellcheck", ()=>_spellcheckDefault.default
+);
+parcelHelpers.export(exports, "Spotify", ()=>_spotifyDefault.default
+);
+parcelHelpers.export(exports, "SquareFill", ()=>_squareFillDefault.default
+);
+parcelHelpers.export(exports, "SquareHalf", ()=>_squareHalfDefault.default
+);
+parcelHelpers.export(exports, "Square", ()=>_squareDefault.default
+);
+parcelHelpers.export(exports, "StackOverflow", ()=>_stackOverflowDefault.default
+);
+parcelHelpers.export(exports, "Stack", ()=>_stackDefault.default
+);
+parcelHelpers.export(exports, "StarFill", ()=>_starFillDefault.default
+);
+parcelHelpers.export(exports, "StarHalf", ()=>_starHalfDefault.default
+);
+parcelHelpers.export(exports, "Star", ()=>_starDefault.default
+);
+parcelHelpers.export(exports, "Stars", ()=>_starsDefault.default
+);
+parcelHelpers.export(exports, "Steam", ()=>_steamDefault.default
+);
+parcelHelpers.export(exports, "StickiesFill", ()=>_stickiesFillDefault.default
+);
+parcelHelpers.export(exports, "Stickies", ()=>_stickiesDefault.default
+);
+parcelHelpers.export(exports, "StickyFill", ()=>_stickyFillDefault.default
+);
+parcelHelpers.export(exports, "Sticky", ()=>_stickyDefault.default
+);
+parcelHelpers.export(exports, "StopBtnFill", ()=>_stopBtnFillDefault.default
+);
+parcelHelpers.export(exports, "StopBtn", ()=>_stopBtnDefault.default
+);
+parcelHelpers.export(exports, "StopCircleFill", ()=>_stopCircleFillDefault.default
+);
+parcelHelpers.export(exports, "StopCircle", ()=>_stopCircleDefault.default
+);
+parcelHelpers.export(exports, "StopFill", ()=>_stopFillDefault.default
+);
+parcelHelpers.export(exports, "Stop", ()=>_stopDefault.default
+);
+parcelHelpers.export(exports, "StoplightsFill", ()=>_stoplightsFillDefault.default
+);
+parcelHelpers.export(exports, "Stoplights", ()=>_stoplightsDefault.default
+);
+parcelHelpers.export(exports, "StopwatchFill", ()=>_stopwatchFillDefault.default
+);
+parcelHelpers.export(exports, "Stopwatch", ()=>_stopwatchDefault.default
+);
+parcelHelpers.export(exports, "Strava", ()=>_stravaDefault.default
+);
+parcelHelpers.export(exports, "Subtract", ()=>_subtractDefault.default
+);
+parcelHelpers.export(exports, "SuitClubFill", ()=>_suitClubFillDefault.default
+);
+parcelHelpers.export(exports, "SuitClub", ()=>_suitClubDefault.default
+);
+parcelHelpers.export(exports, "SuitDiamondFill", ()=>_suitDiamondFillDefault.default
+);
+parcelHelpers.export(exports, "SuitDiamond", ()=>_suitDiamondDefault.default
+);
+parcelHelpers.export(exports, "SuitHeartFill", ()=>_suitHeartFillDefault.default
+);
+parcelHelpers.export(exports, "SuitHeart", ()=>_suitHeartDefault.default
+);
+parcelHelpers.export(exports, "SuitSpadeFill", ()=>_suitSpadeFillDefault.default
+);
+parcelHelpers.export(exports, "SuitSpade", ()=>_suitSpadeDefault.default
+);
+parcelHelpers.export(exports, "SunFill", ()=>_sunFillDefault.default
+);
+parcelHelpers.export(exports, "Sun", ()=>_sunDefault.default
+);
+parcelHelpers.export(exports, "Sunglasses", ()=>_sunglassesDefault.default
+);
+parcelHelpers.export(exports, "SunriseFill", ()=>_sunriseFillDefault.default
+);
+parcelHelpers.export(exports, "Sunrise", ()=>_sunriseDefault.default
+);
+parcelHelpers.export(exports, "SunsetFill", ()=>_sunsetFillDefault.default
+);
+parcelHelpers.export(exports, "Sunset", ()=>_sunsetDefault.default
+);
+parcelHelpers.export(exports, "SymmetryHorizontal", ()=>_symmetryHorizontalDefault.default
+);
+parcelHelpers.export(exports, "SymmetryVertical", ()=>_symmetryVerticalDefault.default
+);
+parcelHelpers.export(exports, "Table", ()=>_tableDefault.default
+);
+parcelHelpers.export(exports, "TabletFill", ()=>_tabletFillDefault.default
+);
+parcelHelpers.export(exports, "TabletLandscapeFill", ()=>_tabletLandscapeFillDefault.default
+);
+parcelHelpers.export(exports, "TabletLandscape", ()=>_tabletLandscapeDefault.default
+);
+parcelHelpers.export(exports, "Tablet", ()=>_tabletDefault.default
+);
+parcelHelpers.export(exports, "TagFill", ()=>_tagFillDefault.default
+);
+parcelHelpers.export(exports, "Tag", ()=>_tagDefault.default
+);
+parcelHelpers.export(exports, "TagsFill", ()=>_tagsFillDefault.default
+);
+parcelHelpers.export(exports, "Tags", ()=>_tagsDefault.default
+);
+parcelHelpers.export(exports, "Telegram", ()=>_telegramDefault.default
+);
+parcelHelpers.export(exports, "TelephoneFill", ()=>_telephoneFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneForwardFill", ()=>_telephoneForwardFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneForward", ()=>_telephoneForwardDefault.default
+);
+parcelHelpers.export(exports, "TelephoneInboundFill", ()=>_telephoneInboundFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneInbound", ()=>_telephoneInboundDefault.default
+);
+parcelHelpers.export(exports, "TelephoneMinusFill", ()=>_telephoneMinusFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneMinus", ()=>_telephoneMinusDefault.default
+);
+parcelHelpers.export(exports, "TelephoneOutboundFill", ()=>_telephoneOutboundFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneOutbound", ()=>_telephoneOutboundDefault.default
+);
+parcelHelpers.export(exports, "TelephonePlusFill", ()=>_telephonePlusFillDefault.default
+);
+parcelHelpers.export(exports, "TelephonePlus", ()=>_telephonePlusDefault.default
+);
+parcelHelpers.export(exports, "TelephoneXFill", ()=>_telephoneXFillDefault.default
+);
+parcelHelpers.export(exports, "TelephoneX", ()=>_telephoneXDefault.default
+);
+parcelHelpers.export(exports, "Telephone", ()=>_telephoneDefault.default
+);
+parcelHelpers.export(exports, "TerminalDash", ()=>_terminalDashDefault.default
+);
+parcelHelpers.export(exports, "TerminalFill", ()=>_terminalFillDefault.default
+);
+parcelHelpers.export(exports, "TerminalPlus", ()=>_terminalPlusDefault.default
+);
+parcelHelpers.export(exports, "TerminalSplit", ()=>_terminalSplitDefault.default
+);
+parcelHelpers.export(exports, "TerminalX", ()=>_terminalXDefault.default
+);
+parcelHelpers.export(exports, "Terminal", ()=>_terminalDefault.default
+);
+parcelHelpers.export(exports, "TextCenter", ()=>_textCenterDefault.default
+);
+parcelHelpers.export(exports, "TextIndentLeft", ()=>_textIndentLeftDefault.default
+);
+parcelHelpers.export(exports, "TextIndentRight", ()=>_textIndentRightDefault.default
+);
+parcelHelpers.export(exports, "TextLeft", ()=>_textLeftDefault.default
+);
+parcelHelpers.export(exports, "TextParagraph", ()=>_textParagraphDefault.default
+);
+parcelHelpers.export(exports, "TextRight", ()=>_textRightDefault.default
+);
+parcelHelpers.export(exports, "TextareaResize", ()=>_textareaResizeDefault.default
+);
+parcelHelpers.export(exports, "TextareaT", ()=>_textareaTDefault.default
+);
+parcelHelpers.export(exports, "Textarea", ()=>_textareaDefault.default
+);
+parcelHelpers.export(exports, "ThermometerHalf", ()=>_thermometerHalfDefault.default
+);
+parcelHelpers.export(exports, "ThermometerHigh", ()=>_thermometerHighDefault.default
+);
+parcelHelpers.export(exports, "ThermometerLow", ()=>_thermometerLowDefault.default
+);
+parcelHelpers.export(exports, "ThermometerSnow", ()=>_thermometerSnowDefault.default
+);
+parcelHelpers.export(exports, "ThermometerSun", ()=>_thermometerSunDefault.default
+);
+parcelHelpers.export(exports, "Thermometer", ()=>_thermometerDefault.default
+);
+parcelHelpers.export(exports, "ThreeDotsVertical", ()=>_threeDotsVerticalDefault.default
+);
+parcelHelpers.export(exports, "ThreeDots", ()=>_threeDotsDefault.default
+);
+parcelHelpers.export(exports, "ThunderboltFill", ()=>_thunderboltFillDefault.default
+);
+parcelHelpers.export(exports, "Thunderbolt", ()=>_thunderboltDefault.default
+);
+parcelHelpers.export(exports, "TicketDetailedFill", ()=>_ticketDetailedFillDefault.default
+);
+parcelHelpers.export(exports, "TicketDetailed", ()=>_ticketDetailedDefault.default
+);
+parcelHelpers.export(exports, "TicketFill", ()=>_ticketFillDefault.default
+);
+parcelHelpers.export(exports, "TicketPerforatedFill", ()=>_ticketPerforatedFillDefault.default
+);
+parcelHelpers.export(exports, "TicketPerforated", ()=>_ticketPerforatedDefault.default
+);
+parcelHelpers.export(exports, "Ticket", ()=>_ticketDefault.default
+);
+parcelHelpers.export(exports, "Tiktok", ()=>_tiktokDefault.default
+);
+parcelHelpers.export(exports, "ToggleOff", ()=>_toggleOffDefault.default
+);
+parcelHelpers.export(exports, "ToggleOn", ()=>_toggleOnDefault.default
+);
+parcelHelpers.export(exports, "Toggle2Off", ()=>_toggle2OffDefault.default
+);
+parcelHelpers.export(exports, "Toggle2On", ()=>_toggle2OnDefault.default
+);
+parcelHelpers.export(exports, "Toggles", ()=>_togglesDefault.default
+);
+parcelHelpers.export(exports, "Toggles2", ()=>_toggles2Default.default
+);
+parcelHelpers.export(exports, "Tools", ()=>_toolsDefault.default
+);
+parcelHelpers.export(exports, "Tornado", ()=>_tornadoDefault.default
+);
+parcelHelpers.export(exports, "Translate", ()=>_translateDefault.default
+);
+parcelHelpers.export(exports, "TrashFill", ()=>_trashFillDefault.default
+);
+parcelHelpers.export(exports, "Trash", ()=>_trashDefault.default
+);
+parcelHelpers.export(exports, "Trash2Fill", ()=>_trash2FillDefault.default
+);
+parcelHelpers.export(exports, "Trash2", ()=>_trash2Default.default
+);
+parcelHelpers.export(exports, "TreeFill", ()=>_treeFillDefault.default
+);
+parcelHelpers.export(exports, "Tree", ()=>_treeDefault.default
+);
+parcelHelpers.export(exports, "TriangleFill", ()=>_triangleFillDefault.default
+);
+parcelHelpers.export(exports, "TriangleHalf", ()=>_triangleHalfDefault.default
+);
+parcelHelpers.export(exports, "Triangle", ()=>_triangleDefault.default
+);
+parcelHelpers.export(exports, "TrophyFill", ()=>_trophyFillDefault.default
+);
+parcelHelpers.export(exports, "Trophy", ()=>_trophyDefault.default
+);
+parcelHelpers.export(exports, "TropicalStorm", ()=>_tropicalStormDefault.default
+);
+parcelHelpers.export(exports, "TruckFlatbed", ()=>_truckFlatbedDefault.default
+);
+parcelHelpers.export(exports, "Truck", ()=>_truckDefault.default
+);
+parcelHelpers.export(exports, "Tsunami", ()=>_tsunamiDefault.default
+);
+parcelHelpers.export(exports, "TvFill", ()=>_tvFillDefault.default
+);
+parcelHelpers.export(exports, "Tv", ()=>_tvDefault.default
+);
+parcelHelpers.export(exports, "Twitch", ()=>_twitchDefault.default
+);
+parcelHelpers.export(exports, "Twitter", ()=>_twitterDefault.default
+);
+parcelHelpers.export(exports, "TypeBold", ()=>_typeBoldDefault.default
+);
+parcelHelpers.export(exports, "TypeH1", ()=>_typeH1Default.default
+);
+parcelHelpers.export(exports, "TypeH2", ()=>_typeH2Default.default
+);
+parcelHelpers.export(exports, "TypeH3", ()=>_typeH3Default.default
+);
+parcelHelpers.export(exports, "TypeItalic", ()=>_typeItalicDefault.default
+);
+parcelHelpers.export(exports, "TypeStrikethrough", ()=>_typeStrikethroughDefault.default
+);
+parcelHelpers.export(exports, "TypeUnderline", ()=>_typeUnderlineDefault.default
+);
+parcelHelpers.export(exports, "Type", ()=>_typeDefault.default
+);
+parcelHelpers.export(exports, "UiChecksGrid", ()=>_uiChecksGridDefault.default
+);
+parcelHelpers.export(exports, "UiChecks", ()=>_uiChecksDefault.default
+);
+parcelHelpers.export(exports, "UiRadiosGrid", ()=>_uiRadiosGridDefault.default
+);
+parcelHelpers.export(exports, "UiRadios", ()=>_uiRadiosDefault.default
+);
+parcelHelpers.export(exports, "UmbrellaFill", ()=>_umbrellaFillDefault.default
+);
+parcelHelpers.export(exports, "Umbrella", ()=>_umbrellaDefault.default
+);
+parcelHelpers.export(exports, "Union", ()=>_unionDefault.default
+);
+parcelHelpers.export(exports, "UnlockFill", ()=>_unlockFillDefault.default
+);
+parcelHelpers.export(exports, "Unlock", ()=>_unlockDefault.default
+);
+parcelHelpers.export(exports, "UpcScan", ()=>_upcScanDefault.default
+);
+parcelHelpers.export(exports, "Upc", ()=>_upcDefault.default
+);
+parcelHelpers.export(exports, "Upload", ()=>_uploadDefault.default
+);
+parcelHelpers.export(exports, "UsbCFill", ()=>_usbCFillDefault.default
+);
+parcelHelpers.export(exports, "UsbC", ()=>_usbCDefault.default
+);
+parcelHelpers.export(exports, "UsbDriveFill", ()=>_usbDriveFillDefault.default
+);
+parcelHelpers.export(exports, "UsbDrive", ()=>_usbDriveDefault.default
+);
+parcelHelpers.export(exports, "UsbFill", ()=>_usbFillDefault.default
+);
+parcelHelpers.export(exports, "UsbMicroFill", ()=>_usbMicroFillDefault.default
+);
+parcelHelpers.export(exports, "UsbMicro", ()=>_usbMicroDefault.default
+);
+parcelHelpers.export(exports, "UsbMiniFill", ()=>_usbMiniFillDefault.default
+);
+parcelHelpers.export(exports, "UsbMini", ()=>_usbMiniDefault.default
+);
+parcelHelpers.export(exports, "UsbPlugFill", ()=>_usbPlugFillDefault.default
+);
+parcelHelpers.export(exports, "UsbPlug", ()=>_usbPlugDefault.default
+);
+parcelHelpers.export(exports, "UsbSymbol", ()=>_usbSymbolDefault.default
+);
+parcelHelpers.export(exports, "Usb", ()=>_usbDefault.default
+);
+parcelHelpers.export(exports, "VectorPen", ()=>_vectorPenDefault.default
+);
+parcelHelpers.export(exports, "ViewList", ()=>_viewListDefault.default
+);
+parcelHelpers.export(exports, "ViewStacked", ()=>_viewStackedDefault.default
+);
+parcelHelpers.export(exports, "Vimeo", ()=>_vimeoDefault.default
+);
+parcelHelpers.export(exports, "VinylFill", ()=>_vinylFillDefault.default
+);
+parcelHelpers.export(exports, "Vinyl", ()=>_vinylDefault.default
+);
+parcelHelpers.export(exports, "Voicemail", ()=>_voicemailDefault.default
+);
+parcelHelpers.export(exports, "VolumeDownFill", ()=>_volumeDownFillDefault.default
+);
+parcelHelpers.export(exports, "VolumeDown", ()=>_volumeDownDefault.default
+);
+parcelHelpers.export(exports, "VolumeMuteFill", ()=>_volumeMuteFillDefault.default
+);
+parcelHelpers.export(exports, "VolumeMute", ()=>_volumeMuteDefault.default
+);
+parcelHelpers.export(exports, "VolumeOffFill", ()=>_volumeOffFillDefault.default
+);
+parcelHelpers.export(exports, "VolumeOff", ()=>_volumeOffDefault.default
+);
+parcelHelpers.export(exports, "VolumeUpFill", ()=>_volumeUpFillDefault.default
+);
+parcelHelpers.export(exports, "VolumeUp", ()=>_volumeUpDefault.default
+);
+parcelHelpers.export(exports, "Vr", ()=>_vrDefault.default
+);
+parcelHelpers.export(exports, "WalletFill", ()=>_walletFillDefault.default
+);
+parcelHelpers.export(exports, "Wallet", ()=>_walletDefault.default
+);
+parcelHelpers.export(exports, "Wallet2", ()=>_wallet2Default.default
+);
+parcelHelpers.export(exports, "Watch", ()=>_watchDefault.default
+);
+parcelHelpers.export(exports, "Water", ()=>_waterDefault.default
+);
+parcelHelpers.export(exports, "WebcamFill", ()=>_webcamFillDefault.default
+);
+parcelHelpers.export(exports, "Webcam", ()=>_webcamDefault.default
+);
+parcelHelpers.export(exports, "Whatsapp", ()=>_whatsappDefault.default
+);
+parcelHelpers.export(exports, "Wifi1", ()=>_wifi1Default.default
+);
+parcelHelpers.export(exports, "Wifi2", ()=>_wifi2Default.default
+);
+parcelHelpers.export(exports, "WifiOff", ()=>_wifiOffDefault.default
+);
+parcelHelpers.export(exports, "Wifi", ()=>_wifiDefault.default
+);
+parcelHelpers.export(exports, "Wind", ()=>_windDefault.default
+);
+parcelHelpers.export(exports, "WindowDash", ()=>_windowDashDefault.default
+);
+parcelHelpers.export(exports, "WindowDesktop", ()=>_windowDesktopDefault.default
+);
+parcelHelpers.export(exports, "WindowDock", ()=>_windowDockDefault.default
+);
+parcelHelpers.export(exports, "WindowFullscreen", ()=>_windowFullscreenDefault.default
+);
+parcelHelpers.export(exports, "WindowPlus", ()=>_windowPlusDefault.default
+);
+parcelHelpers.export(exports, "WindowSidebar", ()=>_windowSidebarDefault.default
+);
+parcelHelpers.export(exports, "WindowSplit", ()=>_windowSplitDefault.default
+);
+parcelHelpers.export(exports, "WindowStack", ()=>_windowStackDefault.default
+);
+parcelHelpers.export(exports, "WindowX", ()=>_windowXDefault.default
+);
+parcelHelpers.export(exports, "Window", ()=>_windowDefault.default
+);
+parcelHelpers.export(exports, "Windows", ()=>_windowsDefault.default
+);
+parcelHelpers.export(exports, "Wordpress", ()=>_wordpressDefault.default
+);
+parcelHelpers.export(exports, "Wrench", ()=>_wrenchDefault.default
+);
+parcelHelpers.export(exports, "XCircleFill", ()=>_xCircleFillDefault.default
+);
+parcelHelpers.export(exports, "XCircle", ()=>_xCircleDefault.default
+);
+parcelHelpers.export(exports, "XDiamondFill", ()=>_xDiamondFillDefault.default
+);
+parcelHelpers.export(exports, "XDiamond", ()=>_xDiamondDefault.default
+);
+parcelHelpers.export(exports, "XLg", ()=>_xLgDefault.default
+);
+parcelHelpers.export(exports, "XOctagonFill", ()=>_xOctagonFillDefault.default
+);
+parcelHelpers.export(exports, "XOctagon", ()=>_xOctagonDefault.default
+);
+parcelHelpers.export(exports, "XSquareFill", ()=>_xSquareFillDefault.default
+);
+parcelHelpers.export(exports, "XSquare", ()=>_xSquareDefault.default
+);
+parcelHelpers.export(exports, "X", ()=>_xDefault.default
+);
+parcelHelpers.export(exports, "Xbox", ()=>_xboxDefault.default
+);
+parcelHelpers.export(exports, "YinYang", ()=>_yinYangDefault.default
+);
+parcelHelpers.export(exports, "Youtube", ()=>_youtubeDefault.default
+);
+parcelHelpers.export(exports, "ZoomIn", ()=>_zoomInDefault.default
+);
+parcelHelpers.export(exports, "ZoomOut", ()=>_zoomOutDefault.default
+);
+var _123 = require("./icons/123");
+var _123Default = parcelHelpers.interopDefault(_123);
+var _activity = require("./icons/activity");
+var _activityDefault = parcelHelpers.interopDefault(_activity);
+var _alarmFill = require("./icons/alarm-fill");
+var _alarmFillDefault = parcelHelpers.interopDefault(_alarmFill);
+var _alarm = require("./icons/alarm");
+var _alarmDefault = parcelHelpers.interopDefault(_alarm);
+var _alignBottom = require("./icons/align-bottom");
+var _alignBottomDefault = parcelHelpers.interopDefault(_alignBottom);
+var _alignCenter = require("./icons/align-center");
+var _alignCenterDefault = parcelHelpers.interopDefault(_alignCenter);
+var _alignEnd = require("./icons/align-end");
+var _alignEndDefault = parcelHelpers.interopDefault(_alignEnd);
+var _alignMiddle = require("./icons/align-middle");
+var _alignMiddleDefault = parcelHelpers.interopDefault(_alignMiddle);
+var _alignStart = require("./icons/align-start");
+var _alignStartDefault = parcelHelpers.interopDefault(_alignStart);
+var _alignTop = require("./icons/align-top");
+var _alignTopDefault = parcelHelpers.interopDefault(_alignTop);
+var _alt = require("./icons/alt");
+var _altDefault = parcelHelpers.interopDefault(_alt);
+var _appIndicator = require("./icons/app-indicator");
+var _appIndicatorDefault = parcelHelpers.interopDefault(_appIndicator);
+var _app = require("./icons/app");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _apple = require("./icons/apple");
+var _appleDefault = parcelHelpers.interopDefault(_apple);
+var _archiveFill = require("./icons/archive-fill");
+var _archiveFillDefault = parcelHelpers.interopDefault(_archiveFill);
+var _archive = require("./icons/archive");
+var _archiveDefault = parcelHelpers.interopDefault(_archive);
+var _arrow90DegDown = require("./icons/arrow-90deg-down");
+var _arrow90DegDownDefault = parcelHelpers.interopDefault(_arrow90DegDown);
+var _arrow90DegLeft = require("./icons/arrow-90deg-left");
+var _arrow90DegLeftDefault = parcelHelpers.interopDefault(_arrow90DegLeft);
+var _arrow90DegRight = require("./icons/arrow-90deg-right");
+var _arrow90DegRightDefault = parcelHelpers.interopDefault(_arrow90DegRight);
+var _arrow90DegUp = require("./icons/arrow-90deg-up");
+var _arrow90DegUpDefault = parcelHelpers.interopDefault(_arrow90DegUp);
+var _arrowBarDown = require("./icons/arrow-bar-down");
+var _arrowBarDownDefault = parcelHelpers.interopDefault(_arrowBarDown);
+var _arrowBarLeft = require("./icons/arrow-bar-left");
+var _arrowBarLeftDefault = parcelHelpers.interopDefault(_arrowBarLeft);
+var _arrowBarRight = require("./icons/arrow-bar-right");
+var _arrowBarRightDefault = parcelHelpers.interopDefault(_arrowBarRight);
+var _arrowBarUp = require("./icons/arrow-bar-up");
+var _arrowBarUpDefault = parcelHelpers.interopDefault(_arrowBarUp);
+var _arrowClockwise = require("./icons/arrow-clockwise");
+var _arrowClockwiseDefault = parcelHelpers.interopDefault(_arrowClockwise);
+var _arrowCounterclockwise = require("./icons/arrow-counterclockwise");
+var _arrowCounterclockwiseDefault = parcelHelpers.interopDefault(_arrowCounterclockwise);
+var _arrowDownCircleFill = require("./icons/arrow-down-circle-fill");
+var _arrowDownCircleFillDefault = parcelHelpers.interopDefault(_arrowDownCircleFill);
+var _arrowDownCircle = require("./icons/arrow-down-circle");
+var _arrowDownCircleDefault = parcelHelpers.interopDefault(_arrowDownCircle);
+var _arrowDownLeftCircleFill = require("./icons/arrow-down-left-circle-fill");
+var _arrowDownLeftCircleFillDefault = parcelHelpers.interopDefault(_arrowDownLeftCircleFill);
+var _arrowDownLeftCircle = require("./icons/arrow-down-left-circle");
+var _arrowDownLeftCircleDefault = parcelHelpers.interopDefault(_arrowDownLeftCircle);
+var _arrowDownLeftSquareFill = require("./icons/arrow-down-left-square-fill");
+var _arrowDownLeftSquareFillDefault = parcelHelpers.interopDefault(_arrowDownLeftSquareFill);
+var _arrowDownLeftSquare = require("./icons/arrow-down-left-square");
+var _arrowDownLeftSquareDefault = parcelHelpers.interopDefault(_arrowDownLeftSquare);
+var _arrowDownLeft = require("./icons/arrow-down-left");
+var _arrowDownLeftDefault = parcelHelpers.interopDefault(_arrowDownLeft);
+var _arrowDownRightCircleFill = require("./icons/arrow-down-right-circle-fill");
+var _arrowDownRightCircleFillDefault = parcelHelpers.interopDefault(_arrowDownRightCircleFill);
+var _arrowDownRightCircle = require("./icons/arrow-down-right-circle");
+var _arrowDownRightCircleDefault = parcelHelpers.interopDefault(_arrowDownRightCircle);
+var _arrowDownRightSquareFill = require("./icons/arrow-down-right-square-fill");
+var _arrowDownRightSquareFillDefault = parcelHelpers.interopDefault(_arrowDownRightSquareFill);
+var _arrowDownRightSquare = require("./icons/arrow-down-right-square");
+var _arrowDownRightSquareDefault = parcelHelpers.interopDefault(_arrowDownRightSquare);
+var _arrowDownRight = require("./icons/arrow-down-right");
+var _arrowDownRightDefault = parcelHelpers.interopDefault(_arrowDownRight);
+var _arrowDownShort = require("./icons/arrow-down-short");
+var _arrowDownShortDefault = parcelHelpers.interopDefault(_arrowDownShort);
+var _arrowDownSquareFill = require("./icons/arrow-down-square-fill");
+var _arrowDownSquareFillDefault = parcelHelpers.interopDefault(_arrowDownSquareFill);
+var _arrowDownSquare = require("./icons/arrow-down-square");
+var _arrowDownSquareDefault = parcelHelpers.interopDefault(_arrowDownSquare);
+var _arrowDownUp = require("./icons/arrow-down-up");
+var _arrowDownUpDefault = parcelHelpers.interopDefault(_arrowDownUp);
+var _arrowDown = require("./icons/arrow-down");
+var _arrowDownDefault = parcelHelpers.interopDefault(_arrowDown);
+var _arrowLeftCircleFill = require("./icons/arrow-left-circle-fill");
+var _arrowLeftCircleFillDefault = parcelHelpers.interopDefault(_arrowLeftCircleFill);
+var _arrowLeftCircle = require("./icons/arrow-left-circle");
+var _arrowLeftCircleDefault = parcelHelpers.interopDefault(_arrowLeftCircle);
+var _arrowLeftRight = require("./icons/arrow-left-right");
+var _arrowLeftRightDefault = parcelHelpers.interopDefault(_arrowLeftRight);
+var _arrowLeftShort = require("./icons/arrow-left-short");
+var _arrowLeftShortDefault = parcelHelpers.interopDefault(_arrowLeftShort);
+var _arrowLeftSquareFill = require("./icons/arrow-left-square-fill");
+var _arrowLeftSquareFillDefault = parcelHelpers.interopDefault(_arrowLeftSquareFill);
+var _arrowLeftSquare = require("./icons/arrow-left-square");
+var _arrowLeftSquareDefault = parcelHelpers.interopDefault(_arrowLeftSquare);
+var _arrowLeft = require("./icons/arrow-left");
+var _arrowLeftDefault = parcelHelpers.interopDefault(_arrowLeft);
+var _arrowRepeat = require("./icons/arrow-repeat");
+var _arrowRepeatDefault = parcelHelpers.interopDefault(_arrowRepeat);
+var _arrowReturnLeft = require("./icons/arrow-return-left");
+var _arrowReturnLeftDefault = parcelHelpers.interopDefault(_arrowReturnLeft);
+var _arrowReturnRight = require("./icons/arrow-return-right");
+var _arrowReturnRightDefault = parcelHelpers.interopDefault(_arrowReturnRight);
+var _arrowRightCircleFill = require("./icons/arrow-right-circle-fill");
+var _arrowRightCircleFillDefault = parcelHelpers.interopDefault(_arrowRightCircleFill);
+var _arrowRightCircle = require("./icons/arrow-right-circle");
+var _arrowRightCircleDefault = parcelHelpers.interopDefault(_arrowRightCircle);
+var _arrowRightShort = require("./icons/arrow-right-short");
+var _arrowRightShortDefault = parcelHelpers.interopDefault(_arrowRightShort);
+var _arrowRightSquareFill = require("./icons/arrow-right-square-fill");
+var _arrowRightSquareFillDefault = parcelHelpers.interopDefault(_arrowRightSquareFill);
+var _arrowRightSquare = require("./icons/arrow-right-square");
+var _arrowRightSquareDefault = parcelHelpers.interopDefault(_arrowRightSquare);
+var _arrowRight = require("./icons/arrow-right");
+var _arrowRightDefault = parcelHelpers.interopDefault(_arrowRight);
+var _arrowUpCircleFill = require("./icons/arrow-up-circle-fill");
+var _arrowUpCircleFillDefault = parcelHelpers.interopDefault(_arrowUpCircleFill);
+var _arrowUpCircle = require("./icons/arrow-up-circle");
+var _arrowUpCircleDefault = parcelHelpers.interopDefault(_arrowUpCircle);
+var _arrowUpLeftCircleFill = require("./icons/arrow-up-left-circle-fill");
+var _arrowUpLeftCircleFillDefault = parcelHelpers.interopDefault(_arrowUpLeftCircleFill);
+var _arrowUpLeftCircle = require("./icons/arrow-up-left-circle");
+var _arrowUpLeftCircleDefault = parcelHelpers.interopDefault(_arrowUpLeftCircle);
+var _arrowUpLeftSquareFill = require("./icons/arrow-up-left-square-fill");
+var _arrowUpLeftSquareFillDefault = parcelHelpers.interopDefault(_arrowUpLeftSquareFill);
+var _arrowUpLeftSquare = require("./icons/arrow-up-left-square");
+var _arrowUpLeftSquareDefault = parcelHelpers.interopDefault(_arrowUpLeftSquare);
+var _arrowUpLeft = require("./icons/arrow-up-left");
+var _arrowUpLeftDefault = parcelHelpers.interopDefault(_arrowUpLeft);
+var _arrowUpRightCircleFill = require("./icons/arrow-up-right-circle-fill");
+var _arrowUpRightCircleFillDefault = parcelHelpers.interopDefault(_arrowUpRightCircleFill);
+var _arrowUpRightCircle = require("./icons/arrow-up-right-circle");
+var _arrowUpRightCircleDefault = parcelHelpers.interopDefault(_arrowUpRightCircle);
+var _arrowUpRightSquareFill = require("./icons/arrow-up-right-square-fill");
+var _arrowUpRightSquareFillDefault = parcelHelpers.interopDefault(_arrowUpRightSquareFill);
+var _arrowUpRightSquare = require("./icons/arrow-up-right-square");
+var _arrowUpRightSquareDefault = parcelHelpers.interopDefault(_arrowUpRightSquare);
+var _arrowUpRight = require("./icons/arrow-up-right");
+var _arrowUpRightDefault = parcelHelpers.interopDefault(_arrowUpRight);
+var _arrowUpShort = require("./icons/arrow-up-short");
+var _arrowUpShortDefault = parcelHelpers.interopDefault(_arrowUpShort);
+var _arrowUpSquareFill = require("./icons/arrow-up-square-fill");
+var _arrowUpSquareFillDefault = parcelHelpers.interopDefault(_arrowUpSquareFill);
+var _arrowUpSquare = require("./icons/arrow-up-square");
+var _arrowUpSquareDefault = parcelHelpers.interopDefault(_arrowUpSquare);
+var _arrowUp = require("./icons/arrow-up");
+var _arrowUpDefault = parcelHelpers.interopDefault(_arrowUp);
+var _arrowsAngleContract = require("./icons/arrows-angle-contract");
+var _arrowsAngleContractDefault = parcelHelpers.interopDefault(_arrowsAngleContract);
+var _arrowsAngleExpand = require("./icons/arrows-angle-expand");
+var _arrowsAngleExpandDefault = parcelHelpers.interopDefault(_arrowsAngleExpand);
+var _arrowsCollapse = require("./icons/arrows-collapse");
+var _arrowsCollapseDefault = parcelHelpers.interopDefault(_arrowsCollapse);
+var _arrowsExpand = require("./icons/arrows-expand");
+var _arrowsExpandDefault = parcelHelpers.interopDefault(_arrowsExpand);
+var _arrowsFullscreen = require("./icons/arrows-fullscreen");
+var _arrowsFullscreenDefault = parcelHelpers.interopDefault(_arrowsFullscreen);
+var _arrowsMove = require("./icons/arrows-move");
+var _arrowsMoveDefault = parcelHelpers.interopDefault(_arrowsMove);
+var _aspectRatioFill = require("./icons/aspect-ratio-fill");
+var _aspectRatioFillDefault = parcelHelpers.interopDefault(_aspectRatioFill);
+var _aspectRatio = require("./icons/aspect-ratio");
+var _aspectRatioDefault = parcelHelpers.interopDefault(_aspectRatio);
+var _asterisk = require("./icons/asterisk");
+var _asteriskDefault = parcelHelpers.interopDefault(_asterisk);
+var _at = require("./icons/at");
+var _atDefault = parcelHelpers.interopDefault(_at);
+var _awardFill = require("./icons/award-fill");
+var _awardFillDefault = parcelHelpers.interopDefault(_awardFill);
+var _award = require("./icons/award");
+var _awardDefault = parcelHelpers.interopDefault(_award);
+var _back = require("./icons/back");
+var _backDefault = parcelHelpers.interopDefault(_back);
+var _backspaceFill = require("./icons/backspace-fill");
+var _backspaceFillDefault = parcelHelpers.interopDefault(_backspaceFill);
+var _backspaceReverseFill = require("./icons/backspace-reverse-fill");
+var _backspaceReverseFillDefault = parcelHelpers.interopDefault(_backspaceReverseFill);
+var _backspaceReverse = require("./icons/backspace-reverse");
+var _backspaceReverseDefault = parcelHelpers.interopDefault(_backspaceReverse);
+var _backspace = require("./icons/backspace");
+var _backspaceDefault = parcelHelpers.interopDefault(_backspace);
+var _badge3DFill = require("./icons/badge-3d-fill");
+var _badge3DFillDefault = parcelHelpers.interopDefault(_badge3DFill);
+var _badge3D = require("./icons/badge-3d");
+var _badge3DDefault = parcelHelpers.interopDefault(_badge3D);
+var _badge4KFill = require("./icons/badge-4k-fill");
+var _badge4KFillDefault = parcelHelpers.interopDefault(_badge4KFill);
+var _badge4K = require("./icons/badge-4k");
+var _badge4KDefault = parcelHelpers.interopDefault(_badge4K);
+var _badge8KFill = require("./icons/badge-8k-fill");
+var _badge8KFillDefault = parcelHelpers.interopDefault(_badge8KFill);
+var _badge8K = require("./icons/badge-8k");
+var _badge8KDefault = parcelHelpers.interopDefault(_badge8K);
+var _badgeAdFill = require("./icons/badge-ad-fill");
+var _badgeAdFillDefault = parcelHelpers.interopDefault(_badgeAdFill);
+var _badgeAd = require("./icons/badge-ad");
+var _badgeAdDefault = parcelHelpers.interopDefault(_badgeAd);
+var _badgeArFill = require("./icons/badge-ar-fill");
+var _badgeArFillDefault = parcelHelpers.interopDefault(_badgeArFill);
+var _badgeAr = require("./icons/badge-ar");
+var _badgeArDefault = parcelHelpers.interopDefault(_badgeAr);
+var _badgeCcFill = require("./icons/badge-cc-fill");
+var _badgeCcFillDefault = parcelHelpers.interopDefault(_badgeCcFill);
+var _badgeCc = require("./icons/badge-cc");
+var _badgeCcDefault = parcelHelpers.interopDefault(_badgeCc);
+var _badgeHdFill = require("./icons/badge-hd-fill");
+var _badgeHdFillDefault = parcelHelpers.interopDefault(_badgeHdFill);
+var _badgeHd = require("./icons/badge-hd");
+var _badgeHdDefault = parcelHelpers.interopDefault(_badgeHd);
+var _badgeTmFill = require("./icons/badge-tm-fill");
+var _badgeTmFillDefault = parcelHelpers.interopDefault(_badgeTmFill);
+var _badgeTm = require("./icons/badge-tm");
+var _badgeTmDefault = parcelHelpers.interopDefault(_badgeTm);
+var _badgeVoFill = require("./icons/badge-vo-fill");
+var _badgeVoFillDefault = parcelHelpers.interopDefault(_badgeVoFill);
+var _badgeVo = require("./icons/badge-vo");
+var _badgeVoDefault = parcelHelpers.interopDefault(_badgeVo);
+var _badgeVrFill = require("./icons/badge-vr-fill");
+var _badgeVrFillDefault = parcelHelpers.interopDefault(_badgeVrFill);
+var _badgeVr = require("./icons/badge-vr");
+var _badgeVrDefault = parcelHelpers.interopDefault(_badgeVr);
+var _badgeWcFill = require("./icons/badge-wc-fill");
+var _badgeWcFillDefault = parcelHelpers.interopDefault(_badgeWcFill);
+var _badgeWc = require("./icons/badge-wc");
+var _badgeWcDefault = parcelHelpers.interopDefault(_badgeWc);
+var _bagCheckFill = require("./icons/bag-check-fill");
+var _bagCheckFillDefault = parcelHelpers.interopDefault(_bagCheckFill);
+var _bagCheck = require("./icons/bag-check");
+var _bagCheckDefault = parcelHelpers.interopDefault(_bagCheck);
+var _bagDashFill = require("./icons/bag-dash-fill");
+var _bagDashFillDefault = parcelHelpers.interopDefault(_bagDashFill);
+var _bagDash = require("./icons/bag-dash");
+var _bagDashDefault = parcelHelpers.interopDefault(_bagDash);
+var _bagFill = require("./icons/bag-fill");
+var _bagFillDefault = parcelHelpers.interopDefault(_bagFill);
+var _bagPlusFill = require("./icons/bag-plus-fill");
+var _bagPlusFillDefault = parcelHelpers.interopDefault(_bagPlusFill);
+var _bagPlus = require("./icons/bag-plus");
+var _bagPlusDefault = parcelHelpers.interopDefault(_bagPlus);
+var _bagXFill = require("./icons/bag-x-fill");
+var _bagXFillDefault = parcelHelpers.interopDefault(_bagXFill);
+var _bagX = require("./icons/bag-x");
+var _bagXDefault = parcelHelpers.interopDefault(_bagX);
+var _bag = require("./icons/bag");
+var _bagDefault = parcelHelpers.interopDefault(_bag);
+var _bandaidFill = require("./icons/bandaid-fill");
+var _bandaidFillDefault = parcelHelpers.interopDefault(_bandaidFill);
+var _bandaid = require("./icons/bandaid");
+var _bandaidDefault = parcelHelpers.interopDefault(_bandaid);
+var _bank = require("./icons/bank");
+var _bankDefault = parcelHelpers.interopDefault(_bank);
+var _bank2 = require("./icons/bank2");
+var _bank2Default = parcelHelpers.interopDefault(_bank2);
+var _barChartFill = require("./icons/bar-chart-fill");
+var _barChartFillDefault = parcelHelpers.interopDefault(_barChartFill);
+var _barChartLineFill = require("./icons/bar-chart-line-fill");
+var _barChartLineFillDefault = parcelHelpers.interopDefault(_barChartLineFill);
+var _barChartLine = require("./icons/bar-chart-line");
+var _barChartLineDefault = parcelHelpers.interopDefault(_barChartLine);
+var _barChartSteps = require("./icons/bar-chart-steps");
+var _barChartStepsDefault = parcelHelpers.interopDefault(_barChartSteps);
+var _barChart = require("./icons/bar-chart");
+var _barChartDefault = parcelHelpers.interopDefault(_barChart);
+var _basketFill = require("./icons/basket-fill");
+var _basketFillDefault = parcelHelpers.interopDefault(_basketFill);
+var _basket = require("./icons/basket");
+var _basketDefault = parcelHelpers.interopDefault(_basket);
+var _basket2Fill = require("./icons/basket2-fill");
+var _basket2FillDefault = parcelHelpers.interopDefault(_basket2Fill);
+var _basket2 = require("./icons/basket2");
+var _basket2Default = parcelHelpers.interopDefault(_basket2);
+var _basket3Fill = require("./icons/basket3-fill");
+var _basket3FillDefault = parcelHelpers.interopDefault(_basket3Fill);
+var _basket3 = require("./icons/basket3");
+var _basket3Default = parcelHelpers.interopDefault(_basket3);
+var _batteryCharging = require("./icons/battery-charging");
+var _batteryChargingDefault = parcelHelpers.interopDefault(_batteryCharging);
+var _batteryFull = require("./icons/battery-full");
+var _batteryFullDefault = parcelHelpers.interopDefault(_batteryFull);
+var _batteryHalf = require("./icons/battery-half");
+var _batteryHalfDefault = parcelHelpers.interopDefault(_batteryHalf);
+var _battery = require("./icons/battery");
+var _batteryDefault = parcelHelpers.interopDefault(_battery);
+var _behance = require("./icons/behance");
+var _behanceDefault = parcelHelpers.interopDefault(_behance);
+var _bellFill = require("./icons/bell-fill");
+var _bellFillDefault = parcelHelpers.interopDefault(_bellFill);
+var _bellSlashFill = require("./icons/bell-slash-fill");
+var _bellSlashFillDefault = parcelHelpers.interopDefault(_bellSlashFill);
+var _bellSlash = require("./icons/bell-slash");
+var _bellSlashDefault = parcelHelpers.interopDefault(_bellSlash);
+var _bell = require("./icons/bell");
+var _bellDefault = parcelHelpers.interopDefault(_bell);
+var _bezier = require("./icons/bezier");
+var _bezierDefault = parcelHelpers.interopDefault(_bezier);
+var _bezier2 = require("./icons/bezier2");
+var _bezier2Default = parcelHelpers.interopDefault(_bezier2);
+var _bicycle = require("./icons/bicycle");
+var _bicycleDefault = parcelHelpers.interopDefault(_bicycle);
+var _binocularsFill = require("./icons/binoculars-fill");
+var _binocularsFillDefault = parcelHelpers.interopDefault(_binocularsFill);
+var _binoculars = require("./icons/binoculars");
+var _binocularsDefault = parcelHelpers.interopDefault(_binoculars);
+var _blockquoteLeft = require("./icons/blockquote-left");
+var _blockquoteLeftDefault = parcelHelpers.interopDefault(_blockquoteLeft);
+var _blockquoteRight = require("./icons/blockquote-right");
+var _blockquoteRightDefault = parcelHelpers.interopDefault(_blockquoteRight);
+var _bluetooth = require("./icons/bluetooth");
+var _bluetoothDefault = parcelHelpers.interopDefault(_bluetooth);
+var _bodyText = require("./icons/body-text");
+var _bodyTextDefault = parcelHelpers.interopDefault(_bodyText);
+var _bookFill = require("./icons/book-fill");
+var _bookFillDefault = parcelHelpers.interopDefault(_bookFill);
+var _bookHalf = require("./icons/book-half");
+var _bookHalfDefault = parcelHelpers.interopDefault(_bookHalf);
+var _book = require("./icons/book");
+var _bookDefault = parcelHelpers.interopDefault(_book);
+var _bookmarkCheckFill = require("./icons/bookmark-check-fill");
+var _bookmarkCheckFillDefault = parcelHelpers.interopDefault(_bookmarkCheckFill);
+var _bookmarkCheck = require("./icons/bookmark-check");
+var _bookmarkCheckDefault = parcelHelpers.interopDefault(_bookmarkCheck);
+var _bookmarkDashFill = require("./icons/bookmark-dash-fill");
+var _bookmarkDashFillDefault = parcelHelpers.interopDefault(_bookmarkDashFill);
+var _bookmarkDash = require("./icons/bookmark-dash");
+var _bookmarkDashDefault = parcelHelpers.interopDefault(_bookmarkDash);
+var _bookmarkFill = require("./icons/bookmark-fill");
+var _bookmarkFillDefault = parcelHelpers.interopDefault(_bookmarkFill);
+var _bookmarkHeartFill = require("./icons/bookmark-heart-fill");
+var _bookmarkHeartFillDefault = parcelHelpers.interopDefault(_bookmarkHeartFill);
+var _bookmarkHeart = require("./icons/bookmark-heart");
+var _bookmarkHeartDefault = parcelHelpers.interopDefault(_bookmarkHeart);
+var _bookmarkPlusFill = require("./icons/bookmark-plus-fill");
+var _bookmarkPlusFillDefault = parcelHelpers.interopDefault(_bookmarkPlusFill);
+var _bookmarkPlus = require("./icons/bookmark-plus");
+var _bookmarkPlusDefault = parcelHelpers.interopDefault(_bookmarkPlus);
+var _bookmarkStarFill = require("./icons/bookmark-star-fill");
+var _bookmarkStarFillDefault = parcelHelpers.interopDefault(_bookmarkStarFill);
+var _bookmarkStar = require("./icons/bookmark-star");
+var _bookmarkStarDefault = parcelHelpers.interopDefault(_bookmarkStar);
+var _bookmarkXFill = require("./icons/bookmark-x-fill");
+var _bookmarkXFillDefault = parcelHelpers.interopDefault(_bookmarkXFill);
+var _bookmarkX = require("./icons/bookmark-x");
+var _bookmarkXDefault = parcelHelpers.interopDefault(_bookmarkX);
+var _bookmark = require("./icons/bookmark");
+var _bookmarkDefault = parcelHelpers.interopDefault(_bookmark);
+var _bookmarksFill = require("./icons/bookmarks-fill");
+var _bookmarksFillDefault = parcelHelpers.interopDefault(_bookmarksFill);
+var _bookmarks = require("./icons/bookmarks");
+var _bookmarksDefault = parcelHelpers.interopDefault(_bookmarks);
+var _bookshelf = require("./icons/bookshelf");
+var _bookshelfDefault = parcelHelpers.interopDefault(_bookshelf);
+var _boomboxFill = require("./icons/boombox-fill");
+var _boomboxFillDefault = parcelHelpers.interopDefault(_boomboxFill);
+var _boombox = require("./icons/boombox");
+var _boomboxDefault = parcelHelpers.interopDefault(_boombox);
+var _bootstrapFill = require("./icons/bootstrap-fill");
+var _bootstrapFillDefault = parcelHelpers.interopDefault(_bootstrapFill);
+var _bootstrapReboot = require("./icons/bootstrap-reboot");
+var _bootstrapRebootDefault = parcelHelpers.interopDefault(_bootstrapReboot);
+var _bootstrap = require("./icons/bootstrap");
+var _bootstrapDefault = parcelHelpers.interopDefault(_bootstrap);
+var _borderAll = require("./icons/border-all");
+var _borderAllDefault = parcelHelpers.interopDefault(_borderAll);
+var _borderBottom = require("./icons/border-bottom");
+var _borderBottomDefault = parcelHelpers.interopDefault(_borderBottom);
+var _borderCenter = require("./icons/border-center");
+var _borderCenterDefault = parcelHelpers.interopDefault(_borderCenter);
+var _borderInner = require("./icons/border-inner");
+var _borderInnerDefault = parcelHelpers.interopDefault(_borderInner);
+var _borderLeft = require("./icons/border-left");
+var _borderLeftDefault = parcelHelpers.interopDefault(_borderLeft);
+var _borderMiddle = require("./icons/border-middle");
+var _borderMiddleDefault = parcelHelpers.interopDefault(_borderMiddle);
+var _borderOuter = require("./icons/border-outer");
+var _borderOuterDefault = parcelHelpers.interopDefault(_borderOuter);
+var _borderRight = require("./icons/border-right");
+var _borderRightDefault = parcelHelpers.interopDefault(_borderRight);
+var _borderStyle = require("./icons/border-style");
+var _borderStyleDefault = parcelHelpers.interopDefault(_borderStyle);
+var _borderTop = require("./icons/border-top");
+var _borderTopDefault = parcelHelpers.interopDefault(_borderTop);
+var _borderWidth = require("./icons/border-width");
+var _borderWidthDefault = parcelHelpers.interopDefault(_borderWidth);
+var _border = require("./icons/border");
+var _borderDefault = parcelHelpers.interopDefault(_border);
+var _boundingBoxCircles = require("./icons/bounding-box-circles");
+var _boundingBoxCirclesDefault = parcelHelpers.interopDefault(_boundingBoxCircles);
+var _boundingBox = require("./icons/bounding-box");
+var _boundingBoxDefault = parcelHelpers.interopDefault(_boundingBox);
+var _boxArrowDownLeft = require("./icons/box-arrow-down-left");
+var _boxArrowDownLeftDefault = parcelHelpers.interopDefault(_boxArrowDownLeft);
+var _boxArrowDownRight = require("./icons/box-arrow-down-right");
+var _boxArrowDownRightDefault = parcelHelpers.interopDefault(_boxArrowDownRight);
+var _boxArrowDown = require("./icons/box-arrow-down");
+var _boxArrowDownDefault = parcelHelpers.interopDefault(_boxArrowDown);
+var _boxArrowInDownLeft = require("./icons/box-arrow-in-down-left");
+var _boxArrowInDownLeftDefault = parcelHelpers.interopDefault(_boxArrowInDownLeft);
+var _boxArrowInDownRight = require("./icons/box-arrow-in-down-right");
+var _boxArrowInDownRightDefault = parcelHelpers.interopDefault(_boxArrowInDownRight);
+var _boxArrowInDown = require("./icons/box-arrow-in-down");
+var _boxArrowInDownDefault = parcelHelpers.interopDefault(_boxArrowInDown);
+var _boxArrowInLeft = require("./icons/box-arrow-in-left");
+var _boxArrowInLeftDefault = parcelHelpers.interopDefault(_boxArrowInLeft);
+var _boxArrowInRight = require("./icons/box-arrow-in-right");
+var _boxArrowInRightDefault = parcelHelpers.interopDefault(_boxArrowInRight);
+var _boxArrowInUpLeft = require("./icons/box-arrow-in-up-left");
+var _boxArrowInUpLeftDefault = parcelHelpers.interopDefault(_boxArrowInUpLeft);
+var _boxArrowInUpRight = require("./icons/box-arrow-in-up-right");
+var _boxArrowInUpRightDefault = parcelHelpers.interopDefault(_boxArrowInUpRight);
+var _boxArrowInUp = require("./icons/box-arrow-in-up");
+var _boxArrowInUpDefault = parcelHelpers.interopDefault(_boxArrowInUp);
+var _boxArrowLeft = require("./icons/box-arrow-left");
+var _boxArrowLeftDefault = parcelHelpers.interopDefault(_boxArrowLeft);
+var _boxArrowRight = require("./icons/box-arrow-right");
+var _boxArrowRightDefault = parcelHelpers.interopDefault(_boxArrowRight);
+var _boxArrowUpLeft = require("./icons/box-arrow-up-left");
+var _boxArrowUpLeftDefault = parcelHelpers.interopDefault(_boxArrowUpLeft);
+var _boxArrowUpRight = require("./icons/box-arrow-up-right");
+var _boxArrowUpRightDefault = parcelHelpers.interopDefault(_boxArrowUpRight);
+var _boxArrowUp = require("./icons/box-arrow-up");
+var _boxArrowUpDefault = parcelHelpers.interopDefault(_boxArrowUp);
+var _boxSeam = require("./icons/box-seam");
+var _boxSeamDefault = parcelHelpers.interopDefault(_boxSeam);
+var _box = require("./icons/box");
+var _boxDefault = parcelHelpers.interopDefault(_box);
+var _boxes = require("./icons/boxes");
+var _boxesDefault = parcelHelpers.interopDefault(_boxes);
+var _braces = require("./icons/braces");
+var _bracesDefault = parcelHelpers.interopDefault(_braces);
+var _bricks = require("./icons/bricks");
+var _bricksDefault = parcelHelpers.interopDefault(_bricks);
+var _briefcaseFill = require("./icons/briefcase-fill");
+var _briefcaseFillDefault = parcelHelpers.interopDefault(_briefcaseFill);
+var _briefcase = require("./icons/briefcase");
+var _briefcaseDefault = parcelHelpers.interopDefault(_briefcase);
+var _brightnessAltHighFill = require("./icons/brightness-alt-high-fill");
+var _brightnessAltHighFillDefault = parcelHelpers.interopDefault(_brightnessAltHighFill);
+var _brightnessAltHigh = require("./icons/brightness-alt-high");
+var _brightnessAltHighDefault = parcelHelpers.interopDefault(_brightnessAltHigh);
+var _brightnessAltLowFill = require("./icons/brightness-alt-low-fill");
+var _brightnessAltLowFillDefault = parcelHelpers.interopDefault(_brightnessAltLowFill);
+var _brightnessAltLow = require("./icons/brightness-alt-low");
+var _brightnessAltLowDefault = parcelHelpers.interopDefault(_brightnessAltLow);
+var _brightnessHighFill = require("./icons/brightness-high-fill");
+var _brightnessHighFillDefault = parcelHelpers.interopDefault(_brightnessHighFill);
+var _brightnessHigh = require("./icons/brightness-high");
+var _brightnessHighDefault = parcelHelpers.interopDefault(_brightnessHigh);
+var _brightnessLowFill = require("./icons/brightness-low-fill");
+var _brightnessLowFillDefault = parcelHelpers.interopDefault(_brightnessLowFill);
+var _brightnessLow = require("./icons/brightness-low");
+var _brightnessLowDefault = parcelHelpers.interopDefault(_brightnessLow);
+var _broadcastPin = require("./icons/broadcast-pin");
+var _broadcastPinDefault = parcelHelpers.interopDefault(_broadcastPin);
+var _broadcast = require("./icons/broadcast");
+var _broadcastDefault = parcelHelpers.interopDefault(_broadcast);
+var _brushFill = require("./icons/brush-fill");
+var _brushFillDefault = parcelHelpers.interopDefault(_brushFill);
+var _brush = require("./icons/brush");
+var _brushDefault = parcelHelpers.interopDefault(_brush);
+var _bucketFill = require("./icons/bucket-fill");
+var _bucketFillDefault = parcelHelpers.interopDefault(_bucketFill);
+var _bucket = require("./icons/bucket");
+var _bucketDefault = parcelHelpers.interopDefault(_bucket);
+var _bugFill = require("./icons/bug-fill");
+var _bugFillDefault = parcelHelpers.interopDefault(_bugFill);
+var _bug = require("./icons/bug");
+var _bugDefault = parcelHelpers.interopDefault(_bug);
+var _building = require("./icons/building");
+var _buildingDefault = parcelHelpers.interopDefault(_building);
+var _bullseye = require("./icons/bullseye");
+var _bullseyeDefault = parcelHelpers.interopDefault(_bullseye);
+var _calculatorFill = require("./icons/calculator-fill");
+var _calculatorFillDefault = parcelHelpers.interopDefault(_calculatorFill);
+var _calculator = require("./icons/calculator");
+var _calculatorDefault = parcelHelpers.interopDefault(_calculator);
+var _calendarCheckFill = require("./icons/calendar-check-fill");
+var _calendarCheckFillDefault = parcelHelpers.interopDefault(_calendarCheckFill);
+var _calendarCheck = require("./icons/calendar-check");
+var _calendarCheckDefault = parcelHelpers.interopDefault(_calendarCheck);
+var _calendarDateFill = require("./icons/calendar-date-fill");
+var _calendarDateFillDefault = parcelHelpers.interopDefault(_calendarDateFill);
+var _calendarDate = require("./icons/calendar-date");
+var _calendarDateDefault = parcelHelpers.interopDefault(_calendarDate);
+var _calendarDayFill = require("./icons/calendar-day-fill");
+var _calendarDayFillDefault = parcelHelpers.interopDefault(_calendarDayFill);
+var _calendarDay = require("./icons/calendar-day");
+var _calendarDayDefault = parcelHelpers.interopDefault(_calendarDay);
+var _calendarEventFill = require("./icons/calendar-event-fill");
+var _calendarEventFillDefault = parcelHelpers.interopDefault(_calendarEventFill);
+var _calendarEvent = require("./icons/calendar-event");
+var _calendarEventDefault = parcelHelpers.interopDefault(_calendarEvent);
+var _calendarFill = require("./icons/calendar-fill");
+var _calendarFillDefault = parcelHelpers.interopDefault(_calendarFill);
+var _calendarMinusFill = require("./icons/calendar-minus-fill");
+var _calendarMinusFillDefault = parcelHelpers.interopDefault(_calendarMinusFill);
+var _calendarMinus = require("./icons/calendar-minus");
+var _calendarMinusDefault = parcelHelpers.interopDefault(_calendarMinus);
+var _calendarMonthFill = require("./icons/calendar-month-fill");
+var _calendarMonthFillDefault = parcelHelpers.interopDefault(_calendarMonthFill);
+var _calendarMonth = require("./icons/calendar-month");
+var _calendarMonthDefault = parcelHelpers.interopDefault(_calendarMonth);
+var _calendarPlusFill = require("./icons/calendar-plus-fill");
+var _calendarPlusFillDefault = parcelHelpers.interopDefault(_calendarPlusFill);
+var _calendarPlus = require("./icons/calendar-plus");
+var _calendarPlusDefault = parcelHelpers.interopDefault(_calendarPlus);
+var _calendarRangeFill = require("./icons/calendar-range-fill");
+var _calendarRangeFillDefault = parcelHelpers.interopDefault(_calendarRangeFill);
+var _calendarRange = require("./icons/calendar-range");
+var _calendarRangeDefault = parcelHelpers.interopDefault(_calendarRange);
+var _calendarWeekFill = require("./icons/calendar-week-fill");
+var _calendarWeekFillDefault = parcelHelpers.interopDefault(_calendarWeekFill);
+var _calendarWeek = require("./icons/calendar-week");
+var _calendarWeekDefault = parcelHelpers.interopDefault(_calendarWeek);
+var _calendarXFill = require("./icons/calendar-x-fill");
+var _calendarXFillDefault = parcelHelpers.interopDefault(_calendarXFill);
+var _calendarX = require("./icons/calendar-x");
+var _calendarXDefault = parcelHelpers.interopDefault(_calendarX);
+var _calendar = require("./icons/calendar");
+var _calendarDefault = parcelHelpers.interopDefault(_calendar);
+var _calendar2CheckFill = require("./icons/calendar2-check-fill");
+var _calendar2CheckFillDefault = parcelHelpers.interopDefault(_calendar2CheckFill);
+var _calendar2Check = require("./icons/calendar2-check");
+var _calendar2CheckDefault = parcelHelpers.interopDefault(_calendar2Check);
+var _calendar2DateFill = require("./icons/calendar2-date-fill");
+var _calendar2DateFillDefault = parcelHelpers.interopDefault(_calendar2DateFill);
+var _calendar2Date = require("./icons/calendar2-date");
+var _calendar2DateDefault = parcelHelpers.interopDefault(_calendar2Date);
+var _calendar2DayFill = require("./icons/calendar2-day-fill");
+var _calendar2DayFillDefault = parcelHelpers.interopDefault(_calendar2DayFill);
+var _calendar2Day = require("./icons/calendar2-day");
+var _calendar2DayDefault = parcelHelpers.interopDefault(_calendar2Day);
+var _calendar2EventFill = require("./icons/calendar2-event-fill");
+var _calendar2EventFillDefault = parcelHelpers.interopDefault(_calendar2EventFill);
+var _calendar2Event = require("./icons/calendar2-event");
+var _calendar2EventDefault = parcelHelpers.interopDefault(_calendar2Event);
+var _calendar2Fill = require("./icons/calendar2-fill");
+var _calendar2FillDefault = parcelHelpers.interopDefault(_calendar2Fill);
+var _calendar2MinusFill = require("./icons/calendar2-minus-fill");
+var _calendar2MinusFillDefault = parcelHelpers.interopDefault(_calendar2MinusFill);
+var _calendar2Minus = require("./icons/calendar2-minus");
+var _calendar2MinusDefault = parcelHelpers.interopDefault(_calendar2Minus);
+var _calendar2MonthFill = require("./icons/calendar2-month-fill");
+var _calendar2MonthFillDefault = parcelHelpers.interopDefault(_calendar2MonthFill);
+var _calendar2Month = require("./icons/calendar2-month");
+var _calendar2MonthDefault = parcelHelpers.interopDefault(_calendar2Month);
+var _calendar2PlusFill = require("./icons/calendar2-plus-fill");
+var _calendar2PlusFillDefault = parcelHelpers.interopDefault(_calendar2PlusFill);
+var _calendar2Plus = require("./icons/calendar2-plus");
+var _calendar2PlusDefault = parcelHelpers.interopDefault(_calendar2Plus);
+var _calendar2RangeFill = require("./icons/calendar2-range-fill");
+var _calendar2RangeFillDefault = parcelHelpers.interopDefault(_calendar2RangeFill);
+var _calendar2Range = require("./icons/calendar2-range");
+var _calendar2RangeDefault = parcelHelpers.interopDefault(_calendar2Range);
+var _calendar2WeekFill = require("./icons/calendar2-week-fill");
+var _calendar2WeekFillDefault = parcelHelpers.interopDefault(_calendar2WeekFill);
+var _calendar2Week = require("./icons/calendar2-week");
+var _calendar2WeekDefault = parcelHelpers.interopDefault(_calendar2Week);
+var _calendar2XFill = require("./icons/calendar2-x-fill");
+var _calendar2XFillDefault = parcelHelpers.interopDefault(_calendar2XFill);
+var _calendar2X = require("./icons/calendar2-x");
+var _calendar2XDefault = parcelHelpers.interopDefault(_calendar2X);
+var _calendar2 = require("./icons/calendar2");
+var _calendar2Default = parcelHelpers.interopDefault(_calendar2);
+var _calendar3EventFill = require("./icons/calendar3-event-fill");
+var _calendar3EventFillDefault = parcelHelpers.interopDefault(_calendar3EventFill);
+var _calendar3Event = require("./icons/calendar3-event");
+var _calendar3EventDefault = parcelHelpers.interopDefault(_calendar3Event);
+var _calendar3Fill = require("./icons/calendar3-fill");
+var _calendar3FillDefault = parcelHelpers.interopDefault(_calendar3Fill);
+var _calendar3RangeFill = require("./icons/calendar3-range-fill");
+var _calendar3RangeFillDefault = parcelHelpers.interopDefault(_calendar3RangeFill);
+var _calendar3Range = require("./icons/calendar3-range");
+var _calendar3RangeDefault = parcelHelpers.interopDefault(_calendar3Range);
+var _calendar3WeekFill = require("./icons/calendar3-week-fill");
+var _calendar3WeekFillDefault = parcelHelpers.interopDefault(_calendar3WeekFill);
+var _calendar3Week = require("./icons/calendar3-week");
+var _calendar3WeekDefault = parcelHelpers.interopDefault(_calendar3Week);
+var _calendar3 = require("./icons/calendar3");
+var _calendar3Default = parcelHelpers.interopDefault(_calendar3);
+var _calendar4Event = require("./icons/calendar4-event");
+var _calendar4EventDefault = parcelHelpers.interopDefault(_calendar4Event);
+var _calendar4Range = require("./icons/calendar4-range");
+var _calendar4RangeDefault = parcelHelpers.interopDefault(_calendar4Range);
+var _calendar4Week = require("./icons/calendar4-week");
+var _calendar4WeekDefault = parcelHelpers.interopDefault(_calendar4Week);
+var _calendar4 = require("./icons/calendar4");
+var _calendar4Default = parcelHelpers.interopDefault(_calendar4);
+var _cameraFill = require("./icons/camera-fill");
+var _cameraFillDefault = parcelHelpers.interopDefault(_cameraFill);
+var _cameraReelsFill = require("./icons/camera-reels-fill");
+var _cameraReelsFillDefault = parcelHelpers.interopDefault(_cameraReelsFill);
+var _cameraReels = require("./icons/camera-reels");
+var _cameraReelsDefault = parcelHelpers.interopDefault(_cameraReels);
+var _cameraVideoFill = require("./icons/camera-video-fill");
+var _cameraVideoFillDefault = parcelHelpers.interopDefault(_cameraVideoFill);
+var _cameraVideoOffFill = require("./icons/camera-video-off-fill");
+var _cameraVideoOffFillDefault = parcelHelpers.interopDefault(_cameraVideoOffFill);
+var _cameraVideoOff = require("./icons/camera-video-off");
+var _cameraVideoOffDefault = parcelHelpers.interopDefault(_cameraVideoOff);
+var _cameraVideo = require("./icons/camera-video");
+var _cameraVideoDefault = parcelHelpers.interopDefault(_cameraVideo);
+var _camera = require("./icons/camera");
+var _cameraDefault = parcelHelpers.interopDefault(_camera);
+var _camera2 = require("./icons/camera2");
+var _camera2Default = parcelHelpers.interopDefault(_camera2);
+var _capslockFill = require("./icons/capslock-fill");
+var _capslockFillDefault = parcelHelpers.interopDefault(_capslockFill);
+var _capslock = require("./icons/capslock");
+var _capslockDefault = parcelHelpers.interopDefault(_capslock);
+var _cardChecklist = require("./icons/card-checklist");
+var _cardChecklistDefault = parcelHelpers.interopDefault(_cardChecklist);
+var _cardHeading = require("./icons/card-heading");
+var _cardHeadingDefault = parcelHelpers.interopDefault(_cardHeading);
+var _cardImage = require("./icons/card-image");
+var _cardImageDefault = parcelHelpers.interopDefault(_cardImage);
+var _cardList = require("./icons/card-list");
+var _cardListDefault = parcelHelpers.interopDefault(_cardList);
+var _cardText = require("./icons/card-text");
+var _cardTextDefault = parcelHelpers.interopDefault(_cardText);
+var _caretDownFill = require("./icons/caret-down-fill");
+var _caretDownFillDefault = parcelHelpers.interopDefault(_caretDownFill);
+var _caretDownSquareFill = require("./icons/caret-down-square-fill");
+var _caretDownSquareFillDefault = parcelHelpers.interopDefault(_caretDownSquareFill);
+var _caretDownSquare = require("./icons/caret-down-square");
+var _caretDownSquareDefault = parcelHelpers.interopDefault(_caretDownSquare);
+var _caretDown = require("./icons/caret-down");
+var _caretDownDefault = parcelHelpers.interopDefault(_caretDown);
+var _caretLeftFill = require("./icons/caret-left-fill");
+var _caretLeftFillDefault = parcelHelpers.interopDefault(_caretLeftFill);
+var _caretLeftSquareFill = require("./icons/caret-left-square-fill");
+var _caretLeftSquareFillDefault = parcelHelpers.interopDefault(_caretLeftSquareFill);
+var _caretLeftSquare = require("./icons/caret-left-square");
+var _caretLeftSquareDefault = parcelHelpers.interopDefault(_caretLeftSquare);
+var _caretLeft = require("./icons/caret-left");
+var _caretLeftDefault = parcelHelpers.interopDefault(_caretLeft);
+var _caretRightFill = require("./icons/caret-right-fill");
+var _caretRightFillDefault = parcelHelpers.interopDefault(_caretRightFill);
+var _caretRightSquareFill = require("./icons/caret-right-square-fill");
+var _caretRightSquareFillDefault = parcelHelpers.interopDefault(_caretRightSquareFill);
+var _caretRightSquare = require("./icons/caret-right-square");
+var _caretRightSquareDefault = parcelHelpers.interopDefault(_caretRightSquare);
+var _caretRight = require("./icons/caret-right");
+var _caretRightDefault = parcelHelpers.interopDefault(_caretRight);
+var _caretUpFill = require("./icons/caret-up-fill");
+var _caretUpFillDefault = parcelHelpers.interopDefault(_caretUpFill);
+var _caretUpSquareFill = require("./icons/caret-up-square-fill");
+var _caretUpSquareFillDefault = parcelHelpers.interopDefault(_caretUpSquareFill);
+var _caretUpSquare = require("./icons/caret-up-square");
+var _caretUpSquareDefault = parcelHelpers.interopDefault(_caretUpSquare);
+var _caretUp = require("./icons/caret-up");
+var _caretUpDefault = parcelHelpers.interopDefault(_caretUp);
+var _cartCheckFill = require("./icons/cart-check-fill");
+var _cartCheckFillDefault = parcelHelpers.interopDefault(_cartCheckFill);
+var _cartCheck = require("./icons/cart-check");
+var _cartCheckDefault = parcelHelpers.interopDefault(_cartCheck);
+var _cartDashFill = require("./icons/cart-dash-fill");
+var _cartDashFillDefault = parcelHelpers.interopDefault(_cartDashFill);
+var _cartDash = require("./icons/cart-dash");
+var _cartDashDefault = parcelHelpers.interopDefault(_cartDash);
+var _cartFill = require("./icons/cart-fill");
+var _cartFillDefault = parcelHelpers.interopDefault(_cartFill);
+var _cartPlusFill = require("./icons/cart-plus-fill");
+var _cartPlusFillDefault = parcelHelpers.interopDefault(_cartPlusFill);
+var _cartPlus = require("./icons/cart-plus");
+var _cartPlusDefault = parcelHelpers.interopDefault(_cartPlus);
+var _cartXFill = require("./icons/cart-x-fill");
+var _cartXFillDefault = parcelHelpers.interopDefault(_cartXFill);
+var _cartX = require("./icons/cart-x");
+var _cartXDefault = parcelHelpers.interopDefault(_cartX);
+var _cart = require("./icons/cart");
+var _cartDefault = parcelHelpers.interopDefault(_cart);
+var _cart2 = require("./icons/cart2");
+var _cart2Default = parcelHelpers.interopDefault(_cart2);
+var _cart3 = require("./icons/cart3");
+var _cart3Default = parcelHelpers.interopDefault(_cart3);
+var _cart4 = require("./icons/cart4");
+var _cart4Default = parcelHelpers.interopDefault(_cart4);
+var _cashCoin = require("./icons/cash-coin");
+var _cashCoinDefault = parcelHelpers.interopDefault(_cashCoin);
+var _cashStack = require("./icons/cash-stack");
+var _cashStackDefault = parcelHelpers.interopDefault(_cashStack);
+var _cash = require("./icons/cash");
+var _cashDefault = parcelHelpers.interopDefault(_cash);
+var _cast = require("./icons/cast");
+var _castDefault = parcelHelpers.interopDefault(_cast);
+var _chatDotsFill = require("./icons/chat-dots-fill");
+var _chatDotsFillDefault = parcelHelpers.interopDefault(_chatDotsFill);
+var _chatDots = require("./icons/chat-dots");
+var _chatDotsDefault = parcelHelpers.interopDefault(_chatDots);
+var _chatFill = require("./icons/chat-fill");
+var _chatFillDefault = parcelHelpers.interopDefault(_chatFill);
+var _chatLeftDotsFill = require("./icons/chat-left-dots-fill");
+var _chatLeftDotsFillDefault = parcelHelpers.interopDefault(_chatLeftDotsFill);
+var _chatLeftDots = require("./icons/chat-left-dots");
+var _chatLeftDotsDefault = parcelHelpers.interopDefault(_chatLeftDots);
+var _chatLeftFill = require("./icons/chat-left-fill");
+var _chatLeftFillDefault = parcelHelpers.interopDefault(_chatLeftFill);
+var _chatLeftQuoteFill = require("./icons/chat-left-quote-fill");
+var _chatLeftQuoteFillDefault = parcelHelpers.interopDefault(_chatLeftQuoteFill);
+var _chatLeftQuote = require("./icons/chat-left-quote");
+var _chatLeftQuoteDefault = parcelHelpers.interopDefault(_chatLeftQuote);
+var _chatLeftTextFill = require("./icons/chat-left-text-fill");
+var _chatLeftTextFillDefault = parcelHelpers.interopDefault(_chatLeftTextFill);
+var _chatLeftText = require("./icons/chat-left-text");
+var _chatLeftTextDefault = parcelHelpers.interopDefault(_chatLeftText);
+var _chatLeft = require("./icons/chat-left");
+var _chatLeftDefault = parcelHelpers.interopDefault(_chatLeft);
+var _chatQuoteFill = require("./icons/chat-quote-fill");
+var _chatQuoteFillDefault = parcelHelpers.interopDefault(_chatQuoteFill);
+var _chatQuote = require("./icons/chat-quote");
+var _chatQuoteDefault = parcelHelpers.interopDefault(_chatQuote);
+var _chatRightDotsFill = require("./icons/chat-right-dots-fill");
+var _chatRightDotsFillDefault = parcelHelpers.interopDefault(_chatRightDotsFill);
+var _chatRightDots = require("./icons/chat-right-dots");
+var _chatRightDotsDefault = parcelHelpers.interopDefault(_chatRightDots);
+var _chatRightFill = require("./icons/chat-right-fill");
+var _chatRightFillDefault = parcelHelpers.interopDefault(_chatRightFill);
+var _chatRightQuoteFill = require("./icons/chat-right-quote-fill");
+var _chatRightQuoteFillDefault = parcelHelpers.interopDefault(_chatRightQuoteFill);
+var _chatRightQuote = require("./icons/chat-right-quote");
+var _chatRightQuoteDefault = parcelHelpers.interopDefault(_chatRightQuote);
+var _chatRightTextFill = require("./icons/chat-right-text-fill");
+var _chatRightTextFillDefault = parcelHelpers.interopDefault(_chatRightTextFill);
+var _chatRightText = require("./icons/chat-right-text");
+var _chatRightTextDefault = parcelHelpers.interopDefault(_chatRightText);
+var _chatRight = require("./icons/chat-right");
+var _chatRightDefault = parcelHelpers.interopDefault(_chatRight);
+var _chatSquareDotsFill = require("./icons/chat-square-dots-fill");
+var _chatSquareDotsFillDefault = parcelHelpers.interopDefault(_chatSquareDotsFill);
+var _chatSquareDots = require("./icons/chat-square-dots");
+var _chatSquareDotsDefault = parcelHelpers.interopDefault(_chatSquareDots);
+var _chatSquareFill = require("./icons/chat-square-fill");
+var _chatSquareFillDefault = parcelHelpers.interopDefault(_chatSquareFill);
+var _chatSquareQuoteFill = require("./icons/chat-square-quote-fill");
+var _chatSquareQuoteFillDefault = parcelHelpers.interopDefault(_chatSquareQuoteFill);
+var _chatSquareQuote = require("./icons/chat-square-quote");
+var _chatSquareQuoteDefault = parcelHelpers.interopDefault(_chatSquareQuote);
+var _chatSquareTextFill = require("./icons/chat-square-text-fill");
+var _chatSquareTextFillDefault = parcelHelpers.interopDefault(_chatSquareTextFill);
+var _chatSquareText = require("./icons/chat-square-text");
+var _chatSquareTextDefault = parcelHelpers.interopDefault(_chatSquareText);
+var _chatSquare = require("./icons/chat-square");
+var _chatSquareDefault = parcelHelpers.interopDefault(_chatSquare);
+var _chatTextFill = require("./icons/chat-text-fill");
+var _chatTextFillDefault = parcelHelpers.interopDefault(_chatTextFill);
+var _chatText = require("./icons/chat-text");
+var _chatTextDefault = parcelHelpers.interopDefault(_chatText);
+var _chat = require("./icons/chat");
+var _chatDefault = parcelHelpers.interopDefault(_chat);
+var _checkAll = require("./icons/check-all");
+var _checkAllDefault = parcelHelpers.interopDefault(_checkAll);
+var _checkCircleFill = require("./icons/check-circle-fill");
+var _checkCircleFillDefault = parcelHelpers.interopDefault(_checkCircleFill);
+var _checkCircle = require("./icons/check-circle");
+var _checkCircleDefault = parcelHelpers.interopDefault(_checkCircle);
+var _checkLg = require("./icons/check-lg");
+var _checkLgDefault = parcelHelpers.interopDefault(_checkLg);
+var _checkSquareFill = require("./icons/check-square-fill");
+var _checkSquareFillDefault = parcelHelpers.interopDefault(_checkSquareFill);
+var _checkSquare = require("./icons/check-square");
+var _checkSquareDefault = parcelHelpers.interopDefault(_checkSquare);
+var _check = require("./icons/check");
+var _checkDefault = parcelHelpers.interopDefault(_check);
+var _check2All = require("./icons/check2-all");
+var _check2AllDefault = parcelHelpers.interopDefault(_check2All);
+var _check2Circle = require("./icons/check2-circle");
+var _check2CircleDefault = parcelHelpers.interopDefault(_check2Circle);
+var _check2Square = require("./icons/check2-square");
+var _check2SquareDefault = parcelHelpers.interopDefault(_check2Square);
+var _check2 = require("./icons/check2");
+var _check2Default = parcelHelpers.interopDefault(_check2);
+var _chevronBarContract = require("./icons/chevron-bar-contract");
+var _chevronBarContractDefault = parcelHelpers.interopDefault(_chevronBarContract);
+var _chevronBarDown = require("./icons/chevron-bar-down");
+var _chevronBarDownDefault = parcelHelpers.interopDefault(_chevronBarDown);
+var _chevronBarExpand = require("./icons/chevron-bar-expand");
+var _chevronBarExpandDefault = parcelHelpers.interopDefault(_chevronBarExpand);
+var _chevronBarLeft = require("./icons/chevron-bar-left");
+var _chevronBarLeftDefault = parcelHelpers.interopDefault(_chevronBarLeft);
+var _chevronBarRight = require("./icons/chevron-bar-right");
+var _chevronBarRightDefault = parcelHelpers.interopDefault(_chevronBarRight);
+var _chevronBarUp = require("./icons/chevron-bar-up");
+var _chevronBarUpDefault = parcelHelpers.interopDefault(_chevronBarUp);
+var _chevronCompactDown = require("./icons/chevron-compact-down");
+var _chevronCompactDownDefault = parcelHelpers.interopDefault(_chevronCompactDown);
+var _chevronCompactLeft = require("./icons/chevron-compact-left");
+var _chevronCompactLeftDefault = parcelHelpers.interopDefault(_chevronCompactLeft);
+var _chevronCompactRight = require("./icons/chevron-compact-right");
+var _chevronCompactRightDefault = parcelHelpers.interopDefault(_chevronCompactRight);
+var _chevronCompactUp = require("./icons/chevron-compact-up");
+var _chevronCompactUpDefault = parcelHelpers.interopDefault(_chevronCompactUp);
+var _chevronContract = require("./icons/chevron-contract");
+var _chevronContractDefault = parcelHelpers.interopDefault(_chevronContract);
+var _chevronDoubleDown = require("./icons/chevron-double-down");
+var _chevronDoubleDownDefault = parcelHelpers.interopDefault(_chevronDoubleDown);
+var _chevronDoubleLeft = require("./icons/chevron-double-left");
+var _chevronDoubleLeftDefault = parcelHelpers.interopDefault(_chevronDoubleLeft);
+var _chevronDoubleRight = require("./icons/chevron-double-right");
+var _chevronDoubleRightDefault = parcelHelpers.interopDefault(_chevronDoubleRight);
+var _chevronDoubleUp = require("./icons/chevron-double-up");
+var _chevronDoubleUpDefault = parcelHelpers.interopDefault(_chevronDoubleUp);
+var _chevronDown = require("./icons/chevron-down");
+var _chevronDownDefault = parcelHelpers.interopDefault(_chevronDown);
+var _chevronExpand = require("./icons/chevron-expand");
+var _chevronExpandDefault = parcelHelpers.interopDefault(_chevronExpand);
+var _chevronLeft = require("./icons/chevron-left");
+var _chevronLeftDefault = parcelHelpers.interopDefault(_chevronLeft);
+var _chevronRight = require("./icons/chevron-right");
+var _chevronRightDefault = parcelHelpers.interopDefault(_chevronRight);
+var _chevronUp = require("./icons/chevron-up");
+var _chevronUpDefault = parcelHelpers.interopDefault(_chevronUp);
+var _circleFill = require("./icons/circle-fill");
+var _circleFillDefault = parcelHelpers.interopDefault(_circleFill);
+var _circleHalf = require("./icons/circle-half");
+var _circleHalfDefault = parcelHelpers.interopDefault(_circleHalf);
+var _circleSquare = require("./icons/circle-square");
+var _circleSquareDefault = parcelHelpers.interopDefault(_circleSquare);
+var _circle = require("./icons/circle");
+var _circleDefault = parcelHelpers.interopDefault(_circle);
+var _clipboardCheck = require("./icons/clipboard-check");
+var _clipboardCheckDefault = parcelHelpers.interopDefault(_clipboardCheck);
+var _clipboardData = require("./icons/clipboard-data");
+var _clipboardDataDefault = parcelHelpers.interopDefault(_clipboardData);
+var _clipboardMinus = require("./icons/clipboard-minus");
+var _clipboardMinusDefault = parcelHelpers.interopDefault(_clipboardMinus);
+var _clipboardPlus = require("./icons/clipboard-plus");
+var _clipboardPlusDefault = parcelHelpers.interopDefault(_clipboardPlus);
+var _clipboardX = require("./icons/clipboard-x");
+var _clipboardXDefault = parcelHelpers.interopDefault(_clipboardX);
+var _clipboard = require("./icons/clipboard");
+var _clipboardDefault = parcelHelpers.interopDefault(_clipboard);
+var _clockFill = require("./icons/clock-fill");
+var _clockFillDefault = parcelHelpers.interopDefault(_clockFill);
+var _clockHistory = require("./icons/clock-history");
+var _clockHistoryDefault = parcelHelpers.interopDefault(_clockHistory);
+var _clock = require("./icons/clock");
+var _clockDefault = parcelHelpers.interopDefault(_clock);
+var _cloudArrowDownFill = require("./icons/cloud-arrow-down-fill");
+var _cloudArrowDownFillDefault = parcelHelpers.interopDefault(_cloudArrowDownFill);
+var _cloudArrowDown = require("./icons/cloud-arrow-down");
+var _cloudArrowDownDefault = parcelHelpers.interopDefault(_cloudArrowDown);
+var _cloudArrowUpFill = require("./icons/cloud-arrow-up-fill");
+var _cloudArrowUpFillDefault = parcelHelpers.interopDefault(_cloudArrowUpFill);
+var _cloudArrowUp = require("./icons/cloud-arrow-up");
+var _cloudArrowUpDefault = parcelHelpers.interopDefault(_cloudArrowUp);
+var _cloudCheckFill = require("./icons/cloud-check-fill");
+var _cloudCheckFillDefault = parcelHelpers.interopDefault(_cloudCheckFill);
+var _cloudCheck = require("./icons/cloud-check");
+var _cloudCheckDefault = parcelHelpers.interopDefault(_cloudCheck);
+var _cloudDownloadFill = require("./icons/cloud-download-fill");
+var _cloudDownloadFillDefault = parcelHelpers.interopDefault(_cloudDownloadFill);
+var _cloudDownload = require("./icons/cloud-download");
+var _cloudDownloadDefault = parcelHelpers.interopDefault(_cloudDownload);
+var _cloudDrizzleFill = require("./icons/cloud-drizzle-fill");
+var _cloudDrizzleFillDefault = parcelHelpers.interopDefault(_cloudDrizzleFill);
+var _cloudDrizzle = require("./icons/cloud-drizzle");
+var _cloudDrizzleDefault = parcelHelpers.interopDefault(_cloudDrizzle);
+var _cloudFill = require("./icons/cloud-fill");
+var _cloudFillDefault = parcelHelpers.interopDefault(_cloudFill);
+var _cloudFogFill = require("./icons/cloud-fog-fill");
+var _cloudFogFillDefault = parcelHelpers.interopDefault(_cloudFogFill);
+var _cloudFog = require("./icons/cloud-fog");
+var _cloudFogDefault = parcelHelpers.interopDefault(_cloudFog);
+var _cloudFog2Fill = require("./icons/cloud-fog2-fill");
+var _cloudFog2FillDefault = parcelHelpers.interopDefault(_cloudFog2Fill);
+var _cloudFog2 = require("./icons/cloud-fog2");
+var _cloudFog2Default = parcelHelpers.interopDefault(_cloudFog2);
+var _cloudHailFill = require("./icons/cloud-hail-fill");
+var _cloudHailFillDefault = parcelHelpers.interopDefault(_cloudHailFill);
+var _cloudHail = require("./icons/cloud-hail");
+var _cloudHailDefault = parcelHelpers.interopDefault(_cloudHail);
+var _cloudHazeFill = require("./icons/cloud-haze-fill");
+var _cloudHazeFillDefault = parcelHelpers.interopDefault(_cloudHazeFill);
+var _cloudHaze = require("./icons/cloud-haze");
+var _cloudHazeDefault = parcelHelpers.interopDefault(_cloudHaze);
+var _cloudHaze2Fill = require("./icons/cloud-haze2-fill");
+var _cloudHaze2FillDefault = parcelHelpers.interopDefault(_cloudHaze2Fill);
+var _cloudHaze2 = require("./icons/cloud-haze2");
+var _cloudHaze2Default = parcelHelpers.interopDefault(_cloudHaze2);
+var _cloudLightningFill = require("./icons/cloud-lightning-fill");
+var _cloudLightningFillDefault = parcelHelpers.interopDefault(_cloudLightningFill);
+var _cloudLightningRainFill = require("./icons/cloud-lightning-rain-fill");
+var _cloudLightningRainFillDefault = parcelHelpers.interopDefault(_cloudLightningRainFill);
+var _cloudLightningRain = require("./icons/cloud-lightning-rain");
+var _cloudLightningRainDefault = parcelHelpers.interopDefault(_cloudLightningRain);
+var _cloudLightning = require("./icons/cloud-lightning");
+var _cloudLightningDefault = parcelHelpers.interopDefault(_cloudLightning);
+var _cloudMinusFill = require("./icons/cloud-minus-fill");
+var _cloudMinusFillDefault = parcelHelpers.interopDefault(_cloudMinusFill);
+var _cloudMinus = require("./icons/cloud-minus");
+var _cloudMinusDefault = parcelHelpers.interopDefault(_cloudMinus);
+var _cloudMoonFill = require("./icons/cloud-moon-fill");
+var _cloudMoonFillDefault = parcelHelpers.interopDefault(_cloudMoonFill);
+var _cloudMoon = require("./icons/cloud-moon");
+var _cloudMoonDefault = parcelHelpers.interopDefault(_cloudMoon);
+var _cloudPlusFill = require("./icons/cloud-plus-fill");
+var _cloudPlusFillDefault = parcelHelpers.interopDefault(_cloudPlusFill);
+var _cloudPlus = require("./icons/cloud-plus");
+var _cloudPlusDefault = parcelHelpers.interopDefault(_cloudPlus);
+var _cloudRainFill = require("./icons/cloud-rain-fill");
+var _cloudRainFillDefault = parcelHelpers.interopDefault(_cloudRainFill);
+var _cloudRainHeavyFill = require("./icons/cloud-rain-heavy-fill");
+var _cloudRainHeavyFillDefault = parcelHelpers.interopDefault(_cloudRainHeavyFill);
+var _cloudRainHeavy = require("./icons/cloud-rain-heavy");
+var _cloudRainHeavyDefault = parcelHelpers.interopDefault(_cloudRainHeavy);
+var _cloudRain = require("./icons/cloud-rain");
+var _cloudRainDefault = parcelHelpers.interopDefault(_cloudRain);
+var _cloudSlashFill = require("./icons/cloud-slash-fill");
+var _cloudSlashFillDefault = parcelHelpers.interopDefault(_cloudSlashFill);
+var _cloudSlash = require("./icons/cloud-slash");
+var _cloudSlashDefault = parcelHelpers.interopDefault(_cloudSlash);
+var _cloudSleetFill = require("./icons/cloud-sleet-fill");
+var _cloudSleetFillDefault = parcelHelpers.interopDefault(_cloudSleetFill);
+var _cloudSleet = require("./icons/cloud-sleet");
+var _cloudSleetDefault = parcelHelpers.interopDefault(_cloudSleet);
+var _cloudSnowFill = require("./icons/cloud-snow-fill");
+var _cloudSnowFillDefault = parcelHelpers.interopDefault(_cloudSnowFill);
+var _cloudSnow = require("./icons/cloud-snow");
+var _cloudSnowDefault = parcelHelpers.interopDefault(_cloudSnow);
+var _cloudSunFill = require("./icons/cloud-sun-fill");
+var _cloudSunFillDefault = parcelHelpers.interopDefault(_cloudSunFill);
+var _cloudSun = require("./icons/cloud-sun");
+var _cloudSunDefault = parcelHelpers.interopDefault(_cloudSun);
+var _cloudUploadFill = require("./icons/cloud-upload-fill");
+var _cloudUploadFillDefault = parcelHelpers.interopDefault(_cloudUploadFill);
+var _cloudUpload = require("./icons/cloud-upload");
+var _cloudUploadDefault = parcelHelpers.interopDefault(_cloudUpload);
+var _cloud = require("./icons/cloud");
+var _cloudDefault = parcelHelpers.interopDefault(_cloud);
+var _cloudsFill = require("./icons/clouds-fill");
+var _cloudsFillDefault = parcelHelpers.interopDefault(_cloudsFill);
+var _clouds = require("./icons/clouds");
+var _cloudsDefault = parcelHelpers.interopDefault(_clouds);
+var _cloudyFill = require("./icons/cloudy-fill");
+var _cloudyFillDefault = parcelHelpers.interopDefault(_cloudyFill);
+var _cloudy = require("./icons/cloudy");
+var _cloudyDefault = parcelHelpers.interopDefault(_cloudy);
+var _codeSlash = require("./icons/code-slash");
+var _codeSlashDefault = parcelHelpers.interopDefault(_codeSlash);
+var _codeSquare = require("./icons/code-square");
+var _codeSquareDefault = parcelHelpers.interopDefault(_codeSquare);
+var _code = require("./icons/code");
+var _codeDefault = parcelHelpers.interopDefault(_code);
+var _coin = require("./icons/coin");
+var _coinDefault = parcelHelpers.interopDefault(_coin);
+var _collectionFill = require("./icons/collection-fill");
+var _collectionFillDefault = parcelHelpers.interopDefault(_collectionFill);
+var _collectionPlayFill = require("./icons/collection-play-fill");
+var _collectionPlayFillDefault = parcelHelpers.interopDefault(_collectionPlayFill);
+var _collectionPlay = require("./icons/collection-play");
+var _collectionPlayDefault = parcelHelpers.interopDefault(_collectionPlay);
+var _collection = require("./icons/collection");
+var _collectionDefault = parcelHelpers.interopDefault(_collection);
+var _columnsGap = require("./icons/columns-gap");
+var _columnsGapDefault = parcelHelpers.interopDefault(_columnsGap);
+var _columns = require("./icons/columns");
+var _columnsDefault = parcelHelpers.interopDefault(_columns);
+var _command = require("./icons/command");
+var _commandDefault = parcelHelpers.interopDefault(_command);
+var _compassFill = require("./icons/compass-fill");
+var _compassFillDefault = parcelHelpers.interopDefault(_compassFill);
+var _compass = require("./icons/compass");
+var _compassDefault = parcelHelpers.interopDefault(_compass);
+var _coneStriped = require("./icons/cone-striped");
+var _coneStripedDefault = parcelHelpers.interopDefault(_coneStriped);
+var _cone = require("./icons/cone");
+var _coneDefault = parcelHelpers.interopDefault(_cone);
+var _controller = require("./icons/controller");
+var _controllerDefault = parcelHelpers.interopDefault(_controller);
+var _cpuFill = require("./icons/cpu-fill");
+var _cpuFillDefault = parcelHelpers.interopDefault(_cpuFill);
+var _cpu = require("./icons/cpu");
+var _cpuDefault = parcelHelpers.interopDefault(_cpu);
+var _creditCard2BackFill = require("./icons/credit-card-2-back-fill");
+var _creditCard2BackFillDefault = parcelHelpers.interopDefault(_creditCard2BackFill);
+var _creditCard2Back = require("./icons/credit-card-2-back");
+var _creditCard2BackDefault = parcelHelpers.interopDefault(_creditCard2Back);
+var _creditCard2FrontFill = require("./icons/credit-card-2-front-fill");
+var _creditCard2FrontFillDefault = parcelHelpers.interopDefault(_creditCard2FrontFill);
+var _creditCard2Front = require("./icons/credit-card-2-front");
+var _creditCard2FrontDefault = parcelHelpers.interopDefault(_creditCard2Front);
+var _creditCardFill = require("./icons/credit-card-fill");
+var _creditCardFillDefault = parcelHelpers.interopDefault(_creditCardFill);
+var _creditCard = require("./icons/credit-card");
+var _creditCardDefault = parcelHelpers.interopDefault(_creditCard);
+var _crop = require("./icons/crop");
+var _cropDefault = parcelHelpers.interopDefault(_crop);
+var _cupFill = require("./icons/cup-fill");
+var _cupFillDefault = parcelHelpers.interopDefault(_cupFill);
+var _cupStraw = require("./icons/cup-straw");
+var _cupStrawDefault = parcelHelpers.interopDefault(_cupStraw);
+var _cup = require("./icons/cup");
+var _cupDefault = parcelHelpers.interopDefault(_cup);
+var _currencyBitcoin = require("./icons/currency-bitcoin");
+var _currencyBitcoinDefault = parcelHelpers.interopDefault(_currencyBitcoin);
+var _currencyDollar = require("./icons/currency-dollar");
+var _currencyDollarDefault = parcelHelpers.interopDefault(_currencyDollar);
+var _currencyEuro = require("./icons/currency-euro");
+var _currencyEuroDefault = parcelHelpers.interopDefault(_currencyEuro);
+var _currencyExchange = require("./icons/currency-exchange");
+var _currencyExchangeDefault = parcelHelpers.interopDefault(_currencyExchange);
+var _currencyPound = require("./icons/currency-pound");
+var _currencyPoundDefault = parcelHelpers.interopDefault(_currencyPound);
+var _currencyYen = require("./icons/currency-yen");
+var _currencyYenDefault = parcelHelpers.interopDefault(_currencyYen);
+var _cursorFill = require("./icons/cursor-fill");
+var _cursorFillDefault = parcelHelpers.interopDefault(_cursorFill);
+var _cursorText = require("./icons/cursor-text");
+var _cursorTextDefault = parcelHelpers.interopDefault(_cursorText);
+var _cursor = require("./icons/cursor");
+var _cursorDefault = parcelHelpers.interopDefault(_cursor);
+var _dashCircleDotted = require("./icons/dash-circle-dotted");
+var _dashCircleDottedDefault = parcelHelpers.interopDefault(_dashCircleDotted);
+var _dashCircleFill = require("./icons/dash-circle-fill");
+var _dashCircleFillDefault = parcelHelpers.interopDefault(_dashCircleFill);
+var _dashCircle = require("./icons/dash-circle");
+var _dashCircleDefault = parcelHelpers.interopDefault(_dashCircle);
+var _dashLg = require("./icons/dash-lg");
+var _dashLgDefault = parcelHelpers.interopDefault(_dashLg);
+var _dashSquareDotted = require("./icons/dash-square-dotted");
+var _dashSquareDottedDefault = parcelHelpers.interopDefault(_dashSquareDotted);
+var _dashSquareFill = require("./icons/dash-square-fill");
+var _dashSquareFillDefault = parcelHelpers.interopDefault(_dashSquareFill);
+var _dashSquare = require("./icons/dash-square");
+var _dashSquareDefault = parcelHelpers.interopDefault(_dashSquare);
+var _dash = require("./icons/dash");
+var _dashDefault = parcelHelpers.interopDefault(_dash);
+var _deviceHddFill = require("./icons/device-hdd-fill");
+var _deviceHddFillDefault = parcelHelpers.interopDefault(_deviceHddFill);
+var _deviceHdd = require("./icons/device-hdd");
+var _deviceHddDefault = parcelHelpers.interopDefault(_deviceHdd);
+var _deviceSsdFill = require("./icons/device-ssd-fill");
+var _deviceSsdFillDefault = parcelHelpers.interopDefault(_deviceSsdFill);
+var _deviceSsd = require("./icons/device-ssd");
+var _deviceSsdDefault = parcelHelpers.interopDefault(_deviceSsd);
+var _diagram2Fill = require("./icons/diagram-2-fill");
+var _diagram2FillDefault = parcelHelpers.interopDefault(_diagram2Fill);
+var _diagram2 = require("./icons/diagram-2");
+var _diagram2Default = parcelHelpers.interopDefault(_diagram2);
+var _diagram3Fill = require("./icons/diagram-3-fill");
+var _diagram3FillDefault = parcelHelpers.interopDefault(_diagram3Fill);
+var _diagram3 = require("./icons/diagram-3");
+var _diagram3Default = parcelHelpers.interopDefault(_diagram3);
+var _diamondFill = require("./icons/diamond-fill");
+var _diamondFillDefault = parcelHelpers.interopDefault(_diamondFill);
+var _diamondHalf = require("./icons/diamond-half");
+var _diamondHalfDefault = parcelHelpers.interopDefault(_diamondHalf);
+var _diamond = require("./icons/diamond");
+var _diamondDefault = parcelHelpers.interopDefault(_diamond);
+var _dice1Fill = require("./icons/dice-1-fill");
+var _dice1FillDefault = parcelHelpers.interopDefault(_dice1Fill);
+var _dice1 = require("./icons/dice-1");
+var _dice1Default = parcelHelpers.interopDefault(_dice1);
+var _dice2Fill = require("./icons/dice-2-fill");
+var _dice2FillDefault = parcelHelpers.interopDefault(_dice2Fill);
+var _dice2 = require("./icons/dice-2");
+var _dice2Default = parcelHelpers.interopDefault(_dice2);
+var _dice3Fill = require("./icons/dice-3-fill");
+var _dice3FillDefault = parcelHelpers.interopDefault(_dice3Fill);
+var _dice3 = require("./icons/dice-3");
+var _dice3Default = parcelHelpers.interopDefault(_dice3);
+var _dice4Fill = require("./icons/dice-4-fill");
+var _dice4FillDefault = parcelHelpers.interopDefault(_dice4Fill);
+var _dice4 = require("./icons/dice-4");
+var _dice4Default = parcelHelpers.interopDefault(_dice4);
+var _dice5Fill = require("./icons/dice-5-fill");
+var _dice5FillDefault = parcelHelpers.interopDefault(_dice5Fill);
+var _dice5 = require("./icons/dice-5");
+var _dice5Default = parcelHelpers.interopDefault(_dice5);
+var _dice6Fill = require("./icons/dice-6-fill");
+var _dice6FillDefault = parcelHelpers.interopDefault(_dice6Fill);
+var _dice6 = require("./icons/dice-6");
+var _dice6Default = parcelHelpers.interopDefault(_dice6);
+var _discFill = require("./icons/disc-fill");
+var _discFillDefault = parcelHelpers.interopDefault(_discFill);
+var _disc = require("./icons/disc");
+var _discDefault = parcelHelpers.interopDefault(_disc);
+var _discord = require("./icons/discord");
+var _discordDefault = parcelHelpers.interopDefault(_discord);
+var _displayFill = require("./icons/display-fill");
+var _displayFillDefault = parcelHelpers.interopDefault(_displayFill);
+var _display = require("./icons/display");
+var _displayDefault = parcelHelpers.interopDefault(_display);
+var _displayportFill = require("./icons/displayport-fill");
+var _displayportFillDefault = parcelHelpers.interopDefault(_displayportFill);
+var _displayport = require("./icons/displayport");
+var _displayportDefault = parcelHelpers.interopDefault(_displayport);
+var _distributeHorizontal = require("./icons/distribute-horizontal");
+var _distributeHorizontalDefault = parcelHelpers.interopDefault(_distributeHorizontal);
+var _distributeVertical = require("./icons/distribute-vertical");
+var _distributeVerticalDefault = parcelHelpers.interopDefault(_distributeVertical);
+var _doorClosedFill = require("./icons/door-closed-fill");
+var _doorClosedFillDefault = parcelHelpers.interopDefault(_doorClosedFill);
+var _doorClosed = require("./icons/door-closed");
+var _doorClosedDefault = parcelHelpers.interopDefault(_doorClosed);
+var _doorOpenFill = require("./icons/door-open-fill");
+var _doorOpenFillDefault = parcelHelpers.interopDefault(_doorOpenFill);
+var _doorOpen = require("./icons/door-open");
+var _doorOpenDefault = parcelHelpers.interopDefault(_doorOpen);
+var _dot = require("./icons/dot");
+var _dotDefault = parcelHelpers.interopDefault(_dot);
+var _download = require("./icons/download");
+var _downloadDefault = parcelHelpers.interopDefault(_download);
+var _dpadFill = require("./icons/dpad-fill");
+var _dpadFillDefault = parcelHelpers.interopDefault(_dpadFill);
+var _dpad = require("./icons/dpad");
+var _dpadDefault = parcelHelpers.interopDefault(_dpad);
+var _dribbble = require("./icons/dribbble");
+var _dribbbleDefault = parcelHelpers.interopDefault(_dribbble);
+var _dropletFill = require("./icons/droplet-fill");
+var _dropletFillDefault = parcelHelpers.interopDefault(_dropletFill);
+var _dropletHalf = require("./icons/droplet-half");
+var _dropletHalfDefault = parcelHelpers.interopDefault(_dropletHalf);
+var _droplet = require("./icons/droplet");
+var _dropletDefault = parcelHelpers.interopDefault(_droplet);
+var _earFill = require("./icons/ear-fill");
+var _earFillDefault = parcelHelpers.interopDefault(_earFill);
+var _ear = require("./icons/ear");
+var _earDefault = parcelHelpers.interopDefault(_ear);
+var _earbuds = require("./icons/earbuds");
+var _earbudsDefault = parcelHelpers.interopDefault(_earbuds);
+var _easelFill = require("./icons/easel-fill");
+var _easelFillDefault = parcelHelpers.interopDefault(_easelFill);
+var _easel = require("./icons/easel");
+var _easelDefault = parcelHelpers.interopDefault(_easel);
+var _easel2Fill = require("./icons/easel2-fill");
+var _easel2FillDefault = parcelHelpers.interopDefault(_easel2Fill);
+var _easel2 = require("./icons/easel2");
+var _easel2Default = parcelHelpers.interopDefault(_easel2);
+var _easel3Fill = require("./icons/easel3-fill");
+var _easel3FillDefault = parcelHelpers.interopDefault(_easel3Fill);
+var _easel3 = require("./icons/easel3");
+var _easel3Default = parcelHelpers.interopDefault(_easel3);
+var _eggFill = require("./icons/egg-fill");
+var _eggFillDefault = parcelHelpers.interopDefault(_eggFill);
+var _eggFried = require("./icons/egg-fried");
+var _eggFriedDefault = parcelHelpers.interopDefault(_eggFried);
+var _egg = require("./icons/egg");
+var _eggDefault = parcelHelpers.interopDefault(_egg);
+var _ejectFill = require("./icons/eject-fill");
+var _ejectFillDefault = parcelHelpers.interopDefault(_ejectFill);
+var _eject = require("./icons/eject");
+var _ejectDefault = parcelHelpers.interopDefault(_eject);
+var _emojiAngryFill = require("./icons/emoji-angry-fill");
+var _emojiAngryFillDefault = parcelHelpers.interopDefault(_emojiAngryFill);
+var _emojiAngry = require("./icons/emoji-angry");
+var _emojiAngryDefault = parcelHelpers.interopDefault(_emojiAngry);
+var _emojiDizzyFill = require("./icons/emoji-dizzy-fill");
+var _emojiDizzyFillDefault = parcelHelpers.interopDefault(_emojiDizzyFill);
+var _emojiDizzy = require("./icons/emoji-dizzy");
+var _emojiDizzyDefault = parcelHelpers.interopDefault(_emojiDizzy);
+var _emojiExpressionlessFill = require("./icons/emoji-expressionless-fill");
+var _emojiExpressionlessFillDefault = parcelHelpers.interopDefault(_emojiExpressionlessFill);
+var _emojiExpressionless = require("./icons/emoji-expressionless");
+var _emojiExpressionlessDefault = parcelHelpers.interopDefault(_emojiExpressionless);
+var _emojiFrownFill = require("./icons/emoji-frown-fill");
+var _emojiFrownFillDefault = parcelHelpers.interopDefault(_emojiFrownFill);
+var _emojiFrown = require("./icons/emoji-frown");
+var _emojiFrownDefault = parcelHelpers.interopDefault(_emojiFrown);
+var _emojiHeartEyesFill = require("./icons/emoji-heart-eyes-fill");
+var _emojiHeartEyesFillDefault = parcelHelpers.interopDefault(_emojiHeartEyesFill);
+var _emojiHeartEyes = require("./icons/emoji-heart-eyes");
+var _emojiHeartEyesDefault = parcelHelpers.interopDefault(_emojiHeartEyes);
+var _emojiLaughingFill = require("./icons/emoji-laughing-fill");
+var _emojiLaughingFillDefault = parcelHelpers.interopDefault(_emojiLaughingFill);
+var _emojiLaughing = require("./icons/emoji-laughing");
+var _emojiLaughingDefault = parcelHelpers.interopDefault(_emojiLaughing);
+var _emojiNeutralFill = require("./icons/emoji-neutral-fill");
+var _emojiNeutralFillDefault = parcelHelpers.interopDefault(_emojiNeutralFill);
+var _emojiNeutral = require("./icons/emoji-neutral");
+var _emojiNeutralDefault = parcelHelpers.interopDefault(_emojiNeutral);
+var _emojiSmileFill = require("./icons/emoji-smile-fill");
+var _emojiSmileFillDefault = parcelHelpers.interopDefault(_emojiSmileFill);
+var _emojiSmileUpsideDownFill = require("./icons/emoji-smile-upside-down-fill");
+var _emojiSmileUpsideDownFillDefault = parcelHelpers.interopDefault(_emojiSmileUpsideDownFill);
+var _emojiSmileUpsideDown = require("./icons/emoji-smile-upside-down");
+var _emojiSmileUpsideDownDefault = parcelHelpers.interopDefault(_emojiSmileUpsideDown);
+var _emojiSmile = require("./icons/emoji-smile");
+var _emojiSmileDefault = parcelHelpers.interopDefault(_emojiSmile);
+var _emojiSunglassesFill = require("./icons/emoji-sunglasses-fill");
+var _emojiSunglassesFillDefault = parcelHelpers.interopDefault(_emojiSunglassesFill);
+var _emojiSunglasses = require("./icons/emoji-sunglasses");
+var _emojiSunglassesDefault = parcelHelpers.interopDefault(_emojiSunglasses);
+var _emojiWinkFill = require("./icons/emoji-wink-fill");
+var _emojiWinkFillDefault = parcelHelpers.interopDefault(_emojiWinkFill);
+var _emojiWink = require("./icons/emoji-wink");
+var _emojiWinkDefault = parcelHelpers.interopDefault(_emojiWink);
+var _envelopeCheckFill = require("./icons/envelope-check-fill");
+var _envelopeCheckFillDefault = parcelHelpers.interopDefault(_envelopeCheckFill);
+var _envelopeCheck = require("./icons/envelope-check");
+var _envelopeCheckDefault = parcelHelpers.interopDefault(_envelopeCheck);
+var _envelopeDashFill = require("./icons/envelope-dash-fill");
+var _envelopeDashFillDefault = parcelHelpers.interopDefault(_envelopeDashFill);
+var _envelopeDash = require("./icons/envelope-dash");
+var _envelopeDashDefault = parcelHelpers.interopDefault(_envelopeDash);
+var _envelopeExclamationFill = require("./icons/envelope-exclamation-fill");
+var _envelopeExclamationFillDefault = parcelHelpers.interopDefault(_envelopeExclamationFill);
+var _envelopeExclamation = require("./icons/envelope-exclamation");
+var _envelopeExclamationDefault = parcelHelpers.interopDefault(_envelopeExclamation);
+var _envelopeFill = require("./icons/envelope-fill");
+var _envelopeFillDefault = parcelHelpers.interopDefault(_envelopeFill);
+var _envelopeOpenFill = require("./icons/envelope-open-fill");
+var _envelopeOpenFillDefault = parcelHelpers.interopDefault(_envelopeOpenFill);
+var _envelopeOpen = require("./icons/envelope-open");
+var _envelopeOpenDefault = parcelHelpers.interopDefault(_envelopeOpen);
+var _envelopePlusFill = require("./icons/envelope-plus-fill");
+var _envelopePlusFillDefault = parcelHelpers.interopDefault(_envelopePlusFill);
+var _envelopePlus = require("./icons/envelope-plus");
+var _envelopePlusDefault = parcelHelpers.interopDefault(_envelopePlus);
+var _envelopeSlashFill = require("./icons/envelope-slash-fill");
+var _envelopeSlashFillDefault = parcelHelpers.interopDefault(_envelopeSlashFill);
+var _envelopeSlash = require("./icons/envelope-slash");
+var _envelopeSlashDefault = parcelHelpers.interopDefault(_envelopeSlash);
+var _envelopeXFill = require("./icons/envelope-x-fill");
+var _envelopeXFillDefault = parcelHelpers.interopDefault(_envelopeXFill);
+var _envelopeX = require("./icons/envelope-x");
+var _envelopeXDefault = parcelHelpers.interopDefault(_envelopeX);
+var _envelope = require("./icons/envelope");
+var _envelopeDefault = parcelHelpers.interopDefault(_envelope);
+var _eraserFill = require("./icons/eraser-fill");
+var _eraserFillDefault = parcelHelpers.interopDefault(_eraserFill);
+var _eraser = require("./icons/eraser");
+var _eraserDefault = parcelHelpers.interopDefault(_eraser);
+var _ethernet = require("./icons/ethernet");
+var _ethernetDefault = parcelHelpers.interopDefault(_ethernet);
+var _exclamationCircleFill = require("./icons/exclamation-circle-fill");
+var _exclamationCircleFillDefault = parcelHelpers.interopDefault(_exclamationCircleFill);
+var _exclamationCircle = require("./icons/exclamation-circle");
+var _exclamationCircleDefault = parcelHelpers.interopDefault(_exclamationCircle);
+var _exclamationDiamondFill = require("./icons/exclamation-diamond-fill");
+var _exclamationDiamondFillDefault = parcelHelpers.interopDefault(_exclamationDiamondFill);
+var _exclamationDiamond = require("./icons/exclamation-diamond");
+var _exclamationDiamondDefault = parcelHelpers.interopDefault(_exclamationDiamond);
+var _exclamationLg = require("./icons/exclamation-lg");
+var _exclamationLgDefault = parcelHelpers.interopDefault(_exclamationLg);
+var _exclamationOctagonFill = require("./icons/exclamation-octagon-fill");
+var _exclamationOctagonFillDefault = parcelHelpers.interopDefault(_exclamationOctagonFill);
+var _exclamationOctagon = require("./icons/exclamation-octagon");
+var _exclamationOctagonDefault = parcelHelpers.interopDefault(_exclamationOctagon);
+var _exclamationSquareFill = require("./icons/exclamation-square-fill");
+var _exclamationSquareFillDefault = parcelHelpers.interopDefault(_exclamationSquareFill);
+var _exclamationSquare = require("./icons/exclamation-square");
+var _exclamationSquareDefault = parcelHelpers.interopDefault(_exclamationSquare);
+var _exclamationTriangleFill = require("./icons/exclamation-triangle-fill");
+var _exclamationTriangleFillDefault = parcelHelpers.interopDefault(_exclamationTriangleFill);
+var _exclamationTriangle = require("./icons/exclamation-triangle");
+var _exclamationTriangleDefault = parcelHelpers.interopDefault(_exclamationTriangle);
+var _exclamation = require("./icons/exclamation");
+var _exclamationDefault = parcelHelpers.interopDefault(_exclamation);
+var _exclude = require("./icons/exclude");
+var _excludeDefault = parcelHelpers.interopDefault(_exclude);
+var _explicitFill = require("./icons/explicit-fill");
+var _explicitFillDefault = parcelHelpers.interopDefault(_explicitFill);
+var _explicit = require("./icons/explicit");
+var _explicitDefault = parcelHelpers.interopDefault(_explicit);
+var _eyeFill = require("./icons/eye-fill");
+var _eyeFillDefault = parcelHelpers.interopDefault(_eyeFill);
+var _eyeSlashFill = require("./icons/eye-slash-fill");
+var _eyeSlashFillDefault = parcelHelpers.interopDefault(_eyeSlashFill);
+var _eyeSlash = require("./icons/eye-slash");
+var _eyeSlashDefault = parcelHelpers.interopDefault(_eyeSlash);
+var _eye = require("./icons/eye");
+var _eyeDefault = parcelHelpers.interopDefault(_eye);
+var _eyedropper = require("./icons/eyedropper");
+var _eyedropperDefault = parcelHelpers.interopDefault(_eyedropper);
+var _eyeglasses = require("./icons/eyeglasses");
+var _eyeglassesDefault = parcelHelpers.interopDefault(_eyeglasses);
+var _facebook = require("./icons/facebook");
+var _facebookDefault = parcelHelpers.interopDefault(_facebook);
+var _fan = require("./icons/fan");
+var _fanDefault = parcelHelpers.interopDefault(_fan);
+var _fileArrowDownFill = require("./icons/file-arrow-down-fill");
+var _fileArrowDownFillDefault = parcelHelpers.interopDefault(_fileArrowDownFill);
+var _fileArrowDown = require("./icons/file-arrow-down");
+var _fileArrowDownDefault = parcelHelpers.interopDefault(_fileArrowDown);
+var _fileArrowUpFill = require("./icons/file-arrow-up-fill");
+var _fileArrowUpFillDefault = parcelHelpers.interopDefault(_fileArrowUpFill);
+var _fileArrowUp = require("./icons/file-arrow-up");
+var _fileArrowUpDefault = parcelHelpers.interopDefault(_fileArrowUp);
+var _fileBarGraphFill = require("./icons/file-bar-graph-fill");
+var _fileBarGraphFillDefault = parcelHelpers.interopDefault(_fileBarGraphFill);
+var _fileBarGraph = require("./icons/file-bar-graph");
+var _fileBarGraphDefault = parcelHelpers.interopDefault(_fileBarGraph);
+var _fileBinaryFill = require("./icons/file-binary-fill");
+var _fileBinaryFillDefault = parcelHelpers.interopDefault(_fileBinaryFill);
+var _fileBinary = require("./icons/file-binary");
+var _fileBinaryDefault = parcelHelpers.interopDefault(_fileBinary);
+var _fileBreakFill = require("./icons/file-break-fill");
+var _fileBreakFillDefault = parcelHelpers.interopDefault(_fileBreakFill);
+var _fileBreak = require("./icons/file-break");
+var _fileBreakDefault = parcelHelpers.interopDefault(_fileBreak);
+var _fileCheckFill = require("./icons/file-check-fill");
+var _fileCheckFillDefault = parcelHelpers.interopDefault(_fileCheckFill);
+var _fileCheck = require("./icons/file-check");
+var _fileCheckDefault = parcelHelpers.interopDefault(_fileCheck);
+var _fileCodeFill = require("./icons/file-code-fill");
+var _fileCodeFillDefault = parcelHelpers.interopDefault(_fileCodeFill);
+var _fileCode = require("./icons/file-code");
+var _fileCodeDefault = parcelHelpers.interopDefault(_fileCode);
+var _fileDiffFill = require("./icons/file-diff-fill");
+var _fileDiffFillDefault = parcelHelpers.interopDefault(_fileDiffFill);
+var _fileDiff = require("./icons/file-diff");
+var _fileDiffDefault = parcelHelpers.interopDefault(_fileDiff);
+var _fileEarmarkArrowDownFill = require("./icons/file-earmark-arrow-down-fill");
+var _fileEarmarkArrowDownFillDefault = parcelHelpers.interopDefault(_fileEarmarkArrowDownFill);
+var _fileEarmarkArrowDown = require("./icons/file-earmark-arrow-down");
+var _fileEarmarkArrowDownDefault = parcelHelpers.interopDefault(_fileEarmarkArrowDown);
+var _fileEarmarkArrowUpFill = require("./icons/file-earmark-arrow-up-fill");
+var _fileEarmarkArrowUpFillDefault = parcelHelpers.interopDefault(_fileEarmarkArrowUpFill);
+var _fileEarmarkArrowUp = require("./icons/file-earmark-arrow-up");
+var _fileEarmarkArrowUpDefault = parcelHelpers.interopDefault(_fileEarmarkArrowUp);
+var _fileEarmarkBarGraphFill = require("./icons/file-earmark-bar-graph-fill");
+var _fileEarmarkBarGraphFillDefault = parcelHelpers.interopDefault(_fileEarmarkBarGraphFill);
+var _fileEarmarkBarGraph = require("./icons/file-earmark-bar-graph");
+var _fileEarmarkBarGraphDefault = parcelHelpers.interopDefault(_fileEarmarkBarGraph);
+var _fileEarmarkBinaryFill = require("./icons/file-earmark-binary-fill");
+var _fileEarmarkBinaryFillDefault = parcelHelpers.interopDefault(_fileEarmarkBinaryFill);
+var _fileEarmarkBinary = require("./icons/file-earmark-binary");
+var _fileEarmarkBinaryDefault = parcelHelpers.interopDefault(_fileEarmarkBinary);
+var _fileEarmarkBreakFill = require("./icons/file-earmark-break-fill");
+var _fileEarmarkBreakFillDefault = parcelHelpers.interopDefault(_fileEarmarkBreakFill);
+var _fileEarmarkBreak = require("./icons/file-earmark-break");
+var _fileEarmarkBreakDefault = parcelHelpers.interopDefault(_fileEarmarkBreak);
+var _fileEarmarkCheckFill = require("./icons/file-earmark-check-fill");
+var _fileEarmarkCheckFillDefault = parcelHelpers.interopDefault(_fileEarmarkCheckFill);
+var _fileEarmarkCheck = require("./icons/file-earmark-check");
+var _fileEarmarkCheckDefault = parcelHelpers.interopDefault(_fileEarmarkCheck);
+var _fileEarmarkCodeFill = require("./icons/file-earmark-code-fill");
+var _fileEarmarkCodeFillDefault = parcelHelpers.interopDefault(_fileEarmarkCodeFill);
+var _fileEarmarkCode = require("./icons/file-earmark-code");
+var _fileEarmarkCodeDefault = parcelHelpers.interopDefault(_fileEarmarkCode);
+var _fileEarmarkDiffFill = require("./icons/file-earmark-diff-fill");
+var _fileEarmarkDiffFillDefault = parcelHelpers.interopDefault(_fileEarmarkDiffFill);
+var _fileEarmarkDiff = require("./icons/file-earmark-diff");
+var _fileEarmarkDiffDefault = parcelHelpers.interopDefault(_fileEarmarkDiff);
+var _fileEarmarkEaselFill = require("./icons/file-earmark-easel-fill");
+var _fileEarmarkEaselFillDefault = parcelHelpers.interopDefault(_fileEarmarkEaselFill);
+var _fileEarmarkEasel = require("./icons/file-earmark-easel");
+var _fileEarmarkEaselDefault = parcelHelpers.interopDefault(_fileEarmarkEasel);
+var _fileEarmarkExcelFill = require("./icons/file-earmark-excel-fill");
+var _fileEarmarkExcelFillDefault = parcelHelpers.interopDefault(_fileEarmarkExcelFill);
+var _fileEarmarkExcel = require("./icons/file-earmark-excel");
+var _fileEarmarkExcelDefault = parcelHelpers.interopDefault(_fileEarmarkExcel);
+var _fileEarmarkFill = require("./icons/file-earmark-fill");
+var _fileEarmarkFillDefault = parcelHelpers.interopDefault(_fileEarmarkFill);
+var _fileEarmarkFontFill = require("./icons/file-earmark-font-fill");
+var _fileEarmarkFontFillDefault = parcelHelpers.interopDefault(_fileEarmarkFontFill);
+var _fileEarmarkFont = require("./icons/file-earmark-font");
+var _fileEarmarkFontDefault = parcelHelpers.interopDefault(_fileEarmarkFont);
+var _fileEarmarkImageFill = require("./icons/file-earmark-image-fill");
+var _fileEarmarkImageFillDefault = parcelHelpers.interopDefault(_fileEarmarkImageFill);
+var _fileEarmarkImage = require("./icons/file-earmark-image");
+var _fileEarmarkImageDefault = parcelHelpers.interopDefault(_fileEarmarkImage);
+var _fileEarmarkLockFill = require("./icons/file-earmark-lock-fill");
+var _fileEarmarkLockFillDefault = parcelHelpers.interopDefault(_fileEarmarkLockFill);
+var _fileEarmarkLock = require("./icons/file-earmark-lock");
+var _fileEarmarkLockDefault = parcelHelpers.interopDefault(_fileEarmarkLock);
+var _fileEarmarkLock2Fill = require("./icons/file-earmark-lock2-fill");
+var _fileEarmarkLock2FillDefault = parcelHelpers.interopDefault(_fileEarmarkLock2Fill);
+var _fileEarmarkLock2 = require("./icons/file-earmark-lock2");
+var _fileEarmarkLock2Default = parcelHelpers.interopDefault(_fileEarmarkLock2);
+var _fileEarmarkMedicalFill = require("./icons/file-earmark-medical-fill");
+var _fileEarmarkMedicalFillDefault = parcelHelpers.interopDefault(_fileEarmarkMedicalFill);
+var _fileEarmarkMedical = require("./icons/file-earmark-medical");
+var _fileEarmarkMedicalDefault = parcelHelpers.interopDefault(_fileEarmarkMedical);
+var _fileEarmarkMinusFill = require("./icons/file-earmark-minus-fill");
+var _fileEarmarkMinusFillDefault = parcelHelpers.interopDefault(_fileEarmarkMinusFill);
+var _fileEarmarkMinus = require("./icons/file-earmark-minus");
+var _fileEarmarkMinusDefault = parcelHelpers.interopDefault(_fileEarmarkMinus);
+var _fileEarmarkMusicFill = require("./icons/file-earmark-music-fill");
+var _fileEarmarkMusicFillDefault = parcelHelpers.interopDefault(_fileEarmarkMusicFill);
+var _fileEarmarkMusic = require("./icons/file-earmark-music");
+var _fileEarmarkMusicDefault = parcelHelpers.interopDefault(_fileEarmarkMusic);
+var _fileEarmarkPdfFill = require("./icons/file-earmark-pdf-fill");
+var _fileEarmarkPdfFillDefault = parcelHelpers.interopDefault(_fileEarmarkPdfFill);
+var _fileEarmarkPdf = require("./icons/file-earmark-pdf");
+var _fileEarmarkPdfDefault = parcelHelpers.interopDefault(_fileEarmarkPdf);
+var _fileEarmarkPersonFill = require("./icons/file-earmark-person-fill");
+var _fileEarmarkPersonFillDefault = parcelHelpers.interopDefault(_fileEarmarkPersonFill);
+var _fileEarmarkPerson = require("./icons/file-earmark-person");
+var _fileEarmarkPersonDefault = parcelHelpers.interopDefault(_fileEarmarkPerson);
+var _fileEarmarkPlayFill = require("./icons/file-earmark-play-fill");
+var _fileEarmarkPlayFillDefault = parcelHelpers.interopDefault(_fileEarmarkPlayFill);
+var _fileEarmarkPlay = require("./icons/file-earmark-play");
+var _fileEarmarkPlayDefault = parcelHelpers.interopDefault(_fileEarmarkPlay);
+var _fileEarmarkPlusFill = require("./icons/file-earmark-plus-fill");
+var _fileEarmarkPlusFillDefault = parcelHelpers.interopDefault(_fileEarmarkPlusFill);
+var _fileEarmarkPlus = require("./icons/file-earmark-plus");
+var _fileEarmarkPlusDefault = parcelHelpers.interopDefault(_fileEarmarkPlus);
+var _fileEarmarkPostFill = require("./icons/file-earmark-post-fill");
+var _fileEarmarkPostFillDefault = parcelHelpers.interopDefault(_fileEarmarkPostFill);
+var _fileEarmarkPost = require("./icons/file-earmark-post");
+var _fileEarmarkPostDefault = parcelHelpers.interopDefault(_fileEarmarkPost);
+var _fileEarmarkPptFill = require("./icons/file-earmark-ppt-fill");
+var _fileEarmarkPptFillDefault = parcelHelpers.interopDefault(_fileEarmarkPptFill);
+var _fileEarmarkPpt = require("./icons/file-earmark-ppt");
+var _fileEarmarkPptDefault = parcelHelpers.interopDefault(_fileEarmarkPpt);
+var _fileEarmarkRichtextFill = require("./icons/file-earmark-richtext-fill");
+var _fileEarmarkRichtextFillDefault = parcelHelpers.interopDefault(_fileEarmarkRichtextFill);
+var _fileEarmarkRichtext = require("./icons/file-earmark-richtext");
+var _fileEarmarkRichtextDefault = parcelHelpers.interopDefault(_fileEarmarkRichtext);
+var _fileEarmarkRuledFill = require("./icons/file-earmark-ruled-fill");
+var _fileEarmarkRuledFillDefault = parcelHelpers.interopDefault(_fileEarmarkRuledFill);
+var _fileEarmarkRuled = require("./icons/file-earmark-ruled");
+var _fileEarmarkRuledDefault = parcelHelpers.interopDefault(_fileEarmarkRuled);
+var _fileEarmarkSlidesFill = require("./icons/file-earmark-slides-fill");
+var _fileEarmarkSlidesFillDefault = parcelHelpers.interopDefault(_fileEarmarkSlidesFill);
+var _fileEarmarkSlides = require("./icons/file-earmark-slides");
+var _fileEarmarkSlidesDefault = parcelHelpers.interopDefault(_fileEarmarkSlides);
+var _fileEarmarkSpreadsheetFill = require("./icons/file-earmark-spreadsheet-fill");
+var _fileEarmarkSpreadsheetFillDefault = parcelHelpers.interopDefault(_fileEarmarkSpreadsheetFill);
+var _fileEarmarkSpreadsheet = require("./icons/file-earmark-spreadsheet");
+var _fileEarmarkSpreadsheetDefault = parcelHelpers.interopDefault(_fileEarmarkSpreadsheet);
+var _fileEarmarkTextFill = require("./icons/file-earmark-text-fill");
+var _fileEarmarkTextFillDefault = parcelHelpers.interopDefault(_fileEarmarkTextFill);
+var _fileEarmarkText = require("./icons/file-earmark-text");
+var _fileEarmarkTextDefault = parcelHelpers.interopDefault(_fileEarmarkText);
+var _fileEarmarkWordFill = require("./icons/file-earmark-word-fill");
+var _fileEarmarkWordFillDefault = parcelHelpers.interopDefault(_fileEarmarkWordFill);
+var _fileEarmarkWord = require("./icons/file-earmark-word");
+var _fileEarmarkWordDefault = parcelHelpers.interopDefault(_fileEarmarkWord);
+var _fileEarmarkXFill = require("./icons/file-earmark-x-fill");
+var _fileEarmarkXFillDefault = parcelHelpers.interopDefault(_fileEarmarkXFill);
+var _fileEarmarkX = require("./icons/file-earmark-x");
+var _fileEarmarkXDefault = parcelHelpers.interopDefault(_fileEarmarkX);
+var _fileEarmarkZipFill = require("./icons/file-earmark-zip-fill");
+var _fileEarmarkZipFillDefault = parcelHelpers.interopDefault(_fileEarmarkZipFill);
+var _fileEarmarkZip = require("./icons/file-earmark-zip");
+var _fileEarmarkZipDefault = parcelHelpers.interopDefault(_fileEarmarkZip);
+var _fileEarmark = require("./icons/file-earmark");
+var _fileEarmarkDefault = parcelHelpers.interopDefault(_fileEarmark);
+var _fileEaselFill = require("./icons/file-easel-fill");
+var _fileEaselFillDefault = parcelHelpers.interopDefault(_fileEaselFill);
+var _fileEasel = require("./icons/file-easel");
+var _fileEaselDefault = parcelHelpers.interopDefault(_fileEasel);
+var _fileExcelFill = require("./icons/file-excel-fill");
+var _fileExcelFillDefault = parcelHelpers.interopDefault(_fileExcelFill);
+var _fileExcel = require("./icons/file-excel");
+var _fileExcelDefault = parcelHelpers.interopDefault(_fileExcel);
+var _fileFill = require("./icons/file-fill");
+var _fileFillDefault = parcelHelpers.interopDefault(_fileFill);
+var _fileFontFill = require("./icons/file-font-fill");
+var _fileFontFillDefault = parcelHelpers.interopDefault(_fileFontFill);
+var _fileFont = require("./icons/file-font");
+var _fileFontDefault = parcelHelpers.interopDefault(_fileFont);
+var _fileImageFill = require("./icons/file-image-fill");
+var _fileImageFillDefault = parcelHelpers.interopDefault(_fileImageFill);
+var _fileImage = require("./icons/file-image");
+var _fileImageDefault = parcelHelpers.interopDefault(_fileImage);
+var _fileLockFill = require("./icons/file-lock-fill");
+var _fileLockFillDefault = parcelHelpers.interopDefault(_fileLockFill);
+var _fileLock = require("./icons/file-lock");
+var _fileLockDefault = parcelHelpers.interopDefault(_fileLock);
+var _fileLock2Fill = require("./icons/file-lock2-fill");
+var _fileLock2FillDefault = parcelHelpers.interopDefault(_fileLock2Fill);
+var _fileLock2 = require("./icons/file-lock2");
+var _fileLock2Default = parcelHelpers.interopDefault(_fileLock2);
+var _fileMedicalFill = require("./icons/file-medical-fill");
+var _fileMedicalFillDefault = parcelHelpers.interopDefault(_fileMedicalFill);
+var _fileMedical = require("./icons/file-medical");
+var _fileMedicalDefault = parcelHelpers.interopDefault(_fileMedical);
+var _fileMinusFill = require("./icons/file-minus-fill");
+var _fileMinusFillDefault = parcelHelpers.interopDefault(_fileMinusFill);
+var _fileMinus = require("./icons/file-minus");
+var _fileMinusDefault = parcelHelpers.interopDefault(_fileMinus);
+var _fileMusicFill = require("./icons/file-music-fill");
+var _fileMusicFillDefault = parcelHelpers.interopDefault(_fileMusicFill);
+var _fileMusic = require("./icons/file-music");
+var _fileMusicDefault = parcelHelpers.interopDefault(_fileMusic);
+var _filePdfFill = require("./icons/file-pdf-fill");
+var _filePdfFillDefault = parcelHelpers.interopDefault(_filePdfFill);
+var _filePdf = require("./icons/file-pdf");
+var _filePdfDefault = parcelHelpers.interopDefault(_filePdf);
+var _filePersonFill = require("./icons/file-person-fill");
+var _filePersonFillDefault = parcelHelpers.interopDefault(_filePersonFill);
+var _filePerson = require("./icons/file-person");
+var _filePersonDefault = parcelHelpers.interopDefault(_filePerson);
+var _filePlayFill = require("./icons/file-play-fill");
+var _filePlayFillDefault = parcelHelpers.interopDefault(_filePlayFill);
+var _filePlay = require("./icons/file-play");
+var _filePlayDefault = parcelHelpers.interopDefault(_filePlay);
+var _filePlusFill = require("./icons/file-plus-fill");
+var _filePlusFillDefault = parcelHelpers.interopDefault(_filePlusFill);
+var _filePlus = require("./icons/file-plus");
+var _filePlusDefault = parcelHelpers.interopDefault(_filePlus);
+var _filePostFill = require("./icons/file-post-fill");
+var _filePostFillDefault = parcelHelpers.interopDefault(_filePostFill);
+var _filePost = require("./icons/file-post");
+var _filePostDefault = parcelHelpers.interopDefault(_filePost);
+var _filePptFill = require("./icons/file-ppt-fill");
+var _filePptFillDefault = parcelHelpers.interopDefault(_filePptFill);
+var _filePpt = require("./icons/file-ppt");
+var _filePptDefault = parcelHelpers.interopDefault(_filePpt);
+var _fileRichtextFill = require("./icons/file-richtext-fill");
+var _fileRichtextFillDefault = parcelHelpers.interopDefault(_fileRichtextFill);
+var _fileRichtext = require("./icons/file-richtext");
+var _fileRichtextDefault = parcelHelpers.interopDefault(_fileRichtext);
+var _fileRuledFill = require("./icons/file-ruled-fill");
+var _fileRuledFillDefault = parcelHelpers.interopDefault(_fileRuledFill);
+var _fileRuled = require("./icons/file-ruled");
+var _fileRuledDefault = parcelHelpers.interopDefault(_fileRuled);
+var _fileSlidesFill = require("./icons/file-slides-fill");
+var _fileSlidesFillDefault = parcelHelpers.interopDefault(_fileSlidesFill);
+var _fileSlides = require("./icons/file-slides");
+var _fileSlidesDefault = parcelHelpers.interopDefault(_fileSlides);
+var _fileSpreadsheetFill = require("./icons/file-spreadsheet-fill");
+var _fileSpreadsheetFillDefault = parcelHelpers.interopDefault(_fileSpreadsheetFill);
+var _fileSpreadsheet = require("./icons/file-spreadsheet");
+var _fileSpreadsheetDefault = parcelHelpers.interopDefault(_fileSpreadsheet);
+var _fileTextFill = require("./icons/file-text-fill");
+var _fileTextFillDefault = parcelHelpers.interopDefault(_fileTextFill);
+var _fileText = require("./icons/file-text");
+var _fileTextDefault = parcelHelpers.interopDefault(_fileText);
+var _fileWordFill = require("./icons/file-word-fill");
+var _fileWordFillDefault = parcelHelpers.interopDefault(_fileWordFill);
+var _fileWord = require("./icons/file-word");
+var _fileWordDefault = parcelHelpers.interopDefault(_fileWord);
+var _fileXFill = require("./icons/file-x-fill");
+var _fileXFillDefault = parcelHelpers.interopDefault(_fileXFill);
+var _fileX = require("./icons/file-x");
+var _fileXDefault = parcelHelpers.interopDefault(_fileX);
+var _fileZipFill = require("./icons/file-zip-fill");
+var _fileZipFillDefault = parcelHelpers.interopDefault(_fileZipFill);
+var _fileZip = require("./icons/file-zip");
+var _fileZipDefault = parcelHelpers.interopDefault(_fileZip);
+var _file = require("./icons/file");
+var _fileDefault = parcelHelpers.interopDefault(_file);
+var _filesAlt = require("./icons/files-alt");
+var _filesAltDefault = parcelHelpers.interopDefault(_filesAlt);
+var _files = require("./icons/files");
+var _filesDefault = parcelHelpers.interopDefault(_files);
+var _film = require("./icons/film");
+var _filmDefault = parcelHelpers.interopDefault(_film);
+var _filterCircleFill = require("./icons/filter-circle-fill");
+var _filterCircleFillDefault = parcelHelpers.interopDefault(_filterCircleFill);
+var _filterCircle = require("./icons/filter-circle");
+var _filterCircleDefault = parcelHelpers.interopDefault(_filterCircle);
+var _filterLeft = require("./icons/filter-left");
+var _filterLeftDefault = parcelHelpers.interopDefault(_filterLeft);
+var _filterRight = require("./icons/filter-right");
+var _filterRightDefault = parcelHelpers.interopDefault(_filterRight);
+var _filterSquareFill = require("./icons/filter-square-fill");
+var _filterSquareFillDefault = parcelHelpers.interopDefault(_filterSquareFill);
+var _filterSquare = require("./icons/filter-square");
+var _filterSquareDefault = parcelHelpers.interopDefault(_filterSquare);
+var _filter = require("./icons/filter");
+var _filterDefault = parcelHelpers.interopDefault(_filter);
+var _fingerprint = require("./icons/fingerprint");
+var _fingerprintDefault = parcelHelpers.interopDefault(_fingerprint);
+var _flagFill = require("./icons/flag-fill");
+var _flagFillDefault = parcelHelpers.interopDefault(_flagFill);
+var _flag = require("./icons/flag");
+var _flagDefault = parcelHelpers.interopDefault(_flag);
+var _flower1 = require("./icons/flower1");
+var _flower1Default = parcelHelpers.interopDefault(_flower1);
+var _flower2 = require("./icons/flower2");
+var _flower2Default = parcelHelpers.interopDefault(_flower2);
+var _flower3 = require("./icons/flower3");
+var _flower3Default = parcelHelpers.interopDefault(_flower3);
+var _folderCheck = require("./icons/folder-check");
+var _folderCheckDefault = parcelHelpers.interopDefault(_folderCheck);
+var _folderFill = require("./icons/folder-fill");
+var _folderFillDefault = parcelHelpers.interopDefault(_folderFill);
+var _folderMinus = require("./icons/folder-minus");
+var _folderMinusDefault = parcelHelpers.interopDefault(_folderMinus);
+var _folderPlus = require("./icons/folder-plus");
+var _folderPlusDefault = parcelHelpers.interopDefault(_folderPlus);
+var _folderSymlinkFill = require("./icons/folder-symlink-fill");
+var _folderSymlinkFillDefault = parcelHelpers.interopDefault(_folderSymlinkFill);
+var _folderSymlink = require("./icons/folder-symlink");
+var _folderSymlinkDefault = parcelHelpers.interopDefault(_folderSymlink);
+var _folderX = require("./icons/folder-x");
+var _folderXDefault = parcelHelpers.interopDefault(_folderX);
+var _folder = require("./icons/folder");
+var _folderDefault = parcelHelpers.interopDefault(_folder);
+var _folder2Open = require("./icons/folder2-open");
+var _folder2OpenDefault = parcelHelpers.interopDefault(_folder2Open);
+var _folder2 = require("./icons/folder2");
+var _folder2Default = parcelHelpers.interopDefault(_folder2);
+var _fonts = require("./icons/fonts");
+var _fontsDefault = parcelHelpers.interopDefault(_fonts);
+var _forwardFill = require("./icons/forward-fill");
+var _forwardFillDefault = parcelHelpers.interopDefault(_forwardFill);
+var _forward = require("./icons/forward");
+var _forwardDefault = parcelHelpers.interopDefault(_forward);
+var _front = require("./icons/front");
+var _frontDefault = parcelHelpers.interopDefault(_front);
+var _fullscreenExit = require("./icons/fullscreen-exit");
+var _fullscreenExitDefault = parcelHelpers.interopDefault(_fullscreenExit);
+var _fullscreen = require("./icons/fullscreen");
+var _fullscreenDefault = parcelHelpers.interopDefault(_fullscreen);
+var _funnelFill = require("./icons/funnel-fill");
+var _funnelFillDefault = parcelHelpers.interopDefault(_funnelFill);
+var _funnel = require("./icons/funnel");
+var _funnelDefault = parcelHelpers.interopDefault(_funnel);
+var _gearFill = require("./icons/gear-fill");
+var _gearFillDefault = parcelHelpers.interopDefault(_gearFill);
+var _gearWideConnected = require("./icons/gear-wide-connected");
+var _gearWideConnectedDefault = parcelHelpers.interopDefault(_gearWideConnected);
+var _gearWide = require("./icons/gear-wide");
+var _gearWideDefault = parcelHelpers.interopDefault(_gearWide);
+var _gear = require("./icons/gear");
+var _gearDefault = parcelHelpers.interopDefault(_gear);
+var _gem = require("./icons/gem");
+var _gemDefault = parcelHelpers.interopDefault(_gem);
+var _genderAmbiguous = require("./icons/gender-ambiguous");
+var _genderAmbiguousDefault = parcelHelpers.interopDefault(_genderAmbiguous);
+var _genderFemale = require("./icons/gender-female");
+var _genderFemaleDefault = parcelHelpers.interopDefault(_genderFemale);
+var _genderMale = require("./icons/gender-male");
+var _genderMaleDefault = parcelHelpers.interopDefault(_genderMale);
+var _genderTrans = require("./icons/gender-trans");
+var _genderTransDefault = parcelHelpers.interopDefault(_genderTrans);
+var _geoAltFill = require("./icons/geo-alt-fill");
+var _geoAltFillDefault = parcelHelpers.interopDefault(_geoAltFill);
+var _geoAlt = require("./icons/geo-alt");
+var _geoAltDefault = parcelHelpers.interopDefault(_geoAlt);
+var _geoFill = require("./icons/geo-fill");
+var _geoFillDefault = parcelHelpers.interopDefault(_geoFill);
+var _geo = require("./icons/geo");
+var _geoDefault = parcelHelpers.interopDefault(_geo);
+var _giftFill = require("./icons/gift-fill");
+var _giftFillDefault = parcelHelpers.interopDefault(_giftFill);
+var _gift = require("./icons/gift");
+var _giftDefault = parcelHelpers.interopDefault(_gift);
+var _git = require("./icons/git");
+var _gitDefault = parcelHelpers.interopDefault(_git);
+var _github = require("./icons/github");
+var _githubDefault = parcelHelpers.interopDefault(_github);
+var _globe = require("./icons/globe");
+var _globeDefault = parcelHelpers.interopDefault(_globe);
+var _globe2 = require("./icons/globe2");
+var _globe2Default = parcelHelpers.interopDefault(_globe2);
+var _google = require("./icons/google");
+var _googleDefault = parcelHelpers.interopDefault(_google);
+var _gpuCard = require("./icons/gpu-card");
+var _gpuCardDefault = parcelHelpers.interopDefault(_gpuCard);
+var _graphDownArrow = require("./icons/graph-down-arrow");
+var _graphDownArrowDefault = parcelHelpers.interopDefault(_graphDownArrow);
+var _graphDown = require("./icons/graph-down");
+var _graphDownDefault = parcelHelpers.interopDefault(_graphDown);
+var _graphUpArrow = require("./icons/graph-up-arrow");
+var _graphUpArrowDefault = parcelHelpers.interopDefault(_graphUpArrow);
+var _graphUp = require("./icons/graph-up");
+var _graphUpDefault = parcelHelpers.interopDefault(_graphUp);
+var _grid1X2Fill = require("./icons/grid-1x2-fill");
+var _grid1X2FillDefault = parcelHelpers.interopDefault(_grid1X2Fill);
+var _grid1X2 = require("./icons/grid-1x2");
+var _grid1X2Default = parcelHelpers.interopDefault(_grid1X2);
+var _grid3X2GapFill = require("./icons/grid-3x2-gap-fill");
+var _grid3X2GapFillDefault = parcelHelpers.interopDefault(_grid3X2GapFill);
+var _grid3X2Gap = require("./icons/grid-3x2-gap");
+var _grid3X2GapDefault = parcelHelpers.interopDefault(_grid3X2Gap);
+var _grid3X2 = require("./icons/grid-3x2");
+var _grid3X2Default = parcelHelpers.interopDefault(_grid3X2);
+var _grid3X3GapFill = require("./icons/grid-3x3-gap-fill");
+var _grid3X3GapFillDefault = parcelHelpers.interopDefault(_grid3X3GapFill);
+var _grid3X3Gap = require("./icons/grid-3x3-gap");
+var _grid3X3GapDefault = parcelHelpers.interopDefault(_grid3X3Gap);
+var _grid3X3 = require("./icons/grid-3x3");
+var _grid3X3Default = parcelHelpers.interopDefault(_grid3X3);
+var _gridFill = require("./icons/grid-fill");
+var _gridFillDefault = parcelHelpers.interopDefault(_gridFill);
+var _grid = require("./icons/grid");
+var _gridDefault = parcelHelpers.interopDefault(_grid);
+var _gripHorizontal = require("./icons/grip-horizontal");
+var _gripHorizontalDefault = parcelHelpers.interopDefault(_gripHorizontal);
+var _gripVertical = require("./icons/grip-vertical");
+var _gripVerticalDefault = parcelHelpers.interopDefault(_gripVertical);
+var _hammer = require("./icons/hammer");
+var _hammerDefault = parcelHelpers.interopDefault(_hammer);
+var _handIndexFill = require("./icons/hand-index-fill");
+var _handIndexFillDefault = parcelHelpers.interopDefault(_handIndexFill);
+var _handIndexThumbFill = require("./icons/hand-index-thumb-fill");
+var _handIndexThumbFillDefault = parcelHelpers.interopDefault(_handIndexThumbFill);
+var _handIndexThumb = require("./icons/hand-index-thumb");
+var _handIndexThumbDefault = parcelHelpers.interopDefault(_handIndexThumb);
+var _handIndex = require("./icons/hand-index");
+var _handIndexDefault = parcelHelpers.interopDefault(_handIndex);
+var _handThumbsDownFill = require("./icons/hand-thumbs-down-fill");
+var _handThumbsDownFillDefault = parcelHelpers.interopDefault(_handThumbsDownFill);
+var _handThumbsDown = require("./icons/hand-thumbs-down");
+var _handThumbsDownDefault = parcelHelpers.interopDefault(_handThumbsDown);
+var _handThumbsUpFill = require("./icons/hand-thumbs-up-fill");
+var _handThumbsUpFillDefault = parcelHelpers.interopDefault(_handThumbsUpFill);
+var _handThumbsUp = require("./icons/hand-thumbs-up");
+var _handThumbsUpDefault = parcelHelpers.interopDefault(_handThumbsUp);
+var _handbagFill = require("./icons/handbag-fill");
+var _handbagFillDefault = parcelHelpers.interopDefault(_handbagFill);
+var _handbag = require("./icons/handbag");
+var _handbagDefault = parcelHelpers.interopDefault(_handbag);
+var _hash = require("./icons/hash");
+var _hashDefault = parcelHelpers.interopDefault(_hash);
+var _hddFill = require("./icons/hdd-fill");
+var _hddFillDefault = parcelHelpers.interopDefault(_hddFill);
+var _hddNetworkFill = require("./icons/hdd-network-fill");
+var _hddNetworkFillDefault = parcelHelpers.interopDefault(_hddNetworkFill);
+var _hddNetwork = require("./icons/hdd-network");
+var _hddNetworkDefault = parcelHelpers.interopDefault(_hddNetwork);
+var _hddRackFill = require("./icons/hdd-rack-fill");
+var _hddRackFillDefault = parcelHelpers.interopDefault(_hddRackFill);
+var _hddRack = require("./icons/hdd-rack");
+var _hddRackDefault = parcelHelpers.interopDefault(_hddRack);
+var _hddStackFill = require("./icons/hdd-stack-fill");
+var _hddStackFillDefault = parcelHelpers.interopDefault(_hddStackFill);
+var _hddStack = require("./icons/hdd-stack");
+var _hddStackDefault = parcelHelpers.interopDefault(_hddStack);
+var _hdd = require("./icons/hdd");
+var _hddDefault = parcelHelpers.interopDefault(_hdd);
+var _hdmiFill = require("./icons/hdmi-fill");
+var _hdmiFillDefault = parcelHelpers.interopDefault(_hdmiFill);
+var _hdmi = require("./icons/hdmi");
+var _hdmiDefault = parcelHelpers.interopDefault(_hdmi);
+var _headphones = require("./icons/headphones");
+var _headphonesDefault = parcelHelpers.interopDefault(_headphones);
+var _headsetVr = require("./icons/headset-vr");
+var _headsetVrDefault = parcelHelpers.interopDefault(_headsetVr);
+var _headset = require("./icons/headset");
+var _headsetDefault = parcelHelpers.interopDefault(_headset);
+var _heartFill = require("./icons/heart-fill");
+var _heartFillDefault = parcelHelpers.interopDefault(_heartFill);
+var _heartHalf = require("./icons/heart-half");
+var _heartHalfDefault = parcelHelpers.interopDefault(_heartHalf);
+var _heart = require("./icons/heart");
+var _heartDefault = parcelHelpers.interopDefault(_heart);
+var _heptagonFill = require("./icons/heptagon-fill");
+var _heptagonFillDefault = parcelHelpers.interopDefault(_heptagonFill);
+var _heptagonHalf = require("./icons/heptagon-half");
+var _heptagonHalfDefault = parcelHelpers.interopDefault(_heptagonHalf);
+var _heptagon = require("./icons/heptagon");
+var _heptagonDefault = parcelHelpers.interopDefault(_heptagon);
+var _hexagonFill = require("./icons/hexagon-fill");
+var _hexagonFillDefault = parcelHelpers.interopDefault(_hexagonFill);
+var _hexagonHalf = require("./icons/hexagon-half");
+var _hexagonHalfDefault = parcelHelpers.interopDefault(_hexagonHalf);
+var _hexagon = require("./icons/hexagon");
+var _hexagonDefault = parcelHelpers.interopDefault(_hexagon);
+var _hourglassBottom = require("./icons/hourglass-bottom");
+var _hourglassBottomDefault = parcelHelpers.interopDefault(_hourglassBottom);
+var _hourglassSplit = require("./icons/hourglass-split");
+var _hourglassSplitDefault = parcelHelpers.interopDefault(_hourglassSplit);
+var _hourglassTop = require("./icons/hourglass-top");
+var _hourglassTopDefault = parcelHelpers.interopDefault(_hourglassTop);
+var _hourglass = require("./icons/hourglass");
+var _hourglassDefault = parcelHelpers.interopDefault(_hourglass);
+var _houseDoorFill = require("./icons/house-door-fill");
+var _houseDoorFillDefault = parcelHelpers.interopDefault(_houseDoorFill);
+var _houseDoor = require("./icons/house-door");
+var _houseDoorDefault = parcelHelpers.interopDefault(_houseDoor);
+var _houseFill = require("./icons/house-fill");
+var _houseFillDefault = parcelHelpers.interopDefault(_houseFill);
+var _house = require("./icons/house");
+var _houseDefault = parcelHelpers.interopDefault(_house);
+var _hr = require("./icons/hr");
+var _hrDefault = parcelHelpers.interopDefault(_hr);
+var _hurricane = require("./icons/hurricane");
+var _hurricaneDefault = parcelHelpers.interopDefault(_hurricane);
+var _hypnotize = require("./icons/hypnotize");
+var _hypnotizeDefault = parcelHelpers.interopDefault(_hypnotize);
+var _imageAlt = require("./icons/image-alt");
+var _imageAltDefault = parcelHelpers.interopDefault(_imageAlt);
+var _imageFill = require("./icons/image-fill");
+var _imageFillDefault = parcelHelpers.interopDefault(_imageFill);
+var _image = require("./icons/image");
+var _imageDefault = parcelHelpers.interopDefault(_image);
+var _images = require("./icons/images");
+var _imagesDefault = parcelHelpers.interopDefault(_images);
+var _inboxFill = require("./icons/inbox-fill");
+var _inboxFillDefault = parcelHelpers.interopDefault(_inboxFill);
+var _inbox = require("./icons/inbox");
+var _inboxDefault = parcelHelpers.interopDefault(_inbox);
+var _inboxesFill = require("./icons/inboxes-fill");
+var _inboxesFillDefault = parcelHelpers.interopDefault(_inboxesFill);
+var _inboxes = require("./icons/inboxes");
+var _inboxesDefault = parcelHelpers.interopDefault(_inboxes);
+var _infinity = require("./icons/infinity");
+var _infinityDefault = parcelHelpers.interopDefault(_infinity);
+var _infoCircleFill = require("./icons/info-circle-fill");
+var _infoCircleFillDefault = parcelHelpers.interopDefault(_infoCircleFill);
+var _infoCircle = require("./icons/info-circle");
+var _infoCircleDefault = parcelHelpers.interopDefault(_infoCircle);
+var _infoLg = require("./icons/info-lg");
+var _infoLgDefault = parcelHelpers.interopDefault(_infoLg);
+var _infoSquareFill = require("./icons/info-square-fill");
+var _infoSquareFillDefault = parcelHelpers.interopDefault(_infoSquareFill);
+var _infoSquare = require("./icons/info-square");
+var _infoSquareDefault = parcelHelpers.interopDefault(_infoSquare);
+var _info = require("./icons/info");
+var _infoDefault = parcelHelpers.interopDefault(_info);
+var _inputCursorText = require("./icons/input-cursor-text");
+var _inputCursorTextDefault = parcelHelpers.interopDefault(_inputCursorText);
+var _inputCursor = require("./icons/input-cursor");
+var _inputCursorDefault = parcelHelpers.interopDefault(_inputCursor);
+var _instagram = require("./icons/instagram");
+var _instagramDefault = parcelHelpers.interopDefault(_instagram);
+var _intersect = require("./icons/intersect");
+var _intersectDefault = parcelHelpers.interopDefault(_intersect);
+var _journalAlbum = require("./icons/journal-album");
+var _journalAlbumDefault = parcelHelpers.interopDefault(_journalAlbum);
+var _journalArrowDown = require("./icons/journal-arrow-down");
+var _journalArrowDownDefault = parcelHelpers.interopDefault(_journalArrowDown);
+var _journalArrowUp = require("./icons/journal-arrow-up");
+var _journalArrowUpDefault = parcelHelpers.interopDefault(_journalArrowUp);
+var _journalBookmarkFill = require("./icons/journal-bookmark-fill");
+var _journalBookmarkFillDefault = parcelHelpers.interopDefault(_journalBookmarkFill);
+var _journalBookmark = require("./icons/journal-bookmark");
+var _journalBookmarkDefault = parcelHelpers.interopDefault(_journalBookmark);
+var _journalCheck = require("./icons/journal-check");
+var _journalCheckDefault = parcelHelpers.interopDefault(_journalCheck);
+var _journalCode = require("./icons/journal-code");
+var _journalCodeDefault = parcelHelpers.interopDefault(_journalCode);
+var _journalMedical = require("./icons/journal-medical");
+var _journalMedicalDefault = parcelHelpers.interopDefault(_journalMedical);
+var _journalMinus = require("./icons/journal-minus");
+var _journalMinusDefault = parcelHelpers.interopDefault(_journalMinus);
+var _journalPlus = require("./icons/journal-plus");
+var _journalPlusDefault = parcelHelpers.interopDefault(_journalPlus);
+var _journalRichtext = require("./icons/journal-richtext");
+var _journalRichtextDefault = parcelHelpers.interopDefault(_journalRichtext);
+var _journalText = require("./icons/journal-text");
+var _journalTextDefault = parcelHelpers.interopDefault(_journalText);
+var _journalX = require("./icons/journal-x");
+var _journalXDefault = parcelHelpers.interopDefault(_journalX);
+var _journal = require("./icons/journal");
+var _journalDefault = parcelHelpers.interopDefault(_journal);
+var _journals = require("./icons/journals");
+var _journalsDefault = parcelHelpers.interopDefault(_journals);
+var _joystick = require("./icons/joystick");
+var _joystickDefault = parcelHelpers.interopDefault(_joystick);
+var _justifyLeft = require("./icons/justify-left");
+var _justifyLeftDefault = parcelHelpers.interopDefault(_justifyLeft);
+var _justifyRight = require("./icons/justify-right");
+var _justifyRightDefault = parcelHelpers.interopDefault(_justifyRight);
+var _justify = require("./icons/justify");
+var _justifyDefault = parcelHelpers.interopDefault(_justify);
+var _kanbanFill = require("./icons/kanban-fill");
+var _kanbanFillDefault = parcelHelpers.interopDefault(_kanbanFill);
+var _kanban = require("./icons/kanban");
+var _kanbanDefault = parcelHelpers.interopDefault(_kanban);
+var _keyFill = require("./icons/key-fill");
+var _keyFillDefault = parcelHelpers.interopDefault(_keyFill);
+var _key = require("./icons/key");
+var _keyDefault = parcelHelpers.interopDefault(_key);
+var _keyboardFill = require("./icons/keyboard-fill");
+var _keyboardFillDefault = parcelHelpers.interopDefault(_keyboardFill);
+var _keyboard = require("./icons/keyboard");
+var _keyboardDefault = parcelHelpers.interopDefault(_keyboard);
+var _ladder = require("./icons/ladder");
+var _ladderDefault = parcelHelpers.interopDefault(_ladder);
+var _lampFill = require("./icons/lamp-fill");
+var _lampFillDefault = parcelHelpers.interopDefault(_lampFill);
+var _lamp = require("./icons/lamp");
+var _lampDefault = parcelHelpers.interopDefault(_lamp);
+var _laptopFill = require("./icons/laptop-fill");
+var _laptopFillDefault = parcelHelpers.interopDefault(_laptopFill);
+var _laptop = require("./icons/laptop");
+var _laptopDefault = parcelHelpers.interopDefault(_laptop);
+var _layerBackward = require("./icons/layer-backward");
+var _layerBackwardDefault = parcelHelpers.interopDefault(_layerBackward);
+var _layerForward = require("./icons/layer-forward");
+var _layerForwardDefault = parcelHelpers.interopDefault(_layerForward);
+var _layersFill = require("./icons/layers-fill");
+var _layersFillDefault = parcelHelpers.interopDefault(_layersFill);
+var _layersHalf = require("./icons/layers-half");
+var _layersHalfDefault = parcelHelpers.interopDefault(_layersHalf);
+var _layers = require("./icons/layers");
+var _layersDefault = parcelHelpers.interopDefault(_layers);
+var _layoutSidebarInsetReverse = require("./icons/layout-sidebar-inset-reverse");
+var _layoutSidebarInsetReverseDefault = parcelHelpers.interopDefault(_layoutSidebarInsetReverse);
+var _layoutSidebarInset = require("./icons/layout-sidebar-inset");
+var _layoutSidebarInsetDefault = parcelHelpers.interopDefault(_layoutSidebarInset);
+var _layoutSidebarReverse = require("./icons/layout-sidebar-reverse");
+var _layoutSidebarReverseDefault = parcelHelpers.interopDefault(_layoutSidebarReverse);
+var _layoutSidebar = require("./icons/layout-sidebar");
+var _layoutSidebarDefault = parcelHelpers.interopDefault(_layoutSidebar);
+var _layoutSplit = require("./icons/layout-split");
+var _layoutSplitDefault = parcelHelpers.interopDefault(_layoutSplit);
+var _layoutTextSidebarReverse = require("./icons/layout-text-sidebar-reverse");
+var _layoutTextSidebarReverseDefault = parcelHelpers.interopDefault(_layoutTextSidebarReverse);
+var _layoutTextSidebar = require("./icons/layout-text-sidebar");
+var _layoutTextSidebarDefault = parcelHelpers.interopDefault(_layoutTextSidebar);
+var _layoutTextWindowReverse = require("./icons/layout-text-window-reverse");
+var _layoutTextWindowReverseDefault = parcelHelpers.interopDefault(_layoutTextWindowReverse);
+var _layoutTextWindow = require("./icons/layout-text-window");
+var _layoutTextWindowDefault = parcelHelpers.interopDefault(_layoutTextWindow);
+var _layoutThreeColumns = require("./icons/layout-three-columns");
+var _layoutThreeColumnsDefault = parcelHelpers.interopDefault(_layoutThreeColumns);
+var _layoutWtf = require("./icons/layout-wtf");
+var _layoutWtfDefault = parcelHelpers.interopDefault(_layoutWtf);
+var _lifePreserver = require("./icons/life-preserver");
+var _lifePreserverDefault = parcelHelpers.interopDefault(_lifePreserver);
+var _lightbulbFill = require("./icons/lightbulb-fill");
+var _lightbulbFillDefault = parcelHelpers.interopDefault(_lightbulbFill);
+var _lightbulbOffFill = require("./icons/lightbulb-off-fill");
+var _lightbulbOffFillDefault = parcelHelpers.interopDefault(_lightbulbOffFill);
+var _lightbulbOff = require("./icons/lightbulb-off");
+var _lightbulbOffDefault = parcelHelpers.interopDefault(_lightbulbOff);
+var _lightbulb = require("./icons/lightbulb");
+var _lightbulbDefault = parcelHelpers.interopDefault(_lightbulb);
+var _lightningChargeFill = require("./icons/lightning-charge-fill");
+var _lightningChargeFillDefault = parcelHelpers.interopDefault(_lightningChargeFill);
+var _lightningCharge = require("./icons/lightning-charge");
+var _lightningChargeDefault = parcelHelpers.interopDefault(_lightningCharge);
+var _lightningFill = require("./icons/lightning-fill");
+var _lightningFillDefault = parcelHelpers.interopDefault(_lightningFill);
+var _lightning = require("./icons/lightning");
+var _lightningDefault = parcelHelpers.interopDefault(_lightning);
+var _line = require("./icons/line");
+var _lineDefault = parcelHelpers.interopDefault(_line);
+var _link45Deg = require("./icons/link-45deg");
+var _link45DegDefault = parcelHelpers.interopDefault(_link45Deg);
+var _link = require("./icons/link");
+var _linkDefault = parcelHelpers.interopDefault(_link);
+var _linkedin = require("./icons/linkedin");
+var _linkedinDefault = parcelHelpers.interopDefault(_linkedin);
+var _listCheck = require("./icons/list-check");
+var _listCheckDefault = parcelHelpers.interopDefault(_listCheck);
+var _listColumnsReverse = require("./icons/list-columns-reverse");
+var _listColumnsReverseDefault = parcelHelpers.interopDefault(_listColumnsReverse);
+var _listColumns = require("./icons/list-columns");
+var _listColumnsDefault = parcelHelpers.interopDefault(_listColumns);
+var _listNested = require("./icons/list-nested");
+var _listNestedDefault = parcelHelpers.interopDefault(_listNested);
+var _listOl = require("./icons/list-ol");
+var _listOlDefault = parcelHelpers.interopDefault(_listOl);
+var _listStars = require("./icons/list-stars");
+var _listStarsDefault = parcelHelpers.interopDefault(_listStars);
+var _listTask = require("./icons/list-task");
+var _listTaskDefault = parcelHelpers.interopDefault(_listTask);
+var _listUl = require("./icons/list-ul");
+var _listUlDefault = parcelHelpers.interopDefault(_listUl);
+var _list = require("./icons/list");
+var _listDefault = parcelHelpers.interopDefault(_list);
+var _lockFill = require("./icons/lock-fill");
+var _lockFillDefault = parcelHelpers.interopDefault(_lockFill);
+var _lock = require("./icons/lock");
+var _lockDefault = parcelHelpers.interopDefault(_lock);
+var _magic = require("./icons/magic");
+var _magicDefault = parcelHelpers.interopDefault(_magic);
+var _mailbox = require("./icons/mailbox");
+var _mailboxDefault = parcelHelpers.interopDefault(_mailbox);
+var _mailbox2 = require("./icons/mailbox2");
+var _mailbox2Default = parcelHelpers.interopDefault(_mailbox2);
+var _mapFill = require("./icons/map-fill");
+var _mapFillDefault = parcelHelpers.interopDefault(_mapFill);
+var _map = require("./icons/map");
+var _mapDefault = parcelHelpers.interopDefault(_map);
+var _markdownFill = require("./icons/markdown-fill");
+var _markdownFillDefault = parcelHelpers.interopDefault(_markdownFill);
+var _markdown = require("./icons/markdown");
+var _markdownDefault = parcelHelpers.interopDefault(_markdown);
+var _mask = require("./icons/mask");
+var _maskDefault = parcelHelpers.interopDefault(_mask);
+var _mastodon = require("./icons/mastodon");
+var _mastodonDefault = parcelHelpers.interopDefault(_mastodon);
+var _medium = require("./icons/medium");
+var _mediumDefault = parcelHelpers.interopDefault(_medium);
+var _megaphoneFill = require("./icons/megaphone-fill");
+var _megaphoneFillDefault = parcelHelpers.interopDefault(_megaphoneFill);
+var _megaphone = require("./icons/megaphone");
+var _megaphoneDefault = parcelHelpers.interopDefault(_megaphone);
+var _memory = require("./icons/memory");
+var _memoryDefault = parcelHelpers.interopDefault(_memory);
+var _menuAppFill = require("./icons/menu-app-fill");
+var _menuAppFillDefault = parcelHelpers.interopDefault(_menuAppFill);
+var _menuApp = require("./icons/menu-app");
+var _menuAppDefault = parcelHelpers.interopDefault(_menuApp);
+var _menuButtonFill = require("./icons/menu-button-fill");
+var _menuButtonFillDefault = parcelHelpers.interopDefault(_menuButtonFill);
+var _menuButtonWideFill = require("./icons/menu-button-wide-fill");
+var _menuButtonWideFillDefault = parcelHelpers.interopDefault(_menuButtonWideFill);
+var _menuButtonWide = require("./icons/menu-button-wide");
+var _menuButtonWideDefault = parcelHelpers.interopDefault(_menuButtonWide);
+var _menuButton = require("./icons/menu-button");
+var _menuButtonDefault = parcelHelpers.interopDefault(_menuButton);
+var _menuDown = require("./icons/menu-down");
+var _menuDownDefault = parcelHelpers.interopDefault(_menuDown);
+var _menuUp = require("./icons/menu-up");
+var _menuUpDefault = parcelHelpers.interopDefault(_menuUp);
+var _messenger = require("./icons/messenger");
+var _messengerDefault = parcelHelpers.interopDefault(_messenger);
+var _meta = require("./icons/meta");
+var _metaDefault = parcelHelpers.interopDefault(_meta);
+var _micFill = require("./icons/mic-fill");
+var _micFillDefault = parcelHelpers.interopDefault(_micFill);
+var _micMuteFill = require("./icons/mic-mute-fill");
+var _micMuteFillDefault = parcelHelpers.interopDefault(_micMuteFill);
+var _micMute = require("./icons/mic-mute");
+var _micMuteDefault = parcelHelpers.interopDefault(_micMute);
+var _mic = require("./icons/mic");
+var _micDefault = parcelHelpers.interopDefault(_mic);
+var _microsoft = require("./icons/microsoft");
+var _microsoftDefault = parcelHelpers.interopDefault(_microsoft);
+var _minecartLoaded = require("./icons/minecart-loaded");
+var _minecartLoadedDefault = parcelHelpers.interopDefault(_minecartLoaded);
+var _minecart = require("./icons/minecart");
+var _minecartDefault = parcelHelpers.interopDefault(_minecart);
+var _modemFill = require("./icons/modem-fill");
+var _modemFillDefault = parcelHelpers.interopDefault(_modemFill);
+var _modem = require("./icons/modem");
+var _modemDefault = parcelHelpers.interopDefault(_modem);
+var _moisture = require("./icons/moisture");
+var _moistureDefault = parcelHelpers.interopDefault(_moisture);
+var _moonFill = require("./icons/moon-fill");
+var _moonFillDefault = parcelHelpers.interopDefault(_moonFill);
+var _moonStarsFill = require("./icons/moon-stars-fill");
+var _moonStarsFillDefault = parcelHelpers.interopDefault(_moonStarsFill);
+var _moonStars = require("./icons/moon-stars");
+var _moonStarsDefault = parcelHelpers.interopDefault(_moonStars);
+var _moon = require("./icons/moon");
+var _moonDefault = parcelHelpers.interopDefault(_moon);
+var _mortarboardFill = require("./icons/mortarboard-fill");
+var _mortarboardFillDefault = parcelHelpers.interopDefault(_mortarboardFill);
+var _mortarboard = require("./icons/mortarboard");
+var _mortarboardDefault = parcelHelpers.interopDefault(_mortarboard);
+var _motherboardFill = require("./icons/motherboard-fill");
+var _motherboardFillDefault = parcelHelpers.interopDefault(_motherboardFill);
+var _motherboard = require("./icons/motherboard");
+var _motherboardDefault = parcelHelpers.interopDefault(_motherboard);
+var _mouseFill = require("./icons/mouse-fill");
+var _mouseFillDefault = parcelHelpers.interopDefault(_mouseFill);
+var _mouse = require("./icons/mouse");
+var _mouseDefault = parcelHelpers.interopDefault(_mouse);
+var _mouse2Fill = require("./icons/mouse2-fill");
+var _mouse2FillDefault = parcelHelpers.interopDefault(_mouse2Fill);
+var _mouse2 = require("./icons/mouse2");
+var _mouse2Default = parcelHelpers.interopDefault(_mouse2);
+var _mouse3Fill = require("./icons/mouse3-fill");
+var _mouse3FillDefault = parcelHelpers.interopDefault(_mouse3Fill);
+var _mouse3 = require("./icons/mouse3");
+var _mouse3Default = parcelHelpers.interopDefault(_mouse3);
+var _musicNoteBeamed = require("./icons/music-note-beamed");
+var _musicNoteBeamedDefault = parcelHelpers.interopDefault(_musicNoteBeamed);
+var _musicNoteList = require("./icons/music-note-list");
+var _musicNoteListDefault = parcelHelpers.interopDefault(_musicNoteList);
+var _musicNote = require("./icons/music-note");
+var _musicNoteDefault = parcelHelpers.interopDefault(_musicNote);
+var _musicPlayerFill = require("./icons/music-player-fill");
+var _musicPlayerFillDefault = parcelHelpers.interopDefault(_musicPlayerFill);
+var _musicPlayer = require("./icons/music-player");
+var _musicPlayerDefault = parcelHelpers.interopDefault(_musicPlayer);
+var _newspaper = require("./icons/newspaper");
+var _newspaperDefault = parcelHelpers.interopDefault(_newspaper);
+var _nintendoSwitch = require("./icons/nintendo-switch");
+var _nintendoSwitchDefault = parcelHelpers.interopDefault(_nintendoSwitch);
+var _nodeMinusFill = require("./icons/node-minus-fill");
+var _nodeMinusFillDefault = parcelHelpers.interopDefault(_nodeMinusFill);
+var _nodeMinus = require("./icons/node-minus");
+var _nodeMinusDefault = parcelHelpers.interopDefault(_nodeMinus);
+var _nodePlusFill = require("./icons/node-plus-fill");
+var _nodePlusFillDefault = parcelHelpers.interopDefault(_nodePlusFill);
+var _nodePlus = require("./icons/node-plus");
+var _nodePlusDefault = parcelHelpers.interopDefault(_nodePlus);
+var _nutFill = require("./icons/nut-fill");
+var _nutFillDefault = parcelHelpers.interopDefault(_nutFill);
+var _nut = require("./icons/nut");
+var _nutDefault = parcelHelpers.interopDefault(_nut);
+var _octagonFill = require("./icons/octagon-fill");
+var _octagonFillDefault = parcelHelpers.interopDefault(_octagonFill);
+var _octagonHalf = require("./icons/octagon-half");
+var _octagonHalfDefault = parcelHelpers.interopDefault(_octagonHalf);
+var _octagon = require("./icons/octagon");
+var _octagonDefault = parcelHelpers.interopDefault(_octagon);
+var _opticalAudioFill = require("./icons/optical-audio-fill");
+var _opticalAudioFillDefault = parcelHelpers.interopDefault(_opticalAudioFill);
+var _opticalAudio = require("./icons/optical-audio");
+var _opticalAudioDefault = parcelHelpers.interopDefault(_opticalAudio);
+var _option = require("./icons/option");
+var _optionDefault = parcelHelpers.interopDefault(_option);
+var _outlet = require("./icons/outlet");
+var _outletDefault = parcelHelpers.interopDefault(_outlet);
+var _paintBucket = require("./icons/paint-bucket");
+var _paintBucketDefault = parcelHelpers.interopDefault(_paintBucket);
+var _paletteFill = require("./icons/palette-fill");
+var _paletteFillDefault = parcelHelpers.interopDefault(_paletteFill);
+var _palette = require("./icons/palette");
+var _paletteDefault = parcelHelpers.interopDefault(_palette);
+var _palette2 = require("./icons/palette2");
+var _palette2Default = parcelHelpers.interopDefault(_palette2);
+var _paperclip = require("./icons/paperclip");
+var _paperclipDefault = parcelHelpers.interopDefault(_paperclip);
+var _paragraph = require("./icons/paragraph");
+var _paragraphDefault = parcelHelpers.interopDefault(_paragraph);
+var _patchCheckFill = require("./icons/patch-check-fill");
+var _patchCheckFillDefault = parcelHelpers.interopDefault(_patchCheckFill);
+var _patchCheck = require("./icons/patch-check");
+var _patchCheckDefault = parcelHelpers.interopDefault(_patchCheck);
+var _patchExclamationFill = require("./icons/patch-exclamation-fill");
+var _patchExclamationFillDefault = parcelHelpers.interopDefault(_patchExclamationFill);
+var _patchExclamation = require("./icons/patch-exclamation");
+var _patchExclamationDefault = parcelHelpers.interopDefault(_patchExclamation);
+var _patchMinusFill = require("./icons/patch-minus-fill");
+var _patchMinusFillDefault = parcelHelpers.interopDefault(_patchMinusFill);
+var _patchMinus = require("./icons/patch-minus");
+var _patchMinusDefault = parcelHelpers.interopDefault(_patchMinus);
+var _patchPlusFill = require("./icons/patch-plus-fill");
+var _patchPlusFillDefault = parcelHelpers.interopDefault(_patchPlusFill);
+var _patchPlus = require("./icons/patch-plus");
+var _patchPlusDefault = parcelHelpers.interopDefault(_patchPlus);
+var _patchQuestionFill = require("./icons/patch-question-fill");
+var _patchQuestionFillDefault = parcelHelpers.interopDefault(_patchQuestionFill);
+var _patchQuestion = require("./icons/patch-question");
+var _patchQuestionDefault = parcelHelpers.interopDefault(_patchQuestion);
+var _pauseBtnFill = require("./icons/pause-btn-fill");
+var _pauseBtnFillDefault = parcelHelpers.interopDefault(_pauseBtnFill);
+var _pauseBtn = require("./icons/pause-btn");
+var _pauseBtnDefault = parcelHelpers.interopDefault(_pauseBtn);
+var _pauseCircleFill = require("./icons/pause-circle-fill");
+var _pauseCircleFillDefault = parcelHelpers.interopDefault(_pauseCircleFill);
+var _pauseCircle = require("./icons/pause-circle");
+var _pauseCircleDefault = parcelHelpers.interopDefault(_pauseCircle);
+var _pauseFill = require("./icons/pause-fill");
+var _pauseFillDefault = parcelHelpers.interopDefault(_pauseFill);
+var _pause = require("./icons/pause");
+var _pauseDefault = parcelHelpers.interopDefault(_pause);
+var _paypal = require("./icons/paypal");
+var _paypalDefault = parcelHelpers.interopDefault(_paypal);
+var _pcDisplayHorizontal = require("./icons/pc-display-horizontal");
+var _pcDisplayHorizontalDefault = parcelHelpers.interopDefault(_pcDisplayHorizontal);
+var _pcDisplay = require("./icons/pc-display");
+var _pcDisplayDefault = parcelHelpers.interopDefault(_pcDisplay);
+var _pcHorizontal = require("./icons/pc-horizontal");
+var _pcHorizontalDefault = parcelHelpers.interopDefault(_pcHorizontal);
+var _pc = require("./icons/pc");
+var _pcDefault = parcelHelpers.interopDefault(_pc);
+var _pciCard = require("./icons/pci-card");
+var _pciCardDefault = parcelHelpers.interopDefault(_pciCard);
+var _peaceFill = require("./icons/peace-fill");
+var _peaceFillDefault = parcelHelpers.interopDefault(_peaceFill);
+var _peace = require("./icons/peace");
+var _peaceDefault = parcelHelpers.interopDefault(_peace);
+var _penFill = require("./icons/pen-fill");
+var _penFillDefault = parcelHelpers.interopDefault(_penFill);
+var _pen = require("./icons/pen");
+var _penDefault = parcelHelpers.interopDefault(_pen);
+var _pencilFill = require("./icons/pencil-fill");
+var _pencilFillDefault = parcelHelpers.interopDefault(_pencilFill);
+var _pencilSquare = require("./icons/pencil-square");
+var _pencilSquareDefault = parcelHelpers.interopDefault(_pencilSquare);
+var _pencil = require("./icons/pencil");
+var _pencilDefault = parcelHelpers.interopDefault(_pencil);
+var _pentagonFill = require("./icons/pentagon-fill");
+var _pentagonFillDefault = parcelHelpers.interopDefault(_pentagonFill);
+var _pentagonHalf = require("./icons/pentagon-half");
+var _pentagonHalfDefault = parcelHelpers.interopDefault(_pentagonHalf);
+var _pentagon = require("./icons/pentagon");
+var _pentagonDefault = parcelHelpers.interopDefault(_pentagon);
+var _peopleFill = require("./icons/people-fill");
+var _peopleFillDefault = parcelHelpers.interopDefault(_peopleFill);
+var _people = require("./icons/people");
+var _peopleDefault = parcelHelpers.interopDefault(_people);
+var _percent = require("./icons/percent");
+var _percentDefault = parcelHelpers.interopDefault(_percent);
+var _personBadgeFill = require("./icons/person-badge-fill");
+var _personBadgeFillDefault = parcelHelpers.interopDefault(_personBadgeFill);
+var _personBadge = require("./icons/person-badge");
+var _personBadgeDefault = parcelHelpers.interopDefault(_personBadge);
+var _personBoundingBox = require("./icons/person-bounding-box");
+var _personBoundingBoxDefault = parcelHelpers.interopDefault(_personBoundingBox);
+var _personCheckFill = require("./icons/person-check-fill");
+var _personCheckFillDefault = parcelHelpers.interopDefault(_personCheckFill);
+var _personCheck = require("./icons/person-check");
+var _personCheckDefault = parcelHelpers.interopDefault(_personCheck);
+var _personCircle = require("./icons/person-circle");
+var _personCircleDefault = parcelHelpers.interopDefault(_personCircle);
+var _personDashFill = require("./icons/person-dash-fill");
+var _personDashFillDefault = parcelHelpers.interopDefault(_personDashFill);
+var _personDash = require("./icons/person-dash");
+var _personDashDefault = parcelHelpers.interopDefault(_personDash);
+var _personFill = require("./icons/person-fill");
+var _personFillDefault = parcelHelpers.interopDefault(_personFill);
+var _personLinesFill = require("./icons/person-lines-fill");
+var _personLinesFillDefault = parcelHelpers.interopDefault(_personLinesFill);
+var _personPlusFill = require("./icons/person-plus-fill");
+var _personPlusFillDefault = parcelHelpers.interopDefault(_personPlusFill);
+var _personPlus = require("./icons/person-plus");
+var _personPlusDefault = parcelHelpers.interopDefault(_personPlus);
+var _personRolodex = require("./icons/person-rolodex");
+var _personRolodexDefault = parcelHelpers.interopDefault(_personRolodex);
+var _personSquare = require("./icons/person-square");
+var _personSquareDefault = parcelHelpers.interopDefault(_personSquare);
+var _personVideo = require("./icons/person-video");
+var _personVideoDefault = parcelHelpers.interopDefault(_personVideo);
+var _personVideo2 = require("./icons/person-video2");
+var _personVideo2Default = parcelHelpers.interopDefault(_personVideo2);
+var _personVideo3 = require("./icons/person-video3");
+var _personVideo3Default = parcelHelpers.interopDefault(_personVideo3);
+var _personWorkspace = require("./icons/person-workspace");
+var _personWorkspaceDefault = parcelHelpers.interopDefault(_personWorkspace);
+var _personXFill = require("./icons/person-x-fill");
+var _personXFillDefault = parcelHelpers.interopDefault(_personXFill);
+var _personX = require("./icons/person-x");
+var _personXDefault = parcelHelpers.interopDefault(_personX);
+var _person = require("./icons/person");
+var _personDefault = parcelHelpers.interopDefault(_person);
+var _phoneFill = require("./icons/phone-fill");
+var _phoneFillDefault = parcelHelpers.interopDefault(_phoneFill);
+var _phoneLandscapeFill = require("./icons/phone-landscape-fill");
+var _phoneLandscapeFillDefault = parcelHelpers.interopDefault(_phoneLandscapeFill);
+var _phoneLandscape = require("./icons/phone-landscape");
+var _phoneLandscapeDefault = parcelHelpers.interopDefault(_phoneLandscape);
+var _phoneVibrateFill = require("./icons/phone-vibrate-fill");
+var _phoneVibrateFillDefault = parcelHelpers.interopDefault(_phoneVibrateFill);
+var _phoneVibrate = require("./icons/phone-vibrate");
+var _phoneVibrateDefault = parcelHelpers.interopDefault(_phoneVibrate);
+var _phone = require("./icons/phone");
+var _phoneDefault = parcelHelpers.interopDefault(_phone);
+var _pieChartFill = require("./icons/pie-chart-fill");
+var _pieChartFillDefault = parcelHelpers.interopDefault(_pieChartFill);
+var _pieChart = require("./icons/pie-chart");
+var _pieChartDefault = parcelHelpers.interopDefault(_pieChart);
+var _piggyBankFill = require("./icons/piggy-bank-fill");
+var _piggyBankFillDefault = parcelHelpers.interopDefault(_piggyBankFill);
+var _piggyBank = require("./icons/piggy-bank");
+var _piggyBankDefault = parcelHelpers.interopDefault(_piggyBank);
+var _pinAngleFill = require("./icons/pin-angle-fill");
+var _pinAngleFillDefault = parcelHelpers.interopDefault(_pinAngleFill);
+var _pinAngle = require("./icons/pin-angle");
+var _pinAngleDefault = parcelHelpers.interopDefault(_pinAngle);
+var _pinFill = require("./icons/pin-fill");
+var _pinFillDefault = parcelHelpers.interopDefault(_pinFill);
+var _pinMapFill = require("./icons/pin-map-fill");
+var _pinMapFillDefault = parcelHelpers.interopDefault(_pinMapFill);
+var _pinMap = require("./icons/pin-map");
+var _pinMapDefault = parcelHelpers.interopDefault(_pinMap);
+var _pin = require("./icons/pin");
+var _pinDefault = parcelHelpers.interopDefault(_pin);
+var _pinterest = require("./icons/pinterest");
+var _pinterestDefault = parcelHelpers.interopDefault(_pinterest);
+var _pipFill = require("./icons/pip-fill");
+var _pipFillDefault = parcelHelpers.interopDefault(_pipFill);
+var _pip = require("./icons/pip");
+var _pipDefault = parcelHelpers.interopDefault(_pip);
+var _playBtnFill = require("./icons/play-btn-fill");
+var _playBtnFillDefault = parcelHelpers.interopDefault(_playBtnFill);
+var _playBtn = require("./icons/play-btn");
+var _playBtnDefault = parcelHelpers.interopDefault(_playBtn);
+var _playCircleFill = require("./icons/play-circle-fill");
+var _playCircleFillDefault = parcelHelpers.interopDefault(_playCircleFill);
+var _playCircle = require("./icons/play-circle");
+var _playCircleDefault = parcelHelpers.interopDefault(_playCircle);
+var _playFill = require("./icons/play-fill");
+var _playFillDefault = parcelHelpers.interopDefault(_playFill);
+var _play = require("./icons/play");
+var _playDefault = parcelHelpers.interopDefault(_play);
+var _playstation = require("./icons/playstation");
+var _playstationDefault = parcelHelpers.interopDefault(_playstation);
+var _plugFill = require("./icons/plug-fill");
+var _plugFillDefault = parcelHelpers.interopDefault(_plugFill);
+var _plug = require("./icons/plug");
+var _plugDefault = parcelHelpers.interopDefault(_plug);
+var _plusCircleDotted = require("./icons/plus-circle-dotted");
+var _plusCircleDottedDefault = parcelHelpers.interopDefault(_plusCircleDotted);
+var _plusCircleFill = require("./icons/plus-circle-fill");
+var _plusCircleFillDefault = parcelHelpers.interopDefault(_plusCircleFill);
+var _plusCircle = require("./icons/plus-circle");
+var _plusCircleDefault = parcelHelpers.interopDefault(_plusCircle);
+var _plusLg = require("./icons/plus-lg");
+var _plusLgDefault = parcelHelpers.interopDefault(_plusLg);
+var _plusSlashMinus = require("./icons/plus-slash-minus");
+var _plusSlashMinusDefault = parcelHelpers.interopDefault(_plusSlashMinus);
+var _plusSquareDotted = require("./icons/plus-square-dotted");
+var _plusSquareDottedDefault = parcelHelpers.interopDefault(_plusSquareDotted);
+var _plusSquareFill = require("./icons/plus-square-fill");
+var _plusSquareFillDefault = parcelHelpers.interopDefault(_plusSquareFill);
+var _plusSquare = require("./icons/plus-square");
+var _plusSquareDefault = parcelHelpers.interopDefault(_plusSquare);
+var _plus = require("./icons/plus");
+var _plusDefault = parcelHelpers.interopDefault(_plus);
+var _power = require("./icons/power");
+var _powerDefault = parcelHelpers.interopDefault(_power);
+var _printerFill = require("./icons/printer-fill");
+var _printerFillDefault = parcelHelpers.interopDefault(_printerFill);
+var _printer = require("./icons/printer");
+var _printerDefault = parcelHelpers.interopDefault(_printer);
+var _projectorFill = require("./icons/projector-fill");
+var _projectorFillDefault = parcelHelpers.interopDefault(_projectorFill);
+var _projector = require("./icons/projector");
+var _projectorDefault = parcelHelpers.interopDefault(_projector);
+var _puzzleFill = require("./icons/puzzle-fill");
+var _puzzleFillDefault = parcelHelpers.interopDefault(_puzzleFill);
+var _puzzle = require("./icons/puzzle");
+var _puzzleDefault = parcelHelpers.interopDefault(_puzzle);
+var _qrCodeScan = require("./icons/qr-code-scan");
+var _qrCodeScanDefault = parcelHelpers.interopDefault(_qrCodeScan);
+var _qrCode = require("./icons/qr-code");
+var _qrCodeDefault = parcelHelpers.interopDefault(_qrCode);
+var _questionCircleFill = require("./icons/question-circle-fill");
+var _questionCircleFillDefault = parcelHelpers.interopDefault(_questionCircleFill);
+var _questionCircle = require("./icons/question-circle");
+var _questionCircleDefault = parcelHelpers.interopDefault(_questionCircle);
+var _questionDiamondFill = require("./icons/question-diamond-fill");
+var _questionDiamondFillDefault = parcelHelpers.interopDefault(_questionDiamondFill);
+var _questionDiamond = require("./icons/question-diamond");
+var _questionDiamondDefault = parcelHelpers.interopDefault(_questionDiamond);
+var _questionLg = require("./icons/question-lg");
+var _questionLgDefault = parcelHelpers.interopDefault(_questionLg);
+var _questionOctagonFill = require("./icons/question-octagon-fill");
+var _questionOctagonFillDefault = parcelHelpers.interopDefault(_questionOctagonFill);
+var _questionOctagon = require("./icons/question-octagon");
+var _questionOctagonDefault = parcelHelpers.interopDefault(_questionOctagon);
+var _questionSquareFill = require("./icons/question-square-fill");
+var _questionSquareFillDefault = parcelHelpers.interopDefault(_questionSquareFill);
+var _questionSquare = require("./icons/question-square");
+var _questionSquareDefault = parcelHelpers.interopDefault(_questionSquare);
+var _question = require("./icons/question");
+var _questionDefault = parcelHelpers.interopDefault(_question);
+var _quora = require("./icons/quora");
+var _quoraDefault = parcelHelpers.interopDefault(_quora);
+var _quote = require("./icons/quote");
+var _quoteDefault = parcelHelpers.interopDefault(_quote);
+var _radioactive = require("./icons/radioactive");
+var _radioactiveDefault = parcelHelpers.interopDefault(_radioactive);
+var _rainbow = require("./icons/rainbow");
+var _rainbowDefault = parcelHelpers.interopDefault(_rainbow);
+var _receiptCutoff = require("./icons/receipt-cutoff");
+var _receiptCutoffDefault = parcelHelpers.interopDefault(_receiptCutoff);
+var _receipt = require("./icons/receipt");
+var _receiptDefault = parcelHelpers.interopDefault(_receipt);
+var _reception0 = require("./icons/reception-0");
+var _reception0Default = parcelHelpers.interopDefault(_reception0);
+var _reception1 = require("./icons/reception-1");
+var _reception1Default = parcelHelpers.interopDefault(_reception1);
+var _reception2 = require("./icons/reception-2");
+var _reception2Default = parcelHelpers.interopDefault(_reception2);
+var _reception3 = require("./icons/reception-3");
+var _reception3Default = parcelHelpers.interopDefault(_reception3);
+var _reception4 = require("./icons/reception-4");
+var _reception4Default = parcelHelpers.interopDefault(_reception4);
+var _recordBtnFill = require("./icons/record-btn-fill");
+var _recordBtnFillDefault = parcelHelpers.interopDefault(_recordBtnFill);
+var _recordBtn = require("./icons/record-btn");
+var _recordBtnDefault = parcelHelpers.interopDefault(_recordBtn);
+var _recordCircleFill = require("./icons/record-circle-fill");
+var _recordCircleFillDefault = parcelHelpers.interopDefault(_recordCircleFill);
+var _recordCircle = require("./icons/record-circle");
+var _recordCircleDefault = parcelHelpers.interopDefault(_recordCircle);
+var _recordFill = require("./icons/record-fill");
+var _recordFillDefault = parcelHelpers.interopDefault(_recordFill);
+var _record = require("./icons/record");
+var _recordDefault = parcelHelpers.interopDefault(_record);
+var _record2Fill = require("./icons/record2-fill");
+var _record2FillDefault = parcelHelpers.interopDefault(_record2Fill);
+var _record2 = require("./icons/record2");
+var _record2Default = parcelHelpers.interopDefault(_record2);
+var _recycle = require("./icons/recycle");
+var _recycleDefault = parcelHelpers.interopDefault(_recycle);
+var _reddit = require("./icons/reddit");
+var _redditDefault = parcelHelpers.interopDefault(_reddit);
+var _replyAllFill = require("./icons/reply-all-fill");
+var _replyAllFillDefault = parcelHelpers.interopDefault(_replyAllFill);
+var _replyAll = require("./icons/reply-all");
+var _replyAllDefault = parcelHelpers.interopDefault(_replyAll);
+var _replyFill = require("./icons/reply-fill");
+var _replyFillDefault = parcelHelpers.interopDefault(_replyFill);
+var _reply = require("./icons/reply");
+var _replyDefault = parcelHelpers.interopDefault(_reply);
+var _robot = require("./icons/robot");
+var _robotDefault = parcelHelpers.interopDefault(_robot);
+var _routerFill = require("./icons/router-fill");
+var _routerFillDefault = parcelHelpers.interopDefault(_routerFill);
+var _router = require("./icons/router");
+var _routerDefault = parcelHelpers.interopDefault(_router);
+var _rssFill = require("./icons/rss-fill");
+var _rssFillDefault = parcelHelpers.interopDefault(_rssFill);
+var _rss = require("./icons/rss");
+var _rssDefault = parcelHelpers.interopDefault(_rss);
+var _rulers = require("./icons/rulers");
+var _rulersDefault = parcelHelpers.interopDefault(_rulers);
+var _safeFill = require("./icons/safe-fill");
+var _safeFillDefault = parcelHelpers.interopDefault(_safeFill);
+var _safe = require("./icons/safe");
+var _safeDefault = parcelHelpers.interopDefault(_safe);
+var _safe2Fill = require("./icons/safe2-fill");
+var _safe2FillDefault = parcelHelpers.interopDefault(_safe2Fill);
+var _safe2 = require("./icons/safe2");
+var _safe2Default = parcelHelpers.interopDefault(_safe2);
+var _saveFill = require("./icons/save-fill");
+var _saveFillDefault = parcelHelpers.interopDefault(_saveFill);
+var _save = require("./icons/save");
+var _saveDefault = parcelHelpers.interopDefault(_save);
+var _save2Fill = require("./icons/save2-fill");
+var _save2FillDefault = parcelHelpers.interopDefault(_save2Fill);
+var _save2 = require("./icons/save2");
+var _save2Default = parcelHelpers.interopDefault(_save2);
+var _scissors = require("./icons/scissors");
+var _scissorsDefault = parcelHelpers.interopDefault(_scissors);
+var _screwdriver = require("./icons/screwdriver");
+var _screwdriverDefault = parcelHelpers.interopDefault(_screwdriver);
+var _sdCardFill = require("./icons/sd-card-fill");
+var _sdCardFillDefault = parcelHelpers.interopDefault(_sdCardFill);
+var _sdCard = require("./icons/sd-card");
+var _sdCardDefault = parcelHelpers.interopDefault(_sdCard);
+var _search = require("./icons/search");
+var _searchDefault = parcelHelpers.interopDefault(_search);
+var _segmentedNav = require("./icons/segmented-nav");
+var _segmentedNavDefault = parcelHelpers.interopDefault(_segmentedNav);
+var _sendCheckFill = require("./icons/send-check-fill");
+var _sendCheckFillDefault = parcelHelpers.interopDefault(_sendCheckFill);
+var _sendCheck = require("./icons/send-check");
+var _sendCheckDefault = parcelHelpers.interopDefault(_sendCheck);
+var _sendDashFill = require("./icons/send-dash-fill");
+var _sendDashFillDefault = parcelHelpers.interopDefault(_sendDashFill);
+var _sendDash = require("./icons/send-dash");
+var _sendDashDefault = parcelHelpers.interopDefault(_sendDash);
+var _sendExclamationFill = require("./icons/send-exclamation-fill");
+var _sendExclamationFillDefault = parcelHelpers.interopDefault(_sendExclamationFill);
+var _sendExclamation = require("./icons/send-exclamation");
+var _sendExclamationDefault = parcelHelpers.interopDefault(_sendExclamation);
+var _sendFill = require("./icons/send-fill");
+var _sendFillDefault = parcelHelpers.interopDefault(_sendFill);
+var _sendPlusFill = require("./icons/send-plus-fill");
+var _sendPlusFillDefault = parcelHelpers.interopDefault(_sendPlusFill);
+var _sendPlus = require("./icons/send-plus");
+var _sendPlusDefault = parcelHelpers.interopDefault(_sendPlus);
+var _sendSlashFill = require("./icons/send-slash-fill");
+var _sendSlashFillDefault = parcelHelpers.interopDefault(_sendSlashFill);
+var _sendSlash = require("./icons/send-slash");
+var _sendSlashDefault = parcelHelpers.interopDefault(_sendSlash);
+var _sendXFill = require("./icons/send-x-fill");
+var _sendXFillDefault = parcelHelpers.interopDefault(_sendXFill);
+var _sendX = require("./icons/send-x");
+var _sendXDefault = parcelHelpers.interopDefault(_sendX);
+var _send = require("./icons/send");
+var _sendDefault = parcelHelpers.interopDefault(_send);
+var _server = require("./icons/server");
+var _serverDefault = parcelHelpers.interopDefault(_server);
+var _shareFill = require("./icons/share-fill");
+var _shareFillDefault = parcelHelpers.interopDefault(_shareFill);
+var _share = require("./icons/share");
+var _shareDefault = parcelHelpers.interopDefault(_share);
+var _shieldCheck = require("./icons/shield-check");
+var _shieldCheckDefault = parcelHelpers.interopDefault(_shieldCheck);
+var _shieldExclamation = require("./icons/shield-exclamation");
+var _shieldExclamationDefault = parcelHelpers.interopDefault(_shieldExclamation);
+var _shieldFillCheck = require("./icons/shield-fill-check");
+var _shieldFillCheckDefault = parcelHelpers.interopDefault(_shieldFillCheck);
+var _shieldFillExclamation = require("./icons/shield-fill-exclamation");
+var _shieldFillExclamationDefault = parcelHelpers.interopDefault(_shieldFillExclamation);
+var _shieldFillMinus = require("./icons/shield-fill-minus");
+var _shieldFillMinusDefault = parcelHelpers.interopDefault(_shieldFillMinus);
+var _shieldFillPlus = require("./icons/shield-fill-plus");
+var _shieldFillPlusDefault = parcelHelpers.interopDefault(_shieldFillPlus);
+var _shieldFillX = require("./icons/shield-fill-x");
+var _shieldFillXDefault = parcelHelpers.interopDefault(_shieldFillX);
+var _shieldFill = require("./icons/shield-fill");
+var _shieldFillDefault = parcelHelpers.interopDefault(_shieldFill);
+var _shieldLockFill = require("./icons/shield-lock-fill");
+var _shieldLockFillDefault = parcelHelpers.interopDefault(_shieldLockFill);
+var _shieldLock = require("./icons/shield-lock");
+var _shieldLockDefault = parcelHelpers.interopDefault(_shieldLock);
+var _shieldMinus = require("./icons/shield-minus");
+var _shieldMinusDefault = parcelHelpers.interopDefault(_shieldMinus);
+var _shieldPlus = require("./icons/shield-plus");
+var _shieldPlusDefault = parcelHelpers.interopDefault(_shieldPlus);
+var _shieldShaded = require("./icons/shield-shaded");
+var _shieldShadedDefault = parcelHelpers.interopDefault(_shieldShaded);
+var _shieldSlashFill = require("./icons/shield-slash-fill");
+var _shieldSlashFillDefault = parcelHelpers.interopDefault(_shieldSlashFill);
+var _shieldSlash = require("./icons/shield-slash");
+var _shieldSlashDefault = parcelHelpers.interopDefault(_shieldSlash);
+var _shieldX = require("./icons/shield-x");
+var _shieldXDefault = parcelHelpers.interopDefault(_shieldX);
+var _shield = require("./icons/shield");
+var _shieldDefault = parcelHelpers.interopDefault(_shield);
+var _shiftFill = require("./icons/shift-fill");
+var _shiftFillDefault = parcelHelpers.interopDefault(_shiftFill);
+var _shift = require("./icons/shift");
+var _shiftDefault = parcelHelpers.interopDefault(_shift);
+var _shopWindow = require("./icons/shop-window");
+var _shopWindowDefault = parcelHelpers.interopDefault(_shopWindow);
+var _shop = require("./icons/shop");
+var _shopDefault = parcelHelpers.interopDefault(_shop);
+var _shuffle = require("./icons/shuffle");
+var _shuffleDefault = parcelHelpers.interopDefault(_shuffle);
+var _signal = require("./icons/signal");
+var _signalDefault = parcelHelpers.interopDefault(_signal);
+var _signpost2Fill = require("./icons/signpost-2-fill");
+var _signpost2FillDefault = parcelHelpers.interopDefault(_signpost2Fill);
+var _signpost2 = require("./icons/signpost-2");
+var _signpost2Default = parcelHelpers.interopDefault(_signpost2);
+var _signpostFill = require("./icons/signpost-fill");
+var _signpostFillDefault = parcelHelpers.interopDefault(_signpostFill);
+var _signpostSplitFill = require("./icons/signpost-split-fill");
+var _signpostSplitFillDefault = parcelHelpers.interopDefault(_signpostSplitFill);
+var _signpostSplit = require("./icons/signpost-split");
+var _signpostSplitDefault = parcelHelpers.interopDefault(_signpostSplit);
+var _signpost = require("./icons/signpost");
+var _signpostDefault = parcelHelpers.interopDefault(_signpost);
+var _simFill = require("./icons/sim-fill");
+var _simFillDefault = parcelHelpers.interopDefault(_simFill);
+var _sim = require("./icons/sim");
+var _simDefault = parcelHelpers.interopDefault(_sim);
+var _skipBackwardBtnFill = require("./icons/skip-backward-btn-fill");
+var _skipBackwardBtnFillDefault = parcelHelpers.interopDefault(_skipBackwardBtnFill);
+var _skipBackwardBtn = require("./icons/skip-backward-btn");
+var _skipBackwardBtnDefault = parcelHelpers.interopDefault(_skipBackwardBtn);
+var _skipBackwardCircleFill = require("./icons/skip-backward-circle-fill");
+var _skipBackwardCircleFillDefault = parcelHelpers.interopDefault(_skipBackwardCircleFill);
+var _skipBackwardCircle = require("./icons/skip-backward-circle");
+var _skipBackwardCircleDefault = parcelHelpers.interopDefault(_skipBackwardCircle);
+var _skipBackwardFill = require("./icons/skip-backward-fill");
+var _skipBackwardFillDefault = parcelHelpers.interopDefault(_skipBackwardFill);
+var _skipBackward = require("./icons/skip-backward");
+var _skipBackwardDefault = parcelHelpers.interopDefault(_skipBackward);
+var _skipEndBtnFill = require("./icons/skip-end-btn-fill");
+var _skipEndBtnFillDefault = parcelHelpers.interopDefault(_skipEndBtnFill);
+var _skipEndBtn = require("./icons/skip-end-btn");
+var _skipEndBtnDefault = parcelHelpers.interopDefault(_skipEndBtn);
+var _skipEndCircleFill = require("./icons/skip-end-circle-fill");
+var _skipEndCircleFillDefault = parcelHelpers.interopDefault(_skipEndCircleFill);
+var _skipEndCircle = require("./icons/skip-end-circle");
+var _skipEndCircleDefault = parcelHelpers.interopDefault(_skipEndCircle);
+var _skipEndFill = require("./icons/skip-end-fill");
+var _skipEndFillDefault = parcelHelpers.interopDefault(_skipEndFill);
+var _skipEnd = require("./icons/skip-end");
+var _skipEndDefault = parcelHelpers.interopDefault(_skipEnd);
+var _skipForwardBtnFill = require("./icons/skip-forward-btn-fill");
+var _skipForwardBtnFillDefault = parcelHelpers.interopDefault(_skipForwardBtnFill);
+var _skipForwardBtn = require("./icons/skip-forward-btn");
+var _skipForwardBtnDefault = parcelHelpers.interopDefault(_skipForwardBtn);
+var _skipForwardCircleFill = require("./icons/skip-forward-circle-fill");
+var _skipForwardCircleFillDefault = parcelHelpers.interopDefault(_skipForwardCircleFill);
+var _skipForwardCircle = require("./icons/skip-forward-circle");
+var _skipForwardCircleDefault = parcelHelpers.interopDefault(_skipForwardCircle);
+var _skipForwardFill = require("./icons/skip-forward-fill");
+var _skipForwardFillDefault = parcelHelpers.interopDefault(_skipForwardFill);
+var _skipForward = require("./icons/skip-forward");
+var _skipForwardDefault = parcelHelpers.interopDefault(_skipForward);
+var _skipStartBtnFill = require("./icons/skip-start-btn-fill");
+var _skipStartBtnFillDefault = parcelHelpers.interopDefault(_skipStartBtnFill);
+var _skipStartBtn = require("./icons/skip-start-btn");
+var _skipStartBtnDefault = parcelHelpers.interopDefault(_skipStartBtn);
+var _skipStartCircleFill = require("./icons/skip-start-circle-fill");
+var _skipStartCircleFillDefault = parcelHelpers.interopDefault(_skipStartCircleFill);
+var _skipStartCircle = require("./icons/skip-start-circle");
+var _skipStartCircleDefault = parcelHelpers.interopDefault(_skipStartCircle);
+var _skipStartFill = require("./icons/skip-start-fill");
+var _skipStartFillDefault = parcelHelpers.interopDefault(_skipStartFill);
+var _skipStart = require("./icons/skip-start");
+var _skipStartDefault = parcelHelpers.interopDefault(_skipStart);
+var _skype = require("./icons/skype");
+var _skypeDefault = parcelHelpers.interopDefault(_skype);
+var _slack = require("./icons/slack");
+var _slackDefault = parcelHelpers.interopDefault(_slack);
+var _slashCircleFill = require("./icons/slash-circle-fill");
+var _slashCircleFillDefault = parcelHelpers.interopDefault(_slashCircleFill);
+var _slashCircle = require("./icons/slash-circle");
+var _slashCircleDefault = parcelHelpers.interopDefault(_slashCircle);
+var _slashLg = require("./icons/slash-lg");
+var _slashLgDefault = parcelHelpers.interopDefault(_slashLg);
+var _slashSquareFill = require("./icons/slash-square-fill");
+var _slashSquareFillDefault = parcelHelpers.interopDefault(_slashSquareFill);
+var _slashSquare = require("./icons/slash-square");
+var _slashSquareDefault = parcelHelpers.interopDefault(_slashSquare);
+var _slash = require("./icons/slash");
+var _slashDefault = parcelHelpers.interopDefault(_slash);
+var _sliders = require("./icons/sliders");
+var _slidersDefault = parcelHelpers.interopDefault(_sliders);
+var _smartwatch = require("./icons/smartwatch");
+var _smartwatchDefault = parcelHelpers.interopDefault(_smartwatch);
+var _snapchat = require("./icons/snapchat");
+var _snapchatDefault = parcelHelpers.interopDefault(_snapchat);
+var _snow = require("./icons/snow");
+var _snowDefault = parcelHelpers.interopDefault(_snow);
+var _snow2 = require("./icons/snow2");
+var _snow2Default = parcelHelpers.interopDefault(_snow2);
+var _snow3 = require("./icons/snow3");
+var _snow3Default = parcelHelpers.interopDefault(_snow3);
+var _sortAlphaDownAlt = require("./icons/sort-alpha-down-alt");
+var _sortAlphaDownAltDefault = parcelHelpers.interopDefault(_sortAlphaDownAlt);
+var _sortAlphaDown = require("./icons/sort-alpha-down");
+var _sortAlphaDownDefault = parcelHelpers.interopDefault(_sortAlphaDown);
+var _sortAlphaUpAlt = require("./icons/sort-alpha-up-alt");
+var _sortAlphaUpAltDefault = parcelHelpers.interopDefault(_sortAlphaUpAlt);
+var _sortAlphaUp = require("./icons/sort-alpha-up");
+var _sortAlphaUpDefault = parcelHelpers.interopDefault(_sortAlphaUp);
+var _sortDownAlt = require("./icons/sort-down-alt");
+var _sortDownAltDefault = parcelHelpers.interopDefault(_sortDownAlt);
+var _sortDown = require("./icons/sort-down");
+var _sortDownDefault = parcelHelpers.interopDefault(_sortDown);
+var _sortNumericDownAlt = require("./icons/sort-numeric-down-alt");
+var _sortNumericDownAltDefault = parcelHelpers.interopDefault(_sortNumericDownAlt);
+var _sortNumericDown = require("./icons/sort-numeric-down");
+var _sortNumericDownDefault = parcelHelpers.interopDefault(_sortNumericDown);
+var _sortNumericUpAlt = require("./icons/sort-numeric-up-alt");
+var _sortNumericUpAltDefault = parcelHelpers.interopDefault(_sortNumericUpAlt);
+var _sortNumericUp = require("./icons/sort-numeric-up");
+var _sortNumericUpDefault = parcelHelpers.interopDefault(_sortNumericUp);
+var _sortUpAlt = require("./icons/sort-up-alt");
+var _sortUpAltDefault = parcelHelpers.interopDefault(_sortUpAlt);
+var _sortUp = require("./icons/sort-up");
+var _sortUpDefault = parcelHelpers.interopDefault(_sortUp);
+var _soundwave = require("./icons/soundwave");
+var _soundwaveDefault = parcelHelpers.interopDefault(_soundwave);
+var _speakerFill = require("./icons/speaker-fill");
+var _speakerFillDefault = parcelHelpers.interopDefault(_speakerFill);
+var _speaker = require("./icons/speaker");
+var _speakerDefault = parcelHelpers.interopDefault(_speaker);
+var _speedometer = require("./icons/speedometer");
+var _speedometerDefault = parcelHelpers.interopDefault(_speedometer);
+var _speedometer2 = require("./icons/speedometer2");
+var _speedometer2Default = parcelHelpers.interopDefault(_speedometer2);
+var _spellcheck = require("./icons/spellcheck");
+var _spellcheckDefault = parcelHelpers.interopDefault(_spellcheck);
+var _spotify = require("./icons/spotify");
+var _spotifyDefault = parcelHelpers.interopDefault(_spotify);
+var _squareFill = require("./icons/square-fill");
+var _squareFillDefault = parcelHelpers.interopDefault(_squareFill);
+var _squareHalf = require("./icons/square-half");
+var _squareHalfDefault = parcelHelpers.interopDefault(_squareHalf);
+var _square = require("./icons/square");
+var _squareDefault = parcelHelpers.interopDefault(_square);
+var _stackOverflow = require("./icons/stack-overflow");
+var _stackOverflowDefault = parcelHelpers.interopDefault(_stackOverflow);
+var _stack = require("./icons/stack");
+var _stackDefault = parcelHelpers.interopDefault(_stack);
+var _starFill = require("./icons/star-fill");
+var _starFillDefault = parcelHelpers.interopDefault(_starFill);
+var _starHalf = require("./icons/star-half");
+var _starHalfDefault = parcelHelpers.interopDefault(_starHalf);
+var _star = require("./icons/star");
+var _starDefault = parcelHelpers.interopDefault(_star);
+var _stars = require("./icons/stars");
+var _starsDefault = parcelHelpers.interopDefault(_stars);
+var _steam = require("./icons/steam");
+var _steamDefault = parcelHelpers.interopDefault(_steam);
+var _stickiesFill = require("./icons/stickies-fill");
+var _stickiesFillDefault = parcelHelpers.interopDefault(_stickiesFill);
+var _stickies = require("./icons/stickies");
+var _stickiesDefault = parcelHelpers.interopDefault(_stickies);
+var _stickyFill = require("./icons/sticky-fill");
+var _stickyFillDefault = parcelHelpers.interopDefault(_stickyFill);
+var _sticky = require("./icons/sticky");
+var _stickyDefault = parcelHelpers.interopDefault(_sticky);
+var _stopBtnFill = require("./icons/stop-btn-fill");
+var _stopBtnFillDefault = parcelHelpers.interopDefault(_stopBtnFill);
+var _stopBtn = require("./icons/stop-btn");
+var _stopBtnDefault = parcelHelpers.interopDefault(_stopBtn);
+var _stopCircleFill = require("./icons/stop-circle-fill");
+var _stopCircleFillDefault = parcelHelpers.interopDefault(_stopCircleFill);
+var _stopCircle = require("./icons/stop-circle");
+var _stopCircleDefault = parcelHelpers.interopDefault(_stopCircle);
+var _stopFill = require("./icons/stop-fill");
+var _stopFillDefault = parcelHelpers.interopDefault(_stopFill);
+var _stop = require("./icons/stop");
+var _stopDefault = parcelHelpers.interopDefault(_stop);
+var _stoplightsFill = require("./icons/stoplights-fill");
+var _stoplightsFillDefault = parcelHelpers.interopDefault(_stoplightsFill);
+var _stoplights = require("./icons/stoplights");
+var _stoplightsDefault = parcelHelpers.interopDefault(_stoplights);
+var _stopwatchFill = require("./icons/stopwatch-fill");
+var _stopwatchFillDefault = parcelHelpers.interopDefault(_stopwatchFill);
+var _stopwatch = require("./icons/stopwatch");
+var _stopwatchDefault = parcelHelpers.interopDefault(_stopwatch);
+var _strava = require("./icons/strava");
+var _stravaDefault = parcelHelpers.interopDefault(_strava);
+var _subtract = require("./icons/subtract");
+var _subtractDefault = parcelHelpers.interopDefault(_subtract);
+var _suitClubFill = require("./icons/suit-club-fill");
+var _suitClubFillDefault = parcelHelpers.interopDefault(_suitClubFill);
+var _suitClub = require("./icons/suit-club");
+var _suitClubDefault = parcelHelpers.interopDefault(_suitClub);
+var _suitDiamondFill = require("./icons/suit-diamond-fill");
+var _suitDiamondFillDefault = parcelHelpers.interopDefault(_suitDiamondFill);
+var _suitDiamond = require("./icons/suit-diamond");
+var _suitDiamondDefault = parcelHelpers.interopDefault(_suitDiamond);
+var _suitHeartFill = require("./icons/suit-heart-fill");
+var _suitHeartFillDefault = parcelHelpers.interopDefault(_suitHeartFill);
+var _suitHeart = require("./icons/suit-heart");
+var _suitHeartDefault = parcelHelpers.interopDefault(_suitHeart);
+var _suitSpadeFill = require("./icons/suit-spade-fill");
+var _suitSpadeFillDefault = parcelHelpers.interopDefault(_suitSpadeFill);
+var _suitSpade = require("./icons/suit-spade");
+var _suitSpadeDefault = parcelHelpers.interopDefault(_suitSpade);
+var _sunFill = require("./icons/sun-fill");
+var _sunFillDefault = parcelHelpers.interopDefault(_sunFill);
+var _sun = require("./icons/sun");
+var _sunDefault = parcelHelpers.interopDefault(_sun);
+var _sunglasses = require("./icons/sunglasses");
+var _sunglassesDefault = parcelHelpers.interopDefault(_sunglasses);
+var _sunriseFill = require("./icons/sunrise-fill");
+var _sunriseFillDefault = parcelHelpers.interopDefault(_sunriseFill);
+var _sunrise = require("./icons/sunrise");
+var _sunriseDefault = parcelHelpers.interopDefault(_sunrise);
+var _sunsetFill = require("./icons/sunset-fill");
+var _sunsetFillDefault = parcelHelpers.interopDefault(_sunsetFill);
+var _sunset = require("./icons/sunset");
+var _sunsetDefault = parcelHelpers.interopDefault(_sunset);
+var _symmetryHorizontal = require("./icons/symmetry-horizontal");
+var _symmetryHorizontalDefault = parcelHelpers.interopDefault(_symmetryHorizontal);
+var _symmetryVertical = require("./icons/symmetry-vertical");
+var _symmetryVerticalDefault = parcelHelpers.interopDefault(_symmetryVertical);
+var _table = require("./icons/table");
+var _tableDefault = parcelHelpers.interopDefault(_table);
+var _tabletFill = require("./icons/tablet-fill");
+var _tabletFillDefault = parcelHelpers.interopDefault(_tabletFill);
+var _tabletLandscapeFill = require("./icons/tablet-landscape-fill");
+var _tabletLandscapeFillDefault = parcelHelpers.interopDefault(_tabletLandscapeFill);
+var _tabletLandscape = require("./icons/tablet-landscape");
+var _tabletLandscapeDefault = parcelHelpers.interopDefault(_tabletLandscape);
+var _tablet = require("./icons/tablet");
+var _tabletDefault = parcelHelpers.interopDefault(_tablet);
+var _tagFill = require("./icons/tag-fill");
+var _tagFillDefault = parcelHelpers.interopDefault(_tagFill);
+var _tag = require("./icons/tag");
+var _tagDefault = parcelHelpers.interopDefault(_tag);
+var _tagsFill = require("./icons/tags-fill");
+var _tagsFillDefault = parcelHelpers.interopDefault(_tagsFill);
+var _tags = require("./icons/tags");
+var _tagsDefault = parcelHelpers.interopDefault(_tags);
+var _telegram = require("./icons/telegram");
+var _telegramDefault = parcelHelpers.interopDefault(_telegram);
+var _telephoneFill = require("./icons/telephone-fill");
+var _telephoneFillDefault = parcelHelpers.interopDefault(_telephoneFill);
+var _telephoneForwardFill = require("./icons/telephone-forward-fill");
+var _telephoneForwardFillDefault = parcelHelpers.interopDefault(_telephoneForwardFill);
+var _telephoneForward = require("./icons/telephone-forward");
+var _telephoneForwardDefault = parcelHelpers.interopDefault(_telephoneForward);
+var _telephoneInboundFill = require("./icons/telephone-inbound-fill");
+var _telephoneInboundFillDefault = parcelHelpers.interopDefault(_telephoneInboundFill);
+var _telephoneInbound = require("./icons/telephone-inbound");
+var _telephoneInboundDefault = parcelHelpers.interopDefault(_telephoneInbound);
+var _telephoneMinusFill = require("./icons/telephone-minus-fill");
+var _telephoneMinusFillDefault = parcelHelpers.interopDefault(_telephoneMinusFill);
+var _telephoneMinus = require("./icons/telephone-minus");
+var _telephoneMinusDefault = parcelHelpers.interopDefault(_telephoneMinus);
+var _telephoneOutboundFill = require("./icons/telephone-outbound-fill");
+var _telephoneOutboundFillDefault = parcelHelpers.interopDefault(_telephoneOutboundFill);
+var _telephoneOutbound = require("./icons/telephone-outbound");
+var _telephoneOutboundDefault = parcelHelpers.interopDefault(_telephoneOutbound);
+var _telephonePlusFill = require("./icons/telephone-plus-fill");
+var _telephonePlusFillDefault = parcelHelpers.interopDefault(_telephonePlusFill);
+var _telephonePlus = require("./icons/telephone-plus");
+var _telephonePlusDefault = parcelHelpers.interopDefault(_telephonePlus);
+var _telephoneXFill = require("./icons/telephone-x-fill");
+var _telephoneXFillDefault = parcelHelpers.interopDefault(_telephoneXFill);
+var _telephoneX = require("./icons/telephone-x");
+var _telephoneXDefault = parcelHelpers.interopDefault(_telephoneX);
+var _telephone = require("./icons/telephone");
+var _telephoneDefault = parcelHelpers.interopDefault(_telephone);
+var _terminalDash = require("./icons/terminal-dash");
+var _terminalDashDefault = parcelHelpers.interopDefault(_terminalDash);
+var _terminalFill = require("./icons/terminal-fill");
+var _terminalFillDefault = parcelHelpers.interopDefault(_terminalFill);
+var _terminalPlus = require("./icons/terminal-plus");
+var _terminalPlusDefault = parcelHelpers.interopDefault(_terminalPlus);
+var _terminalSplit = require("./icons/terminal-split");
+var _terminalSplitDefault = parcelHelpers.interopDefault(_terminalSplit);
+var _terminalX = require("./icons/terminal-x");
+var _terminalXDefault = parcelHelpers.interopDefault(_terminalX);
+var _terminal = require("./icons/terminal");
+var _terminalDefault = parcelHelpers.interopDefault(_terminal);
+var _textCenter = require("./icons/text-center");
+var _textCenterDefault = parcelHelpers.interopDefault(_textCenter);
+var _textIndentLeft = require("./icons/text-indent-left");
+var _textIndentLeftDefault = parcelHelpers.interopDefault(_textIndentLeft);
+var _textIndentRight = require("./icons/text-indent-right");
+var _textIndentRightDefault = parcelHelpers.interopDefault(_textIndentRight);
+var _textLeft = require("./icons/text-left");
+var _textLeftDefault = parcelHelpers.interopDefault(_textLeft);
+var _textParagraph = require("./icons/text-paragraph");
+var _textParagraphDefault = parcelHelpers.interopDefault(_textParagraph);
+var _textRight = require("./icons/text-right");
+var _textRightDefault = parcelHelpers.interopDefault(_textRight);
+var _textareaResize = require("./icons/textarea-resize");
+var _textareaResizeDefault = parcelHelpers.interopDefault(_textareaResize);
+var _textareaT = require("./icons/textarea-t");
+var _textareaTDefault = parcelHelpers.interopDefault(_textareaT);
+var _textarea = require("./icons/textarea");
+var _textareaDefault = parcelHelpers.interopDefault(_textarea);
+var _thermometerHalf = require("./icons/thermometer-half");
+var _thermometerHalfDefault = parcelHelpers.interopDefault(_thermometerHalf);
+var _thermometerHigh = require("./icons/thermometer-high");
+var _thermometerHighDefault = parcelHelpers.interopDefault(_thermometerHigh);
+var _thermometerLow = require("./icons/thermometer-low");
+var _thermometerLowDefault = parcelHelpers.interopDefault(_thermometerLow);
+var _thermometerSnow = require("./icons/thermometer-snow");
+var _thermometerSnowDefault = parcelHelpers.interopDefault(_thermometerSnow);
+var _thermometerSun = require("./icons/thermometer-sun");
+var _thermometerSunDefault = parcelHelpers.interopDefault(_thermometerSun);
+var _thermometer = require("./icons/thermometer");
+var _thermometerDefault = parcelHelpers.interopDefault(_thermometer);
+var _threeDotsVertical = require("./icons/three-dots-vertical");
+var _threeDotsVerticalDefault = parcelHelpers.interopDefault(_threeDotsVertical);
+var _threeDots = require("./icons/three-dots");
+var _threeDotsDefault = parcelHelpers.interopDefault(_threeDots);
+var _thunderboltFill = require("./icons/thunderbolt-fill");
+var _thunderboltFillDefault = parcelHelpers.interopDefault(_thunderboltFill);
+var _thunderbolt = require("./icons/thunderbolt");
+var _thunderboltDefault = parcelHelpers.interopDefault(_thunderbolt);
+var _ticketDetailedFill = require("./icons/ticket-detailed-fill");
+var _ticketDetailedFillDefault = parcelHelpers.interopDefault(_ticketDetailedFill);
+var _ticketDetailed = require("./icons/ticket-detailed");
+var _ticketDetailedDefault = parcelHelpers.interopDefault(_ticketDetailed);
+var _ticketFill = require("./icons/ticket-fill");
+var _ticketFillDefault = parcelHelpers.interopDefault(_ticketFill);
+var _ticketPerforatedFill = require("./icons/ticket-perforated-fill");
+var _ticketPerforatedFillDefault = parcelHelpers.interopDefault(_ticketPerforatedFill);
+var _ticketPerforated = require("./icons/ticket-perforated");
+var _ticketPerforatedDefault = parcelHelpers.interopDefault(_ticketPerforated);
+var _ticket = require("./icons/ticket");
+var _ticketDefault = parcelHelpers.interopDefault(_ticket);
+var _tiktok = require("./icons/tiktok");
+var _tiktokDefault = parcelHelpers.interopDefault(_tiktok);
+var _toggleOff = require("./icons/toggle-off");
+var _toggleOffDefault = parcelHelpers.interopDefault(_toggleOff);
+var _toggleOn = require("./icons/toggle-on");
+var _toggleOnDefault = parcelHelpers.interopDefault(_toggleOn);
+var _toggle2Off = require("./icons/toggle2-off");
+var _toggle2OffDefault = parcelHelpers.interopDefault(_toggle2Off);
+var _toggle2On = require("./icons/toggle2-on");
+var _toggle2OnDefault = parcelHelpers.interopDefault(_toggle2On);
+var _toggles = require("./icons/toggles");
+var _togglesDefault = parcelHelpers.interopDefault(_toggles);
+var _toggles2 = require("./icons/toggles2");
+var _toggles2Default = parcelHelpers.interopDefault(_toggles2);
+var _tools = require("./icons/tools");
+var _toolsDefault = parcelHelpers.interopDefault(_tools);
+var _tornado = require("./icons/tornado");
+var _tornadoDefault = parcelHelpers.interopDefault(_tornado);
+var _translate = require("./icons/translate");
+var _translateDefault = parcelHelpers.interopDefault(_translate);
+var _trashFill = require("./icons/trash-fill");
+var _trashFillDefault = parcelHelpers.interopDefault(_trashFill);
+var _trash = require("./icons/trash");
+var _trashDefault = parcelHelpers.interopDefault(_trash);
+var _trash2Fill = require("./icons/trash2-fill");
+var _trash2FillDefault = parcelHelpers.interopDefault(_trash2Fill);
+var _trash2 = require("./icons/trash2");
+var _trash2Default = parcelHelpers.interopDefault(_trash2);
+var _treeFill = require("./icons/tree-fill");
+var _treeFillDefault = parcelHelpers.interopDefault(_treeFill);
+var _tree = require("./icons/tree");
+var _treeDefault = parcelHelpers.interopDefault(_tree);
+var _triangleFill = require("./icons/triangle-fill");
+var _triangleFillDefault = parcelHelpers.interopDefault(_triangleFill);
+var _triangleHalf = require("./icons/triangle-half");
+var _triangleHalfDefault = parcelHelpers.interopDefault(_triangleHalf);
+var _triangle = require("./icons/triangle");
+var _triangleDefault = parcelHelpers.interopDefault(_triangle);
+var _trophyFill = require("./icons/trophy-fill");
+var _trophyFillDefault = parcelHelpers.interopDefault(_trophyFill);
+var _trophy = require("./icons/trophy");
+var _trophyDefault = parcelHelpers.interopDefault(_trophy);
+var _tropicalStorm = require("./icons/tropical-storm");
+var _tropicalStormDefault = parcelHelpers.interopDefault(_tropicalStorm);
+var _truckFlatbed = require("./icons/truck-flatbed");
+var _truckFlatbedDefault = parcelHelpers.interopDefault(_truckFlatbed);
+var _truck = require("./icons/truck");
+var _truckDefault = parcelHelpers.interopDefault(_truck);
+var _tsunami = require("./icons/tsunami");
+var _tsunamiDefault = parcelHelpers.interopDefault(_tsunami);
+var _tvFill = require("./icons/tv-fill");
+var _tvFillDefault = parcelHelpers.interopDefault(_tvFill);
+var _tv = require("./icons/tv");
+var _tvDefault = parcelHelpers.interopDefault(_tv);
+var _twitch = require("./icons/twitch");
+var _twitchDefault = parcelHelpers.interopDefault(_twitch);
+var _twitter = require("./icons/twitter");
+var _twitterDefault = parcelHelpers.interopDefault(_twitter);
+var _typeBold = require("./icons/type-bold");
+var _typeBoldDefault = parcelHelpers.interopDefault(_typeBold);
+var _typeH1 = require("./icons/type-h1");
+var _typeH1Default = parcelHelpers.interopDefault(_typeH1);
+var _typeH2 = require("./icons/type-h2");
+var _typeH2Default = parcelHelpers.interopDefault(_typeH2);
+var _typeH3 = require("./icons/type-h3");
+var _typeH3Default = parcelHelpers.interopDefault(_typeH3);
+var _typeItalic = require("./icons/type-italic");
+var _typeItalicDefault = parcelHelpers.interopDefault(_typeItalic);
+var _typeStrikethrough = require("./icons/type-strikethrough");
+var _typeStrikethroughDefault = parcelHelpers.interopDefault(_typeStrikethrough);
+var _typeUnderline = require("./icons/type-underline");
+var _typeUnderlineDefault = parcelHelpers.interopDefault(_typeUnderline);
+var _type = require("./icons/type");
+var _typeDefault = parcelHelpers.interopDefault(_type);
+var _uiChecksGrid = require("./icons/ui-checks-grid");
+var _uiChecksGridDefault = parcelHelpers.interopDefault(_uiChecksGrid);
+var _uiChecks = require("./icons/ui-checks");
+var _uiChecksDefault = parcelHelpers.interopDefault(_uiChecks);
+var _uiRadiosGrid = require("./icons/ui-radios-grid");
+var _uiRadiosGridDefault = parcelHelpers.interopDefault(_uiRadiosGrid);
+var _uiRadios = require("./icons/ui-radios");
+var _uiRadiosDefault = parcelHelpers.interopDefault(_uiRadios);
+var _umbrellaFill = require("./icons/umbrella-fill");
+var _umbrellaFillDefault = parcelHelpers.interopDefault(_umbrellaFill);
+var _umbrella = require("./icons/umbrella");
+var _umbrellaDefault = parcelHelpers.interopDefault(_umbrella);
+var _union = require("./icons/union");
+var _unionDefault = parcelHelpers.interopDefault(_union);
+var _unlockFill = require("./icons/unlock-fill");
+var _unlockFillDefault = parcelHelpers.interopDefault(_unlockFill);
+var _unlock = require("./icons/unlock");
+var _unlockDefault = parcelHelpers.interopDefault(_unlock);
+var _upcScan = require("./icons/upc-scan");
+var _upcScanDefault = parcelHelpers.interopDefault(_upcScan);
+var _upc = require("./icons/upc");
+var _upcDefault = parcelHelpers.interopDefault(_upc);
+var _upload = require("./icons/upload");
+var _uploadDefault = parcelHelpers.interopDefault(_upload);
+var _usbCFill = require("./icons/usb-c-fill");
+var _usbCFillDefault = parcelHelpers.interopDefault(_usbCFill);
+var _usbC = require("./icons/usb-c");
+var _usbCDefault = parcelHelpers.interopDefault(_usbC);
+var _usbDriveFill = require("./icons/usb-drive-fill");
+var _usbDriveFillDefault = parcelHelpers.interopDefault(_usbDriveFill);
+var _usbDrive = require("./icons/usb-drive");
+var _usbDriveDefault = parcelHelpers.interopDefault(_usbDrive);
+var _usbFill = require("./icons/usb-fill");
+var _usbFillDefault = parcelHelpers.interopDefault(_usbFill);
+var _usbMicroFill = require("./icons/usb-micro-fill");
+var _usbMicroFillDefault = parcelHelpers.interopDefault(_usbMicroFill);
+var _usbMicro = require("./icons/usb-micro");
+var _usbMicroDefault = parcelHelpers.interopDefault(_usbMicro);
+var _usbMiniFill = require("./icons/usb-mini-fill");
+var _usbMiniFillDefault = parcelHelpers.interopDefault(_usbMiniFill);
+var _usbMini = require("./icons/usb-mini");
+var _usbMiniDefault = parcelHelpers.interopDefault(_usbMini);
+var _usbPlugFill = require("./icons/usb-plug-fill");
+var _usbPlugFillDefault = parcelHelpers.interopDefault(_usbPlugFill);
+var _usbPlug = require("./icons/usb-plug");
+var _usbPlugDefault = parcelHelpers.interopDefault(_usbPlug);
+var _usbSymbol = require("./icons/usb-symbol");
+var _usbSymbolDefault = parcelHelpers.interopDefault(_usbSymbol);
+var _usb = require("./icons/usb");
+var _usbDefault = parcelHelpers.interopDefault(_usb);
+var _vectorPen = require("./icons/vector-pen");
+var _vectorPenDefault = parcelHelpers.interopDefault(_vectorPen);
+var _viewList = require("./icons/view-list");
+var _viewListDefault = parcelHelpers.interopDefault(_viewList);
+var _viewStacked = require("./icons/view-stacked");
+var _viewStackedDefault = parcelHelpers.interopDefault(_viewStacked);
+var _vimeo = require("./icons/vimeo");
+var _vimeoDefault = parcelHelpers.interopDefault(_vimeo);
+var _vinylFill = require("./icons/vinyl-fill");
+var _vinylFillDefault = parcelHelpers.interopDefault(_vinylFill);
+var _vinyl = require("./icons/vinyl");
+var _vinylDefault = parcelHelpers.interopDefault(_vinyl);
+var _voicemail = require("./icons/voicemail");
+var _voicemailDefault = parcelHelpers.interopDefault(_voicemail);
+var _volumeDownFill = require("./icons/volume-down-fill");
+var _volumeDownFillDefault = parcelHelpers.interopDefault(_volumeDownFill);
+var _volumeDown = require("./icons/volume-down");
+var _volumeDownDefault = parcelHelpers.interopDefault(_volumeDown);
+var _volumeMuteFill = require("./icons/volume-mute-fill");
+var _volumeMuteFillDefault = parcelHelpers.interopDefault(_volumeMuteFill);
+var _volumeMute = require("./icons/volume-mute");
+var _volumeMuteDefault = parcelHelpers.interopDefault(_volumeMute);
+var _volumeOffFill = require("./icons/volume-off-fill");
+var _volumeOffFillDefault = parcelHelpers.interopDefault(_volumeOffFill);
+var _volumeOff = require("./icons/volume-off");
+var _volumeOffDefault = parcelHelpers.interopDefault(_volumeOff);
+var _volumeUpFill = require("./icons/volume-up-fill");
+var _volumeUpFillDefault = parcelHelpers.interopDefault(_volumeUpFill);
+var _volumeUp = require("./icons/volume-up");
+var _volumeUpDefault = parcelHelpers.interopDefault(_volumeUp);
+var _vr = require("./icons/vr");
+var _vrDefault = parcelHelpers.interopDefault(_vr);
+var _walletFill = require("./icons/wallet-fill");
+var _walletFillDefault = parcelHelpers.interopDefault(_walletFill);
+var _wallet = require("./icons/wallet");
+var _walletDefault = parcelHelpers.interopDefault(_wallet);
+var _wallet2 = require("./icons/wallet2");
+var _wallet2Default = parcelHelpers.interopDefault(_wallet2);
+var _watch = require("./icons/watch");
+var _watchDefault = parcelHelpers.interopDefault(_watch);
+var _water = require("./icons/water");
+var _waterDefault = parcelHelpers.interopDefault(_water);
+var _webcamFill = require("./icons/webcam-fill");
+var _webcamFillDefault = parcelHelpers.interopDefault(_webcamFill);
+var _webcam = require("./icons/webcam");
+var _webcamDefault = parcelHelpers.interopDefault(_webcam);
+var _whatsapp = require("./icons/whatsapp");
+var _whatsappDefault = parcelHelpers.interopDefault(_whatsapp);
+var _wifi1 = require("./icons/wifi-1");
+var _wifi1Default = parcelHelpers.interopDefault(_wifi1);
+var _wifi2 = require("./icons/wifi-2");
+var _wifi2Default = parcelHelpers.interopDefault(_wifi2);
+var _wifiOff = require("./icons/wifi-off");
+var _wifiOffDefault = parcelHelpers.interopDefault(_wifiOff);
+var _wifi = require("./icons/wifi");
+var _wifiDefault = parcelHelpers.interopDefault(_wifi);
+var _wind = require("./icons/wind");
+var _windDefault = parcelHelpers.interopDefault(_wind);
+var _windowDash = require("./icons/window-dash");
+var _windowDashDefault = parcelHelpers.interopDefault(_windowDash);
+var _windowDesktop = require("./icons/window-desktop");
+var _windowDesktopDefault = parcelHelpers.interopDefault(_windowDesktop);
+var _windowDock = require("./icons/window-dock");
+var _windowDockDefault = parcelHelpers.interopDefault(_windowDock);
+var _windowFullscreen = require("./icons/window-fullscreen");
+var _windowFullscreenDefault = parcelHelpers.interopDefault(_windowFullscreen);
+var _windowPlus = require("./icons/window-plus");
+var _windowPlusDefault = parcelHelpers.interopDefault(_windowPlus);
+var _windowSidebar = require("./icons/window-sidebar");
+var _windowSidebarDefault = parcelHelpers.interopDefault(_windowSidebar);
+var _windowSplit = require("./icons/window-split");
+var _windowSplitDefault = parcelHelpers.interopDefault(_windowSplit);
+var _windowStack = require("./icons/window-stack");
+var _windowStackDefault = parcelHelpers.interopDefault(_windowStack);
+var _windowX = require("./icons/window-x");
+var _windowXDefault = parcelHelpers.interopDefault(_windowX);
+var _window = require("./icons/window");
+var _windowDefault = parcelHelpers.interopDefault(_window);
+var _windows = require("./icons/windows");
+var _windowsDefault = parcelHelpers.interopDefault(_windows);
+var _wordpress = require("./icons/wordpress");
+var _wordpressDefault = parcelHelpers.interopDefault(_wordpress);
+var _wrench = require("./icons/wrench");
+var _wrenchDefault = parcelHelpers.interopDefault(_wrench);
+var _xCircleFill = require("./icons/x-circle-fill");
+var _xCircleFillDefault = parcelHelpers.interopDefault(_xCircleFill);
+var _xCircle = require("./icons/x-circle");
+var _xCircleDefault = parcelHelpers.interopDefault(_xCircle);
+var _xDiamondFill = require("./icons/x-diamond-fill");
+var _xDiamondFillDefault = parcelHelpers.interopDefault(_xDiamondFill);
+var _xDiamond = require("./icons/x-diamond");
+var _xDiamondDefault = parcelHelpers.interopDefault(_xDiamond);
+var _xLg = require("./icons/x-lg");
+var _xLgDefault = parcelHelpers.interopDefault(_xLg);
+var _xOctagonFill = require("./icons/x-octagon-fill");
+var _xOctagonFillDefault = parcelHelpers.interopDefault(_xOctagonFill);
+var _xOctagon = require("./icons/x-octagon");
+var _xOctagonDefault = parcelHelpers.interopDefault(_xOctagon);
+var _xSquareFill = require("./icons/x-square-fill");
+var _xSquareFillDefault = parcelHelpers.interopDefault(_xSquareFill);
+var _xSquare = require("./icons/x-square");
+var _xSquareDefault = parcelHelpers.interopDefault(_xSquare);
+var _x = require("./icons/x");
+var _xDefault = parcelHelpers.interopDefault(_x);
+var _xbox = require("./icons/xbox");
+var _xboxDefault = parcelHelpers.interopDefault(_xbox);
+var _yinYang = require("./icons/yin-yang");
+var _yinYangDefault = parcelHelpers.interopDefault(_yinYang);
+var _youtube = require("./icons/youtube");
+var _youtubeDefault = parcelHelpers.interopDefault(_youtube);
+var _zoomIn = require("./icons/zoom-in");
+var _zoomInDefault = parcelHelpers.interopDefault(_zoomIn);
+var _zoomOut = require("./icons/zoom-out");
+var _zoomOutDefault = parcelHelpers.interopDefault(_zoomOut);
+
+},{"./icons/123":false,"./icons/activity":false,"./icons/alarm-fill":false,"./icons/alarm":false,"./icons/align-bottom":false,"./icons/align-center":false,"./icons/align-end":false,"./icons/align-middle":false,"./icons/align-start":false,"./icons/align-top":false,"./icons/alt":false,"./icons/app-indicator":false,"./icons/app":false,"./icons/apple":false,"./icons/archive-fill":false,"./icons/archive":false,"./icons/arrow-90deg-down":false,"./icons/arrow-90deg-left":false,"./icons/arrow-90deg-right":false,"./icons/arrow-90deg-up":false,"./icons/arrow-bar-down":false,"./icons/arrow-bar-left":false,"./icons/arrow-bar-right":false,"./icons/arrow-bar-up":false,"./icons/arrow-clockwise":false,"./icons/arrow-counterclockwise":false,"./icons/arrow-down-circle-fill":false,"./icons/arrow-down-circle":"kcUV0","./icons/arrow-down-left-circle-fill":false,"./icons/arrow-down-left-circle":false,"./icons/arrow-down-left-square-fill":false,"./icons/arrow-down-left-square":false,"./icons/arrow-down-left":false,"./icons/arrow-down-right-circle-fill":false,"./icons/arrow-down-right-circle":false,"./icons/arrow-down-right-square-fill":false,"./icons/arrow-down-right-square":false,"./icons/arrow-down-right":false,"./icons/arrow-down-short":false,"./icons/arrow-down-square-fill":false,"./icons/arrow-down-square":false,"./icons/arrow-down-up":false,"./icons/arrow-down":false,"./icons/arrow-left-circle-fill":false,"./icons/arrow-left-circle":false,"./icons/arrow-left-right":false,"./icons/arrow-left-short":false,"./icons/arrow-left-square-fill":false,"./icons/arrow-left-square":false,"./icons/arrow-left":false,"./icons/arrow-repeat":false,"./icons/arrow-return-left":false,"./icons/arrow-return-right":false,"./icons/arrow-right-circle-fill":false,"./icons/arrow-right-circle":false,"./icons/arrow-right-short":false,"./icons/arrow-right-square-fill":false,"./icons/arrow-right-square":false,"./icons/arrow-right":false,"./icons/arrow-up-circle-fill":false,"./icons/arrow-up-circle":false,"./icons/arrow-up-left-circle-fill":false,"./icons/arrow-up-left-circle":false,"./icons/arrow-up-left-square-fill":false,"./icons/arrow-up-left-square":false,"./icons/arrow-up-left":false,"./icons/arrow-up-right-circle-fill":false,"./icons/arrow-up-right-circle":false,"./icons/arrow-up-right-square-fill":false,"./icons/arrow-up-right-square":false,"./icons/arrow-up-right":false,"./icons/arrow-up-short":false,"./icons/arrow-up-square-fill":false,"./icons/arrow-up-square":false,"./icons/arrow-up":false,"./icons/arrows-angle-contract":false,"./icons/arrows-angle-expand":false,"./icons/arrows-collapse":false,"./icons/arrows-expand":false,"./icons/arrows-fullscreen":false,"./icons/arrows-move":false,"./icons/aspect-ratio-fill":false,"./icons/aspect-ratio":false,"./icons/asterisk":false,"./icons/at":false,"./icons/award-fill":false,"./icons/award":false,"./icons/back":false,"./icons/backspace-fill":false,"./icons/backspace-reverse-fill":false,"./icons/backspace-reverse":false,"./icons/backspace":false,"./icons/badge-3d-fill":false,"./icons/badge-3d":false,"./icons/badge-4k-fill":false,"./icons/badge-4k":false,"./icons/badge-8k-fill":false,"./icons/badge-8k":false,"./icons/badge-ad-fill":false,"./icons/badge-ad":false,"./icons/badge-ar-fill":false,"./icons/badge-ar":false,"./icons/badge-cc-fill":false,"./icons/badge-cc":false,"./icons/badge-hd-fill":false,"./icons/badge-hd":false,"./icons/badge-tm-fill":false,"./icons/badge-tm":false,"./icons/badge-vo-fill":false,"./icons/badge-vo":false,"./icons/badge-vr-fill":false,"./icons/badge-vr":false,"./icons/badge-wc-fill":false,"./icons/badge-wc":false,"./icons/bag-check-fill":false,"./icons/bag-check":false,"./icons/bag-dash-fill":false,"./icons/bag-dash":false,"./icons/bag-fill":false,"./icons/bag-plus-fill":false,"./icons/bag-plus":false,"./icons/bag-x-fill":false,"./icons/bag-x":false,"./icons/bag":false,"./icons/bandaid-fill":false,"./icons/bandaid":false,"./icons/bank":false,"./icons/bank2":false,"./icons/bar-chart-fill":false,"./icons/bar-chart-line-fill":false,"./icons/bar-chart-line":false,"./icons/bar-chart-steps":false,"./icons/bar-chart":false,"./icons/basket-fill":false,"./icons/basket":false,"./icons/basket2-fill":false,"./icons/basket2":false,"./icons/basket3-fill":false,"./icons/basket3":false,"./icons/battery-charging":false,"./icons/battery-full":false,"./icons/battery-half":false,"./icons/battery":false,"./icons/behance":false,"./icons/bell-fill":false,"./icons/bell-slash-fill":false,"./icons/bell-slash":false,"./icons/bell":false,"./icons/bezier":false,"./icons/bezier2":false,"./icons/bicycle":false,"./icons/binoculars-fill":false,"./icons/binoculars":false,"./icons/blockquote-left":false,"./icons/blockquote-right":false,"./icons/bluetooth":false,"./icons/body-text":false,"./icons/book-fill":false,"./icons/book-half":false,"./icons/book":false,"./icons/bookmark-check-fill":false,"./icons/bookmark-check":false,"./icons/bookmark-dash-fill":false,"./icons/bookmark-dash":false,"./icons/bookmark-fill":false,"./icons/bookmark-heart-fill":false,"./icons/bookmark-heart":false,"./icons/bookmark-plus-fill":false,"./icons/bookmark-plus":false,"./icons/bookmark-star-fill":false,"./icons/bookmark-star":false,"./icons/bookmark-x-fill":false,"./icons/bookmark-x":false,"./icons/bookmark":false,"./icons/bookmarks-fill":false,"./icons/bookmarks":false,"./icons/bookshelf":false,"./icons/boombox-fill":false,"./icons/boombox":false,"./icons/bootstrap-fill":false,"./icons/bootstrap-reboot":false,"./icons/bootstrap":false,"./icons/border-all":false,"./icons/border-bottom":false,"./icons/border-center":false,"./icons/border-inner":false,"./icons/border-left":false,"./icons/border-middle":false,"./icons/border-outer":false,"./icons/border-right":false,"./icons/border-style":false,"./icons/border-top":false,"./icons/border-width":false,"./icons/border":false,"./icons/bounding-box-circles":false,"./icons/bounding-box":false,"./icons/box-arrow-down-left":false,"./icons/box-arrow-down-right":false,"./icons/box-arrow-down":false,"./icons/box-arrow-in-down-left":false,"./icons/box-arrow-in-down-right":false,"./icons/box-arrow-in-down":false,"./icons/box-arrow-in-left":false,"./icons/box-arrow-in-right":false,"./icons/box-arrow-in-up-left":false,"./icons/box-arrow-in-up-right":false,"./icons/box-arrow-in-up":false,"./icons/box-arrow-left":false,"./icons/box-arrow-right":false,"./icons/box-arrow-up-left":false,"./icons/box-arrow-up-right":false,"./icons/box-arrow-up":false,"./icons/box-seam":false,"./icons/box":false,"./icons/boxes":false,"./icons/braces":false,"./icons/bricks":false,"./icons/briefcase-fill":false,"./icons/briefcase":false,"./icons/brightness-alt-high-fill":false,"./icons/brightness-alt-high":false,"./icons/brightness-alt-low-fill":false,"./icons/brightness-alt-low":false,"./icons/brightness-high-fill":false,"./icons/brightness-high":false,"./icons/brightness-low-fill":false,"./icons/brightness-low":false,"./icons/broadcast-pin":false,"./icons/broadcast":false,"./icons/brush-fill":false,"./icons/brush":false,"./icons/bucket-fill":false,"./icons/bucket":false,"./icons/bug-fill":false,"./icons/bug":false,"./icons/building":false,"./icons/bullseye":false,"./icons/calculator-fill":false,"./icons/calculator":false,"./icons/calendar-check-fill":false,"./icons/calendar-check":false,"./icons/calendar-date-fill":false,"./icons/calendar-date":false,"./icons/calendar-day-fill":false,"./icons/calendar-day":false,"./icons/calendar-event-fill":false,"./icons/calendar-event":false,"./icons/calendar-fill":false,"./icons/calendar-minus-fill":false,"./icons/calendar-minus":false,"./icons/calendar-month-fill":false,"./icons/calendar-month":false,"./icons/calendar-plus-fill":false,"./icons/calendar-plus":false,"./icons/calendar-range-fill":false,"./icons/calendar-range":false,"./icons/calendar-week-fill":false,"./icons/calendar-week":false,"./icons/calendar-x-fill":false,"./icons/calendar-x":false,"./icons/calendar":false,"./icons/calendar2-check-fill":false,"./icons/calendar2-check":false,"./icons/calendar2-date-fill":false,"./icons/calendar2-date":false,"./icons/calendar2-day-fill":false,"./icons/calendar2-day":false,"./icons/calendar2-event-fill":false,"./icons/calendar2-event":false,"./icons/calendar2-fill":false,"./icons/calendar2-minus-fill":false,"./icons/calendar2-minus":false,"./icons/calendar2-month-fill":false,"./icons/calendar2-month":false,"./icons/calendar2-plus-fill":false,"./icons/calendar2-plus":false,"./icons/calendar2-range-fill":false,"./icons/calendar2-range":false,"./icons/calendar2-week-fill":false,"./icons/calendar2-week":false,"./icons/calendar2-x-fill":false,"./icons/calendar2-x":false,"./icons/calendar2":false,"./icons/calendar3-event-fill":false,"./icons/calendar3-event":false,"./icons/calendar3-fill":false,"./icons/calendar3-range-fill":false,"./icons/calendar3-range":false,"./icons/calendar3-week-fill":false,"./icons/calendar3-week":false,"./icons/calendar3":false,"./icons/calendar4-event":false,"./icons/calendar4-range":false,"./icons/calendar4-week":false,"./icons/calendar4":false,"./icons/camera-fill":false,"./icons/camera-reels-fill":false,"./icons/camera-reels":false,"./icons/camera-video-fill":false,"./icons/camera-video-off-fill":false,"./icons/camera-video-off":false,"./icons/camera-video":false,"./icons/camera":false,"./icons/camera2":false,"./icons/capslock-fill":false,"./icons/capslock":false,"./icons/card-checklist":false,"./icons/card-heading":false,"./icons/card-image":false,"./icons/card-list":false,"./icons/card-text":false,"./icons/caret-down-fill":false,"./icons/caret-down-square-fill":false,"./icons/caret-down-square":false,"./icons/caret-down":false,"./icons/caret-left-fill":false,"./icons/caret-left-square-fill":false,"./icons/caret-left-square":false,"./icons/caret-left":false,"./icons/caret-right-fill":false,"./icons/caret-right-square-fill":false,"./icons/caret-right-square":false,"./icons/caret-right":false,"./icons/caret-up-fill":false,"./icons/caret-up-square-fill":false,"./icons/caret-up-square":false,"./icons/caret-up":false,"./icons/cart-check-fill":false,"./icons/cart-check":false,"./icons/cart-dash-fill":false,"./icons/cart-dash":false,"./icons/cart-fill":false,"./icons/cart-plus-fill":false,"./icons/cart-plus":false,"./icons/cart-x-fill":false,"./icons/cart-x":false,"./icons/cart":false,"./icons/cart2":false,"./icons/cart3":false,"./icons/cart4":false,"./icons/cash-coin":false,"./icons/cash-stack":false,"./icons/cash":false,"./icons/cast":false,"./icons/chat-dots-fill":false,"./icons/chat-dots":false,"./icons/chat-fill":false,"./icons/chat-left-dots-fill":false,"./icons/chat-left-dots":false,"./icons/chat-left-fill":false,"./icons/chat-left-quote-fill":false,"./icons/chat-left-quote":false,"./icons/chat-left-text-fill":false,"./icons/chat-left-text":false,"./icons/chat-left":false,"./icons/chat-quote-fill":false,"./icons/chat-quote":false,"./icons/chat-right-dots-fill":false,"./icons/chat-right-dots":false,"./icons/chat-right-fill":false,"./icons/chat-right-quote-fill":false,"./icons/chat-right-quote":false,"./icons/chat-right-text-fill":false,"./icons/chat-right-text":false,"./icons/chat-right":false,"./icons/chat-square-dots-fill":false,"./icons/chat-square-dots":false,"./icons/chat-square-fill":false,"./icons/chat-square-quote-fill":false,"./icons/chat-square-quote":false,"./icons/chat-square-text-fill":false,"./icons/chat-square-text":false,"./icons/chat-square":false,"./icons/chat-text-fill":false,"./icons/chat-text":false,"./icons/chat":false,"./icons/check-all":false,"./icons/check-circle-fill":false,"./icons/check-circle":false,"./icons/check-lg":false,"./icons/check-square-fill":false,"./icons/check-square":false,"./icons/check":false,"./icons/check2-all":false,"./icons/check2-circle":false,"./icons/check2-square":false,"./icons/check2":false,"./icons/chevron-bar-contract":false,"./icons/chevron-bar-down":false,"./icons/chevron-bar-expand":false,"./icons/chevron-bar-left":false,"./icons/chevron-bar-right":false,"./icons/chevron-bar-up":false,"./icons/chevron-compact-down":false,"./icons/chevron-compact-left":false,"./icons/chevron-compact-right":false,"./icons/chevron-compact-up":false,"./icons/chevron-contract":false,"./icons/chevron-double-down":false,"./icons/chevron-double-left":false,"./icons/chevron-double-right":false,"./icons/chevron-double-up":false,"./icons/chevron-down":false,"./icons/chevron-expand":false,"./icons/chevron-left":false,"./icons/chevron-right":false,"./icons/chevron-up":false,"./icons/circle-fill":false,"./icons/circle-half":false,"./icons/circle-square":false,"./icons/circle":false,"./icons/clipboard-check":false,"./icons/clipboard-data":false,"./icons/clipboard-minus":false,"./icons/clipboard-plus":false,"./icons/clipboard-x":false,"./icons/clipboard":false,"./icons/clock-fill":false,"./icons/clock-history":false,"./icons/clock":false,"./icons/cloud-arrow-down-fill":false,"./icons/cloud-arrow-down":false,"./icons/cloud-arrow-up-fill":false,"./icons/cloud-arrow-up":false,"./icons/cloud-check-fill":false,"./icons/cloud-check":false,"./icons/cloud-download-fill":false,"./icons/cloud-download":false,"./icons/cloud-drizzle-fill":false,"./icons/cloud-drizzle":false,"./icons/cloud-fill":false,"./icons/cloud-fog-fill":false,"./icons/cloud-fog":false,"./icons/cloud-fog2-fill":false,"./icons/cloud-fog2":false,"./icons/cloud-hail-fill":false,"./icons/cloud-hail":false,"./icons/cloud-haze-fill":false,"./icons/cloud-haze":false,"./icons/cloud-haze2-fill":false,"./icons/cloud-haze2":false,"./icons/cloud-lightning-fill":false,"./icons/cloud-lightning-rain-fill":false,"./icons/cloud-lightning-rain":false,"./icons/cloud-lightning":false,"./icons/cloud-minus-fill":false,"./icons/cloud-minus":false,"./icons/cloud-moon-fill":false,"./icons/cloud-moon":false,"./icons/cloud-plus-fill":false,"./icons/cloud-plus":false,"./icons/cloud-rain-fill":false,"./icons/cloud-rain-heavy-fill":false,"./icons/cloud-rain-heavy":false,"./icons/cloud-rain":false,"./icons/cloud-slash-fill":false,"./icons/cloud-slash":false,"./icons/cloud-sleet-fill":false,"./icons/cloud-sleet":false,"./icons/cloud-snow-fill":false,"./icons/cloud-snow":false,"./icons/cloud-sun-fill":false,"./icons/cloud-sun":false,"./icons/cloud-upload-fill":false,"./icons/cloud-upload":false,"./icons/cloud":false,"./icons/clouds-fill":false,"./icons/clouds":false,"./icons/cloudy-fill":false,"./icons/cloudy":false,"./icons/code-slash":false,"./icons/code-square":false,"./icons/code":false,"./icons/coin":false,"./icons/collection-fill":false,"./icons/collection-play-fill":false,"./icons/collection-play":false,"./icons/collection":false,"./icons/columns-gap":false,"./icons/columns":false,"./icons/command":false,"./icons/compass-fill":false,"./icons/compass":false,"./icons/cone-striped":false,"./icons/cone":false,"./icons/controller":false,"./icons/cpu-fill":false,"./icons/cpu":false,"./icons/credit-card-2-back-fill":false,"./icons/credit-card-2-back":false,"./icons/credit-card-2-front-fill":false,"./icons/credit-card-2-front":false,"./icons/credit-card-fill":false,"./icons/credit-card":false,"./icons/crop":false,"./icons/cup-fill":false,"./icons/cup-straw":false,"./icons/cup":false,"./icons/currency-bitcoin":false,"./icons/currency-dollar":false,"./icons/currency-euro":false,"./icons/currency-exchange":false,"./icons/currency-pound":false,"./icons/currency-yen":false,"./icons/cursor-fill":false,"./icons/cursor-text":false,"./icons/cursor":false,"./icons/dash-circle-dotted":false,"./icons/dash-circle-fill":false,"./icons/dash-circle":false,"./icons/dash-lg":false,"./icons/dash-square-dotted":false,"./icons/dash-square-fill":false,"./icons/dash-square":false,"./icons/dash":false,"./icons/device-hdd-fill":false,"./icons/device-hdd":false,"./icons/device-ssd-fill":false,"./icons/device-ssd":false,"./icons/diagram-2-fill":false,"./icons/diagram-2":false,"./icons/diagram-3-fill":false,"./icons/diagram-3":false,"./icons/diamond-fill":false,"./icons/diamond-half":false,"./icons/diamond":false,"./icons/dice-1-fill":false,"./icons/dice-1":false,"./icons/dice-2-fill":false,"./icons/dice-2":false,"./icons/dice-3-fill":false,"./icons/dice-3":false,"./icons/dice-4-fill":false,"./icons/dice-4":false,"./icons/dice-5-fill":false,"./icons/dice-5":false,"./icons/dice-6-fill":false,"./icons/dice-6":false,"./icons/disc-fill":false,"./icons/disc":false,"./icons/discord":false,"./icons/display-fill":false,"./icons/display":false,"./icons/displayport-fill":false,"./icons/displayport":false,"./icons/distribute-horizontal":false,"./icons/distribute-vertical":false,"./icons/door-closed-fill":false,"./icons/door-closed":false,"./icons/door-open-fill":false,"./icons/door-open":false,"./icons/dot":false,"./icons/download":false,"./icons/dpad-fill":false,"./icons/dpad":false,"./icons/dribbble":false,"./icons/droplet-fill":false,"./icons/droplet-half":false,"./icons/droplet":false,"./icons/ear-fill":false,"./icons/ear":false,"./icons/earbuds":false,"./icons/easel-fill":false,"./icons/easel":false,"./icons/easel2-fill":false,"./icons/easel2":false,"./icons/easel3-fill":false,"./icons/easel3":false,"./icons/egg-fill":false,"./icons/egg-fried":false,"./icons/egg":false,"./icons/eject-fill":false,"./icons/eject":false,"./icons/emoji-angry-fill":false,"./icons/emoji-angry":false,"./icons/emoji-dizzy-fill":false,"./icons/emoji-dizzy":false,"./icons/emoji-expressionless-fill":false,"./icons/emoji-expressionless":false,"./icons/emoji-frown-fill":false,"./icons/emoji-frown":false,"./icons/emoji-heart-eyes-fill":false,"./icons/emoji-heart-eyes":false,"./icons/emoji-laughing-fill":false,"./icons/emoji-laughing":false,"./icons/emoji-neutral-fill":false,"./icons/emoji-neutral":false,"./icons/emoji-smile-fill":false,"./icons/emoji-smile-upside-down-fill":false,"./icons/emoji-smile-upside-down":false,"./icons/emoji-smile":false,"./icons/emoji-sunglasses-fill":false,"./icons/emoji-sunglasses":false,"./icons/emoji-wink-fill":false,"./icons/emoji-wink":false,"./icons/envelope-check-fill":false,"./icons/envelope-check":false,"./icons/envelope-dash-fill":false,"./icons/envelope-dash":false,"./icons/envelope-exclamation-fill":false,"./icons/envelope-exclamation":false,"./icons/envelope-fill":false,"./icons/envelope-open-fill":false,"./icons/envelope-open":false,"./icons/envelope-plus-fill":false,"./icons/envelope-plus":false,"./icons/envelope-slash-fill":false,"./icons/envelope-slash":false,"./icons/envelope-x-fill":false,"./icons/envelope-x":false,"./icons/envelope":false,"./icons/eraser-fill":false,"./icons/eraser":false,"./icons/ethernet":false,"./icons/exclamation-circle-fill":false,"./icons/exclamation-circle":false,"./icons/exclamation-diamond-fill":false,"./icons/exclamation-diamond":false,"./icons/exclamation-lg":false,"./icons/exclamation-octagon-fill":false,"./icons/exclamation-octagon":false,"./icons/exclamation-square-fill":false,"./icons/exclamation-square":false,"./icons/exclamation-triangle-fill":false,"./icons/exclamation-triangle":false,"./icons/exclamation":false,"./icons/exclude":false,"./icons/explicit-fill":false,"./icons/explicit":false,"./icons/eye-fill":false,"./icons/eye-slash-fill":false,"./icons/eye-slash":false,"./icons/eye":false,"./icons/eyedropper":false,"./icons/eyeglasses":false,"./icons/facebook":false,"./icons/fan":false,"./icons/file-arrow-down-fill":false,"./icons/file-arrow-down":false,"./icons/file-arrow-up-fill":false,"./icons/file-arrow-up":false,"./icons/file-bar-graph-fill":false,"./icons/file-bar-graph":false,"./icons/file-binary-fill":false,"./icons/file-binary":false,"./icons/file-break-fill":false,"./icons/file-break":false,"./icons/file-check-fill":false,"./icons/file-check":false,"./icons/file-code-fill":false,"./icons/file-code":false,"./icons/file-diff-fill":false,"./icons/file-diff":false,"./icons/file-earmark-arrow-down-fill":false,"./icons/file-earmark-arrow-down":false,"./icons/file-earmark-arrow-up-fill":false,"./icons/file-earmark-arrow-up":false,"./icons/file-earmark-bar-graph-fill":false,"./icons/file-earmark-bar-graph":false,"./icons/file-earmark-binary-fill":false,"./icons/file-earmark-binary":false,"./icons/file-earmark-break-fill":false,"./icons/file-earmark-break":false,"./icons/file-earmark-check-fill":false,"./icons/file-earmark-check":false,"./icons/file-earmark-code-fill":false,"./icons/file-earmark-code":false,"./icons/file-earmark-diff-fill":false,"./icons/file-earmark-diff":false,"./icons/file-earmark-easel-fill":false,"./icons/file-earmark-easel":false,"./icons/file-earmark-excel-fill":false,"./icons/file-earmark-excel":false,"./icons/file-earmark-fill":false,"./icons/file-earmark-font-fill":false,"./icons/file-earmark-font":false,"./icons/file-earmark-image-fill":false,"./icons/file-earmark-image":false,"./icons/file-earmark-lock-fill":false,"./icons/file-earmark-lock":false,"./icons/file-earmark-lock2-fill":false,"./icons/file-earmark-lock2":false,"./icons/file-earmark-medical-fill":false,"./icons/file-earmark-medical":false,"./icons/file-earmark-minus-fill":false,"./icons/file-earmark-minus":false,"./icons/file-earmark-music-fill":false,"./icons/file-earmark-music":false,"./icons/file-earmark-pdf-fill":false,"./icons/file-earmark-pdf":false,"./icons/file-earmark-person-fill":false,"./icons/file-earmark-person":false,"./icons/file-earmark-play-fill":false,"./icons/file-earmark-play":false,"./icons/file-earmark-plus-fill":false,"./icons/file-earmark-plus":false,"./icons/file-earmark-post-fill":false,"./icons/file-earmark-post":false,"./icons/file-earmark-ppt-fill":false,"./icons/file-earmark-ppt":false,"./icons/file-earmark-richtext-fill":false,"./icons/file-earmark-richtext":false,"./icons/file-earmark-ruled-fill":false,"./icons/file-earmark-ruled":false,"./icons/file-earmark-slides-fill":false,"./icons/file-earmark-slides":false,"./icons/file-earmark-spreadsheet-fill":false,"./icons/file-earmark-spreadsheet":false,"./icons/file-earmark-text-fill":false,"./icons/file-earmark-text":false,"./icons/file-earmark-word-fill":false,"./icons/file-earmark-word":false,"./icons/file-earmark-x-fill":false,"./icons/file-earmark-x":false,"./icons/file-earmark-zip-fill":false,"./icons/file-earmark-zip":false,"./icons/file-earmark":false,"./icons/file-easel-fill":false,"./icons/file-easel":false,"./icons/file-excel-fill":false,"./icons/file-excel":false,"./icons/file-fill":false,"./icons/file-font-fill":false,"./icons/file-font":false,"./icons/file-image-fill":false,"./icons/file-image":false,"./icons/file-lock-fill":false,"./icons/file-lock":false,"./icons/file-lock2-fill":false,"./icons/file-lock2":false,"./icons/file-medical-fill":false,"./icons/file-medical":false,"./icons/file-minus-fill":false,"./icons/file-minus":false,"./icons/file-music-fill":false,"./icons/file-music":false,"./icons/file-pdf-fill":false,"./icons/file-pdf":false,"./icons/file-person-fill":false,"./icons/file-person":false,"./icons/file-play-fill":false,"./icons/file-play":false,"./icons/file-plus-fill":false,"./icons/file-plus":false,"./icons/file-post-fill":false,"./icons/file-post":false,"./icons/file-ppt-fill":false,"./icons/file-ppt":false,"./icons/file-richtext-fill":false,"./icons/file-richtext":false,"./icons/file-ruled-fill":false,"./icons/file-ruled":false,"./icons/file-slides-fill":false,"./icons/file-slides":false,"./icons/file-spreadsheet-fill":false,"./icons/file-spreadsheet":false,"./icons/file-text-fill":false,"./icons/file-text":false,"./icons/file-word-fill":false,"./icons/file-word":false,"./icons/file-x-fill":false,"./icons/file-x":false,"./icons/file-zip-fill":false,"./icons/file-zip":false,"./icons/file":false,"./icons/files-alt":false,"./icons/files":false,"./icons/film":false,"./icons/filter-circle-fill":false,"./icons/filter-circle":false,"./icons/filter-left":false,"./icons/filter-right":false,"./icons/filter-square-fill":false,"./icons/filter-square":false,"./icons/filter":false,"./icons/fingerprint":false,"./icons/flag-fill":false,"./icons/flag":false,"./icons/flower1":false,"./icons/flower2":false,"./icons/flower3":false,"./icons/folder-check":false,"./icons/folder-fill":false,"./icons/folder-minus":false,"./icons/folder-plus":false,"./icons/folder-symlink-fill":false,"./icons/folder-symlink":false,"./icons/folder-x":false,"./icons/folder":false,"./icons/folder2-open":false,"./icons/folder2":false,"./icons/fonts":false,"./icons/forward-fill":false,"./icons/forward":false,"./icons/front":false,"./icons/fullscreen-exit":false,"./icons/fullscreen":false,"./icons/funnel-fill":false,"./icons/funnel":false,"./icons/gear-fill":false,"./icons/gear-wide-connected":false,"./icons/gear-wide":false,"./icons/gear":false,"./icons/gem":false,"./icons/gender-ambiguous":false,"./icons/gender-female":false,"./icons/gender-male":false,"./icons/gender-trans":false,"./icons/geo-alt-fill":false,"./icons/geo-alt":false,"./icons/geo-fill":false,"./icons/geo":false,"./icons/gift-fill":false,"./icons/gift":false,"./icons/git":false,"./icons/github":false,"./icons/globe":false,"./icons/globe2":false,"./icons/google":false,"./icons/gpu-card":false,"./icons/graph-down-arrow":false,"./icons/graph-down":false,"./icons/graph-up-arrow":false,"./icons/graph-up":false,"./icons/grid-1x2-fill":false,"./icons/grid-1x2":false,"./icons/grid-3x2-gap-fill":false,"./icons/grid-3x2-gap":false,"./icons/grid-3x2":false,"./icons/grid-3x3-gap-fill":false,"./icons/grid-3x3-gap":false,"./icons/grid-3x3":false,"./icons/grid-fill":false,"./icons/grid":false,"./icons/grip-horizontal":false,"./icons/grip-vertical":false,"./icons/hammer":false,"./icons/hand-index-fill":false,"./icons/hand-index-thumb-fill":false,"./icons/hand-index-thumb":false,"./icons/hand-index":false,"./icons/hand-thumbs-down-fill":false,"./icons/hand-thumbs-down":false,"./icons/hand-thumbs-up-fill":false,"./icons/hand-thumbs-up":false,"./icons/handbag-fill":false,"./icons/handbag":false,"./icons/hash":false,"./icons/hdd-fill":false,"./icons/hdd-network-fill":false,"./icons/hdd-network":false,"./icons/hdd-rack-fill":false,"./icons/hdd-rack":false,"./icons/hdd-stack-fill":false,"./icons/hdd-stack":false,"./icons/hdd":false,"./icons/hdmi-fill":false,"./icons/hdmi":false,"./icons/headphones":false,"./icons/headset-vr":false,"./icons/headset":false,"./icons/heart-fill":false,"./icons/heart-half":false,"./icons/heart":false,"./icons/heptagon-fill":false,"./icons/heptagon-half":false,"./icons/heptagon":false,"./icons/hexagon-fill":false,"./icons/hexagon-half":false,"./icons/hexagon":false,"./icons/hourglass-bottom":false,"./icons/hourglass-split":false,"./icons/hourglass-top":false,"./icons/hourglass":false,"./icons/house-door-fill":false,"./icons/house-door":false,"./icons/house-fill":false,"./icons/house":false,"./icons/hr":false,"./icons/hurricane":false,"./icons/hypnotize":false,"./icons/image-alt":false,"./icons/image-fill":false,"./icons/image":false,"./icons/images":false,"./icons/inbox-fill":false,"./icons/inbox":false,"./icons/inboxes-fill":false,"./icons/inboxes":false,"./icons/infinity":false,"./icons/info-circle-fill":false,"./icons/info-circle":false,"./icons/info-lg":false,"./icons/info-square-fill":false,"./icons/info-square":false,"./icons/info":false,"./icons/input-cursor-text":false,"./icons/input-cursor":false,"./icons/instagram":false,"./icons/intersect":false,"./icons/journal-album":false,"./icons/journal-arrow-down":false,"./icons/journal-arrow-up":false,"./icons/journal-bookmark-fill":false,"./icons/journal-bookmark":false,"./icons/journal-check":false,"./icons/journal-code":false,"./icons/journal-medical":false,"./icons/journal-minus":false,"./icons/journal-plus":false,"./icons/journal-richtext":false,"./icons/journal-text":false,"./icons/journal-x":false,"./icons/journal":false,"./icons/journals":false,"./icons/joystick":false,"./icons/justify-left":false,"./icons/justify-right":false,"./icons/justify":false,"./icons/kanban-fill":false,"./icons/kanban":false,"./icons/key-fill":false,"./icons/key":false,"./icons/keyboard-fill":false,"./icons/keyboard":false,"./icons/ladder":false,"./icons/lamp-fill":false,"./icons/lamp":false,"./icons/laptop-fill":false,"./icons/laptop":false,"./icons/layer-backward":false,"./icons/layer-forward":false,"./icons/layers-fill":false,"./icons/layers-half":false,"./icons/layers":false,"./icons/layout-sidebar-inset-reverse":false,"./icons/layout-sidebar-inset":false,"./icons/layout-sidebar-reverse":false,"./icons/layout-sidebar":false,"./icons/layout-split":false,"./icons/layout-text-sidebar-reverse":false,"./icons/layout-text-sidebar":false,"./icons/layout-text-window-reverse":false,"./icons/layout-text-window":false,"./icons/layout-three-columns":false,"./icons/layout-wtf":false,"./icons/life-preserver":false,"./icons/lightbulb-fill":false,"./icons/lightbulb-off-fill":false,"./icons/lightbulb-off":false,"./icons/lightbulb":false,"./icons/lightning-charge-fill":false,"./icons/lightning-charge":false,"./icons/lightning-fill":false,"./icons/lightning":false,"./icons/line":false,"./icons/link-45deg":false,"./icons/link":false,"./icons/linkedin":false,"./icons/list-check":false,"./icons/list-columns-reverse":false,"./icons/list-columns":false,"./icons/list-nested":false,"./icons/list-ol":false,"./icons/list-stars":false,"./icons/list-task":false,"./icons/list-ul":false,"./icons/list":false,"./icons/lock-fill":false,"./icons/lock":false,"./icons/magic":false,"./icons/mailbox":false,"./icons/mailbox2":false,"./icons/map-fill":false,"./icons/map":false,"./icons/markdown-fill":false,"./icons/markdown":false,"./icons/mask":false,"./icons/mastodon":false,"./icons/medium":false,"./icons/megaphone-fill":false,"./icons/megaphone":false,"./icons/memory":false,"./icons/menu-app-fill":false,"./icons/menu-app":false,"./icons/menu-button-fill":false,"./icons/menu-button-wide-fill":false,"./icons/menu-button-wide":false,"./icons/menu-button":false,"./icons/menu-down":false,"./icons/menu-up":false,"./icons/messenger":false,"./icons/meta":false,"./icons/mic-fill":false,"./icons/mic-mute-fill":false,"./icons/mic-mute":false,"./icons/mic":false,"./icons/microsoft":false,"./icons/minecart-loaded":false,"./icons/minecart":false,"./icons/modem-fill":false,"./icons/modem":false,"./icons/moisture":false,"./icons/moon-fill":false,"./icons/moon-stars-fill":false,"./icons/moon-stars":false,"./icons/moon":false,"./icons/mortarboard-fill":false,"./icons/mortarboard":false,"./icons/motherboard-fill":false,"./icons/motherboard":false,"./icons/mouse-fill":false,"./icons/mouse":false,"./icons/mouse2-fill":false,"./icons/mouse2":false,"./icons/mouse3-fill":false,"./icons/mouse3":false,"./icons/music-note-beamed":false,"./icons/music-note-list":false,"./icons/music-note":false,"./icons/music-player-fill":false,"./icons/music-player":false,"./icons/newspaper":false,"./icons/nintendo-switch":false,"./icons/node-minus-fill":false,"./icons/node-minus":false,"./icons/node-plus-fill":false,"./icons/node-plus":false,"./icons/nut-fill":false,"./icons/nut":false,"./icons/octagon-fill":false,"./icons/octagon-half":false,"./icons/octagon":false,"./icons/optical-audio-fill":false,"./icons/optical-audio":false,"./icons/option":false,"./icons/outlet":false,"./icons/paint-bucket":false,"./icons/palette-fill":false,"./icons/palette":false,"./icons/palette2":false,"./icons/paperclip":false,"./icons/paragraph":false,"./icons/patch-check-fill":false,"./icons/patch-check":false,"./icons/patch-exclamation-fill":false,"./icons/patch-exclamation":false,"./icons/patch-minus-fill":false,"./icons/patch-minus":false,"./icons/patch-plus-fill":false,"./icons/patch-plus":false,"./icons/patch-question-fill":false,"./icons/patch-question":false,"./icons/pause-btn-fill":false,"./icons/pause-btn":false,"./icons/pause-circle-fill":false,"./icons/pause-circle":false,"./icons/pause-fill":false,"./icons/pause":false,"./icons/paypal":false,"./icons/pc-display-horizontal":false,"./icons/pc-display":false,"./icons/pc-horizontal":false,"./icons/pc":false,"./icons/pci-card":false,"./icons/peace-fill":false,"./icons/peace":false,"./icons/pen-fill":false,"./icons/pen":false,"./icons/pencil-fill":false,"./icons/pencil-square":false,"./icons/pencil":false,"./icons/pentagon-fill":false,"./icons/pentagon-half":false,"./icons/pentagon":false,"./icons/people-fill":false,"./icons/people":false,"./icons/percent":false,"./icons/person-badge-fill":false,"./icons/person-badge":false,"./icons/person-bounding-box":false,"./icons/person-check-fill":false,"./icons/person-check":false,"./icons/person-circle":false,"./icons/person-dash-fill":false,"./icons/person-dash":false,"./icons/person-fill":false,"./icons/person-lines-fill":false,"./icons/person-plus-fill":false,"./icons/person-plus":false,"./icons/person-rolodex":false,"./icons/person-square":false,"./icons/person-video":false,"./icons/person-video2":false,"./icons/person-video3":false,"./icons/person-workspace":false,"./icons/person-x-fill":false,"./icons/person-x":false,"./icons/person":false,"./icons/phone-fill":false,"./icons/phone-landscape-fill":false,"./icons/phone-landscape":false,"./icons/phone-vibrate-fill":false,"./icons/phone-vibrate":false,"./icons/phone":false,"./icons/pie-chart-fill":false,"./icons/pie-chart":false,"./icons/piggy-bank-fill":false,"./icons/piggy-bank":false,"./icons/pin-angle-fill":false,"./icons/pin-angle":false,"./icons/pin-fill":false,"./icons/pin-map-fill":false,"./icons/pin-map":false,"./icons/pin":false,"./icons/pinterest":false,"./icons/pip-fill":false,"./icons/pip":false,"./icons/play-btn-fill":false,"./icons/play-btn":false,"./icons/play-circle-fill":false,"./icons/play-circle":false,"./icons/play-fill":false,"./icons/play":false,"./icons/playstation":false,"./icons/plug-fill":false,"./icons/plug":false,"./icons/plus-circle-dotted":false,"./icons/plus-circle-fill":false,"./icons/plus-circle":false,"./icons/plus-lg":false,"./icons/plus-slash-minus":false,"./icons/plus-square-dotted":false,"./icons/plus-square-fill":false,"./icons/plus-square":false,"./icons/plus":false,"./icons/power":false,"./icons/printer-fill":false,"./icons/printer":false,"./icons/projector-fill":false,"./icons/projector":false,"./icons/puzzle-fill":false,"./icons/puzzle":false,"./icons/qr-code-scan":false,"./icons/qr-code":false,"./icons/question-circle-fill":false,"./icons/question-circle":false,"./icons/question-diamond-fill":false,"./icons/question-diamond":false,"./icons/question-lg":false,"./icons/question-octagon-fill":false,"./icons/question-octagon":false,"./icons/question-square-fill":false,"./icons/question-square":false,"./icons/question":false,"./icons/quora":false,"./icons/quote":false,"./icons/radioactive":false,"./icons/rainbow":false,"./icons/receipt-cutoff":false,"./icons/receipt":false,"./icons/reception-0":false,"./icons/reception-1":false,"./icons/reception-2":false,"./icons/reception-3":false,"./icons/reception-4":false,"./icons/record-btn-fill":false,"./icons/record-btn":false,"./icons/record-circle-fill":false,"./icons/record-circle":false,"./icons/record-fill":false,"./icons/record":false,"./icons/record2-fill":false,"./icons/record2":false,"./icons/recycle":false,"./icons/reddit":false,"./icons/reply-all-fill":false,"./icons/reply-all":false,"./icons/reply-fill":false,"./icons/reply":false,"./icons/robot":false,"./icons/router-fill":false,"./icons/router":false,"./icons/rss-fill":false,"./icons/rss":false,"./icons/rulers":false,"./icons/safe-fill":false,"./icons/safe":false,"./icons/safe2-fill":false,"./icons/safe2":false,"./icons/save-fill":false,"./icons/save":false,"./icons/save2-fill":false,"./icons/save2":false,"./icons/scissors":false,"./icons/screwdriver":false,"./icons/sd-card-fill":false,"./icons/sd-card":false,"./icons/search":false,"./icons/segmented-nav":false,"./icons/send-check-fill":false,"./icons/send-check":false,"./icons/send-dash-fill":false,"./icons/send-dash":false,"./icons/send-exclamation-fill":false,"./icons/send-exclamation":false,"./icons/send-fill":false,"./icons/send-plus-fill":false,"./icons/send-plus":false,"./icons/send-slash-fill":false,"./icons/send-slash":false,"./icons/send-x-fill":false,"./icons/send-x":false,"./icons/send":false,"./icons/server":false,"./icons/share-fill":false,"./icons/share":false,"./icons/shield-check":false,"./icons/shield-exclamation":false,"./icons/shield-fill-check":false,"./icons/shield-fill-exclamation":false,"./icons/shield-fill-minus":false,"./icons/shield-fill-plus":false,"./icons/shield-fill-x":false,"./icons/shield-fill":false,"./icons/shield-lock-fill":false,"./icons/shield-lock":false,"./icons/shield-minus":false,"./icons/shield-plus":false,"./icons/shield-shaded":false,"./icons/shield-slash-fill":false,"./icons/shield-slash":false,"./icons/shield-x":false,"./icons/shield":false,"./icons/shift-fill":false,"./icons/shift":false,"./icons/shop-window":false,"./icons/shop":false,"./icons/shuffle":false,"./icons/signal":false,"./icons/signpost-2-fill":false,"./icons/signpost-2":false,"./icons/signpost-fill":false,"./icons/signpost-split-fill":false,"./icons/signpost-split":false,"./icons/signpost":false,"./icons/sim-fill":false,"./icons/sim":false,"./icons/skip-backward-btn-fill":false,"./icons/skip-backward-btn":false,"./icons/skip-backward-circle-fill":false,"./icons/skip-backward-circle":false,"./icons/skip-backward-fill":false,"./icons/skip-backward":false,"./icons/skip-end-btn-fill":false,"./icons/skip-end-btn":false,"./icons/skip-end-circle-fill":false,"./icons/skip-end-circle":false,"./icons/skip-end-fill":false,"./icons/skip-end":false,"./icons/skip-forward-btn-fill":false,"./icons/skip-forward-btn":false,"./icons/skip-forward-circle-fill":false,"./icons/skip-forward-circle":false,"./icons/skip-forward-fill":false,"./icons/skip-forward":false,"./icons/skip-start-btn-fill":false,"./icons/skip-start-btn":false,"./icons/skip-start-circle-fill":false,"./icons/skip-start-circle":false,"./icons/skip-start-fill":false,"./icons/skip-start":false,"./icons/skype":false,"./icons/slack":false,"./icons/slash-circle-fill":false,"./icons/slash-circle":false,"./icons/slash-lg":false,"./icons/slash-square-fill":false,"./icons/slash-square":false,"./icons/slash":false,"./icons/sliders":false,"./icons/smartwatch":false,"./icons/snapchat":false,"./icons/snow":false,"./icons/snow2":false,"./icons/snow3":false,"./icons/sort-alpha-down-alt":false,"./icons/sort-alpha-down":false,"./icons/sort-alpha-up-alt":false,"./icons/sort-alpha-up":false,"./icons/sort-down-alt":false,"./icons/sort-down":false,"./icons/sort-numeric-down-alt":false,"./icons/sort-numeric-down":false,"./icons/sort-numeric-up-alt":false,"./icons/sort-numeric-up":false,"./icons/sort-up-alt":false,"./icons/sort-up":false,"./icons/soundwave":false,"./icons/speaker-fill":false,"./icons/speaker":false,"./icons/speedometer":false,"./icons/speedometer2":false,"./icons/spellcheck":false,"./icons/spotify":false,"./icons/square-fill":false,"./icons/square-half":false,"./icons/square":false,"./icons/stack-overflow":false,"./icons/stack":false,"./icons/star-fill":false,"./icons/star-half":false,"./icons/star":false,"./icons/stars":false,"./icons/steam":false,"./icons/stickies-fill":false,"./icons/stickies":false,"./icons/sticky-fill":false,"./icons/sticky":false,"./icons/stop-btn-fill":false,"./icons/stop-btn":false,"./icons/stop-circle-fill":false,"./icons/stop-circle":false,"./icons/stop-fill":false,"./icons/stop":false,"./icons/stoplights-fill":false,"./icons/stoplights":false,"./icons/stopwatch-fill":false,"./icons/stopwatch":false,"./icons/strava":false,"./icons/subtract":false,"./icons/suit-club-fill":false,"./icons/suit-club":false,"./icons/suit-diamond-fill":false,"./icons/suit-diamond":false,"./icons/suit-heart-fill":false,"./icons/suit-heart":false,"./icons/suit-spade-fill":false,"./icons/suit-spade":false,"./icons/sun-fill":false,"./icons/sun":false,"./icons/sunglasses":false,"./icons/sunrise-fill":false,"./icons/sunrise":false,"./icons/sunset-fill":false,"./icons/sunset":false,"./icons/symmetry-horizontal":false,"./icons/symmetry-vertical":false,"./icons/table":false,"./icons/tablet-fill":false,"./icons/tablet-landscape-fill":false,"./icons/tablet-landscape":false,"./icons/tablet":false,"./icons/tag-fill":false,"./icons/tag":false,"./icons/tags-fill":false,"./icons/tags":false,"./icons/telegram":false,"./icons/telephone-fill":false,"./icons/telephone-forward-fill":false,"./icons/telephone-forward":false,"./icons/telephone-inbound-fill":false,"./icons/telephone-inbound":false,"./icons/telephone-minus-fill":false,"./icons/telephone-minus":false,"./icons/telephone-outbound-fill":false,"./icons/telephone-outbound":false,"./icons/telephone-plus-fill":false,"./icons/telephone-plus":false,"./icons/telephone-x-fill":false,"./icons/telephone-x":false,"./icons/telephone":false,"./icons/terminal-dash":false,"./icons/terminal-fill":false,"./icons/terminal-plus":false,"./icons/terminal-split":false,"./icons/terminal-x":false,"./icons/terminal":false,"./icons/text-center":false,"./icons/text-indent-left":false,"./icons/text-indent-right":false,"./icons/text-left":false,"./icons/text-paragraph":false,"./icons/text-right":false,"./icons/textarea-resize":false,"./icons/textarea-t":false,"./icons/textarea":false,"./icons/thermometer-half":false,"./icons/thermometer-high":false,"./icons/thermometer-low":false,"./icons/thermometer-snow":false,"./icons/thermometer-sun":false,"./icons/thermometer":false,"./icons/three-dots-vertical":false,"./icons/three-dots":false,"./icons/thunderbolt-fill":false,"./icons/thunderbolt":false,"./icons/ticket-detailed-fill":false,"./icons/ticket-detailed":false,"./icons/ticket-fill":false,"./icons/ticket-perforated-fill":false,"./icons/ticket-perforated":false,"./icons/ticket":false,"./icons/tiktok":false,"./icons/toggle-off":false,"./icons/toggle-on":false,"./icons/toggle2-off":false,"./icons/toggle2-on":false,"./icons/toggles":false,"./icons/toggles2":false,"./icons/tools":false,"./icons/tornado":false,"./icons/translate":false,"./icons/trash-fill":false,"./icons/trash":false,"./icons/trash2-fill":false,"./icons/trash2":false,"./icons/tree-fill":false,"./icons/tree":false,"./icons/triangle-fill":false,"./icons/triangle-half":false,"./icons/triangle":false,"./icons/trophy-fill":false,"./icons/trophy":false,"./icons/tropical-storm":false,"./icons/truck-flatbed":false,"./icons/truck":false,"./icons/tsunami":false,"./icons/tv-fill":false,"./icons/tv":false,"./icons/twitch":false,"./icons/twitter":false,"./icons/type-bold":false,"./icons/type-h1":false,"./icons/type-h2":false,"./icons/type-h3":false,"./icons/type-italic":false,"./icons/type-strikethrough":false,"./icons/type-underline":false,"./icons/type":false,"./icons/ui-checks-grid":false,"./icons/ui-checks":false,"./icons/ui-radios-grid":false,"./icons/ui-radios":false,"./icons/umbrella-fill":false,"./icons/umbrella":false,"./icons/union":false,"./icons/unlock-fill":false,"./icons/unlock":false,"./icons/upc-scan":false,"./icons/upc":false,"./icons/upload":false,"./icons/usb-c-fill":false,"./icons/usb-c":false,"./icons/usb-drive-fill":false,"./icons/usb-drive":false,"./icons/usb-fill":false,"./icons/usb-micro-fill":false,"./icons/usb-micro":false,"./icons/usb-mini-fill":false,"./icons/usb-mini":false,"./icons/usb-plug-fill":false,"./icons/usb-plug":false,"./icons/usb-symbol":false,"./icons/usb":false,"./icons/vector-pen":false,"./icons/view-list":false,"./icons/view-stacked":false,"./icons/vimeo":false,"./icons/vinyl-fill":false,"./icons/vinyl":false,"./icons/voicemail":false,"./icons/volume-down-fill":false,"./icons/volume-down":false,"./icons/volume-mute-fill":false,"./icons/volume-mute":false,"./icons/volume-off-fill":false,"./icons/volume-off":false,"./icons/volume-up-fill":false,"./icons/volume-up":false,"./icons/vr":false,"./icons/wallet-fill":false,"./icons/wallet":false,"./icons/wallet2":false,"./icons/watch":false,"./icons/water":false,"./icons/webcam-fill":false,"./icons/webcam":false,"./icons/whatsapp":false,"./icons/wifi-1":false,"./icons/wifi-2":false,"./icons/wifi-off":false,"./icons/wifi":false,"./icons/wind":false,"./icons/window-dash":false,"./icons/window-desktop":false,"./icons/window-dock":false,"./icons/window-fullscreen":false,"./icons/window-plus":false,"./icons/window-sidebar":false,"./icons/window-split":false,"./icons/window-stack":false,"./icons/window-x":false,"./icons/window":false,"./icons/windows":false,"./icons/wordpress":false,"./icons/wrench":false,"./icons/x-circle-fill":false,"./icons/x-circle":false,"./icons/x-diamond-fill":false,"./icons/x-diamond":false,"./icons/x-lg":false,"./icons/x-octagon-fill":false,"./icons/x-octagon":false,"./icons/x-square-fill":false,"./icons/x-square":false,"./icons/x":false,"./icons/xbox":false,"./icons/yin-yang":false,"./icons/youtube":false,"./icons/zoom-in":false,"./icons/zoom-out":false,"@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"kcUV0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {
+    };
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+    var key, i;
+    if (Object.getOwnPropertySymbols) {
+        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+        for(i = 0; i < sourceSymbolKeys.length; i++){
+            key = sourceSymbolKeys[i];
+            if (excluded.indexOf(key) >= 0) continue;
+            if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+            target[key] = source[key];
+        }
+    }
+    return target;
+}
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+var ArrowDownCircle = /*#__PURE__*/ _react.forwardRef(function(_ref, ref) {
+    var color = _ref.color, size = _ref.size, rest = _objectWithoutProperties(_ref, [
+        "color",
+        "size"
+    ]);
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", _extends({
+        ref: ref,
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 16 16",
+        width: size,
+        height: size,
+        fill: color
+    }, rest), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        fillRule: "evenodd",
+        d: "M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
+    })));
+});
+ArrowDownCircle.propTypes = {
+    color: _propTypesDefault.default.string,
+    size: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.string,
+        _propTypesDefault.default.number
+    ])
+};
+ArrowDownCircle.defaultProps = {
+    color: 'currentColor',
+    size: '1em'
+};
+exports.default = ArrowDownCircle;
+
+},{"react":"j2vgo","prop-types":"aSVWb","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"fZ6hs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fbf8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fbf8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView
+);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _propTypes = require("prop-types");
+var _navbar = require("react-bootstrap/Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _card = require("react-bootstrap/Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _stack = require("react-bootstrap/Stack");
+var _stackDefault = parcelHelpers.interopDefault(_stack);
+var _movieViewScss = require("./movie-view.scss");
+class MovieView extends _reactDefault.default.Component {
+    constructor(props){
+        super(props);
+    }
+    addFavoriteMovie() {
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        _axiosDefault.default.post(`https://miyazaki-movie-api.herokuapp.com/users/${user}/movies/${this.props.movie._id}`, {
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            method: 'POST'
+        }).then((response)=>{
+            alert(`Added ${this.props.movie.Title} to your favorites!`);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    render() {
+        const { movie , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
+            className: "movie-view",
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default, {
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Header, {
+                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
+                            src: movie.ImagePath
+                        }, void 0, false, {
+                            fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                            lineNumber: 47,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 46,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
+                        children: movie.Title
+                    }, void 0, false, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 49,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
+                        children: [
+                            "Genre:",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                to: `/genres/${movie.Genre.Name}`,
+                                children: movie.Genre.Name
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 50,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
+                        children: [
+                            "Director:",
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                to: `/directors/${movie.Director.Name}`,
+                                children: movie.Director.Name
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                                lineNumber: 56,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 54,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Body, {
+                        children: [
+                            "Description: ",
+                            movie.Description
+                        ]
+                    }, void 0, true, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 60,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_cardDefault.default.Footer, {
+                        children: [
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
+                                className: "movie-view-button",
+                                onClick: ()=>{
+                                    onBackClick(null);
+                                },
+                                children: "Back to list"
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                                lineNumber: 62,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
+                                variant: "outline-primary",
+                                className: "btn-outline-primary",
+                                value: movie._id,
+                                onClick: (e)=>this.addFavoriteMovie(e, movie)
+                                ,
+                                children: "Add to Favorites"
+                            }, void 0, false, {
+                                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                                lineNumber: 70,
+                                columnNumber: 13
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                        lineNumber: 61,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 45,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "Desktop/CF/myFlix-client/src/components/movie-view/movie-view.jsx",
+            lineNumber: 44,
+            columnNumber: 7
+        }, this));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$fbf8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iDbz2","react":"j2vgo","axios":"22oK9","react-router-dom":"efxpL","prop-types":"aSVWb","react-bootstrap/Navbar":"3bMLN","react-bootstrap/Form":"1inqF","react-bootstrap/Button":"3G11l","react-bootstrap/Container":"4bK46","react-bootstrap/Row":"I0sF7","react-bootstrap/Col":"2cYKy","react-bootstrap/Card":"JImEC","react-bootstrap/Stack":"6ILic","./movie-view.scss":"eBfSJ","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"68IVY"}],"3bMLN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _selectableContext = require("@restart/ui/SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _uncontrollable = require("uncontrollable");
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+var _navbarBrand = require("./NavbarBrand");
+var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
+var _navbarCollapse = require("./NavbarCollapse");
+var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
+var _navbarToggle = require("./NavbarToggle");
+var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
+var _navbarOffcanvas = require("./NavbarOffcanvas");
+var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarText = _createWithBsPrefixDefault.default('navbar-text', {
+    Component: 'span'
+});
+const defaultProps = {
+    expand: true,
+    variant: 'light',
+    collapseOnSelect: false
+};
+const Navbar = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const { bsPrefix: initialBsPrefix , expand , variant , bg , fixed , sticky , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = 'nav' , expanded , onToggle , onSelect , collapseOnSelect , ...controlledProps } = _uncontrollable.useUncontrolled(props, {
+        expanded: 'onToggle'
+    });
+    const bsPrefix = _themeProvider.useBootstrapPrefix(initialBsPrefix, 'navbar');
+    const handleCollapse = _react.useCallback((...args)=>{
+        onSelect == null || onSelect(...args);
+        if (collapseOnSelect && expanded) onToggle == null || onToggle(false);
+    }, [
+        onSelect,
+        collapseOnSelect,
+        expanded,
+        onToggle
+    ]); // will result in some false positives but that seems better
+    // than false negatives. strict `undefined` check allows explicit
+    // "nulling" of the role if the user really doesn't want one
+    if (controlledProps.role === undefined && Component !== 'nav') controlledProps.role = 'navigation';
+    let expandClass = `${bsPrefix}-expand`;
+    if (typeof expand === 'string') expandClass = `${expandClass}-${expand}`;
+    const navbarContext = _react.useMemo(()=>({
+            onToggle: ()=>onToggle == null ? void 0 : onToggle(!expanded)
+            ,
+            bsPrefix,
+            expanded: !!expanded
+        })
+    , [
+        bsPrefix,
+        expanded,
+        onToggle
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarContextDefault.default.Provider, {
+        value: navbarContext,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_selectableContextDefault.default.Provider, {
+            value: handleCollapse,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+                ref: ref,
+                ...controlledProps,
+                className: _classnamesDefault.default(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
+            })
+        })
+    }));
+});
+Navbar.defaultProps = defaultProps;
+Navbar.displayName = 'Navbar';
+exports.default = Object.assign(Navbar, {
+    Brand: _navbarBrandDefault.default,
+    Collapse: _navbarCollapseDefault.default,
+    Offcanvas: _navbarOffcanvasDefault.default,
+    Text: NavbarText,
+    Toggle: _navbarToggleDefault.default
+});
+
+},{"classnames":"3ryre","react":"j2vgo","@restart/ui/SelectableContext":"fukMq","uncontrollable":"3EsYt","./createWithBsPrefix":"cACiA","./NavbarBrand":"eCv5e","./NavbarCollapse":"jrNPP","./NavbarToggle":"k7kGI","./NavbarOffcanvas":"5Lz2u","./ThemeProvider":"jFIKE","./NavbarContext":"bOFar","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"fukMq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey
+);
+var _react = require("react");
+const SelectableContext = /*#__PURE__*/ _react.createContext(null);
+const makeEventKey = (eventKey, href = null)=>{
+    if (eventKey != null) return String(eventKey);
+    return href || null;
+};
+exports.default = SelectableContext;
+
+},{"react":"j2vgo","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"eCv5e":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , as , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-brand');
+    const Component = as || (props.href ? 'a' : 'span');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnamesDefault.default(className, bsPrefix)
+    }));
+});
+NavbarBrand.displayName = 'NavbarBrand';
+exports.default = NavbarBrand;
+
+},{"classnames":"3ryre","react":"j2vgo","./ThemeProvider":"jFIKE","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"jrNPP":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarCollapse = /*#__PURE__*/ _react.forwardRef(({ children , bsPrefix , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-collapse');
+    const context = _react.useContext(_navbarContextDefault.default);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_collapseDefault.default, {
+        in: !!(context && context.expanded),
+        ...props,
+        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            ref: ref,
+            className: bsPrefix,
+            children: children
+        })
+    }));
+});
+NavbarCollapse.displayName = 'NavbarCollapse';
+exports.default = NavbarCollapse;
+
+},{"react":"j2vgo","./Collapse":"jJV3h","./ThemeProvider":"jFIKE","./NavbarContext":"bOFar","react/jsx-runtime":"iYvTm","@parcel/transformer-js/src/esmodule-helpers.js":"eZ7wG"}],"bOFar":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react"); // TODO: check
@@ -36318,80 +42770,77 @@ function NavbarView() {
         bg: "light",
         variant: "light",
         expand: "md",
-        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_containerDefault.default, {
-            children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                    to: `/`,
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Brand, {
-                        children: [
-                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
-                                alt: "Logo of Totoro",
-                                src: require('../../img/logotext.svg'),
-                                width: "100",
-                                height: "auto"
-                            }, void 0, false, {
-                                fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                                lineNumber: 30,
-                                columnNumber: 13
-                            }, this),
-                            ' '
-                        ]
-                    }, void 0, true, {
-                        fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                        lineNumber: 29,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+        children: [
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                to: `/`,
+                children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Brand, {
+                    children: [
+                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("img", {
+                            alt: "Logo of Totoro",
+                            src: require('../../img/logotext.svg'),
+                            width: "100",
+                            height: "auto"
+                        }, void 0, false, {
+                            fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
+                            lineNumber: 29,
+                            columnNumber: 11
+                        }, this),
+                        ' '
+                    ]
+                }, void 0, true, {
                     fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
                     lineNumber: 28,
                     columnNumber: 9
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
-                    type: "button",
-                    onClick: ()=>this.onLoggedOut()
-                    ,
-                    children: "Logout"
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                    lineNumber: 38,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Toggle, {
-                    "aria-controls": "basic-navbar-nav"
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                    lineNumber: 41,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Collapse, {
-                    id: "basic-navbar-nav",
-                    children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default, {
+                }, this)
+            }, void 0, false, {
+                fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 27,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Toggle, {
+                "aria-controls": "basic-navbar-nav"
+            }, void 0, false, {
+                fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 37,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarDefault.default.Collapse, {
+                className: "text-center",
+                id: "basic-navbar-nav",
+                children: [
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default, {
                         className: "ml-auto",
                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navDefault.default.Link, {
                             href: `/users/${user}`,
                             children: "My Profile"
                         }, void 0, false, {
                             fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                            lineNumber: 44,
-                            columnNumber: 13
+                            lineNumber: 40,
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                        lineNumber: 43,
-                        columnNumber: 11
+                        lineNumber: 39,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_buttonDefault.default, {
+                        type: "button",
+                        onClick: ()=>this.onLoggedOut()
+                        ,
+                        children: "Logout"
+                    }, void 0, false, {
+                        fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
+                        lineNumber: 42,
+                        columnNumber: 9
                     }, this)
-                }, void 0, false, {
-                    fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-                    lineNumber: 42,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
-            lineNumber: 27,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+                ]
+            }, void 0, true, {
+                fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
+                lineNumber: 38,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "Desktop/CF/myFlix-client/src/components/nav-bar/nav-bar.jsx",
         lineNumber: 26,
         columnNumber: 5
