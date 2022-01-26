@@ -3,8 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 // import { response } from 'express';
-import { setUser, updateUser } from '../../actions/actions';
-import { connect } from 'react-redux';
 
 // Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
@@ -20,29 +18,30 @@ import Stack from 'react-bootstrap/Stack';
 // Import custom SCSS
 import './profile-view.scss';
 
-class ProfileView extends React.Component {
+export class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
-      // Username: null,
-      // Password: null,
-      // Email: null,
-      // Birthday: null,
-      // FavoriteMovies: [],
+      Username: null,
+      Password: null,
+      Email: null,
+      Birthday: null,
+      FavoriteMovies: [],
     };
   }
 
   componentDidMount() {
-    this.props.getUser();
+    const accessToken = localStorage.getItem('token');
+    this.getUser(accessToken);
   }
 
   onRemoveFavorite = (e, movie) => {
-    const Username = localStorage.getItem('user');
-    console.log(Username);
+    const username = localStorage.getItem('user');
+    console.log(username);
     const token = localStorage.getItem('token');
     axios
       .delete(
-        `https://miyazaki-movie-api.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://miyazaki-movie-api.herokuapp.com/users/${username}/movies/${movie._id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
@@ -172,7 +171,7 @@ class ProfileView extends React.Component {
   }
 
   render() {
-    const { movies, user } = this.props;
+    const { movies } = this.props;
     const { FavoriteMovies, Username, Email, Birthday } = this.state;
 
     return (
@@ -328,9 +327,3 @@ class ProfileView extends React.Component {
     );
   }
 }
-
-let mapStateToProps = (state) => {
-  return { movies: state.movies, user: state.user };
-};
-
-export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);

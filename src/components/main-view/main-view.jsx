@@ -5,16 +5,18 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
 // Import actions
+// #0
 import { setMovies, setUser } from '../../actions/actions';
 
 // Import React components
 import MoviesList from '../movies-list/movies-list';
-import ProfileView from '../profile-view/profile-view';
+// import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { DirectorView } from '../director-view/director-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 import { NavbarView } from '../nav-bar/nav-bar';
 
 // Import React Bootstrap components
@@ -35,8 +37,8 @@ class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      selectedMovie: null,
-      favorites: [],
+      // #3 movies state removed
+      user: null,
     };
   }
 
@@ -63,27 +65,6 @@ class MainView extends React.Component {
         console.log(err);
       });
   }
-
-  // Get user
-  getUser(user) {
-    const token = localStorage.getItem('token');
-    axios
-      .get(`https://miyazaki-movie-api.herokuapp.com/users/${user}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.props.setUser({
-          username: response.data.Username,
-          password: response.data.Password,
-          email: response.data.Email,
-          birthday: response.data.Birthday,
-          favorites: response.data.FavoriteMovies,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
   // To log in
   onLoggedIn(authData) {
     this.setState({
@@ -104,6 +85,12 @@ class MainView extends React.Component {
     window.open('/', '_self');
   }
 
+  // Set user
+  setUser(user) {
+    this.setState({ user });
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
   setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie,
@@ -112,7 +99,8 @@ class MainView extends React.Component {
 
   render() {
     //#5 movies extracted from this props
-    const { movies, user } = this.props;
+    const { movies } = this.props;
+    const { user } = this.state;
 
     return (
       <Router>
@@ -227,6 +215,9 @@ class MainView extends React.Component {
               return (
                 <Col md={8}>
                   <ProfileView
+                    user={user}
+                    setUser={(user) => this.setUser(user)}
+                    movies={movies}
                     onLoggedOut={() => this.onLoggedOut()}
                     onBackClick={() => history.goBack()}
                   />
