@@ -66,7 +66,7 @@ class MainView extends React.Component {
 
   // Get user
   getUser(user) {
-    const token = ocalStorage.getItem('token');
+    const token = localStorage.getItem('token');
     axios
       .get(`https://miyazaki-movie-api.herokuapp.com/users/${user}`, {
         headers: { Authorization: `Bearer ${token}` },
