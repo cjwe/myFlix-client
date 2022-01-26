@@ -25,18 +25,12 @@ function MoviesList(props) {
 
   return (
     <>
-      <Col sm={10} style={{ margin: '2em' }}>
+      <Col className="justify-content-center" sm={10} style={{ margin: '2em' }}>
         <VisibilityFilterInput visibilityFilter={visibilityFilter} />
       </Col>
-      <Row xs={1} md={2} className="">
+      <Row xs={1} md={2} className="justify-content-center m-2">
         {filteredMovies.map((m) => (
-          <Col
-            md={4}
-            lg={3}
-            sm={6}
-            className="d-flex align-items-stretch"
-            key={m._id}
-          >
+          <Col md={4} lg={3} sm={6} xs={6} className="mb-4" key={m._id}>
             <MovieCard movie={m} />
           </Col>
         ))}

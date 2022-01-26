@@ -107,7 +107,7 @@ class MainView extends React.Component {
         {/* For main view */}
         <NavbarView />
         <Container>
-          <Row>
+          <Row className="justify-content-center">
             <Route
               exact
               path="/"

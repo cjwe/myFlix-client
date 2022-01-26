@@ -23,7 +23,7 @@ export function NavbarView() {
   };
 
   return (
-    <Navbar bg="light" variant="light" expand="md">
+    <Navbar variant="light" expand="md">
       <Link to={`/`}>
         <Navbar.Brand>
           <img

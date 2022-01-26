@@ -17,19 +17,6 @@ h1 {
     padding-right: 0px;
   }
 }
-.card-title {
-  font-family: "Be Vietnam Pro", sans-serif !important;
-}
-
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
-}
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
-}
-
 :root {
   --surface-color: #fff;
   --curve: 40;
@@ -46,8 +33,11 @@ body {
 
 .card {
   position: relative;
+  border: none !important;
   display: block;
   height: 100%;
+  min-height: 370px;
+  min-width: 220px;
   border-radius: calc(var(--curve) * 1px);
   overflow: hidden;
   text-decoration: none;
@@ -72,6 +62,67 @@ body {
 
 .card:hover .card__overlay {
   transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: 0.2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card-title {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 1.15em !important;
+  margin: 0 0 0.3em !important;
+  color: #6a515e !important;
+}
+
+.card__genre {
+  display: block;
+  font-size: 0.8em;
+  color: #d7bdca;
+}
+
+.card__description {
+  padding: 0 2em 1em !important;
+  margin: 0 !important;
+  color: #d7bdca !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden !important;
+}
+
+.btn-link {
+  padding: 0 2em 1em !important;
+  margin: 0 !important;
+  color: #6a515e !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 3 !important;
+  overflow: hidden !important;
 }
 .btn-primary {
   background-color: #159bea !important;
