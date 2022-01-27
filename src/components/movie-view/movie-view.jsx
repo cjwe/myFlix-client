@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import './movie-view.scss';
+import Carousel from 'react-bootstrap/Carousel';
 
 export class MovieView extends React.Component {
   constructor(props) {
@@ -42,40 +43,67 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
     return (
       <div className="movie-view">
-        <Card>
-          <Card.Header>
-            <img src={movie.ImagePath} />
+        <Card className="movie-view-card">
+          <Card.Header className="movie-carousel">
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={movie.MovieCaps[0]}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={movie.MovieCaps[1]}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={movie.MovieCaps[2]}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
           </Card.Header>
-          <Card.Body>{movie.Title}</Card.Body>
           <Card.Body>
-            Genre:
-            <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
+            <Card.Text className="text-center">
+              <h4>{movie.Title}</h4>
+            </Card.Text>
+            <Card.Text>
+              Genre:{` `}
+              <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
+            </Card.Text>
+            <Card.Text>
+              Director:{` `}
+              <Link to={`/directors/${movie.Director.Name}`}>
+                {movie.Director.Name}
+              </Link>
+            </Card.Text>
+            <Card.Text>Description: {movie.LongDescription}</Card.Text>
+            <Card.Footer>
+              <Button
+                className="movie-view-button"
+                onClick={() => {
+                  onBackClick(null);
+                }}
+              >
+                Back to list
+              </Button>
+              {` `}
+              <Button
+                variant="outline-primary"
+                className="btn-outline-primary"
+                value={movie._id}
+                onClick={(e) => this.addFavoriteMovie(e, movie)}
+              >
+                Add to Favorites
+              </Button>
+            </Card.Footer>
           </Card.Body>
-          <Card.Body>
-            Director:
-            <Link to={`/directors/${movie.Director.Name}`}>
-              {movie.Director.Name}
-            </Link>
-          </Card.Body>
-          <Card.Body>Description: {movie.Description}</Card.Body>
-          <Card.Footer>
-            <Button
-              className="movie-view-button"
-              onClick={() => {
-                onBackClick(null);
-              }}
-            >
-              Back to list
-            </Button>
-            <Button
-              variant="outline-primary"
-              className="btn-outline-primary"
-              value={movie._id}
-              onClick={(e) => this.addFavoriteMovie(e, movie)}
-            >
-              Add to Favorites
-            </Button>
-          </Card.Footer>
         </Card>
       </div>
     );

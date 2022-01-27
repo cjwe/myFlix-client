@@ -39,12 +39,11 @@ export function LoginView(props) {
   // Register button click needed
 
   return (
-    <div className="login-view">
-      <Container>
+    <div>
+      <Container className="d-flex justify-content-center">
         <Row>
-          <Col></Col>
-          <Col xs={9}>
-            <Card className="text-center">
+          <Col lg={7} md={8} xs={12}>
+            <Card className="login text-center">
               <Card.Header>Log in to your myGhibli account</Card.Header>
               <Card.Body>
                 <Form>

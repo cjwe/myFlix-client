@@ -15,7 +15,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <a href="" className="cardlink">
+      <Link to={`/movies/${movie._id}`}>
         <Card className="m-1">
           <Card.Img variant="top" src={movie.ImagePath} />
           <div className="card__overlay">
@@ -38,7 +38,7 @@ export class MovieCard extends React.Component {
             </Card.Text>
           </div>
         </Card>
-      </a>
+      </Link>
     );
   }
 }

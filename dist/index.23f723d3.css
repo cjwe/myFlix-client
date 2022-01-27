@@ -17,20 +17,15 @@ h1 {
     padding-right: 0px;
   }
 }
-:root {
-  --surface-color: #fff;
-  --curve: 40;
+.search-bar {
+  background-color: white !important;
+  border-radius: 0.9rem;
+  border: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
-* {
-  box-sizing: border-box;
+.search-bar :focus {
+  box-shadow: 0 0 0 0.2rem rgba(74, 62, 66, 0.25);
 }
-
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: #fef8f8;
-}
-
 .card {
   position: relative;
   border: none !important;
@@ -43,11 +38,6 @@ body {
   text-decoration: none;
 }
 
-.img {
-  width: 100%;
-  height: auto;
-}
-
 .card__overlay {
   position: absolute;
   bottom: 0;
@@ -55,7 +45,7 @@ body {
   right: 0;
   z-index: 1;
   border-radius: calc(var(--curve) * 1px);
-  background-color: var(--surface-color);
+  background-color: white;
   transform: translateY(100%);
   transition: 0.2s ease-in-out;
 }
@@ -71,7 +61,7 @@ body {
   gap: 2em;
   padding: 2em;
   border-radius: calc(var(--curve) * 1px) 0 0 0;
-  background-color: var(--surface-color);
+  background-color: white;
   transform: translateY(-100%);
   transition: 0.2s ease-in-out;
 }
@@ -86,7 +76,7 @@ body {
 }
 
 .card__arc path {
-  fill: var(--surface-color);
+  fill: white;
   d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
 }
 
@@ -98,19 +88,19 @@ body {
   font-family: "Be Vietnam Pro", sans-serif !important;
   font-size: 1.15em !important;
   margin: 0 0 0.3em !important;
-  color: #6a515e !important;
+  color: #6a82b7 !important;
 }
 
 .card__genre {
   display: block;
   font-size: 0.8em;
-  color: #d7bdca;
+  color: #4a3e42;
 }
 
 .card__description {
   padding: 0 2em 1em !important;
   margin: 0 !important;
-  color: #d7bdca !important;
+  color: #4a3e42 !important;
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 3 !important;
   overflow: hidden !important;
@@ -119,66 +109,170 @@ body {
 .btn-link {
   padding: 0 2em 1em !important;
   margin: 0 !important;
-  color: #6a515e !important;
+  color: #6a82b7 !important;
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 3 !important;
   overflow: hidden !important;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+.movie-carousel {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  max-height: 250px !important;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+
+.carousel {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+.login {
+  min-width: 300px;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+
+.register-title {
+  padding: 2rem;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+
+input.form-control {
+  background-color: #e2eafc;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+
+.favorite-movie {
+  max-width: 100px;
+  margin: 2rem;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+
+.user-favorites {
+  margin-bottom: 2rem;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+
+.user-favorites-container {
+  background-color: #6a82b7;
+  margin-bottom: 2rem;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+
+.user-favorites-header {
+  color: white;
+  padding: 1rem;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+
+.card-holder {
+  display: flex;
+  justify-content: center;
 }
-.btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+
+.favorite-movie-body {
+  color: #e2eafc;
+  text-align: center;
+  background-color: white;
 }
-.btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+.navbar-light .navbar-toggler {
+  color: #6a82b7;
+  border: none;
+}
+
+.nav-link {
+  color: #6a82b7;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #6a82b7;
+}
+:root {
+  --surface-color: $white;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1.4em;
+  text-align: center;
+}
+
+a {
+  color: #4c5e85;
+}
+
+button {
+  border: none;
+  margin: 5px;
+}
+
+body {
+  background-color: #e2eafc;
+}
+
+.img {
+  width: 100%;
+  height: auto;
 }
 
 .btn-primary {
-  background-color: #159bea !important;
-  border-color: #159bea !important;
+  background-color: #6a82b7 !important;
+  border-color: #6a82b7 !important;
 }
 .btn-primary:hover {
-  background-color: #062e46 !important;
-  border-color: #062e46 !important;
+  background-color: #4c5e85 !important;
+  border-color: #4c5e85 !important;
+}
+
+.btn-outline-primary {
+  color: #6a82b7 !important;
+  border-color: #6a82b7 !important;
+}
+.btn-outline-primary:hover {
+  color: white !important;
+  background-color: #6a82b7 !important;
+}
+
+.button {
+  background-color: #4c5e85 !important;
+  border-color: #4c5e85 !important;
+}
+.button:hover {
+  background-color: #e2eafc !important;
+  border-color: #e2eafc !important;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card {
+  color: #4a3e42;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  padding: 2em;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-height: 250px;
+}
+
+.card-body {
+  color: #4a3e42;
+  padding: 1rem 2rem 2rem;
+}
+
+.card-footer {
+  text-align: center;
+  background-color: white;
+  border: none;
 }
 /*# sourceMappingURL=index.23f723d3.css.map */

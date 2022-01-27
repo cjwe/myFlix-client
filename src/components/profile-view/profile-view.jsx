@@ -176,10 +176,12 @@ export class ProfileView extends React.Component {
 
     return (
       <div className="profile-view">
-        <Row>
-          <Col>
+        <Row className="mb-2">
+          <Col className="mb-2">
             <Card className="user-profile">
-              <Card.Header>User Profile</Card.Header>
+              <Card.Header>
+                <h2>User Profile</h2>
+              </Card.Header>
               <Card.Body>
                 <Card.Text>
                   <span className="label">Username: </span>
@@ -196,11 +198,11 @@ export class ProfileView extends React.Component {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-        <Row>
-          <Col>
+          <Col className="mb-2">
             <Card>
-              <Card.Header>Update Profile</Card.Header>
+              <Card.Header>
+                <h2>Update Profile</h2>
+              </Card.Header>
               <Card.Body>
                 <Form
                   className="update-form"
@@ -252,9 +254,9 @@ export class ProfileView extends React.Component {
                       onChange={(e) => this.setBirthday(e.target.value)}
                     />
                   </Form.Group>
-                  <Form.Group>
+                  <Form.Group className="button-group">
                     <Button
-                      variant="warning"
+                      variant="primary"
                       type="submit"
                       onClick={() => this.editUser}
                     >
@@ -274,54 +276,50 @@ export class ProfileView extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Container className="user-favorites">
-              <Card>
-                <Card.Body>
-                  {FavoriteMovies.length === 0 && (
-                    <div className="text-center">No Favorite Movies</div>
-                  )}
-                  My Favorite Movies
-                  <Row className="favorite-container">
-                    {FavoriteMovies.length > 0 &&
-                      movies.map((movie) => {
-                        if (
-                          movie._id ===
-                          FavoriteMovies.find((fav) => fav === movie._id)
-                        ) {
-                          return (
-                            <Container key={movie._id}>
-                              <Card className="favorite-movie card-content">
-                                <Card.Img
-                                  className="fav-poster"
-                                  variant="top"
-                                  src={movie.ImagePath}
-                                />
-                                <Card.Body>
-                                  <Card.Title className="movie_title">
-                                    {movie.Title}
-                                  </Card.Title>
-                                  <Button
-                                    size="sm"
-                                    variant="danger"
-                                    value={movie._id}
-                                    onClick={(e) =>
-                                      this.onRemoveFavorite(e, movie)
-                                    }
-                                  >
-                                    Remove
-                                  </Button>
-                                </Card.Body>
-                              </Card>
-                            </Container>
-                          );
-                        }
-                      })}
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Container>
-          </Col>
+          <Container className="user-favorites">
+            <Card className="user-favorites-container">
+              <Card.Header className="user-favorites-header">
+                <h2>My Favorites</h2>
+              </Card.Header>
+              <Card.Body>
+                {FavoriteMovies.length === 0 && (
+                  <div className="text-center">No Favorite Movies</div>
+                )}
+                {FavoriteMovies.length > 0 &&
+                  movies.map((movie) => {
+                    if (
+                      movie._id ===
+                      FavoriteMovies.find((fav) => fav === movie._id)
+                    ) {
+                      return (
+                        <Container className="card-holder" key={movie._id}>
+                          <Card className="favorite-movie">
+                            <Card.Img
+                              className="fav-poster"
+                              variant="top"
+                              src={movie.ImagePath}
+                            />
+                            <Card.Body className="favorite-movie-body">
+                              <Card.Title className="movie-title">
+                                {movie.Title}
+                              </Card.Title>
+                              <Button
+                                size="sm"
+                                variant="danger"
+                                value={movie._id}
+                                onClick={(e) => this.onRemoveFavorite(e, movie)}
+                              >
+                                Remove
+                              </Button>
+                            </Card.Body>
+                          </Card>
+                        </Container>
+                      );
+                    }
+                  })}
+              </Card.Body>
+            </Card>
+          </Container>
         </Row>
       </div>
     );

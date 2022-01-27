@@ -34,6 +34,7 @@ export function NavbarView() {
           />{' '}
         </Navbar.Brand>
       </Link>
+
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="text-center" id="basic-navbar-nav">
         <Nav className="ml-auto">

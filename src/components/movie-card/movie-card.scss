@@ -1,19 +1,8 @@
-$blue: rgb(21, 155, 234);
-$darkblue: rgb(6, 46, 70);
-
-:root {
-  --surface-color: #fff;
-  --curve: 40;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #fef8f8;
-}
+$lblue: rgb(226, 234, 252);
+$dblue: rgb(106, 130, 183);
+$brown: rgb(74, 62, 66);
+$cream: rgb(248, 237, 235);
+$white: rgb(255, 255, 255);
 
 .card {
   position: relative;
@@ -27,11 +16,6 @@ body {
   text-decoration: none;
 }
 
-.img {
-  width: 100%;
-  height: auto;
-}
-
 .card__overlay {
   position: absolute;
   bottom: 0;
@@ -39,7 +23,7 @@ body {
   right: 0;
   z-index: 1;
   border-radius: calc(var(--curve) * 1px);
-  background-color: var(--surface-color);
+  background-color: $white;
   transform: translateY(100%);
   transition: 0.2s ease-in-out;
 }
@@ -55,7 +39,7 @@ body {
   gap: 2em;
   padding: 2em;
   border-radius: calc(var(--curve) * 1px) 0 0 0;
-  background-color: var(--surface-color);
+  background-color: $white;
   transform: translateY(-100%);
   transition: 0.2s ease-in-out;
 }
@@ -70,7 +54,7 @@ body {
 }
 
 .card__arc path {
-  fill: var(--surface-color);
+  fill: $white;
   d: path('M 40 80 c 22 0 40 -22 40 -40 v 40 Z');
 }
 
@@ -82,19 +66,19 @@ body {
   font-family: 'Be Vietnam Pro', sans-serif !important;
   font-size: 1.15em !important;
   margin: 0 0 0.3em !important;
-  color: #6a515e !important;
+  color: $dblue !important;
 }
 
 .card__genre {
   display: block;
   font-size: 0.8em;
-  color: #d7bdca;
+  color: $brown;
 }
 
 .card__description {
   padding: 0 2em 1em !important;
   margin: 0 !important;
-  color: #d7bdca !important;
+  color: $brown !important;
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 3 !important;
   overflow: hidden !important;
@@ -103,7 +87,7 @@ body {
 .btn-link {
   padding: 0 2em 1em !important;
   margin: 0 !important;
-  color: #6a515e !important;
+  color: $dblue !important;
   -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 3 !important;
   overflow: hidden !important;
