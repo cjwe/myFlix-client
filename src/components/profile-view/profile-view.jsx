@@ -39,19 +39,18 @@ export class ProfileView extends React.Component {
     const username = localStorage.getItem('user');
     console.log(username);
     const token = localStorage.getItem('token');
-    console.log(this.props);
     axios
       .delete(
-        `https://miyazaki-movie-api.herokuapp.com/users/${Username}/movies/${movie._id}`,
+        `https://miyazaki-movie-api.herokuapp.com/users/${username}/movies/${movie._id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
         console.log(response);
-        alert('Movie was removed from favorites.');
+        alert(`${movie.Title} was removed from your favorites.`);
         this.componentDidMount();
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -80,7 +79,7 @@ export class ProfileView extends React.Component {
         });
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -117,7 +116,7 @@ export class ProfileView extends React.Component {
         window.open(`/users/${Username}`, '_self');
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   };
 
@@ -138,7 +137,7 @@ export class ProfileView extends React.Component {
         window.open(`/`, '_self');
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error.response.data);
       });
   }
 
@@ -177,154 +176,150 @@ export class ProfileView extends React.Component {
 
     return (
       <div className="profile-view">
-        <Row>
-          <Col>
+        <Row className="mb-2">
+          <Col className="mb-2">
             <Card className="user-profile">
-              <Card.Header>User Profile</Card.Header>
+              <Card.Header>
+                <h2>User Profile</h2>
+              </Card.Header>
               <Card.Body>
                 <Card.Text>
-                  <span className="label">Username:</span>
+                  <span className="label">Username: </span>
                   <span className="value">{Username}</span>
                 </Card.Text>
                 <Card.Text>
-                  <span className="label">Email:</span>
+                  <span className="label">Email: </span>
                   <span className="value">{Email}</span>
                 </Card.Text>
                 <Card.Text>
-                  <span className="label">Birthday:</span>
+                  <span className="label">Birthday: </span>
                   <span className="value">{Birthday}</span>
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-        <Row>
-          <Col>
+          <Col className="mb-2">
             <Card>
-              <Card.Header>Update Profile</Card.Header>
+              <Card.Header>
+                <h2>Update Profile</h2>
+              </Card.Header>
               <Card.Body>
-                <Card.Text>
-                  <Form
-                    className="update-form"
-                    onSubmit={(e) =>
-                      this.editUser(
-                        e,
-                        this.Username,
-                        this.Password,
-                        this.Email,
-                        this.Birthday
-                      )
-                    }
-                  >
-                    <Form.Group>
-                      <Form.Label>Username</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="Username"
-                        placeholder="New Username"
-                        onChange={(e) => this.setUsername(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        name="Password"
-                        placeholder="New Password"
-                        onChange={(e) => this.setPassword(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="Email"
-                        placeholder="New Email"
-                        onChange={(e) => this.setEmail(e.target.value)}
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Birthday</Form.Label>
-                      <Form.Control
-                        type="date"
-                        name="Birthday"
-                        onChange={(e) => this.setBirthday(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Button
-                        variant="warning"
-                        type="submit"
-                        onClick={() => this.editUser()}
-                      >
-                        Update User
-                      </Button>
-                      <Button
-                        className="delete-button"
-                        variant="danger"
-                        onClick={() => this.onDeleteUser()}
-                      >
-                        Delete User
-                      </Button>
-                    </Form.Group>
-                  </Form>
-                </Card.Text>
+                <Form
+                  className="update-form"
+                  onSubmit={(e) =>
+                    this.editUser(
+                      e,
+                      this.Username,
+                      this.Password,
+                      this.Email,
+                      this.Birthday
+                    )
+                  }
+                >
+                  <Form.Group>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="Username"
+                      placeholder="New Username"
+                      onChange={(e) => this.setUsername(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="Password"
+                      placeholder="New Password"
+                      onChange={(e) => this.setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="Email"
+                      placeholder="New Email"
+                      onChange={(e) => this.setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label>Birthday</Form.Label>
+                    <Form.Control
+                      type="date"
+                      name="Birthday"
+                      onChange={(e) => this.setBirthday(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group className="button-group">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      onClick={() => this.editUser}
+                    >
+                      Update User
+                    </Button>
+                    <Button
+                      className="delete-button"
+                      variant="danger"
+                      onClick={() => this.onDeleteUser()}
+                    >
+                      Delete User
+                    </Button>
+                  </Form.Group>
+                </Form>
               </Card.Body>
             </Card>
           </Col>
         </Row>
         <Row>
-          <Col>
-            <Container className="user-favorites">
-              <Card>
-                <Card.Body>
-                  {FavoriteMovies.length === 0 && (
-                    <div className="text-center">No Favorite Movies</div>
-                  )}
-                  <Row className="favorite-container">
-                    {FavoriteMovies.length > 0 &&
-                      movies.map((movie) => {
-                        if (
-                          movie._id ===
-                          FavoriteMovies.find((fav) => fav === movie._id)
-                        ) {
-                          return (
-                            <Card
-                              className="favorite-movie card-content"
-                              key={movie._id}
-                            >
-                              <Card.Img
-                                className="fav-poster"
-                                variant="top"
-                                src={movie.ImagePath}
-                              />
-                              <Card.Body>
-                                <Card.Title className="movie_title">
-                                  {movie.Title}
-                                </Card.Title>
-                                <Button
-                                  size="sm"
-                                  variant="danger"
-                                  value={movie._id}
-                                  onClick={(e) =>
-                                    this.onRemoveFavorite(e, movie)
-                                  }
-                                >
-                                  Remove
-                                </Button>
-                              </Card.Body>
-                            </Card>
-                          );
-                        }
-                      })}
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Container>
-          </Col>
+          <Container className="user-favorites">
+            <Card className="user-favorites-container">
+              <Card.Header className="user-favorites-header">
+                <h2>My Favorites</h2>
+              </Card.Header>
+              <Card.Body>
+                {FavoriteMovies.length === 0 && (
+                  <div className="text-center">No Favorite Movies</div>
+                )}
+                {FavoriteMovies.length > 0 &&
+                  movies.map((movie) => {
+                    if (
+                      movie._id ===
+                      FavoriteMovies.find((fav) => fav === movie._id)
+                    ) {
+                      return (
+                        <Container className="card-holder" key={movie._id}>
+                          <Card className="favorite-movie">
+                            <Card.Img
+                              className="fav-poster"
+                              variant="top"
+                              src={movie.ImagePath}
+                            />
+                            <Card.Body className="favorite-movie-body">
+                              <Card.Title className="movie-title">
+                                {movie.Title}
+                              </Card.Title>
+                              <Button
+                                size="sm"
+                                variant="danger"
+                                value={movie._id}
+                                onClick={(e) => this.onRemoveFavorite(e, movie)}
+                              >
+                                Remove
+                              </Button>
+                            </Card.Body>
+                          </Card>
+                        </Container>
+                      );
+                    }
+                  })}
+              </Card.Body>
+            </Card>
+          </Container>
         </Row>
       </div>
     );

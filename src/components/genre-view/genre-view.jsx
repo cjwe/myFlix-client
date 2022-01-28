@@ -21,18 +21,20 @@ export class GenreView extends React.Component {
     return (
       <Container>
         <Card>
-          <Card.Header>Genre</Card.Header>
-          <Card.Title>{Genre.Name}</Card.Title>
-          <Card.Text>{Genre.Description}</Card.Text>
-          <Card.Footer>
-            <Button
-              onClick={() => {
-                onBackClick(null);
-              }}
-            >
-              Back
-            </Button>
-          </Card.Footer>
+          <Card.Header></Card.Header>
+          <Card.Body>
+            <Card.Title>{Genre.Name}</Card.Title>
+            <Card.Text>{Genre.Description}</Card.Text>
+            <Card.Footer>
+              <Button
+                onClick={() => {
+                  onBackClick(null);
+                }}
+              >
+                Back
+              </Button>
+            </Card.Footer>
+          </Card.Body>
         </Card>
       </Container>
     );

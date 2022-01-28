@@ -1,0 +1,18 @@
+$lblue: rgb(226, 234, 252);
+$dblue: rgb(106, 130, 183);
+$brown: rgb(74, 62, 66);
+$cream: rgb(248, 237, 235);
+$white: rgb(255, 255, 255);
+
+.navbar-light .navbar-toggler {
+  color: $dblue;
+  border: none;
+}
+
+.nav-link {
+  color: $dblue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $dblue;
+}

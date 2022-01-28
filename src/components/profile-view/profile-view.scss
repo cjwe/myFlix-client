@@ -1,11 +1,39 @@
-$blue: rgb(21, 155, 234);
-$darkblue: rgb(6, 46, 70);
+$lblue: rgb(226, 234, 252);
+$mblue: rgb(106, 130, 183);
+$dblue: rgb(76, 94, 133);
+$brown: rgb(74, 62, 66);
+$cream: rgb(248, 237, 235);
+$white: rgb(255, 255, 255);
 
-.btn-primary {
-  background-color: $blue !important;
-  border-color: $blue !important;
-  &:hover {
-    background-color: $darkblue !important;
-    border-color: $darkblue !important;
-  }
+input.form-control {
+  background-color: $lblue;
+}
+
+.favorite-movie {
+  max-width: 100px;
+  margin: 2rem;
+}
+
+.user-favorites {
+  margin-bottom: 2rem;
+}
+.user-favorites-container {
+  background-color: $mblue;
+  margin-bottom: 2rem;
+}
+
+.user-favorites-header {
+  color: $white;
+  padding: 1rem;
+}
+
+.card-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.favorite-movie-body {
+  color: $lblue;
+  text-align: center;
+  background-color: $white;
 }

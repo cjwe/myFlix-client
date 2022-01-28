@@ -43,14 +43,16 @@ export function RegistrationView(props) {
   };
 
   return (
-    <div className="registration-view">
+    <div className="d-flex justify-content-center">
       <Row>
         <Col>
           <Card>
             <Card.Body>
-              <Card.Title>Sign up for a free myMiyzaki account:</Card.Title>
+              <Card.Title className="register-title">
+                Sign up for a free myGhibli account:
+              </Card.Title>
               <Form>
-                <Form.Group>
+                <Form.Group className="mb-2">
                   <Form.Label>Username:</Form.Label>
                   <Form.Control
                     type="text"
@@ -61,7 +63,7 @@ export function RegistrationView(props) {
                   />
                 </Form.Group>
 
-                <Form.Group>
+                <Form.Group className="mb-2">
                   <Form.Label>Password:</Form.Label>
                   <Form.Control
                     type="password"
@@ -73,7 +75,7 @@ export function RegistrationView(props) {
                   />
                 </Form.Group>
 
-                <Form.Group>
+                <Form.Group className="mb-2">
                   <Form.Label>Email:</Form.Label>
                   <Form.Control
                     type="email"
@@ -84,7 +86,7 @@ export function RegistrationView(props) {
                   />
                 </Form.Group>
 
-                <Form.Group>
+                <Form.Group className="mb-2">
                   <Form.Label>Birthday:</Form.Label>
                   <Form.Control
                     type="date"
@@ -93,10 +95,11 @@ export function RegistrationView(props) {
                     required
                   />
                 </Form.Group>
-
-                <Button type="submit" onClick={handleSubmit}>
-                  Register
-                </Button>
+                <Form.Group className="button-group mt-4">
+                  <Button type="submit" onClick={handleSubmit}>
+                    Register
+                  </Button>
+                </Form.Group>
               </Form>
             </Card.Body>
           </Card>

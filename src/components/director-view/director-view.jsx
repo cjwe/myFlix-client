@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
+
+import { Link } from 'react-router-dom';
 
 // Import React Bootstrap Components
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,24 +19,33 @@ import './director-view.scss';
 
 export class DirectorView extends React.Component {
   render() {
-    const { Director, onBackClick, movies, movie } = this.props;
+    const { Director, onBackClick, movies } = this.props;
 
     return (
       <Container>
-        <Card>
-          <Card.Header>Director</Card.Header>
-          <Card.Title>{Director.Name}</Card.Title>
-          <Card.Text>Born: {Director.Birth}</Card.Text>
-          <Card.Text>{Director.Bio}</Card.Text>
-          <Card.Footer>
-            <Button
-              onClick={() => {
-                onBackClick(null);
-              }}
-            >
-              Back
-            </Button>
-          </Card.Footer>
+        <Card className="director-card">
+          <Card.Img
+            variant="top"
+            src="https://s3.amazonaws.com/criterion-production/images/9206-2db0b3476e483168ce277b751ebc0b80/miyazaki10262017_medium.jpg"
+          />
+          <Card.Body>
+            <Card.Title className="director-card-title">
+              {Director.Name}
+            </Card.Title>
+            <Card.Text className="director-card-text">
+              Born: {Director.Birth}
+            </Card.Text>
+            <Card.Text className="director-card-text">{Director.Bio}</Card.Text>
+            <Card.Footer className="director-card-footer">
+              <Button
+                onClick={() => {
+                  onBackClick(null);
+                }}
+              >
+                Back
+              </Button>
+            </Card.Footer>
+          </Card.Body>
         </Card>
       </Container>
     );
