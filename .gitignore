@@ -3,4 +3,5 @@ node_modules
 .parcel-cache
 .vscode
 .react
+.vscode/.react
 .DS_Store
