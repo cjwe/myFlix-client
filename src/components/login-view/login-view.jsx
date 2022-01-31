@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
 //Import React Bootstrap Components
-import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -13,7 +13,6 @@ import Card from 'react-bootstrap/Card';
 
 //Import custom SCSS
 import './login-view.scss';
-import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -35,8 +34,6 @@ export function LoginView(props) {
         console.log('User not found.');
       });
   };
-
-  // Register button click needed
 
   return (
     <div>

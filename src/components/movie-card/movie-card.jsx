@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { ArrowDownCircle } from 'react-bootstrap-icons';
 
-import Accordion from 'react-bootstrap/Accordion';
+// Import React Bootstrap components
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
 
+// Import Custom CSS
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {

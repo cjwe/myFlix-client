@@ -1,25 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-
-import { Link } from 'react-router-dom';
 
 // Import React Bootstrap Components
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
 
 // Import custom SCSS
 import './director-view.scss';
 
 export class DirectorView extends React.Component {
   render() {
-    const { Director, onBackClick, movies } = this.props;
+    const { Director, onBackClick } = this.props;
 
     return (
       <Container>

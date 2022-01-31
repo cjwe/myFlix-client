@@ -2,21 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import React Bootstrap Components
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
 
 // Import custom SCSS
 import './genre-view.scss';
 
 export class GenreView extends React.Component {
   render() {
-    const { Genre, onBackClick, movies } = this.props;
+    const { Genre, onBackClick } = this.props;
 
     return (
       <Container>

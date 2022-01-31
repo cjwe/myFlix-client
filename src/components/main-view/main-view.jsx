@@ -10,7 +10,6 @@ import { setMovies, setUser } from '../../actions/actions';
 
 // Import React components
 import MoviesList from '../movies-list/movies-list';
-// import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { DirectorView } from '../director-view/director-view';
@@ -20,16 +19,11 @@ import { ProfileView } from '../profile-view/profile-view';
 import { NavbarView } from '../nav-bar/nav-bar';
 
 // Import React Bootstrap components
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
 
-// Custom SCSS Import
+// Import Custom CSS
 import './main-view.scss';
 
 //#2 export keyword removed

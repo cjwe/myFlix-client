@@ -1,18 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { shape } from 'prop-types';
 
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
+// Import React Bootstrap components
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
-import './movie-view.scss';
 import Carousel from 'react-bootstrap/Carousel';
+
+//Import Custom SCSS
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
   constructor(props) {

@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// React Bootstrap Components
+// Import React Bootstrap components
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Stack from 'react-bootstrap/Stack';
-// Custom SCSS
+
+// Import Custom CSS
 import './nav-bar.scss';
 
 export function NavbarView() {
