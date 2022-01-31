@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Form from 'react-bootstrap/Form';
-
+// Import actions
 import { setFilter } from '../../actions/actions';
 
+// Import React Bootstrap components
+import Form from 'react-bootstrap/Form';
+
+// Import Custom SCSS
 import './visibility-filter.scss';
 
 function VisibilityFilterInput(props) {
