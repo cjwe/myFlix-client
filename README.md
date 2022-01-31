@@ -12,7 +12,7 @@ The frontend for this application consists of one main view that switches betwee
 
 ## Built With
 - JavaScript,  HTML, SCSS
-- React, React Redux
+- React, React-Redux
 - Styled with React Bootstrap
 - Built with Parcel
 - MERN (MongoDB, Express, React, and Node.js) stack
