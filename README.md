@@ -18,4 +18,4 @@ The frontend for this application consists of one main view that switches betwee
 - MERN (MongoDB, Express, React, and Node.js) stack
 
 ## Live Demo
-Check it out [here](/).
+Check it out [here](https://myghibli.netlify.app/).
